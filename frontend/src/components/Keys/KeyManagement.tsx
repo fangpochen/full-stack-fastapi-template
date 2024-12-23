@@ -21,11 +21,14 @@ import {
   NumberDecrementStepper,
   HStack,
   Checkbox,
+  Select,
 } from "@chakra-ui/react"
 import { FiTrash2, FiCopy } from "react-icons/fi"
 import { useApiKeys, useCreateApiKeys, useDeleteApiKey, useToggleApiKey } from "../../services/api-key"
-import { useQueryClient } from "@tanstack/react-query"
+import { useQueryClient, useQuery } from "@tanstack/react-query"
 import { useState } from "react"
+import axios from "axios"
+import { ItemsService } from "../../client"
 
 interface ApiKey {
   id: string
@@ -35,6 +38,11 @@ interface ApiKey {
   machine_info: any
   unique_id: string
   user_id: string
+  item?: {
+    id: string
+    title: string
+    description?: string
+  }
 }
 
 const formatMachineInfo = (info: Record<string, any>) => {
@@ -44,16 +52,27 @@ const formatMachineInfo = (info: Record<string, any>) => {
   return JSON.stringify(info, null, 2)
 }
 
+// 在组件外部定义 useItems hook
+const useItems = () => {
+  return useQuery({
+    queryKey: ["items"],
+    queryFn: () => ItemsService.readItems()
+  })
+}
+
 export const KeyManagement = () => {
   const toast = useToast()
   const queryClient = useQueryClient()
   const [count, setCount] = useState(1)
   const [selectedKeys, setSelectedKeys] = useState<string[]>([])
+  const [selectedItemId, setSelectedItemId] = useState<string>("")
   const { data: keysResponse, isLoading } = useApiKeys()
+  const { data: itemsResponse } = useItems()
   const createKeysMutation = useCreateApiKeys()
   const deleteKeyMutation = useDeleteApiKey()
   const toggleKeyMutation = useToggleApiKey()
   const keys = keysResponse?.data || []
+  const items = itemsResponse?.data || []
 
   const handleSelectAll = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.checked) {
@@ -89,7 +108,10 @@ export const KeyManagement = () => {
 
   const handleCreate = async () => {
     try {
-      await createKeysMutation.mutateAsync(count)
+      await createKeysMutation.mutateAsync({
+        count,
+        item_id: selectedItemId || undefined
+      })
       toast({ status: "success", title: `成功创建 ${count} 个密钥` })
       queryClient.invalidateQueries({ queryKey: ["api-keys"] })
     } catch (error) {
@@ -121,6 +143,24 @@ export const KeyManagement = () => {
     toast({ status: "success", title: "复制成功" })
   }
 
+  const handleBatchDelete = async () => {
+    try {
+      await axios.delete(`${import.meta.env.VITE_API_URL}/api/v1/api-keys/batch`, { 
+        data: selectedKeys,
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${localStorage.getItem("access_token")}`,
+        }
+      });
+      toast({ status: "success", title: `成功删除${selectedKeys.length}个密钥` });
+      queryClient.invalidateQueries({ queryKey: ["api-keys"] });
+      setSelectedKeys([]); 
+    } catch (error) {
+      console.error('Delete error:', error);
+      toast({ status: "error", title: "删除失败" });
+    }
+  };
+
   return (
     <Box maxW="100vw" overflowX="auto">
       <HStack spacing={4} mb={4}>
@@ -139,6 +179,20 @@ export const KeyManagement = () => {
             <NumberDecrementStepper />
           </NumberInputStepper>
         </NumberInput>
+        
+        <Select
+          placeholder="选择项目"
+          value={selectedItemId}
+          onChange={(e) => setSelectedItemId(e.target.value)}
+          w="200px"
+        >
+          {items.map((item) => (
+            <option key={item.id} value={item.id}>
+              {item.title}
+            </option>
+          ))}
+        </Select>
+
         <Button
           colorScheme="purple"
           bg="#6B46C1"
@@ -164,6 +218,13 @@ export const KeyManagement = () => {
             >
               批量启用
             </Button>
+            <Button
+              colorScheme="red"
+              onClick={handleBatchDelete}
+              isLoading={deleteKeyMutation.isPending}
+            >
+              批量删除
+            </Button>
           </>
         )}
       </HStack>
@@ -180,6 +241,7 @@ export const KeyManagement = () => {
                 />
               </Th>
               <Th width="300px">密钥</Th>
+              <Th width="200px">项目</Th>
               <Th width="400px">设备信息</Th>
               <Th width="200px">用户ID</Th>
               <Th width="200px">创建时间</Th>
@@ -207,6 +269,11 @@ export const KeyManagement = () => {
                       onClick={() => handleCopy(key.key)}
                     />
                   </Flex>
+                </Td>
+                <Td>
+                  <Text color={key.item ? "black" : "gray.500"}>
+                    {key.item ? key.item.title : "未关联项目"}
+                  </Text>
                 </Td>
                 <Td>
                   <Box

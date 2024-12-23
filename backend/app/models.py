@@ -83,6 +83,7 @@ class Item(ItemBase, table=True):
         foreign_key="user.id", nullable=False, ondelete="CASCADE"
     )
     owner: User | None = Relationship(back_populates="items")
+    keys: list["ApiKey"] = Relationship(back_populates="item")
 
 
 # Properties to return via API, id is always required
@@ -134,12 +135,16 @@ class ApiKey(ApiKeyBase, table=True):
     key: str = Field(max_length=255)
     user_id: uuid.UUID = Field(foreign_key="user.id")
     user: "User" = Relationship(back_populates="apikey")
+    item_id: uuid.UUID | None = Field(default=None, foreign_key="item.id", nullable=True)
+    item: Item | None = Relationship(back_populates="keys")
 
 
 # Properties to return via API
 class ApiKeyPublic(ApiKeyBase):
     id: uuid.UUID
     user_id: uuid.UUID
+    item_id: uuid.UUID | None
+    item: ItemPublic | None
 
 # List response model
 class ApiKeysPublic(SQLModel):
@@ -149,3 +154,4 @@ class ApiKeysPublic(SQLModel):
 # Create request model
 class ApiKeyCreate(SQLModel):
     count: int = Field(gt=0, le=100)
+    item_id: uuid.UUID | None 
