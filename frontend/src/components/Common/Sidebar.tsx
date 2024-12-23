@@ -22,9 +22,8 @@ import SidebarItems from "./SidebarItems"
 
 const Sidebar = () => {
   const queryClient = useQueryClient()
-  const bgColor = useColorModeValue("ui.light", "ui.dark")
-  const textColor = useColorModeValue("ui.dark", "ui.light")
-  const secBgColor = useColorModeValue("ui.secondary", "ui.darkSlate")
+  const bgColor = useColorModeValue("white", "gray.800")
+  const textColor = useColorModeValue("gray.700", "gray.200")
   const currentUser = queryClient.getQueryData<UserPublic>(["currentUser"])
   const { isOpen, onOpen, onClose } = useDisclosure()
   const { logout } = useAuth()
@@ -52,23 +51,27 @@ const Sidebar = () => {
           <DrawerBody py={8}>
             <Flex flexDir="column" justify="space-between">
               <Box>
-                <Image src={Logo} alt="logo" p={6} />
+                <Box p={6}>
+                  <Text fontSize="xl" fontWeight="bold" color="#009485">
+                    阿应工具箱
+                  </Text>
+                </Box>
                 <SidebarItems onClose={onClose} />
                 <Flex
                   as="button"
                   onClick={handleLogout}
                   p={2}
-                  color="ui.danger"
+                  color="red.500"
                   fontWeight="bold"
                   alignItems="center"
                 >
                   <FiLogOut />
-                  <Text ml={2}>Log out</Text>
+                  <Text ml={2}>退出登录</Text>
                 </Flex>
               </Box>
               {currentUser?.email && (
                 <Text color={textColor} noOfLines={2} fontSize="sm" p={2}>
-                  Logged in as: {currentUser.email}
+                  当前用户: {currentUser.email}
                 </Text>
               )}
             </Flex>
@@ -78,35 +81,44 @@ const Sidebar = () => {
 
       {/* Desktop */}
       <Box
-        bg={bgColor}
-        p={3}
-        h="100vh"
-        position="sticky"
+        as="nav"
+        pos="sticky"
         top="0"
-        display={{ base: "none", md: "flex" }}
+        w="250px"
+        h="100vh"
+        bg={bgColor}
+        borderRight="1px"
+        borderColor="gray.200"
+        display={{ base: "none", md: "block" }}
       >
-        <Flex
-          flexDir="column"
-          justify="space-between"
-          bg={secBgColor}
-          p={4}
-          borderRadius={12}
-        >
-          <Box>
-            <Image src={Logo} alt="Logo" w="180px" maxW="2xs" p={6} />
+        <Flex flexDir="column" h="full">
+          <Box p={6}>
+            <Text fontSize="xl" fontWeight="bold" color="#009485">
+              阿应工具箱
+            </Text>
+          </Box>
+          <Box flex="1">
             <SidebarItems />
           </Box>
-          {currentUser?.email && (
-            <Text
-              color={textColor}
-              noOfLines={2}
-              fontSize="sm"
+          <Box p={4}>
+            <Flex
+              as="button"
+              onClick={handleLogout}
               p={2}
-              maxW="180px"
+              color="red.500"
+              fontWeight="bold"
+              alignItems="center"
+              w="full"
             >
-              Logged in as: {currentUser.email}
-            </Text>
-          )}
+              <FiLogOut />
+              <Text ml={2}>退出登录</Text>
+            </Flex>
+            {currentUser?.email && (
+              <Text color={textColor} noOfLines={2} fontSize="sm" mt={2}>
+                当前用户: {currentUser.email}
+              </Text>
+            )}
+          </Box>
         </Flex>
       </Box>
     </>

@@ -1,3 +1,4 @@
+import logging
 import uuid
 from typing import Any
 
@@ -9,6 +10,8 @@ from app.models import Item, ItemCreate, ItemPublic, ItemsPublic, ItemUpdate, Me
 
 router = APIRouter(prefix="/items", tags=["items"])
 
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.DEBUG)
 
 @router.get("/", response_model=ItemsPublic)
 def read_items(
@@ -37,7 +40,7 @@ def read_items(
             .limit(limit)
         )
         items = session.exec(statement).all()
-
+    logger.info(f'items:{items}')
     return ItemsPublic(data=items, count=count)
 
 

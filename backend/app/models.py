@@ -1,7 +1,9 @@
 import uuid
-
+from datetime import datetime
+from typing import Dict, Optional
 from pydantic import EmailStr
 from sqlmodel import Field, Relationship, SQLModel
+from sqlalchemy import JSON
 
 
 # Shared properties
@@ -44,6 +46,7 @@ class User(UserBase, table=True):
     id: uuid.UUID = Field(default_factory=uuid.uuid4, primary_key=True)
     hashed_password: str
     items: list["Item"] = Relationship(back_populates="owner", cascade_delete=True)
+    apikey: list["ApiKey"] = Relationship(back_populates="user")
 
 
 # Properties to return via API, id is always required
@@ -112,3 +115,37 @@ class TokenPayload(SQLModel):
 class NewPassword(SQLModel):
     token: str
     new_password: str = Field(min_length=8, max_length=40)
+
+    # API Key base model
+class ApiKeyBase(SQLModel):
+    id: uuid.UUID = Field(default_factory=uuid.uuid4, primary_key=True)
+    key: str = Field(unique=True, index=True)
+    unique_id: str = Field(max_length=255)
+    machine_info: Dict = Field(default={}, sa_type=JSON)
+    version: str = Field(max_length=255)
+    is_active: bool = Field(default=True)
+    created_at: datetime = Field(default_factory=datetime.utcnow)
+    last_verified_at: datetime | None = Field(default=None)
+    expires_at: datetime | None = Field(default=None)
+
+
+# Database model
+class ApiKey(ApiKeyBase, table=True):
+    key: str = Field(max_length=255)
+    user_id: uuid.UUID = Field(foreign_key="user.id")
+    user: "User" = Relationship(back_populates="apikey")
+
+
+# Properties to return via API
+class ApiKeyPublic(ApiKeyBase):
+    id: uuid.UUID
+    user_id: uuid.UUID
+
+# List response model
+class ApiKeysPublic(SQLModel):
+    data: list[ApiKeyPublic]
+    count: int
+
+# Create request model
+class ApiKeyCreate(SQLModel):
+    count: int = Field(gt=0, le=100)

@@ -1,14 +1,14 @@
 import { Box, Flex, Icon, Text, useColorModeValue } from "@chakra-ui/react"
 import { useQueryClient } from "@tanstack/react-query"
 import { Link } from "@tanstack/react-router"
-import { FiBriefcase, FiHome, FiSettings, FiUsers } from "react-icons/fi"
+import { FiBriefcase, FiHome, FiSettings, FiUsers, FiKey } from "react-icons/fi"
 
 import type { UserPublic } from "../../client"
 
 const items = [
-  { icon: FiHome, title: "Dashboard", path: "/" },
-  { icon: FiBriefcase, title: "Items", path: "/items" },
-  { icon: FiSettings, title: "User Settings", path: "/settings" },
+  { icon: FiHome, title: "控制台", path: "/" },
+  { icon: FiBriefcase, title: "项目管理", path: "/items" },
+  { icon: FiSettings, title: "用户设置", path: "/settings" },
 ]
 
 interface SidebarItemsProps {
@@ -22,7 +22,7 @@ const SidebarItems = ({ onClose }: SidebarItemsProps) => {
   const currentUser = queryClient.getQueryData<UserPublic>(["currentUser"])
 
   const finalItems = currentUser?.is_superuser
-    ? [...items, { icon: FiUsers, title: "Admin", path: "/admin" }]
+    ? [...items, { icon: FiUsers, title: "管理员", path: "/admin" }]
     : items
 
   const listItems = finalItems.map(({ icon, title, path }) => (
@@ -48,7 +48,27 @@ const SidebarItems = ({ onClose }: SidebarItemsProps) => {
 
   return (
     <>
-      <Box>{listItems}</Box>
+      <Box>
+        {listItems}
+        <Flex
+          as={Link}
+          to="/keys"
+          w="100%"
+          p={2}
+          key="Keys"
+          activeProps={{
+            style: {
+              background: bgActive,
+              borderRadius: "12px",
+            },
+          }}
+          color={textColor}
+          onClick={onClose}
+        >
+          <Icon as={FiKey} alignSelf="center" />
+          <Text ml={2}>密钥管理</Text>
+        </Flex>
+      </Box>
     </>
   )
 }
