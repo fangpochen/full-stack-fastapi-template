@@ -11,7 +11,6 @@ import {
   IconButton,
   useToast,
   Text,
-  Badge,
   TableContainer,
   Switch,
   NumberInput,
@@ -29,21 +28,6 @@ import { useQueryClient, useQuery } from "@tanstack/react-query"
 import { useState } from "react"
 import axios from "axios"
 import { ItemsService } from "../../client"
-
-interface ApiKey {
-  id: string
-  key: string
-  is_active: boolean
-  created_at: string
-  machine_info: any
-  unique_id: string
-  user_id: string
-  item?: {
-    id: string
-    title: string
-    description?: string
-  }
-}
 
 const formatMachineInfo = (info: Record<string, any>) => {
   if (Object.keys(info).length === 0) {
@@ -66,7 +50,7 @@ export const KeyManagement = () => {
   const [count, setCount] = useState(1)
   const [selectedKeys, setSelectedKeys] = useState<string[]>([])
   const [selectedItemId, setSelectedItemId] = useState<string>("")
-  const { data: keysResponse, isLoading } = useApiKeys()
+  const { data: keysResponse } = useApiKeys()
   const { data: itemsResponse } = useItems()
   const createKeysMutation = useCreateApiKeys()
   const deleteKeyMutation = useDeleteApiKey()

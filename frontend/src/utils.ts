@@ -44,10 +44,12 @@ export const confirmPasswordRules = (
 }
 
 export const handleError = (err: ApiError, showToast: any) => {
-  const errDetail = (err.body as any)?.detail
-  let errorMessage = errDetail || "Something went wrong."
+  const errDetail = err.response?.status === 422 
+    ? (err.response as any)?.data?.detail 
+    : err.message;
+  let errorMessage = errDetail || "Something went wrong.";
   if (Array.isArray(errDetail) && errDetail.length > 0) {
-    errorMessage = errDetail[0].msg
+    errorMessage = errDetail[0].msg;
   }
-  showToast("Error", errorMessage, "error")
+  showToast("Error", errorMessage, "error");
 }

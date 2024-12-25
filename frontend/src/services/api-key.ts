@@ -12,7 +12,7 @@ export const useApiKeys = () => {
           Authorization: `Bearer ${localStorage.getItem("access_token")}`,
         },
       })
-      if (!response.ok) throw new ApiError(response, "Failed to fetch API keys")
+      if (!response.ok) throw new ApiError(response, "Failed to fetch API keys", response.status)
       return response.json()
     },
   })
@@ -25,6 +25,16 @@ declare namespace API {
     key: string
     is_active: boolean
     created_at: string
+    machine_info: any
+    unique_id: string
+    user_id: string
+    item?: {
+      id: string
+      title: string
+      description?: string
+    }
+    is_bound: boolean
+    last_verified_at: string | null
     expires_at: string | null
   }
 
@@ -32,20 +42,28 @@ declare namespace API {
     data: ApiKey[]
     count: number
   }
+
+  interface CreateApiKeyRequest {
+    count: number
+    item_id?: string
+  }
 }
 
 export const useCreateApiKeys = () => {
   return useMutation({
-    mutationFn: async (count: number) => {
+    mutationFn: async (data: API.CreateApiKeyRequest) => {
       const response = await fetch(`${API_URL}/api-keys/create`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${localStorage.getItem("access_token")}`,
         },
-        body: JSON.stringify({ count }),
+        body: JSON.stringify({
+          count: { count: data.count },
+          item_id: data.item_id
+        }),
       })
-      if (!response.ok) throw new ApiError(response, "Failed to create API keys")
+      if (!response.ok) throw new ApiError(response, "Failed to create API keys", response.status)
       return response.json()
     },
   })
@@ -60,7 +78,7 @@ export const useDeleteApiKey = () => {
           Authorization: `Bearer ${localStorage.getItem("access_token")}`,
         },
       })
-      if (!response.ok) throw new ApiError(response, "Failed to delete API key")
+      if (!response.ok) throw new ApiError(response, "Failed to delete API key", response.status)
     },
   })
 }
@@ -76,7 +94,7 @@ export const useToggleApiKey = () => {
           Authorization: `Bearer ${localStorage.getItem("access_token")}`,
         },
       })
-      if (!response.ok) throw new ApiError(response, "Failed to toggle API key")
+      if (!response.ok) throw new ApiError(response, "Failed to toggle API key", response.status)
       return response.json()
     },
     onSuccess: () => {

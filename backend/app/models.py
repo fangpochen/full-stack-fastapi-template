@@ -117,7 +117,8 @@ class NewPassword(SQLModel):
     token: str
     new_password: str = Field(min_length=8, max_length=40)
 
-    # API Key base model
+
+# API Key base model
 class ApiKeyBase(SQLModel):
     id: uuid.UUID = Field(default_factory=uuid.uuid4, primary_key=True)
     key: str = Field(unique=True, index=True)
@@ -125,6 +126,7 @@ class ApiKeyBase(SQLModel):
     machine_info: Dict = Field(default={}, sa_type=JSON)
     version: str = Field(max_length=255)
     is_active: bool = Field(default=True)
+    is_bound: bool = Field(default=False)
     created_at: datetime = Field(default_factory=datetime.utcnow)
     last_verified_at: datetime | None = Field(default=None)
     expires_at: datetime | None = Field(default=None)
@@ -146,10 +148,12 @@ class ApiKeyPublic(ApiKeyBase):
     item_id: uuid.UUID | None
     item: ItemPublic | None
 
+
 # List response model
 class ApiKeysPublic(SQLModel):
     data: list[ApiKeyPublic]
     count: int
+
 
 # Create request model
 class ApiKeyCreate(SQLModel):

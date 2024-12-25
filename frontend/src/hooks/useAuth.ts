@@ -41,13 +41,15 @@ const useAuth = () => {
       )
     },
     onError: (err: ApiError) => {
-      let errDetail = (err.body as any)?.detail
+      let errDetail = err.response?.status === 422 
+        ? (err.response as any)?.data?.detail 
+        : err.message;
 
       if (err instanceof AxiosError) {
-        errDetail = err.message
+        errDetail = err.message;
       }
 
-      showToast("Something went wrong.", errDetail, "error")
+      showToast("Something went wrong.", errDetail, "error");
     },
     onSettled: () => {
       queryClient.invalidateQueries({ queryKey: ["users"] })
@@ -67,17 +69,19 @@ const useAuth = () => {
       navigate({ to: "/" })
     },
     onError: (err: ApiError) => {
-      let errDetail = (err.body as any)?.detail
+      let errDetail = err.response?.status === 422 
+        ? (err.response as any)?.data?.detail 
+        : err.message;
 
       if (err instanceof AxiosError) {
-        errDetail = err.message
+        errDetail = err.message;
       }
 
       if (Array.isArray(errDetail)) {
-        errDetail = "Something went wrong"
+        errDetail = "Something went wrong";
       }
 
-      setError(errDetail)
+      setError(errDetail);
     },
   })
 
