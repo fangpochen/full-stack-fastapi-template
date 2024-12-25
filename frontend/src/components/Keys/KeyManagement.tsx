@@ -122,9 +122,24 @@ export const KeyManagement = () => {
     }
   }
 
-  const handleCopy = (text: string) => {
-    navigator.clipboard.writeText(text)
-    toast({ status: "success", title: "复制成功" })
+  const handleCopy = async (text: string) => {
+    try {
+      await navigator.clipboard.writeText(text)
+      toast({ 
+        status: "success", 
+        title: "复制成功",
+        position: "top",
+        duration: 2000
+      })
+    } catch (error) {
+      toast({ 
+        status: "error", 
+        title: "复制失败，请手动复制",
+        position: "top",
+        duration: 2000
+      })
+      console.error('Copy failed:', error)
+    }
   }
 
   const handleBatchDelete = async () => {
@@ -243,8 +258,17 @@ export const KeyManagement = () => {
                   />
                 </Td>
                 <Td>
-                  <Flex gap={2} align="center">
-                    <Text isTruncated maxW="250px">{key.key}</Text>
+                  <Flex gap={2} align="center" width="100%">
+                    <Text 
+                      fontFamily="mono" 
+                      fontSize="sm"
+                      whiteSpace="nowrap"
+                      overflow="hidden"
+                      textOverflow="ellipsis"
+                      maxW="350px"
+                    >
+                      {key.key}
+                    </Text>
                     <IconButton
                       aria-label="Copy key"
                       icon={<FiCopy />}
