@@ -20,9 +20,10 @@ class UserCreate(UserBase):
 
 
 class UserRegister(SQLModel):
-    email: EmailStr = Field(max_length=255)
+    email: EmailStr
     password: str = Field(min_length=8, max_length=40)
     full_name: str | None = Field(default=None, max_length=255)
+    invite_code: str
 
 
 # Properties to receive via API on update, all are optional
@@ -159,3 +160,17 @@ class ApiKeysPublic(SQLModel):
 class ApiKeyCreate(SQLModel):
     count: int = Field(gt=0, le=100)
     item_id: uuid.UUID | None 
+
+
+# 邀请码模型
+class InviteCode(SQLModel, table=True):
+    """邀请码模型"""
+    id: uuid.UUID = Field(default_factory=uuid.uuid4, primary_key=True)
+    code: str = Field(unique=True, index=True)
+    created_at: datetime = Field(default_factory=datetime.utcnow)
+    expires_at: Optional[datetime] = Field(default=None)
+    is_used: bool = Field(default=False)
+    used_at: Optional[datetime] = Field(default=None)
+    used_by: Optional[str] = Field(default=None)
+    created_by: Optional[str] = Field(default=None)
+    description: Optional[str] = Field(default=None) 

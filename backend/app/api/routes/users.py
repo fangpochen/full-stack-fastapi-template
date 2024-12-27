@@ -141,19 +141,43 @@ def delete_user_me(session: SessionDep, current_user: CurrentUser) -> Any:
     return Message(message="User deleted successfully")
 
 
-@router.post("/signup", response_model=UserPublic)
-def register_user(session: SessionDep, user_in: UserRegister) -> Any:
+@router.post("/signup", response_model=User)
+def register_user(
+    *,
+    session: SessionDep,
+    user_in: UserRegister,
+) -> Any:
     """
-    Create new user without the need to be logged in.
+    用户注册 (需要邀请码).
     """
+    # 检查邮箱是否已存在
     user = crud.get_user_by_email(session=session, email=user_in.email)
     if user:
         raise HTTPException(
             status_code=400,
-            detail="The user with this email already exists in the system",
+            detail="该邮箱已被注册",
         )
-    user_create = UserCreate.model_validate(user_in)
-    user = crud.create_user(session=session, user_create=user_create)
+    
+    # 验证邀请码
+    invite = crud.get_invite_code_by_code(session=session, code=user_in.invite_code)
+    if not invite:
+        raise HTTPException(
+            status_code=400,
+            detail="无效或已过期的邀请码",
+        )
+    
+    if invite.is_used:
+        raise HTTPException(
+            status_code=400,
+            detail="邀请码已被使用",
+        )
+    
+    # 创建用户
+    user = crud.create_user(session=session, user_create=user_in)
+    
+    # 标记邀请码为已使用
+    crud.mark_invite_code_as_used(session=session, invite=invite, user=user)
+    
     return user
 
 

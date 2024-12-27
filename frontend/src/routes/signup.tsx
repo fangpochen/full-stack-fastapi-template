@@ -35,6 +35,7 @@ export const Route = createFileRoute("/signup")({
 
 interface UserRegisterForm extends UserRegister {
   confirm_password: string
+  invite_code: string
 }
 
 function SignUp() {
@@ -52,6 +53,7 @@ function SignUp() {
       full_name: "",
       password: "",
       confirm_password: "",
+      invite_code: "",
     },
   })
 
@@ -144,6 +146,22 @@ function SignUp() {
               <FormErrorMessage>
                 {errors.confirm_password.message}
               </FormErrorMessage>
+            )}
+          </FormControl>
+          <FormControl id="invite_code" isInvalid={!!errors.invite_code}>
+            <FormLabel htmlFor="invite_code" srOnly>
+              邀请码
+            </FormLabel>
+            <Input
+              id="invite_code"
+              {...register("invite_code", {
+                required: "请输入邀请码",
+              })}
+              placeholder="请输入邀请码"
+              type="text"
+            />
+            {errors.invite_code && (
+              <FormErrorMessage>{errors.invite_code.message}</FormErrorMessage>
             )}
           </FormControl>
           <Button variant="primary" type="submit" isLoading={isSubmitting}>
