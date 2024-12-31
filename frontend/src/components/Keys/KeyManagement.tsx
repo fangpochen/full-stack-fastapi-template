@@ -124,23 +124,46 @@ export const KeyManagement = () => {
 
   const handleCopy = async (text: string) => {
     try {
-      await navigator.clipboard.writeText(text)
+      // 首先尝试使用传统方法
+      const textArea = document.createElement('textarea');
+      textArea.style.position = 'fixed';  // 避免页面滚动
+      textArea.style.opacity = '0';       // 隐藏元素
+      textArea.value = text;
+      document.body.appendChild(textArea);
+      textArea.focus();
+      textArea.select();
+      
+      const successful = document.execCommand('copy');
+      document.body.removeChild(textArea);
+      
+      if (successful) {
+        toast({ 
+          status: "success", 
+          title: "复制成功",
+          position: "top",
+          duration: 2000
+        });
+        return;
+      }
+
+      // 如果传统方法失败，尝试现代 Clipboard API
+      await navigator.clipboard.writeText(text);
       toast({ 
         status: "success", 
         title: "复制成功",
         position: "top",
         duration: 2000
-      })
+      });
     } catch (error) {
+      console.error('Copy failed:', error);
       toast({ 
         status: "error", 
         title: "复制失败，请手动复制",
         position: "top",
         duration: 2000
-      })
-      console.error('Copy failed:', error)
+      });
     }
-  }
+  };
 
   const handleBatchDelete = async () => {
     try {

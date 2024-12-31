@@ -25,7 +25,7 @@ logger.setLevel(logging.DEBUG)
 ip_access_records: Dict[str, Tuple[int, float]] = {}
 
 # IP 限制的配置
-IP_RATE_LIMIT = 3  # 最大尝试次数
+IP_RATE_LIMIT = 10  # 最大尝试次数
 IP_RATE_WINDOW = 3600  # 时间窗口（秒）
 
 def check_ip_rate_limit(request: Request) -> bool:
@@ -197,7 +197,7 @@ def toggle_api_key(
 async def verify_api_key(
     request: Request,
     session: SessionDep,
-    data: dict = Body(...),  # 接收包含 key 和 machine_info 的数据
+    data: dict = Body(...),
 ):
     """验证 API 密钥（无需登录）"""
     try:
@@ -206,6 +206,17 @@ async def verify_api_key(
         
         key = data.get('key')
         machine_info = data.get('machine_info', {})
+        
+        # 添加 IP 信息
+        machine_info.update({
+            'ip_address': request.client.host,
+            'last_access_time': datetime.utcnow().isoformat()
+        })
+        
+        # 如果有 X-Forwarded-For 头，也记录它
+        forwarded_for = request.headers.get('X-Forwarded-For')
+        if forwarded_for:
+            machine_info['x_forwarded_for'] = forwarded_for
         
         # 查找密钥
         api_key = session.exec(
@@ -217,7 +228,18 @@ async def verify_api_key(
         
         # 如果已经绑定，检查设备信息是否匹配
         if api_key.is_bound:
-            if api_key.machine_info != machine_info:
+            stored_machine_info = api_key.machine_info.copy()
+            # 更新 IP 相关信息但保留其他设备信息
+            stored_machine_info.update({
+                'ip_address': machine_info['ip_address'],
+                'last_access_time': machine_info['last_access_time']
+            })
+            if forwarded_for:
+                stored_machine_info['x_forwarded_for'] = machine_info['x_forwarded_for']
+            
+            api_key.machine_info = stored_machine_info
+            
+            if api_key.machine_info.get('device_id') != machine_info.get('device_id'):
                 logger.warning(f"Device mismatch for key {api_key.id}")
                 return {"valid": False, "message": "Device not matched"}
         else:

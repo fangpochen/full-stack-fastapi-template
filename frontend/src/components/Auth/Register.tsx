@@ -11,7 +11,6 @@ import {
 } from "@chakra-ui/react"
 import { Link as RouterLink } from "@tanstack/react-router"
 import { type SubmitHandler, useForm } from "react-hook-form"
-import React from 'react'
 
 import useAuth from "../../hooks/useAuth"
 import { confirmPasswordRules, emailPattern, passwordRules } from "../../utils"
