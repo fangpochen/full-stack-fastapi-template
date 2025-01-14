@@ -239,8 +239,17 @@ async def verify_api_key(
             
             api_key.machine_info = stored_machine_info
             
-            if api_key.machine_info.get('device_id') != machine_info.get('device_id'):
+            # 检查关键设备信息是否匹配
+            device_mismatch = (
+                stored_machine_info.get('hostname') != machine_info.get('hostname') or
+                stored_machine_info.get('mac') != machine_info.get('mac') or
+                stored_machine_info.get('device_id') != machine_info.get('device_id')
+            )
+            
+            if device_mismatch:
                 logger.warning(f"Device mismatch for key {api_key.id}")
+                logger.debug(f"Stored info: {stored_machine_info}")
+                logger.debug(f"Received info: {machine_info}")
                 return {"valid": False, "message": "Device not matched"}
         else:
             # 首次绑定，更新设备信息
