@@ -21,6 +21,9 @@ import {
   HStack,
   Checkbox,
   Select,
+  ButtonGroup,
+  FormControl,
+  FormLabel,
 } from "@chakra-ui/react"
 import { FiTrash2, FiCopy } from "react-icons/fi"
 import { useApiKeys, useCreateApiKeys, useDeleteApiKey, useToggleApiKey } from "../../services/api-key"
@@ -28,6 +31,26 @@ import { useQueryClient, useQuery } from "@tanstack/react-query"
 import { useState } from "react"
 import axios from "axios"
 import { ItemsService } from "../../client"
+import { useUsers } from "../../services/user"
+
+interface ApiKey {
+  id: string;
+  key: string;
+  is_active: boolean;
+  created_at: string;
+  user_id: string;
+  item?: {
+    id: string;
+    title: string;
+  };
+  machine_info: Record<string, any>;
+}
+
+interface User {
+  id: string;
+  email: string;
+  username: string;
+}
 
 const formatMachineInfo = (info: Record<string, any>) => {
   if (Object.keys(info).length === 0) {
@@ -44,23 +67,50 @@ const useItems = () => {
   })
 }
 
+// 添加 hook 来获取当前用户信息
+const useCurrentUser = () => {
+  return useQuery({
+    queryKey: ['current-user'],
+    queryFn: async () => {
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/v1/users/me`, {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("access_token")}`,
+        },
+      });
+      return response.data;
+    },
+  });
+};
+
 export const KeyManagement = () => {
   const toast = useToast()
   const queryClient = useQueryClient()
   const [count, setCount] = useState(1)
   const [selectedKeys, setSelectedKeys] = useState<string[]>([])
   const [selectedItemId, setSelectedItemId] = useState<string>("")
-  const { data: keysResponse } = useApiKeys()
+  const [page, setPage] = useState(1)
+  const [pageSize, setPageSize] = useState(10)
+  const [selectedUserId, setSelectedUserId] = useState<string>("")
+  const { data: users } = useUsers()
+  const { data: keysResponse } = useApiKeys({
+    page,
+    pageSize,
+    userId: selectedUserId || undefined
+  })
   const { data: itemsResponse } = useItems()
   const createKeysMutation = useCreateApiKeys()
   const deleteKeyMutation = useDeleteApiKey()
   const toggleKeyMutation = useToggleApiKey()
   const keys = keysResponse?.data || []
+  const pagination = keysResponse?.pagination || { total: 0, total_pages: 1 }
   const items = itemsResponse?.data || []
+  // 使用 hook 获取用户信息
+  const { data: currentUser } = useCurrentUser();
+  const isAdmin = currentUser?.is_superuser || false;
 
   const handleSelectAll = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.checked) {
-      setSelectedKeys(keys.map(key => key.id))
+      setSelectedKeys(keys.map((key: ApiKey) => key.id))
     } else {
       setSelectedKeys([])
     }
@@ -251,6 +301,28 @@ export const KeyManagement = () => {
         )}
       </HStack>
 
+      <Flex mb={4} gap={4}>
+        {isAdmin && (
+          <FormControl w="300px">
+            <FormLabel>用户筛选</FormLabel>
+            <Select
+              value={selectedUserId}
+              onChange={(e) => {
+                setSelectedUserId(e.target.value);
+                setPage(1);
+              }}
+              placeholder="全部用户"
+            >
+              {users?.map((user: User) => (
+                <option key={user.id} value={user.id}>
+                  {user.email || user.username}
+                </option>
+              ))}
+            </Select>
+          </FormControl>
+        )}
+      </Flex>
+
       <TableContainer minW="1200px">
         <Table size="md">
           <Thead>
@@ -272,7 +344,7 @@ export const KeyManagement = () => {
             </Tr>
           </Thead>
           <Tbody>
-            {keys.map((key) => (
+            {keys.map((key: ApiKey) => (
               <Tr key={key.id}>
                 <Td>
                   <Checkbox
@@ -347,6 +419,46 @@ export const KeyManagement = () => {
           </Tbody>
         </Table>
       </TableContainer>
+
+      <Flex justify="space-between" align="center" mt={4} px={4}>
+        <Text fontSize="sm">
+          共 {pagination.total} 条记录
+        </Text>
+        <HStack spacing={2}>
+          <Select
+            size="sm"
+            value={pageSize}
+            onChange={(e) => {
+              setPageSize(Number(e.target.value));
+              setPage(1);
+            }}
+            w="120px"
+          >
+            <option value={10}>10 条/页</option>
+            <option value={20}>20 条/页</option>
+            <option value={50}>50 条/页</option>
+          </Select>
+
+          <ButtonGroup size="sm" variant="outline">
+            <Button
+              onClick={() => setPage(p => p - 1)}
+              isDisabled={page <= 1}
+            >
+              上一页
+            </Button>
+            <Button
+              onClick={() => setPage(p => p + 1)}
+              isDisabled={page >= pagination.total_pages}
+            >
+              下一页
+            </Button>
+          </ButtonGroup>
+          
+          <Text fontSize="sm">
+            第 {page} / {pagination.total_pages} 页
+          </Text>
+        </HStack>
+      </Flex>
     </Box>
   )
 }

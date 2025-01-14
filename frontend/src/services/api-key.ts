@@ -1,22 +1,33 @@
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query"
 import { ApiError } from "../client"
+import axios from "axios"
 
 const API_URL = import.meta.env.VITE_API_URL + "/api/v1"
 
-export const useApiKeys = () => {
-  return useQuery<API.ApiKeysResponse>({
-    queryKey: ["api-keys"],
+interface PaginationParams {
+  page: number;
+  pageSize: number;
+  userId?: string;
+}
+
+export const useApiKeys = (params: PaginationParams) => {
+  return useQuery({
+    queryKey: ['api-keys', params],
     queryFn: async () => {
-      const response = await fetch(`${API_URL}/api-keys`, {
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/v1/api-keys`, {
+        params: {
+          page: params.page,
+          page_size: params.pageSize,
+          user_id: params.userId
+        },
         headers: {
           Authorization: `Bearer ${localStorage.getItem("access_token")}`,
         },
-      })
-      if (!response.ok) throw new ApiError(response, "Failed to fetch API keys", response.status)
-      return response.json()
+      });
+      return response.data;
     },
-  })
-}
+  });
+};
 
 // 类型定义
 declare namespace API {

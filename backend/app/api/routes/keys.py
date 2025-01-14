@@ -1,6 +1,6 @@
 from typing import Any
 import secrets
-from fastapi import APIRouter, Depends, HTTPException, Body, Request
+from fastapi import APIRouter, Depends, HTTPException, Body, Request, Query
 from fastapi.encoders import jsonable_encoder
 from sqlalchemy import select, func
 from datetime import datetime, timedelta
@@ -10,8 +10,9 @@ from sqlmodel import SQLModel, select, func
 from sqlalchemy.orm import selectinload
 from pydantic import BaseModel
 from passlib.hash import scrypt
-from typing import Dict, Tuple
+from typing import Dict, Tuple, Optional
 import time
+from math import ceil
 
 from app.api.deps import CurrentUser, SessionDep
 from app.models import ApiKey, ApiKeysPublic, ApiKeyCreate, ApiKeyBase
@@ -272,3 +273,60 @@ async def verify_api_key(
     except Exception as e:
         logger.error(f"Error verifying API key: {e}")
         return {"valid": False}
+
+@router.get("")
+async def list_api_keys(
+    session: SessionDep,
+    current_user: CurrentUser,
+    page: int = Query(default=1, ge=1, description="页码"),
+    page_size: int = Query(default=10, ge=1, le=100, description="每页数量"),
+    search: Optional[str] = Query(None, description="搜索关键字"),
+    is_active: Optional[bool] = Query(None, description="密钥状态"),
+    item_id: Optional[str] = Query(None, description="项目ID"),
+    user_id: Optional[str] = Query(None, description="用户ID，仅管理员可用")
+):
+    """获取 API 密钥列表（分页）"""
+    if current_user.is_superuser:
+        # 管理员可以查看所有密钥
+        query = select(ApiKey).options(selectinload(ApiKey.item))
+        if user_id:
+            query = query.where(ApiKey.user_id == user_id)
+    else:
+        # 普通用户只能查看自己的密钥
+        query = select(ApiKey).where(ApiKey.user_id == current_user.id)
+    
+    # 其他过滤条件...
+    if search:
+        query = query.where(ApiKey.key.contains(search))
+    if is_active is not None:
+        query = query.where(ApiKey.is_active == is_active)
+    if item_id:
+        query = query.where(ApiKey.item_id == item_id)
+    
+    # 计算总数
+    total_count = session.exec(
+        select(func.count()).select_from(query.subquery())
+    ).one()
+    
+    # 添加排序和分页
+    query = (query
+        .order_by(ApiKey.created_at.desc())
+        .offset((page - 1) * page_size)
+        .limit(page_size)
+    )
+    
+    # 执行查询
+    keys = session.exec(query).all()
+    
+    # 计算总页数
+    total_pages = ceil(total_count / page_size)
+    
+    return {
+        "data": keys,
+        "pagination": {
+            "current_page": page,
+            "page_size": page_size,
+            "total": total_count,
+            "total_pages": total_pages
+        }
+    }

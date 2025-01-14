@@ -250,3 +250,16 @@ def delete_user(
     session.delete(user)
     session.commit()
     return Message(message="User deleted successfully")
+
+
+@router.get("")
+async def list_users(
+    session: SessionDep,
+    current_user: CurrentUser,
+):
+    """获取用户列表（仅管理员）"""
+    if not current_user.is_superuser:
+        raise HTTPException(status_code=403, detail="Not authorized")
+    
+    users = session.exec(select(User)).all()
+    return users
