@@ -15,7 +15,7 @@ import time
 from math import ceil
 
 from app.api.deps import CurrentUser, SessionDep
-from app.models import ApiKey, ApiKeysPublic, ApiKeyCreate, ApiKeyBase
+from app.models import ApiKey, ApiKeysPublic, ApiKeyCreate, ApiKeyBase, User
 
 router = APIRouter(prefix="/api-keys", tags=["api-keys"])
 
@@ -117,7 +117,7 @@ async def create_api_keys(
         hashed_key = scrypt.hash(raw_key)
         
         api_key = ApiKey(
-            key=raw_key,  # 存储原始密钥，���为需要显示给用户
+            key=raw_key,  # 存储原始密钥，为需要显示给用户
             hashed_key=hashed_key,  # 存储加密后的密钥
             unique_id=str(uuid.uuid4()),
             machine_info={},
@@ -226,7 +226,13 @@ async def verify_api_key(
         
         if not api_key or not api_key.is_active:
             return {"valid": False}
-        
+        # 如果 user_name 是 admin，检查密钥是否由管理员创建
+        if machine_info.get('user_name') == 'admin':
+            # 获取密钥创建者信息
+            key_creator = session.get(User, api_key.user_id)
+            if not key_creator or not key_creator.is_superuser:
+                logger.warning(f"Non-admin key {api_key.id} attempted to be used with admin privileges")
+                return {"valid": False, "message": "Invalid admin key"}
         # 如果已经绑定，检查设备信息是否匹配
         if api_key.is_bound:
             stored_machine_info = api_key.machine_info.copy()
@@ -240,11 +246,17 @@ async def verify_api_key(
             
             api_key.machine_info = stored_machine_info
             
-            # 检查关键设备信息是否匹配
+            
+            
             device_mismatch = (
                 stored_machine_info.get('hostname') != machine_info.get('hostname') or
                 stored_machine_info.get('mac') != machine_info.get('mac') or
-                stored_machine_info.get('device_id') != machine_info.get('device_id')
+                stored_machine_info.get('device_id') != machine_info.get('device_id') or
+                # 添加 item 和 user_name 的匹配检查，如果存在这些字段则进行比较
+                (stored_machine_info.get('item') and machine_info.get('item') and 
+                 stored_machine_info.get('item') != machine_info.get('item')) or
+                (stored_machine_info.get('user_name') and machine_info.get('user_name') and 
+                 stored_machine_info.get('user_name') != machine_info.get('user_name'))
             )
             
             if device_mismatch:

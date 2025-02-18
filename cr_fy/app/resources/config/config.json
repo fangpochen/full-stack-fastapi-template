@@ -1,0 +1,16 @@
+{
+    "api": {
+        "base_url": "http://localhost:8000",
+        "api_key": "",
+        "timeout": 30
+    },
+    "ffmpeg": {
+        "ffmpeg_path": "ffmpeg.exe",
+        "ffprobe_path": "ffprobe.exe",
+        "temp_dir": "temp"
+    },
+    "processing": {
+        "max_concurrent_tasks": 3,
+        "default_output_dir": "output"
+    }
+}

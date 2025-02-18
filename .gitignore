@@ -10,3 +10,9 @@ backend.zip
 backend/app.zip
 backend.zip
 frontend/src.zip
+cr_fy/models/small.pt
+cr_fy/temp/temp_11b28a0f_audio.wav
+cr_fy/temp/temp_85a8d317_audio.wav
+cr_fy/temp/temp_11701197_audio.wav
+cr_fy/ffmpeg.exe
+cr_fy/ffprobe.exe

@@ -34,7 +34,10 @@ logging.basicConfig(
 logger = logging.getLogger()
 
 def custom_generate_unique_id(route: APIRoute) -> str:
-    return f"{route.tags[0]}-{route.name}"
+    """为路由生成唯一ID"""
+    if route.tags and len(route.tags) > 0:
+        return f"{route.tags[0]}-{route.name}"
+    return route.name  # 如果没有 tags，就只使用 name
 
 
 if settings.SENTRY_DSN and settings.ENVIRONMENT != "local":
