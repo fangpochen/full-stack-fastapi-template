@@ -57,6 +57,7 @@ declare namespace API {
   interface CreateApiKeyRequest {
     count: number
     item_id?: string
+    expires_at?: string
   }
 }
 
@@ -71,7 +72,8 @@ export const useCreateApiKeys = () => {
         },
         body: JSON.stringify({
           count: { count: data.count },
-          item_id: data.item_id
+          item_id: data.item_id,
+          expires_at: data.expires_at ? new Date(data.expires_at).toISOString() : null
         }),
       })
       if (!response.ok) throw new ApiError(response, "Failed to create API keys", response.status)
@@ -114,12 +116,11 @@ export const useToggleApiKey = () => {
   })
 }
 
-export async function getApiKeys() {
-  const response = await fetch(`${API_URL}/api-keys`, {
+export async function getApiKeys(): Promise<API.ApiKeysResponse> {
+  const response = await axios.get<API.ApiKeysResponse>(`${API_URL}/api-keys`, {
     headers: {
       Authorization: `Bearer ${localStorage.getItem("access_token")}`,
     },
-  })
-  if (!response.ok) throw new ApiError(response, "Failed to fetch API keys")
-  return response.json()
+  });
+  return response.data;
 } 

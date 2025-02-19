@@ -15,7 +15,7 @@ import time
 from math import ceil
 
 from app.api.deps import CurrentUser, SessionDep
-from app.models import ApiKey, ApiKeysPublic, ApiKeyCreate, ApiKeyBase, User
+from app.models import ApiKey, ApiKeysPublic, ApiKeyCreate, ApiKeyBase, User, ItemPublic, ApiKeyPublic
 
 router = APIRouter(prefix="/api-keys", tags=["api-keys"])
 
@@ -91,9 +91,37 @@ def read_keys(
             .limit(limit)
         ).all()
 
-    # 移除对 key_tuple 的处理，直接返回 keys
+    # 转换为 ApiKeyPublic 并包含 item 信息
+    api_keys_public = []
+    for key in keys:
+        item_public = None
+        if key.item:
+            item_public = ItemPublic(
+                id=key.item.id,
+                title=key.item.title,
+                description=key.item.description,
+                owner_id=key.item.owner_id
+            )
+        
+        api_key_public = ApiKeyPublic(
+            id=key.id,
+            key=key.key,
+            unique_id=key.unique_id,
+            machine_info=key.machine_info,
+            version=key.version,
+            is_active=key.is_active,
+            is_bound=key.is_bound,
+            created_at=key.created_at,
+            last_verified_at=key.last_verified_at,
+            expires_at=key.expires_at,
+            user_id=key.user_id,
+            item_id=key.item_id,
+            item=item_public
+        )
+        api_keys_public.append(api_key_public)
+
     return ApiKeysPublic(
-        data=keys,
+        data=api_keys_public,
         count=count
     )
 
@@ -108,6 +136,12 @@ async def create_api_keys(
     data = api_key_in.get('count', {})
     count = data.get('count', 1)
     item_id = api_key_in.get('item_id')
+    # 获取过期时间，如果没有提供则默认为一个月后
+    expires_at_str = api_key_in.get('expires_at')
+    if expires_at_str:
+        expires_at = datetime.fromisoformat(expires_at_str.replace('Z', '+00:00'))
+    else:
+        expires_at = datetime.utcnow() + timedelta(days=30)
     
     api_keys = []
     for _ in range(count):
@@ -124,6 +158,7 @@ async def create_api_keys(
             version="1.0",
             is_active=True,
             created_at=datetime.utcnow(),
+            expires_at=expires_at,  # 设置过期时间
             user_id=current_user.id,
             item_id=item_id
         )
@@ -305,7 +340,7 @@ async def list_api_keys(
             query = query.where(ApiKey.user_id == user_id)
     else:
         # 普通用户只能查看自己的密钥
-        query = select(ApiKey).where(ApiKey.user_id == current_user.id)
+        query = select(ApiKey).options(selectinload(ApiKey.item)).where(ApiKey.user_id == current_user.id)
     
     # 其他过滤条件...
     if search:
@@ -330,11 +365,40 @@ async def list_api_keys(
     # 执行查询
     keys = session.exec(query).all()
     
+    # 转换为 ApiKeyPublic 并包含 item 信息
+    api_keys_public = []
+    for key in keys:
+        item_public = None
+        if key.item:
+            item_public = ItemPublic(
+                id=key.item.id,
+                title=key.item.title,
+                description=key.item.description,
+                owner_id=key.item.owner_id
+            )
+        
+        api_key_public = ApiKeyPublic(
+            id=key.id,
+            key=key.key,
+            unique_id=key.unique_id,
+            machine_info=key.machine_info,
+            version=key.version,
+            is_active=key.is_active,
+            is_bound=key.is_bound,
+            created_at=key.created_at,
+            last_verified_at=key.last_verified_at,
+            expires_at=key.expires_at,
+            user_id=key.user_id,
+            item_id=key.item_id,
+            item=item_public
+        )
+        api_keys_public.append(api_key_public)
+    
     # 计算总页数
     total_pages = ceil(total_count / page_size)
     
     return {
-        "data": keys,
+        "data": api_keys_public,
         "pagination": {
             "current_page": page,
             "page_size": page_size,

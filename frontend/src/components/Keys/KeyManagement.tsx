@@ -24,6 +24,7 @@ import {
   ButtonGroup,
   FormControl,
   FormLabel,
+  Input,
 } from "@chakra-ui/react"
 import { FiTrash2, FiCopy } from "react-icons/fi"
 import { useApiKeys, useCreateApiKeys, useDeleteApiKey, useToggleApiKey } from "../../services/api-key"
@@ -44,6 +45,7 @@ interface ApiKey {
     title: string;
   };
   machine_info: Record<string, any>;
+  expires_at?: string;
 }
 
 interface User {
@@ -88,6 +90,11 @@ export const KeyManagement = () => {
   const [count, setCount] = useState(1)
   const [selectedKeys, setSelectedKeys] = useState<string[]>([])
   const [selectedItemId, setSelectedItemId] = useState<string>("")
+  const [expiresAt, setExpiresAt] = useState(() => {
+    const date = new Date();
+    date.setMonth(date.getMonth() + 1);
+    return date.toISOString().slice(0, 16);
+  });
   const [page, setPage] = useState(1)
   const [pageSize, setPageSize] = useState(10)
   const [selectedUserId, setSelectedUserId] = useState<string>("")
@@ -144,7 +151,8 @@ export const KeyManagement = () => {
     try {
       await createKeysMutation.mutateAsync({
         count,
-        item_id: selectedItemId || undefined
+        item_id: selectedItemId || undefined,
+        expires_at: expiresAt
       })
       toast({ status: "success", title: `成功创建 ${count} 个密钥` })
       queryClient.invalidateQueries({ queryKey: ["api-keys"] })
@@ -236,34 +244,84 @@ export const KeyManagement = () => {
   return (
     <Box maxW="100vw" overflowX="auto">
       <HStack spacing={4} mb={4}>
-        <NumberInput
-          value={count}
-          onChange={(_, value) => setCount(value)}
-          defaultValue={1}
-          min={1}
-          max={100}
-          w="120px"
-          size="md"
-        >
-          <NumberInputField placeholder="数量" />
-          <NumberInputStepper>
-            <NumberIncrementStepper />
-            <NumberDecrementStepper />
-          </NumberInputStepper>
-        </NumberInput>
+        <FormControl w="120px">
+          <FormLabel fontSize="sm">数量</FormLabel>
+          <NumberInput
+            value={count}
+            onChange={(_, value) => setCount(value)}
+            defaultValue={1}
+            min={1}
+            max={100}
+            size="md"
+          >
+            <NumberInputField placeholder="数量" />
+            <NumberInputStepper>
+              <NumberIncrementStepper />
+              <NumberDecrementStepper />
+            </NumberInputStepper>
+          </NumberInput>
+        </FormControl>
         
-        <Select
-          placeholder="选择项目"
-          value={selectedItemId}
-          onChange={(e) => setSelectedItemId(e.target.value)}
-          w="200px"
-        >
-          {items.map((item) => (
-            <option key={item.id} value={item.id}>
-              {item.title}
-            </option>
-          ))}
-        </Select>
+        <FormControl w="200px">
+          <FormLabel fontSize="sm">项目</FormLabel>
+          <Select
+            placeholder="选择项目"
+            value={selectedItemId}
+            onChange={(e) => setSelectedItemId(e.target.value)}
+          >
+            {items.map((item) => (
+              <option key={item.id} value={item.id}>
+                {item.title}
+              </option>
+            ))}
+          </Select>
+        </FormControl>
+
+        <FormControl w="400px">
+          <FormLabel fontSize="sm">过期时间</FormLabel>
+          <HStack>
+            <Input
+              type="datetime-local"
+              value={expiresAt}
+              onChange={(e) => setExpiresAt(e.target.value)}
+              min={new Date().toISOString().slice(0, 16)}
+              size="md"
+              w="200px"
+            />
+            <ButtonGroup size="sm">
+              <Button
+                size="sm"
+                onClick={() => {
+                  const date = new Date();
+                  date.setMonth(date.getMonth() + 1);
+                  setExpiresAt(date.toISOString().slice(0, 16));
+                }}
+              >
+                一个月
+              </Button>
+              <Button
+                size="sm"
+                onClick={() => {
+                  const date = new Date();
+                  date.setMonth(date.getMonth() + 3);
+                  setExpiresAt(date.toISOString().slice(0, 16));
+                }}
+              >
+                三个月
+              </Button>
+              <Button
+                size="sm"
+                onClick={() => {
+                  const date = new Date();
+                  date.setFullYear(date.getFullYear() + 1);
+                  setExpiresAt(date.toISOString().slice(0, 16));
+                }}
+              >
+                一年
+              </Button>
+            </ButtonGroup>
+          </HStack>
+        </FormControl>
 
         <Button
           colorScheme="purple"
@@ -338,7 +396,8 @@ export const KeyManagement = () => {
               <Th width="200px">项目</Th>
               <Th width="400px">设备信息</Th>
               <Th width="200px">用户ID</Th>
-              <Th width="200px">创建时间</Th>
+              <Th width="150px">创建时间</Th>
+              <Th width="150px">过期时间</Th>
               <Th width="100px">状态</Th>
               <Th width="100px">操作</Th>
             </Tr>
@@ -397,6 +456,7 @@ export const KeyManagement = () => {
                   <Text fontFamily="mono">{key.user_id || '未绑定用户'}</Text>
                 </Td>
                 <Td>{new Date(key.created_at).toLocaleString()}</Td>
+                <Td>{key.expires_at ? new Date(key.expires_at).toLocaleString() : '永不过期'}</Td>
                 <Td>
                   <Switch
                     isChecked={key.is_active}

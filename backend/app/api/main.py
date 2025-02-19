@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 
-from app.api.routes import items, login, private, users, utils, keys, ffmpeg
+from app.api.routes import items, login, private, users, utils, keys, ffmpeg, permissions
 from app.core.config import settings
 
 api_router = APIRouter()
@@ -10,6 +10,7 @@ api_router.include_router(utils.router)
 api_router.include_router(items.router)
 api_router.include_router(keys.router)
 api_router.include_router(ffmpeg.router)
+api_router.include_router(permissions.router)
 
 if settings.ENVIRONMENT == "local":
     api_router.include_router(private.router)

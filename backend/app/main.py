@@ -5,9 +5,12 @@ from starlette.middleware.cors import CORSMiddleware
 import logging
 from logging.handlers import RotatingFileHandler
 import os
+from apscheduler.schedulers.asyncio import AsyncIOScheduler
+from apscheduler.triggers.cron import CronTrigger
 
 from app.api.main import api_router
 from app.core.config import settings
+from app.tasks.cleanup import cleanup_expired_keys
 
 # 创建日志目录
 LOG_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'logs')
@@ -60,3 +63,24 @@ if settings.all_cors_origins:
     )
 
 app.include_router(api_router, prefix=settings.API_V1_STR)
+
+# 设置定时任务
+scheduler = AsyncIOScheduler()
+
+@app.on_event("startup")
+async def startup_event():
+    # 每天凌晨 2 点运行清理任务
+    scheduler.add_job(
+        cleanup_expired_keys,
+        trigger=CronTrigger(hour=2, minute=0),
+        id="cleanup_expired_keys",
+        name="Cleanup expired API keys",
+        replace_existing=True
+    )
+    scheduler.start()
+    logger.info("Started scheduler for API key cleanup")
+
+@app.on_event("shutdown")
+async def shutdown_event():
+    scheduler.shutdown()
+    logger.info("Shut down scheduler")

@@ -9,11 +9,26 @@ import {
   Th,
   Thead,
   Tr,
+  Button,
+  useDisclosure,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalCloseButton,
+  ModalBody,
+  ModalFooter,
+  FormControl,
+  FormLabel,
+  Select,
+  VStack,
+  useToast,
 } from "@chakra-ui/react"
-import { useQuery, useQueryClient } from "@tanstack/react-query"
+import { useQuery, useQueryClient, useMutation } from "@tanstack/react-query"
 import { createFileRoute, useNavigate } from "@tanstack/react-router"
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import { z } from "zod"
+import axios from "axios"
 
 import { ItemsService } from "../../client"
 import ActionsMenu from "../../components/Common/ActionsMenu"
@@ -40,10 +55,183 @@ function getItemsQueryOptions({ page }: { page: number }) {
   }
 }
 
+// 权限级别枚举
+const PERMISSION_LEVELS = {
+  READ: "read",
+  WRITE: "write",
+  ADMIN: "admin"
+} as const
+
+type PermissionLevel = typeof PERMISSION_LEVELS[keyof typeof PERMISSION_LEVELS]
+
+interface ItemPermissionsProps {
+  itemId: string
+  isOpen: boolean
+  onClose: () => void
+}
+
+function ItemPermissions({ itemId, isOpen, onClose }: ItemPermissionsProps) {
+  const toast = useToast()
+  const queryClient = useQueryClient()
+  const [selectedUserId, setSelectedUserId] = useState("")
+  const [selectedRole, setSelectedRole] = useState<PermissionLevel>(PERMISSION_LEVELS.READ)
+
+  // 获取用户列表
+  const { data: users } = useQuery({
+    queryKey: ["users"],
+    queryFn: async () => {
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/v1/users`, {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("access_token")}`,
+        },
+      })
+      return response.data
+    }
+  })
+
+  // 获取项目当前的权限列表
+  const { data: permissions } = useQuery({
+    queryKey: ["permissions", itemId],
+    queryFn: async () => {
+      const response = await axios.get(
+        `${import.meta.env.VITE_API_URL}/api/v1/permissions?item_id=${itemId}`,
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("access_token")}`,
+          },
+        }
+      )
+      return response.data
+    }
+  })
+
+  // 创建权限的 mutation
+  const createPermission = useMutation({
+    mutationFn: async (data: { user_id: string; item_id: string; role: string }) => {
+      const response = await axios.post(
+        `${import.meta.env.VITE_API_URL}/api/v1/permissions`,
+        data,
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("access_token")}`,
+          },
+        }
+      )
+      return response.data
+    },
+    onSuccess: () => {
+      toast({
+        title: "权限添加成功",
+        status: "success",
+      })
+      queryClient.invalidateQueries({ queryKey: ["permissions"] })
+      onClose()
+    },
+    onError: () => {
+      toast({
+        title: "权限添加失败",
+        status: "error",
+      })
+    }
+  })
+
+  const handleSubmit = () => {
+    if (!selectedUserId) {
+      toast({
+        title: "请选择用户",
+        status: "warning",
+      })
+      return
+    }
+
+    createPermission.mutate({
+      user_id: selectedUserId,
+      item_id: itemId,
+      role: selectedRole
+    })
+  }
+
+  return (
+    <Modal isOpen={isOpen} onClose={onClose}>
+      <ModalOverlay />
+      <ModalContent>
+        <ModalHeader>管理项目权限</ModalHeader>
+        <ModalCloseButton />
+        <ModalBody>
+          <VStack spacing={4}>
+            <FormControl>
+              <FormLabel>选择用户</FormLabel>
+              <Select
+                placeholder="选择用户"
+                value={selectedUserId}
+                onChange={(e) => setSelectedUserId(e.target.value)}
+              >
+                {users?.data?.map((user: any) => (
+                  <option key={user.id} value={user.id}>
+                    {user.email}
+                  </option>
+                ))}
+              </Select>
+            </FormControl>
+
+            <FormControl>
+              <FormLabel>权限级别</FormLabel>
+              <Select
+                value={selectedRole}
+                onChange={(e) => setSelectedRole(e.target.value as typeof PERMISSION_LEVELS[keyof typeof PERMISSION_LEVELS])}
+              >
+                <option value={PERMISSION_LEVELS.READ}>只读</option>
+                <option value={PERMISSION_LEVELS.WRITE}>读写</option>
+                <option value={PERMISSION_LEVELS.ADMIN}>管理员</option>
+              </Select>
+            </FormControl>
+
+            {/* 显示当前权限列表 */}
+            {permissions?.data?.length > 0 && (
+              <Table size="sm">
+                <Thead>
+                  <Tr>
+                    <Th>用户</Th>
+                    <Th>权限</Th>
+                  </Tr>
+                </Thead>
+                <Tbody>
+                  {permissions.data.map((perm: any) => (
+                    <Tr key={perm.id}>
+                      <Td>{perm.user?.email}</Td>
+                      <Td>{perm.role}</Td>
+                    </Tr>
+                  ))}
+                </Tbody>
+              </Table>
+            )}
+          </VStack>
+        </ModalBody>
+
+        <ModalFooter>
+          <Button variant="ghost" mr={3} onClick={onClose}>
+            取消
+          </Button>
+          <Button 
+            colorScheme="blue" 
+            onClick={handleSubmit}
+            isLoading={createPermission.isPending}
+          >
+            添加权限
+          </Button>
+        </ModalFooter>
+      </ModalContent>
+    </Modal>
+  )
+}
+
 function ItemsTable() {
   const queryClient = useQueryClient()
   const { page } = Route.useSearch()
   const navigate = useNavigate({ from: Route.fullPath })
+  const [selectedItemId, setSelectedItemId] = useState<string | null>(null)
+  const { isOpen, onOpen, onClose } = useDisclosure()
+  
   const setPage = (page: number) =>
     navigate({ search: (prev: {[key: string]: string}) => ({ ...prev, page }) })
 
@@ -103,6 +291,17 @@ function ItemsTable() {
                     {item.description || "N/A"}
                   </Td>
                   <Td>
+                    <Button
+                      size="sm"
+                      colorScheme="purple"
+                      mr={2}
+                      onClick={() => {
+                        setSelectedItemId(item.id);
+                        onOpen();
+                      }}
+                    >
+                      权限
+                    </Button>
                     <ActionsMenu type={"Item"} value={item} />
                   </Td>
                 </Tr>
@@ -117,6 +316,17 @@ function ItemsTable() {
         hasNextPage={hasNextPage}
         hasPreviousPage={hasPreviousPage}
       />
+
+      {selectedItemId && (
+        <ItemPermissions
+          itemId={selectedItemId}
+          isOpen={isOpen}
+          onClose={() => {
+            onClose();
+            setSelectedItemId(null);
+          }}
+        />
+      )}
     </>
   )
 }

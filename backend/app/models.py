@@ -1,9 +1,10 @@
 import uuid
 from datetime import datetime
-from typing import Dict, Optional
+from typing import Dict, Optional, List
 from pydantic import EmailStr
 from sqlmodel import Field, Relationship, SQLModel
 from sqlalchemy import JSON
+from sqlalchemy import UniqueConstraint
 
 
 # Shared properties
@@ -48,6 +49,7 @@ class User(UserBase, table=True):
     hashed_password: str
     items: list["Item"] = Relationship(back_populates="owner", cascade_delete=True)
     apikey: list["ApiKey"] = Relationship(back_populates="user")
+    project_permissions: list["UserProjectPermission"] = Relationship(back_populates="user")
 
 
 # Properties to return via API, id is always required
@@ -85,6 +87,7 @@ class Item(ItemBase, table=True):
     )
     owner: User | None = Relationship(back_populates="items")
     keys: list["ApiKey"] = Relationship(back_populates="item")
+    user_permissions: list["UserProjectPermission"] = Relationship(back_populates="item")
 
 
 # Properties to return via API, id is always required
@@ -144,10 +147,10 @@ class ApiKey(ApiKeyBase, table=True):
 
 # Properties to return via API
 class ApiKeyPublic(ApiKeyBase):
-    id: uuid.UUID
     user_id: uuid.UUID
     item_id: uuid.UUID | None
-    item: ItemPublic | None
+    item: ItemPublic | None = None
+    hashed_key: str | None = None  # 不返回给前端
 
 
 # List response model
@@ -174,3 +177,59 @@ class InviteCode(SQLModel, table=True):
     used_by: Optional[str] = Field(default=None)
     created_by: Optional[str] = Field(default=None)
     description: Optional[str] = Field(default=None) 
+
+
+# 用户项目权限级别枚举
+class UserProjectRole(str):
+    ADMIN = "admin"  # 管理员权限
+    WRITE = "write"  # 写入权限
+    READ = "read"   # 只读权限
+
+
+# 用户项目权限模型
+class UserProjectPermission(SQLModel, table=True):
+    """用户项目权限模型"""
+    __tablename__ = "user_project_permissions"
+
+    id: uuid.UUID = Field(default_factory=uuid.uuid4, primary_key=True)
+    user_id: uuid.UUID = Field(foreign_key="user.id")
+    item_id: uuid.UUID = Field(foreign_key="item.id")
+    role: str = Field(default="read")  # read, write, admin
+    created_at: datetime = Field(default_factory=datetime.utcnow)
+    updated_at: datetime = Field(default_factory=datetime.utcnow)
+
+    __table_args__ = (
+        UniqueConstraint('user_id', 'item_id', name='uix_user_project'),
+    )
+
+    user: "User" = Relationship(back_populates="project_permissions")
+    item: "Item" = Relationship(back_populates="user_permissions")
+
+
+# API 响应模型
+class UserProjectPermissionPublic(SQLModel):
+    id: uuid.UUID
+    user_id: uuid.UUID
+    item_id: uuid.UUID
+    role: str
+    created_at: datetime
+    updated_at: datetime | None
+    user: UserPublic | None = None
+    item: ItemPublic | None = None
+
+
+class UserProjectPermissionsPublic(SQLModel):
+    data: list[UserProjectPermissionPublic]
+    count: int
+
+
+# 创建权限请求模型
+class UserProjectPermissionCreate(SQLModel):
+    user_id: uuid.UUID
+    item_id: uuid.UUID
+    role: str = Field(default=UserProjectRole.READ)
+
+
+# 更新权限请求模型
+class UserProjectPermissionUpdate(SQLModel):
+    role: str 
