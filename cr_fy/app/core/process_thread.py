@@ -172,7 +172,7 @@ class VideoProcessThread(QThread):
                 command = command.replace('MarginV=85', f'MarginV={self.margin_v}')
             
             # 打印完整的FFmpeg命令
-            self.log(f"完整的FFmpeg命令: {command}", thread_id, 'INFO')
+            self.log(f"完整的FFmpeg命令: {command}", thread_id, 'DEBUG')
             return command
             
         except Exception as e:

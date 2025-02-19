@@ -1,11 +1,85 @@
 from typing import Dict, Any, List
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, HTTPException, Depends, Header
 from pydantic import BaseModel
 import logging
+import requests
+from sqlmodel import select
+from app.models import ApiKey, Item, UserProjectPermission
+from app.api.deps import SessionDep
 
 router = APIRouter(prefix="/ffmpeg", tags=["ffmpeg"])
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
+
+# 添加密钥验证依赖
+async def verify_api_key(
+    session: SessionDep,
+    api_key: str = Header(..., alias="X-API-Key"),
+) -> bool:
+    """验证API密钥并检查项目权限
+    
+    Args:
+        session: 数据库会话
+        api_key: API密钥
+        
+    Returns:
+        bool: 验证是否通过
+        
+    Raises:
+        HTTPException: 验证失败时抛出
+    """
+    try:
+        # 查找API密钥记录
+        api_key_record = session.exec(
+            select(ApiKey).where(ApiKey.key == api_key, ApiKey.is_active == True)
+        ).first()
+        
+        if not api_key_record:
+            raise HTTPException(
+                status_code=401,
+                detail="无效的API密钥"
+            )
+            
+        # 查找标题为"剪辑"的项目
+        clip_project = session.exec(
+            select(Item).where(Item.title == "剪辑")
+        ).first()
+        
+        if not clip_project:
+            raise HTTPException(
+                status_code=404,
+                detail="剪辑项目不存在"
+            )
+            
+        # 检查用户是否有项目权限
+        # 1. 检查是否是项目所有者
+        if clip_project.owner_id == api_key_record.user_id:
+            return True
+            
+        # 2. 检查是否有项目权限
+        permission = session.exec(
+            select(UserProjectPermission).where(
+                UserProjectPermission.user_id == api_key_record.user_id,
+                UserProjectPermission.item_id == clip_project.id
+            )
+        ).first()
+        
+        if not permission:
+            raise HTTPException(
+                status_code=403,
+                detail="没有剪辑项目的访问权限"
+            )
+            
+        return True
+        
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"验证密钥失败: {str(e)}")
+        raise HTTPException(
+            status_code=500,
+            detail="验证服务不可用"
+        )
 
 class FFmpegCommandRequest(BaseModel):
     """FFmpeg命令请求模型"""
@@ -25,6 +99,10 @@ class PlanResponse(BaseModel):
     blur_bg: bool
     add_subtitle: bool = False
     description: str
+
+class MachineInfo(BaseModel):
+    """机器信息请求模型"""
+    machine_info: Dict[str, Any]
 
 def get_all_plans() -> List[Dict[str, Any]]:
     """获取所有可用的处理方案"""
@@ -90,9 +168,14 @@ def get_plan_params(plan_id: int) -> Dict[str, Any]:
     return plans[plan_id]
 
 @router.get("/plans", response_model=List[PlanResponse])
-async def get_plans() -> List[Dict[str, Any]]:
+async def get_plans(
+    verified: bool = Depends(verify_api_key)
+) -> List[Dict[str, Any]]:
     """获取所有可用的处理方案
     
+    Args:
+        verified: 密钥验证结果
+        
     Returns:
         List[Dict[str, Any]]: 方案列表
     """
@@ -305,11 +388,15 @@ def generate_ffmpeg_command(plan_params: Dict[str, Any], more_effects: bool, can
     }
 
 @router.post("/command", response_model=Dict[str, str])
-async def get_ffmpeg_command(request: FFmpegCommandRequest) -> Dict[str, str]:
+async def get_ffmpeg_command(
+    request: FFmpegCommandRequest,
+    verified: bool = Depends(verify_api_key)
+) -> Dict[str, str]:
     """获取FFmpeg命令
     
     Args:
-        request: 包含plan_id、more_effects、canvas_y、font_size、margin_v和font_name的请求
+        request: 包含plan_id、more_effects等参数的请求
+        verified: 密钥验证结果
         
     Returns:
         Dict[str, str]: 包含GPU和CPU命令的响应

@@ -10,6 +10,7 @@ import logging
 import requests
 import cpuinfo
 from pathlib import Path
+from app.core.config import Config
 
 # 创建日志目录
 log_dir = Path('logs')
@@ -17,10 +18,6 @@ log_dir.mkdir(exist_ok=True)
 
 # 配置日志
 logger = logging.getLogger('key_verification')
-
-# 服务器配置
-SERVER_IP = '139.224.70.41'
-# SERVER_IP = 'localhost'
 
 def verify_key(api_key: str, is_background: bool = False, item: str = "clip") -> bool:
     """
@@ -34,6 +31,13 @@ def verify_key(api_key: str, is_background: bool = False, item: str = "clip") ->
     Returns:
         bool: 验证是否成功
     """
+    # 获取配置实例
+    config = Config()
+    
+    # 如果是后台验证且有缓存的密钥，直接返回True
+    if is_background and config.get_cached_key() == api_key:
+        return True
+    
     # 获取机器信息
     hostname = socket.gethostname()
     os_info = f"{platform.system()} {platform.release()}"
@@ -41,8 +45,11 @@ def verify_key(api_key: str, is_background: bool = False, item: str = "clip") ->
     mac = ':'.join(['{:02x}'.format((uuid.getnode() >> elements) & 0xff)
                     for elements in range(0,2*6,2)][::-1])
 
+    # 从配置中获取服务器地址
+    base_url = config.get('api.base_url', 'http://localhost:8000')
+
     # 准备请求数据
-    url = f"http://{SERVER_IP}:8000/api/v1/api-keys/verify"
+    url = f"{base_url}/api/v1/api-keys/verify"
     headers = {"Content-Type": "application/json"}
     payload = {
         "key": api_key,
@@ -71,8 +78,11 @@ def verify_key(api_key: str, is_background: bool = False, item: str = "clip") ->
         if not result.get("valid", False):
             error_msg = result.get("message", "验证失败")
             logger.error(f"密钥验证失败: {error_msg}")
+            config.clear_key_cache()  # 清除缓存
             return False
             
+        # 验证成功，缓存密钥
+        config.cache_verified_key(api_key)
         return True
         
     except requests.exceptions.RequestException as e:
@@ -80,4 +90,5 @@ def verify_key(api_key: str, is_background: bool = False, item: str = "clip") ->
             logger.debug(f"后台密钥验证失败: {e}")
         else:
             logger.error(f"密钥验证失败: {e}")
+        config.clear_key_cache()  # 清除缓存
         return False

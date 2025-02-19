@@ -6,11 +6,22 @@ import json
 import logging
 from pathlib import Path
 from typing import Dict, Any
+from datetime import datetime, timedelta
 
 class Config:
     """配置管理类"""
     
+    _instance = None
+    
+    def __new__(cls):
+        if cls._instance is None:
+            cls._instance = super().__new__(cls)
+        return cls._instance
+    
     def __init__(self):
+        if hasattr(self, 'initialized'):
+            return
+            
         # 基础配置
         self.config_dir = Path("app/resources/config")
         self.config_file = self.config_dir / "config.json"
@@ -31,11 +42,17 @@ class Config:
             }
         }
         
+        # 密钥缓存
+        self._verified_key = None
+        self._key_verified_at = None
+        self._key_valid_duration = timedelta(hours=1)  # 缓存有效期1小时
+        
         # 确保配置目录存在
         self.config_dir.mkdir(parents=True, exist_ok=True)
         
         # 加载配置
         self.config = self.load_config()
+        self.initialized = True
         
     def load_config(self) -> Dict[str, Any]:
         """加载配置文件"""
@@ -88,4 +105,35 @@ class Config:
         
     def update_api_url(self, base_url: str) -> None:
         """更新API基础URL"""
-        self.set('api.base_url', base_url) 
+        self.set('api.base_url', base_url)
+        
+    def cache_verified_key(self, api_key: str) -> None:
+        """缓存已验证的密钥
+        
+        Args:
+            api_key: 验证通过的API密钥
+        """
+        self._verified_key = api_key
+        self._key_verified_at = datetime.now()
+        
+    def get_cached_key(self) -> str | None:
+        """获取缓存的密钥
+        
+        Returns:
+            str | None: 如果缓存有效则返回密钥，否则返回None
+        """
+        if not self._verified_key or not self._key_verified_at:
+            return None
+            
+        # 检查缓存是否过期
+        if datetime.now() - self._key_verified_at > self._key_valid_duration:
+            self._verified_key = None
+            self._key_verified_at = None
+            return None
+            
+        return self._verified_key
+        
+    def clear_key_cache(self) -> None:
+        """清除密钥缓存"""
+        self._verified_key = None
+        self._key_verified_at = None 

@@ -43,7 +43,22 @@ class APIClient:
         """
         try:
             url = f"{self.base_url}/api/v1/ffmpeg/plans"
-            response = requests.get(url, timeout=30)
+            
+            # 优先使用缓存的密钥
+            api_key = self.config.get_cached_key()
+            if not api_key:
+                # 如果缓存中没有,尝试从配置文件获取
+                api_key = self.config.get('api.api_key')
+                
+            if not api_key:
+                self.logger.error("未配置API密钥")
+                return []
+            
+            headers = {
+                "X-API-Key": api_key
+            }
+            
+            response = requests.get(url, headers=headers, timeout=30)
             response.raise_for_status()
             return response.json()
         except Exception as e:
@@ -58,7 +73,7 @@ class APIClient:
             plan_id: 处理方案ID
             more_effects: 是否启用更多效果
             canvas_y: 字幕区域的Y轴位置，默认0.6
-            font_size: 字幕字体大小，默认20
+            font_size: 字体大小，默认20
             margin_v: 字幕边距，默认85
                 
         Returns:
@@ -67,6 +82,22 @@ class APIClient:
         try:
             self.logger.debug(f"获取FFmpeg命令: {plan_id}, {more_effects}, {canvas_y}, {font_size}, {margin_v}")
             url = f"{self.base_url}/api/v1/ffmpeg/command"
+            
+            # 优先使用缓存的密钥
+            api_key = self.config.get_cached_key()
+            if not api_key:
+                # 如果缓存中没有,尝试从配置文件获取
+                api_key = self.config.get('api.api_key')
+                
+            if not api_key:
+                self.logger.error("未配置API密钥")
+                return {}
+            
+            headers = {
+                "X-API-Key": api_key,
+                "Content-Type": "application/json"
+            }
+            
             payload = {
                 "plan_id": plan_id,
                 "more_effects": more_effects,
@@ -75,7 +106,7 @@ class APIClient:
                 "margin_v": margin_v
             }
             
-            response = requests.post(url, json=payload, timeout=30)
+            response = requests.post(url, headers=headers, json=payload, timeout=30)
             response.raise_for_status()
             result = response.json()
             self.logger.debug(f"获取FFmpeg命令结果: {result}")
