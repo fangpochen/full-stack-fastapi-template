@@ -15,7 +15,7 @@ import time
 from math import ceil
 
 from app.api.deps import CurrentUser, SessionDep
-from app.models import ApiKey, ApiKeysPublic, ApiKeyCreate, ApiKeyBase, User, ItemPublic, ApiKeyPublic
+from app.models import ApiKey, ApiKeysPublic, ApiKeyCreate, ApiKeyBase, User, ItemPublic, ApiKeyPublic, Item, UserProjectPermission
 
 router = APIRouter(prefix="/api-keys", tags=["api-keys"])
 
@@ -136,6 +136,28 @@ async def create_api_keys(
     data = api_key_in.get('count', {})
     count = data.get('count', 1)
     item_id = api_key_in.get('item_id')
+    
+    # 验证项目ID是否存在
+    if not item_id:
+        raise HTTPException(status_code=400, detail="必须选择项目")
+        
+    # 验证项目是否存在
+    item = session.get(Item, item_id)
+    if not item:
+        raise HTTPException(status_code=404, detail="项目不存在")
+        
+    # 验证用户是否有权限访问该项目
+    if not current_user.is_superuser and item.owner_id != current_user.id:
+        # 检查用户是否有项目权限
+        permission = session.exec(
+            select(UserProjectPermission)
+            .where(UserProjectPermission.user_id == current_user.id)
+            .where(UserProjectPermission.item_id == item_id)
+        ).first()
+        
+        if not permission:
+            raise HTTPException(status_code=403, detail="没有权限为该项目创建密钥")
+    
     # 获取过期时间，如果没有提供则默认为一个月后
     expires_at_str = api_key_in.get('expires_at')
     if expires_at_str:
@@ -406,3 +428,52 @@ async def list_api_keys(
             "total_pages": total_pages
         }
     }
+
+@router.put("/batch-renew")
+def batch_renew_api_keys(
+    session: SessionDep,
+    current_user: CurrentUser,
+    data: dict = Body(...),
+):
+    """批量续约API密钥"""
+    try:
+        key_ids = data.get('key_ids', [])
+        expires_at = data.get('expires_at')
+        
+        if not key_ids:
+            raise HTTPException(status_code=400, detail="未选择要续约的密钥")
+            
+        if not expires_at:
+            raise HTTPException(status_code=400, detail="未指定续约时间")
+            
+        # 转换为datetime对象
+        try:
+            expires_at = datetime.fromisoformat(expires_at.replace('Z', '+00:00'))
+        except ValueError:
+            raise HTTPException(status_code=400, detail="无效的日期格式")
+            
+        # 将字符串ID转换为UUID
+        uuid_ids = [uuid.UUID(key_id) for key_id in key_ids]
+        
+        # 查询要更新的密钥
+        keys = session.exec(
+            select(ApiKey)
+            .where(ApiKey.id.in_(uuid_ids))
+            .where(ApiKey.user_id == current_user.id)
+        ).all()
+        
+        # 更新过期时间
+        for key in keys:
+            key.expires_at = expires_at
+            session.add(key)
+            
+        session.commit()
+        
+        return {"status": "success", "count": len(keys)}
+        
+    except ValueError as e:
+        logger.error(f"Invalid UUID format: {e}")
+        raise HTTPException(status_code=422, detail="无效的密钥ID格式")
+    except Exception as e:
+        logger.error(f"Error in batch renew: {e}")
+        raise HTTPException(status_code=500, detail=str(e))

@@ -26814,3 +26814,333 @@ for embedded font 'sseriffg.fon'
 2025-02-19 11:28:01 - [Thread-85012] 使用方案 1 (GPU)
 2025-02-19 11:28:04 - 正在停止处理...
 2025-02-19 11:28:04 - 注意：已经开始处理的视频将继续完成，新的视频将不再开始处理
+2025-02-19 23:18:50 - key_verification - INFO - 密钥验证结果: {'valid': True}
+2025-02-19 23:18:53 - ui - WARNING - 背景图片不存在: F:\py\full-stack-fastapi-template\cr_fy\app\ui\壁纸.jpg
+2025-02-19 23:18:55 - ui - INFO - [UI] 成功加载方案列表
+2025-02-19 23:18:55 - ui - INFO - 目录 E:\测试\新建文件夹 中找到 6 个视频文件
+2025-02-19 23:18:55 - ui - INFO - 目录数: 1, 总视频数: 6
+2025-02-19 23:19:01 - app.core.process_thread - INFO - [Thread-67712] 设置GPU并发数为: 6
+2025-02-19 23:19:01 - app.core.process_thread - INFO - [Thread-67712] 使用选中的方案: {'id': 6, 'name': '方案6 自动字幕', 'width': 720, 'height': 1080, 'blur_bg': False, 'add_subtitle': True, 'description': '竖屏带字幕'}
+2025-02-19 23:19:04 - 
+=== 线程参数 ===
+2025-02-19 23:19:04 - 线程输入目录: ['E:\\测试\\新建文件夹']
+2025-02-19 23:19:04 - 线程选中方案: [{'id': 6, 'name': '方案6 自动字幕', 'width': 720, 'height': 1080, 'blur_bg': False, 'add_subtitle': True, 'description': '竖屏带字幕'}]
+2025-02-19 23:19:04 - 线程删除选项: False
+2025-02-19 23:19:04 - 线程字幕选项: True
+2025-02-19 23:19:04 - 字幕边距: 85
+2025-02-19 23:19:04 - 字体大小: 20
+2025-02-19 23:19:04 - app.core.process_thread - INFO - [Thread-118188] 
+=== 线程开始 ===
+2025-02-19 23:19:04 - app.core.process_thread - INFO - [Thread-118188] 线程参数:
+2025-02-19 23:19:04 - app.core.process_thread - INFO - [Thread-118188] 添加字幕: True
+2025-02-19 23:19:04 - app.core.process_thread - INFO - [Thread-118188] 选中的方案: [{'id': 6, 'name': '方案6 自动字幕', 'width': 720, 'height': 1080, 'blur_bg': False, 'add_subtitle': True, 'description': '竖屏带字幕'}]
+2025-02-19 23:19:04 - app.core.process_thread - INFO - [Thread-118188] 更多效果: False
+2025-02-19 23:19:04 - app.core.process_thread - INFO - [Thread-118188] 并发线程数: 10
+2025-02-19 23:19:04 - app.core.process_thread - INFO - [Thread-118188] 循环剪辑: False
+2025-02-19 23:19:04 - app.core.process_thread - INFO - [Thread-118188] 目录 E:\测试\新建文件夹 限制处理 50 个文件
+2025-02-19 23:19:04 - app.core.process_thread - INFO - [Thread-118188] 处理方案ID: 6
+2025-02-19 23:19:04 - app.core.process_thread - INFO - [Thread-116692] 获取到GPU信号量，使用GPU处理
+2025-02-19 23:19:04 - app.core.process_thread - INFO - [Thread-118188] 处理方案ID: 6
+2025-02-19 23:19:04 - app.core.process_thread - INFO - [Thread-116692] 开始识别字幕: 户外唱歌挑战118.mp4
+2025-02-19 23:19:04 - app.core.audio_processor - INFO - 开始提取音频: E:\测试\新建文件夹\户外唱歌挑战118.mp4
+2025-02-19 23:19:04 - app.core.process_thread - INFO - [Thread-121844] 获取到GPU信号量，使用GPU处理
+2025-02-19 23:19:04 - app.core.process_thread - INFO - [Thread-118188] 处理方案ID: 6
+2025-02-19 23:19:04 - app.core.process_thread - INFO - [Thread-121844] 开始识别字幕: 搞笑一下144.mp4
+2025-02-19 23:19:04 - app.core.process_thread - INFO - [Thread-117480] 获取到GPU信号量，使用GPU处理
+2025-02-19 23:19:04 - app.core.process_thread - INFO - [Thread-118188] 处理方案ID: 6
+2025-02-19 23:19:04 - app.core.process_thread - INFO - [Thread-117480] 开始识别字幕: 搞笑日常576.mp4
+2025-02-19 23:19:04 - app.core.process_thread - INFO - [Thread-117580] 获取到GPU信号量，使用GPU处理
+2025-02-19 23:19:04 - app.core.process_thread - INFO - [Thread-118188] 处理方案ID: 6
+2025-02-19 23:19:04 - app.core.process_thread - INFO - [Thread-117580] 开始识别字幕: 搞笑飙演技164.mp4
+2025-02-19 23:19:04 - app.core.process_thread - INFO - [Thread-121020] 获取到GPU信号量，使用GPU处理
+2025-02-19 23:19:04 - app.core.process_thread - INFO - [Thread-118188] 处理方案ID: 6
+2025-02-19 23:19:04 - app.core.process_thread - INFO - [Thread-121020] 开始识别字幕: 搞笑飙演技25.mp4
+2025-02-19 23:19:04 - app.core.process_thread - INFO - [Thread-119296] 获取到GPU信号量，使用GPU处理
+2025-02-19 23:19:04 - app.core.process_thread - INFO - [Thread-119296] 开始识别字幕: 狗狗搞笑视频35.mp4
+2025-02-19 23:19:04 - [Thread-118188] 
+=== 线程开始 ===
+2025-02-19 23:19:04 - [Thread-118188] 线程参数:
+2025-02-19 23:19:04 - [Thread-118188] 添加字幕: True
+2025-02-19 23:19:04 - [Thread-118188] 选中的方案: [{'id': 6, 'name': '方案6 自动字幕', 'width': 720, 'height': 1080, 'blur_bg': False, 'add_subtitle': True, 'description': '竖屏带字幕'}]
+2025-02-19 23:19:04 - [Thread-118188] 更多效果: False
+2025-02-19 23:19:04 - [Thread-118188] 并发线程数: 10
+2025-02-19 23:19:04 - [Thread-118188] 循环剪辑: False
+2025-02-19 23:19:04 - [Thread-118188] 目录 E:\测试\新建文件夹 限制处理 50 个文件
+2025-02-19 23:19:04 - [Thread-118188] 处理方案ID: 6
+2025-02-19 23:19:04 - [Thread-116692] 获取到GPU信号量，使用GPU处理
+2025-02-19 23:19:04 - [Thread-118188] 处理方案ID: 6
+2025-02-19 23:19:04 - [Thread-116692] 开始识别字幕: 户外唱歌挑战118.mp4
+2025-02-19 23:19:04 - [Thread-121844] 获取到GPU信号量，使用GPU处理
+2025-02-19 23:19:04 - [Thread-118188] 处理方案ID: 6
+2025-02-19 23:19:04 - [Thread-121844] 开始识别字幕: 搞笑一下144.mp4
+2025-02-19 23:19:04 - [Thread-117480] 获取到GPU信号量，使用GPU处理
+2025-02-19 23:19:04 - [Thread-118188] 处理方案ID: 6
+2025-02-19 23:19:04 - [Thread-117480] 开始识别字幕: 搞笑日常576.mp4
+2025-02-19 23:19:04 - [Thread-117580] 获取到GPU信号量，使用GPU处理
+2025-02-19 23:19:04 - [Thread-118188] 处理方案ID: 6
+2025-02-19 23:19:04 - [Thread-117580] 开始识别字幕: 搞笑飙演技164.mp4
+2025-02-19 23:19:04 - [Thread-121020] 获取到GPU信号量，使用GPU处理
+2025-02-19 23:19:04 - [Thread-118188] 处理方案ID: 6
+2025-02-19 23:19:04 - [Thread-121020] 开始识别字幕: 搞笑飙演技25.mp4
+2025-02-19 23:19:04 - [Thread-119296] 获取到GPU信号量，使用GPU处理
+2025-02-19 23:19:04 - [Thread-119296] 开始识别字幕: 狗狗搞笑视频35.mp4
+2025-02-19 23:19:05 - app.core.audio_processor - INFO - 音频提取成功: temp/temp_f5f4b1cf_audio.wav
+2025-02-19 23:19:05 - app.core.audio_processor - INFO - 开始识别音频: temp/temp_f5f4b1cf_audio.wav
+2025-02-19 23:19:14 - app.core.audio_processor - INFO - 字幕文件已生成: temp/户外唱歌挑战118.srt
+2025-02-19 23:19:14 - app.core.audio_processor - INFO - 开始提取音频: E:\测试\新建文件夹\搞笑一下144.mp4
+2025-02-19 23:19:14 - [Thread-116692] 字幕识别成功: temp/户外唱歌挑战118.srt
+2025-02-19 23:19:14 - app.core.process_thread - INFO - [Thread-116692] 字幕识别成功: temp/户外唱歌挑战118.srt
+2025-02-19 23:19:14 - app.core.audio_processor - INFO - 音频提取成功: temp/temp_90c88871_audio.wav
+2025-02-19 23:19:14 - app.core.audio_processor - INFO - 开始识别音频: temp/temp_90c88871_audio.wav
+2025-02-19 23:19:16 - [Thread-116692] 完整的FFmpeg命令: ffmpeg -y -i E:\测试\新建文件夹\户外唱歌挑战118.mp4 -vf "scale=1080:1980:force_original_aspect_ratio=1,pad=1080:1980:(ow-iw)/2:(oh-ih)/2:black,drawbox=x=0:y=0:w=iw:h=100:color=white:t=fill,drawtext=text='户外唱歌挑战118':fontfile='C\:/Windows/Fonts/simhei.ttf':fontsize=40:fontcolor=black:x=(w-text_w)/2:y=(50-text_h)/2,drawbox=x=0:y=ih*0.6:w=iw:h=ih*0.16:color=white:t=fill,subtitles='temp/户外唱歌挑战118.srt':force_style='FontName=SimHei,Fontsize=25,Alignment=2,Position=50%,Yabs=ih*0.6+(ih*0.16-th)/2,PrimaryColour=&H000000&,BorderStyle=1,Outline=1,OutlineColour=&HFFFFFF&,MarginL=10,MarginR=10',unsharp=5:5:1.8:5:5:0.5,hqdn3d=1.2:1.2:4:4" -c:v h264_nvenc -preset p4 -tune ll -rc:v vbr -cq:v 23 -qmin 18 -qmax 28 -b:v 4M -maxrate 12M -bufsize 8M -spatial-aq 1 -temporal-aq 1 -aq-strength 8 -b_ref_mode 0 -multipass qres -profile:v high -level 5.1 -c:a aac -b:a 128k -threads 10 -movflags +faststart D:\测试\新建文件夹\户外唱歌挑战118.mp4
+2025-02-19 23:19:16 - app.core.process_thread - INFO - [Thread-116692] 完整的FFmpeg命令: ffmpeg -y -i E:\测试\新建文件夹\户外唱歌挑战118.mp4 -vf "scale=1080:1980:force_original_aspect_ratio=1,pad=1080:1980:(ow-iw)/2:(oh-ih)/2:black,drawbox=x=0:y=0:w=iw:h=100:color=white:t=fill,drawtext=text='户外唱歌挑战118':fontfile='C\:/Windows/Fonts/simhei.ttf':fontsize=40:fontcolor=black:x=(w-text_w)/2:y=(50-text_h)/2,drawbox=x=0:y=ih*0.6:w=iw:h=ih*0.16:color=white:t=fill,subtitles='temp/户外唱歌挑战118.srt':force_style='FontName=SimHei,Fontsize=25,Alignment=2,Position=50%,Yabs=ih*0.6+(ih*0.16-th)/2,PrimaryColour=&H000000&,BorderStyle=1,Outline=1,OutlineColour=&HFFFFFF&,MarginL=10,MarginR=10',unsharp=5:5:1.8:5:5:0.5,hqdn3d=1.2:1.2:4:4" -c:v h264_nvenc -preset p4 -tune ll -rc:v vbr -cq:v 23 -qmin 18 -qmax 28 -b:v 4M -maxrate 12M -bufsize 8M -spatial-aq 1 -temporal-aq 1 -aq-strength 8 -b_ref_mode 0 -multipass qres -profile:v high -level 5.1 -c:a aac -b:a 128k -threads 10 -movflags +faststart D:\测试\新建文件夹\户外唱歌挑战118.mp4
+2025-02-19 23:19:16 - [Thread-116692] 
+开始处理文件: 户外唱歌挑战118.mp4
+2025-02-19 23:19:16 - app.core.process_thread - INFO - [Thread-116692] 
+开始处理文件: 户外唱歌挑战118.mp4
+2025-02-19 23:19:16 - [Thread-116692] 使用方案 6 (GPU)
+2025-02-19 23:19:16 - app.core.process_thread - INFO - [Thread-116692] 使用方案 6 (GPU)
+2025-02-19 23:19:25 - app.core.audio_processor - INFO - 字幕文件已生成: temp/搞笑一下144.srt
+2025-02-19 23:19:25 - app.core.audio_processor - INFO - 开始提取音频: E:\测试\新建文件夹\搞笑日常576.mp4
+2025-02-19 23:19:25 - app.core.process_thread - INFO - [Thread-121844] 字幕识别成功: temp/搞笑一下144.srt
+2025-02-19 23:19:25 - [Thread-121844] 字幕识别成功: temp/搞笑一下144.srt
+2025-02-19 23:19:26 - app.core.audio_processor - INFO - 音频提取成功: temp/temp_3263d33c_audio.wav
+2025-02-19 23:19:26 - app.core.audio_processor - INFO - 开始识别音频: temp/temp_3263d33c_audio.wav
+2025-02-19 23:19:27 - [Thread-121844] 完整的FFmpeg命令: ffmpeg -y -i E:\测试\新建文件夹\搞笑一下144.mp4 -vf "scale=1080:1980:force_original_aspect_ratio=1,pad=1080:1980:(ow-iw)/2:(oh-ih)/2:black,drawbox=x=0:y=0:w=iw:h=100:color=white:t=fill,drawtext=text='搞笑一下144':fontfile='C\:/Windows/Fonts/simhei.ttf':fontsize=40:fontcolor=black:x=(w-text_w)/2:y=(50-text_h)/2,drawbox=x=0:y=ih*0.6:w=iw:h=ih*0.16:color=white:t=fill,subtitles='temp/搞笑一下144.srt':force_style='FontName=SimHei,Fontsize=25,Alignment=2,Position=50%,Yabs=ih*0.6+(ih*0.16-th)/2,PrimaryColour=&H000000&,BorderStyle=1,Outline=1,OutlineColour=&HFFFFFF&,MarginL=10,MarginR=10',unsharp=5:5:1.8:5:5:0.5,hqdn3d=1.2:1.2:4:4" -c:v h264_nvenc -preset p4 -tune ll -rc:v vbr -cq:v 23 -qmin 18 -qmax 28 -b:v 4M -maxrate 12M -bufsize 8M -spatial-aq 1 -temporal-aq 1 -aq-strength 8 -b_ref_mode 0 -multipass qres -profile:v high -level 5.1 -c:a aac -b:a 128k -threads 10 -movflags +faststart D:\测试\新建文件夹\搞笑一下144.mp4
+2025-02-19 23:19:27 - app.core.process_thread - INFO - [Thread-121844] 完整的FFmpeg命令: ffmpeg -y -i E:\测试\新建文件夹\搞笑一下144.mp4 -vf "scale=1080:1980:force_original_aspect_ratio=1,pad=1080:1980:(ow-iw)/2:(oh-ih)/2:black,drawbox=x=0:y=0:w=iw:h=100:color=white:t=fill,drawtext=text='搞笑一下144':fontfile='C\:/Windows/Fonts/simhei.ttf':fontsize=40:fontcolor=black:x=(w-text_w)/2:y=(50-text_h)/2,drawbox=x=0:y=ih*0.6:w=iw:h=ih*0.16:color=white:t=fill,subtitles='temp/搞笑一下144.srt':force_style='FontName=SimHei,Fontsize=25,Alignment=2,Position=50%,Yabs=ih*0.6+(ih*0.16-th)/2,PrimaryColour=&H000000&,BorderStyle=1,Outline=1,OutlineColour=&HFFFFFF&,MarginL=10,MarginR=10',unsharp=5:5:1.8:5:5:0.5,hqdn3d=1.2:1.2:4:4" -c:v h264_nvenc -preset p4 -tune ll -rc:v vbr -cq:v 23 -qmin 18 -qmax 28 -b:v 4M -maxrate 12M -bufsize 8M -spatial-aq 1 -temporal-aq 1 -aq-strength 8 -b_ref_mode 0 -multipass qres -profile:v high -level 5.1 -c:a aac -b:a 128k -threads 10 -movflags +faststart D:\测试\新建文件夹\搞笑一下144.mp4
+2025-02-19 23:19:27 - [Thread-121844] 
+开始处理文件: 搞笑一下144.mp4
+2025-02-19 23:19:27 - app.core.process_thread - INFO - [Thread-121844] 
+开始处理文件: 搞笑一下144.mp4
+2025-02-19 23:19:27 - [Thread-121844] 使用方案 6 (GPU)
+2025-02-19 23:19:27 - app.core.process_thread - INFO - [Thread-121844] 使用方案 6 (GPU)
+2025-02-19 23:19:34 - app.core.process_thread - INFO - [Thread-116692] 成功处理: 户外唱歌挑战118.mp4
+2025-02-19 23:19:34 - [Thread-116692] 成功处理: 户外唱歌挑战118.mp4
+2025-02-19 23:19:36 - app.core.audio_processor - INFO - 字幕文件已生成: temp/搞笑日常576.srt
+2025-02-19 23:19:36 - app.core.audio_processor - INFO - 开始提取音频: E:\测试\新建文件夹\搞笑飙演技164.mp4
+2025-02-19 23:19:36 - [Thread-117480] 字幕识别成功: temp/搞笑日常576.srt
+2025-02-19 23:19:36 - app.core.process_thread - INFO - [Thread-117480] 字幕识别成功: temp/搞笑日常576.srt
+2025-02-19 23:19:36 - app.core.audio_processor - INFO - 音频提取成功: temp/temp_0bb94e93_audio.wav
+2025-02-19 23:19:36 - app.core.audio_processor - INFO - 开始识别音频: temp/temp_0bb94e93_audio.wav
+2025-02-19 23:19:38 - [Thread-117480] 完整的FFmpeg命令: ffmpeg -y -i E:\测试\新建文件夹\搞笑日常576.mp4 -vf "scale=1080:1980:force_original_aspect_ratio=1,pad=1080:1980:(ow-iw)/2:(oh-ih)/2:black,drawbox=x=0:y=0:w=iw:h=100:color=white:t=fill,drawtext=text='搞笑日常576':fontfile='C\:/Windows/Fonts/simhei.ttf':fontsize=40:fontcolor=black:x=(w-text_w)/2:y=(50-text_h)/2,drawbox=x=0:y=ih*0.6:w=iw:h=ih*0.16:color=white:t=fill,subtitles='temp/搞笑日常576.srt':force_style='FontName=SimHei,Fontsize=25,Alignment=2,Position=50%,Yabs=ih*0.6+(ih*0.16-th)/2,PrimaryColour=&H000000&,BorderStyle=1,Outline=1,OutlineColour=&HFFFFFF&,MarginL=10,MarginR=10',unsharp=5:5:1.8:5:5:0.5,hqdn3d=1.2:1.2:4:4" -c:v h264_nvenc -preset p4 -tune ll -rc:v vbr -cq:v 23 -qmin 18 -qmax 28 -b:v 4M -maxrate 12M -bufsize 8M -spatial-aq 1 -temporal-aq 1 -aq-strength 8 -b_ref_mode 0 -multipass qres -profile:v high -level 5.1 -c:a aac -b:a 128k -threads 10 -movflags +faststart D:\测试\新建文件夹\搞笑日常576.mp4
+2025-02-19 23:19:38 - app.core.process_thread - INFO - [Thread-117480] 完整的FFmpeg命令: ffmpeg -y -i E:\测试\新建文件夹\搞笑日常576.mp4 -vf "scale=1080:1980:force_original_aspect_ratio=1,pad=1080:1980:(ow-iw)/2:(oh-ih)/2:black,drawbox=x=0:y=0:w=iw:h=100:color=white:t=fill,drawtext=text='搞笑日常576':fontfile='C\:/Windows/Fonts/simhei.ttf':fontsize=40:fontcolor=black:x=(w-text_w)/2:y=(50-text_h)/2,drawbox=x=0:y=ih*0.6:w=iw:h=ih*0.16:color=white:t=fill,subtitles='temp/搞笑日常576.srt':force_style='FontName=SimHei,Fontsize=25,Alignment=2,Position=50%,Yabs=ih*0.6+(ih*0.16-th)/2,PrimaryColour=&H000000&,BorderStyle=1,Outline=1,OutlineColour=&HFFFFFF&,MarginL=10,MarginR=10',unsharp=5:5:1.8:5:5:0.5,hqdn3d=1.2:1.2:4:4" -c:v h264_nvenc -preset p4 -tune ll -rc:v vbr -cq:v 23 -qmin 18 -qmax 28 -b:v 4M -maxrate 12M -bufsize 8M -spatial-aq 1 -temporal-aq 1 -aq-strength 8 -b_ref_mode 0 -multipass qres -profile:v high -level 5.1 -c:a aac -b:a 128k -threads 10 -movflags +faststart D:\测试\新建文件夹\搞笑日常576.mp4
+2025-02-19 23:19:38 - [Thread-117480] 
+开始处理文件: 搞笑日常576.mp4
+2025-02-19 23:19:38 - app.core.process_thread - INFO - [Thread-117480] 
+开始处理文件: 搞笑日常576.mp4
+2025-02-19 23:19:38 - [Thread-117480] 使用方案 6 (GPU)
+2025-02-19 23:19:38 - app.core.process_thread - INFO - [Thread-117480] 使用方案 6 (GPU)
+2025-02-19 23:19:42 - app.core.audio_processor - INFO - 字幕文件已生成: temp/搞笑飙演技164.srt
+2025-02-19 23:19:42 - app.core.audio_processor - INFO - 开始提取音频: E:\测试\新建文件夹\搞笑飙演技25.mp4
+2025-02-19 23:19:42 - [Thread-117580] 字幕识别成功: temp/搞笑飙演技164.srt
+2025-02-19 23:19:42 - app.core.process_thread - INFO - [Thread-117580] 字幕识别成功: temp/搞笑飙演技164.srt
+2025-02-19 23:19:42 - app.core.audio_processor - INFO - 音频提取成功: temp/temp_d32021bf_audio.wav
+2025-02-19 23:19:42 - app.core.audio_processor - INFO - 开始识别音频: temp/temp_d32021bf_audio.wav
+2025-02-19 23:19:43 - [Thread-121844] 成功处理: 搞笑一下144.mp4
+2025-02-19 23:19:43 - app.core.process_thread - INFO - [Thread-121844] 成功处理: 搞笑一下144.mp4
+2025-02-19 23:19:44 - [Thread-117580] 完整的FFmpeg命令: ffmpeg -y -i E:\测试\新建文件夹\搞笑飙演技164.mp4 -vf "scale=1080:1980:force_original_aspect_ratio=1,pad=1080:1980:(ow-iw)/2:(oh-ih)/2:black,drawbox=x=0:y=0:w=iw:h=100:color=white:t=fill,drawtext=text='搞笑飙演技164':fontfile='C\:/Windows/Fonts/simhei.ttf':fontsize=40:fontcolor=black:x=(w-text_w)/2:y=(50-text_h)/2,drawbox=x=0:y=ih*0.6:w=iw:h=ih*0.16:color=white:t=fill,subtitles='temp/搞笑飙演技164.srt':force_style='FontName=SimHei,Fontsize=25,Alignment=2,Position=50%,Yabs=ih*0.6+(ih*0.16-th)/2,PrimaryColour=&H000000&,BorderStyle=1,Outline=1,OutlineColour=&HFFFFFF&,MarginL=10,MarginR=10',unsharp=5:5:1.8:5:5:0.5,hqdn3d=1.2:1.2:4:4" -c:v h264_nvenc -preset p4 -tune ll -rc:v vbr -cq:v 23 -qmin 18 -qmax 28 -b:v 4M -maxrate 12M -bufsize 8M -spatial-aq 1 -temporal-aq 1 -aq-strength 8 -b_ref_mode 0 -multipass qres -profile:v high -level 5.1 -c:a aac -b:a 128k -threads 10 -movflags +faststart D:\测试\新建文件夹\搞笑飙演技164.mp4
+2025-02-19 23:19:44 - app.core.process_thread - INFO - [Thread-117580] 完整的FFmpeg命令: ffmpeg -y -i E:\测试\新建文件夹\搞笑飙演技164.mp4 -vf "scale=1080:1980:force_original_aspect_ratio=1,pad=1080:1980:(ow-iw)/2:(oh-ih)/2:black,drawbox=x=0:y=0:w=iw:h=100:color=white:t=fill,drawtext=text='搞笑飙演技164':fontfile='C\:/Windows/Fonts/simhei.ttf':fontsize=40:fontcolor=black:x=(w-text_w)/2:y=(50-text_h)/2,drawbox=x=0:y=ih*0.6:w=iw:h=ih*0.16:color=white:t=fill,subtitles='temp/搞笑飙演技164.srt':force_style='FontName=SimHei,Fontsize=25,Alignment=2,Position=50%,Yabs=ih*0.6+(ih*0.16-th)/2,PrimaryColour=&H000000&,BorderStyle=1,Outline=1,OutlineColour=&HFFFFFF&,MarginL=10,MarginR=10',unsharp=5:5:1.8:5:5:0.5,hqdn3d=1.2:1.2:4:4" -c:v h264_nvenc -preset p4 -tune ll -rc:v vbr -cq:v 23 -qmin 18 -qmax 28 -b:v 4M -maxrate 12M -bufsize 8M -spatial-aq 1 -temporal-aq 1 -aq-strength 8 -b_ref_mode 0 -multipass qres -profile:v high -level 5.1 -c:a aac -b:a 128k -threads 10 -movflags +faststart D:\测试\新建文件夹\搞笑飙演技164.mp4
+2025-02-19 23:19:44 - [Thread-117580] 
+开始处理文件: 搞笑飙演技164.mp4
+2025-02-19 23:19:44 - app.core.process_thread - INFO - [Thread-117580] 
+开始处理文件: 搞笑飙演技164.mp4
+2025-02-19 23:19:44 - [Thread-117580] 使用方案 6 (GPU)
+2025-02-19 23:19:44 - app.core.process_thread - INFO - [Thread-117580] 使用方案 6 (GPU)
+2025-02-19 23:19:51 - app.core.audio_processor - INFO - 字幕文件已生成: temp/搞笑飙演技25.srt
+2025-02-19 23:19:51 - app.core.audio_processor - INFO - 开始提取音频: E:\测试\新建文件夹\狗狗搞笑视频35.mp4
+2025-02-19 23:19:51 - [Thread-121020] 字幕识别成功: temp/搞笑飙演技25.srt
+2025-02-19 23:19:51 - app.core.process_thread - INFO - [Thread-121020] 字幕识别成功: temp/搞笑飙演技25.srt
+2025-02-19 23:19:51 - app.core.audio_processor - INFO - 音频提取成功: temp/temp_7f3ec5d6_audio.wav
+2025-02-19 23:19:51 - app.core.audio_processor - INFO - 开始识别音频: temp/temp_7f3ec5d6_audio.wav
+2025-02-19 23:19:53 - [Thread-121020] 完整的FFmpeg命令: ffmpeg -y -i E:\测试\新建文件夹\搞笑飙演技25.mp4 -vf "scale=1080:1980:force_original_aspect_ratio=1,pad=1080:1980:(ow-iw)/2:(oh-ih)/2:black,drawbox=x=0:y=0:w=iw:h=100:color=white:t=fill,drawtext=text='搞笑飙演技25':fontfile='C\:/Windows/Fonts/simhei.ttf':fontsize=40:fontcolor=black:x=(w-text_w)/2:y=(50-text_h)/2,drawbox=x=0:y=ih*0.6:w=iw:h=ih*0.16:color=white:t=fill,subtitles='temp/搞笑飙演技25.srt':force_style='FontName=SimHei,Fontsize=25,Alignment=2,Position=50%,Yabs=ih*0.6+(ih*0.16-th)/2,PrimaryColour=&H000000&,BorderStyle=1,Outline=1,OutlineColour=&HFFFFFF&,MarginL=10,MarginR=10',unsharp=5:5:1.8:5:5:0.5,hqdn3d=1.2:1.2:4:4" -c:v h264_nvenc -preset p4 -tune ll -rc:v vbr -cq:v 23 -qmin 18 -qmax 28 -b:v 4M -maxrate 12M -bufsize 8M -spatial-aq 1 -temporal-aq 1 -aq-strength 8 -b_ref_mode 0 -multipass qres -profile:v high -level 5.1 -c:a aac -b:a 128k -threads 10 -movflags +faststart D:\测试\新建文件夹\搞笑飙演技25.mp4
+2025-02-19 23:19:53 - app.core.process_thread - INFO - [Thread-121020] 完整的FFmpeg命令: ffmpeg -y -i E:\测试\新建文件夹\搞笑飙演技25.mp4 -vf "scale=1080:1980:force_original_aspect_ratio=1,pad=1080:1980:(ow-iw)/2:(oh-ih)/2:black,drawbox=x=0:y=0:w=iw:h=100:color=white:t=fill,drawtext=text='搞笑飙演技25':fontfile='C\:/Windows/Fonts/simhei.ttf':fontsize=40:fontcolor=black:x=(w-text_w)/2:y=(50-text_h)/2,drawbox=x=0:y=ih*0.6:w=iw:h=ih*0.16:color=white:t=fill,subtitles='temp/搞笑飙演技25.srt':force_style='FontName=SimHei,Fontsize=25,Alignment=2,Position=50%,Yabs=ih*0.6+(ih*0.16-th)/2,PrimaryColour=&H000000&,BorderStyle=1,Outline=1,OutlineColour=&HFFFFFF&,MarginL=10,MarginR=10',unsharp=5:5:1.8:5:5:0.5,hqdn3d=1.2:1.2:4:4" -c:v h264_nvenc -preset p4 -tune ll -rc:v vbr -cq:v 23 -qmin 18 -qmax 28 -b:v 4M -maxrate 12M -bufsize 8M -spatial-aq 1 -temporal-aq 1 -aq-strength 8 -b_ref_mode 0 -multipass qres -profile:v high -level 5.1 -c:a aac -b:a 128k -threads 10 -movflags +faststart D:\测试\新建文件夹\搞笑飙演技25.mp4
+2025-02-19 23:19:53 - [Thread-121020] 
+开始处理文件: 搞笑飙演技25.mp4
+2025-02-19 23:19:53 - app.core.process_thread - INFO - [Thread-121020] 
+开始处理文件: 搞笑飙演技25.mp4
+2025-02-19 23:19:53 - app.core.process_thread - INFO - [Thread-121020] 使用方案 6 (GPU)
+2025-02-19 23:19:53 - [Thread-121020] 使用方案 6 (GPU)
+2025-02-19 23:19:53 - app.core.process_thread - INFO - [Thread-117580] 成功处理: 搞笑飙演技164.mp4
+2025-02-19 23:19:53 - [Thread-117580] 成功处理: 搞笑飙演技164.mp4
+2025-02-19 23:19:54 - app.core.process_thread - INFO - [Thread-117480] 成功处理: 搞笑日常576.mp4
+2025-02-19 23:19:54 - [Thread-117480] 成功处理: 搞笑日常576.mp4
+2025-02-19 23:19:58 - app.core.audio_processor - INFO - 字幕文件已生成: temp/狗狗搞笑视频35.srt
+2025-02-19 23:19:58 - app.core.process_thread - INFO - [Thread-119296] 字幕识别成功: temp/狗狗搞笑视频35.srt
+2025-02-19 23:19:58 - [Thread-119296] 字幕识别成功: temp/狗狗搞笑视频35.srt
+2025-02-19 23:20:00 - [Thread-119296] 完整的FFmpeg命令: ffmpeg -y -i E:\测试\新建文件夹\狗狗搞笑视频35.mp4 -vf "scale=1080:1980:force_original_aspect_ratio=1,pad=1080:1980:(ow-iw)/2:(oh-ih)/2:black,drawbox=x=0:y=0:w=iw:h=100:color=white:t=fill,drawtext=text='狗狗搞笑视频35':fontfile='C\:/Windows/Fonts/simhei.ttf':fontsize=40:fontcolor=black:x=(w-text_w)/2:y=(50-text_h)/2,drawbox=x=0:y=ih*0.6:w=iw:h=ih*0.16:color=white:t=fill,subtitles='temp/狗狗搞笑视频35.srt':force_style='FontName=SimHei,Fontsize=25,Alignment=2,Position=50%,Yabs=ih*0.6+(ih*0.16-th)/2,PrimaryColour=&H000000&,BorderStyle=1,Outline=1,OutlineColour=&HFFFFFF&,MarginL=10,MarginR=10',unsharp=5:5:1.8:5:5:0.5,hqdn3d=1.2:1.2:4:4" -c:v h264_nvenc -preset p4 -tune ll -rc:v vbr -cq:v 23 -qmin 18 -qmax 28 -b:v 4M -maxrate 12M -bufsize 8M -spatial-aq 1 -temporal-aq 1 -aq-strength 8 -b_ref_mode 0 -multipass qres -profile:v high -level 5.1 -c:a aac -b:a 128k -threads 10 -movflags +faststart D:\测试\新建文件夹\狗狗搞笑视频35.mp4
+2025-02-19 23:20:00 - app.core.process_thread - INFO - [Thread-119296] 完整的FFmpeg命令: ffmpeg -y -i E:\测试\新建文件夹\狗狗搞笑视频35.mp4 -vf "scale=1080:1980:force_original_aspect_ratio=1,pad=1080:1980:(ow-iw)/2:(oh-ih)/2:black,drawbox=x=0:y=0:w=iw:h=100:color=white:t=fill,drawtext=text='狗狗搞笑视频35':fontfile='C\:/Windows/Fonts/simhei.ttf':fontsize=40:fontcolor=black:x=(w-text_w)/2:y=(50-text_h)/2,drawbox=x=0:y=ih*0.6:w=iw:h=ih*0.16:color=white:t=fill,subtitles='temp/狗狗搞笑视频35.srt':force_style='FontName=SimHei,Fontsize=25,Alignment=2,Position=50%,Yabs=ih*0.6+(ih*0.16-th)/2,PrimaryColour=&H000000&,BorderStyle=1,Outline=1,OutlineColour=&HFFFFFF&,MarginL=10,MarginR=10',unsharp=5:5:1.8:5:5:0.5,hqdn3d=1.2:1.2:4:4" -c:v h264_nvenc -preset p4 -tune ll -rc:v vbr -cq:v 23 -qmin 18 -qmax 28 -b:v 4M -maxrate 12M -bufsize 8M -spatial-aq 1 -temporal-aq 1 -aq-strength 8 -b_ref_mode 0 -multipass qres -profile:v high -level 5.1 -c:a aac -b:a 128k -threads 10 -movflags +faststart D:\测试\新建文件夹\狗狗搞笑视频35.mp4
+2025-02-19 23:20:00 - [Thread-119296] 
+开始处理文件: 狗狗搞笑视频35.mp4
+2025-02-19 23:20:00 - app.core.process_thread - INFO - [Thread-119296] 
+开始处理文件: 狗狗搞笑视频35.mp4
+2025-02-19 23:20:00 - [Thread-119296] 使用方案 6 (GPU)
+2025-02-19 23:20:00 - app.core.process_thread - INFO - [Thread-119296] 使用方案 6 (GPU)
+2025-02-19 23:20:06 - app.core.process_thread - INFO - [Thread-121020] 成功处理: 搞笑飙演技25.mp4
+2025-02-19 23:20:06 - [Thread-121020] 成功处理: 搞笑飙演技25.mp4
+2025-02-19 23:20:17 - [Thread-119296] 成功处理: 狗狗搞笑视频35.mp4
+2025-02-19 23:20:17 - app.core.process_thread - INFO - [Thread-119296] 成功处理: 狗狗搞笑视频35.mp4
+2025-02-19 23:40:42 - key_verification - INFO - 密钥验证结果: {'valid': True}
+2025-02-19 23:40:43 - ui - WARNING - 背景图片不存在: F:\py\full-stack-fastapi-template\cr_fy\app\ui\壁纸.jpg
+2025-02-19 23:40:45 - ui - INFO - [UI] 成功加载方案列表
+2025-02-19 23:40:45 - ui - INFO - 目录 E:\测试\新建文件夹 中找到 6 个视频文件
+2025-02-19 23:40:45 - ui - INFO - 目录数: 1, 总视频数: 6
+2025-02-19 23:40:50 - app.core.process_thread - INFO - [Thread-118480] 设置GPU并发数为: 6
+2025-02-19 23:40:50 - app.core.process_thread - INFO - [Thread-118480] 使用选中的方案: {'id': 6, 'name': '方案6 自动字幕', 'width': 720, 'height': 1080, 'blur_bg': False, 'add_subtitle': True, 'description': '竖屏带字幕'}
+2025-02-19 23:40:52 - 
+=== 线程参数 ===
+2025-02-19 23:40:52 - 线程输入目录: ['E:\\测试\\新建文件夹']
+2025-02-19 23:40:52 - 线程选中方案: [{'id': 6, 'name': '方案6 自动字幕', 'width': 720, 'height': 1080, 'blur_bg': False, 'add_subtitle': True, 'description': '竖屏带字幕'}]
+2025-02-19 23:40:52 - 线程删除选项: False
+2025-02-19 23:40:52 - 线程字幕选项: True
+2025-02-19 23:40:52 - 字幕边距: 85
+2025-02-19 23:40:52 - 字体大小: 20
+2025-02-19 23:40:52 - app.core.process_thread - INFO - [Thread-119084] 
+=== 线程开始 ===
+2025-02-19 23:40:52 - [Thread-119084] 
+=== 线程开始 ===
+2025-02-19 23:40:52 - app.core.process_thread - INFO - [Thread-119084] 线程参数:
+2025-02-19 23:40:52 - app.core.process_thread - INFO - [Thread-119084] 添加字幕: True
+2025-02-19 23:40:52 - app.core.process_thread - INFO - [Thread-119084] 选中的方案: [{'id': 6, 'name': '方案6 自动字幕', 'width': 720, 'height': 1080, 'blur_bg': False, 'add_subtitle': True, 'description': '竖屏带字幕'}]
+2025-02-19 23:40:52 - app.core.process_thread - INFO - [Thread-119084] 更多效果: False
+2025-02-19 23:40:52 - app.core.process_thread - INFO - [Thread-119084] 并发线程数: 10
+2025-02-19 23:40:52 - app.core.process_thread - INFO - [Thread-119084] 循环剪辑: False
+2025-02-19 23:40:52 - app.core.process_thread - INFO - [Thread-119084] 目录 E:\测试\新建文件夹 限制处理 50 个文件
+2025-02-19 23:40:52 - app.core.process_thread - INFO - [Thread-119084] 处理方案ID: 6
+2025-02-19 23:40:52 - app.core.process_thread - INFO - [Thread-84952] 获取到GPU信号量，使用GPU处理
+2025-02-19 23:40:52 - app.core.process_thread - INFO - [Thread-119084] 处理方案ID: 6
+2025-02-19 23:40:52 - app.core.process_thread - INFO - [Thread-84952] 开始识别字幕: 户外唱歌挑战118.mp4
+2025-02-19 23:40:52 - app.core.audio_processor - INFO - 开始提取音频: E:\测试\新建文件夹\户外唱歌挑战118.mp4
+2025-02-19 23:40:52 - app.core.process_thread - INFO - [Thread-119084] 处理方案ID: 6
+2025-02-19 23:40:52 - app.core.process_thread - INFO - [Thread-116220] 获取到GPU信号量，使用GPU处理
+2025-02-19 23:40:52 - app.core.process_thread - INFO - [Thread-116220] 开始识别字幕: 搞笑一下144.mp4
+2025-02-19 23:40:52 - app.core.process_thread - INFO - [Thread-109672] 获取到GPU信号量，使用GPU处理
+2025-02-19 23:40:52 - app.core.process_thread - INFO - [Thread-119084] 处理方案ID: 6
+2025-02-19 23:40:52 - app.core.process_thread - INFO - [Thread-109672] 开始识别字幕: 搞笑日常576.mp4
+2025-02-19 23:40:52 - app.core.process_thread - INFO - [Thread-118708] 获取到GPU信号量，使用GPU处理
+2025-02-19 23:40:52 - app.core.process_thread - INFO - [Thread-119084] 处理方案ID: 6
+2025-02-19 23:40:52 - app.core.process_thread - INFO - [Thread-118708] 开始识别字幕: 搞笑飙演技164.mp4
+2025-02-19 23:40:52 - app.core.process_thread - INFO - [Thread-119084] 处理方案ID: 6
+2025-02-19 23:40:52 - app.core.process_thread - INFO - [Thread-119300] 获取到GPU信号量，使用GPU处理
+2025-02-19 23:40:52 - app.core.process_thread - INFO - [Thread-119300] 开始识别字幕: 搞笑飙演技25.mp4
+2025-02-19 23:40:52 - app.core.process_thread - INFO - [Thread-116208] 获取到GPU信号量，使用GPU处理
+2025-02-19 23:40:52 - app.core.process_thread - INFO - [Thread-116208] 开始识别字幕: 狗狗搞笑视频35.mp4
+2025-02-19 23:40:52 - [Thread-119084] 线程参数:
+2025-02-19 23:40:52 - [Thread-119084] 添加字幕: True
+2025-02-19 23:40:52 - [Thread-119084] 选中的方案: [{'id': 6, 'name': '方案6 自动字幕', 'width': 720, 'height': 1080, 'blur_bg': False, 'add_subtitle': True, 'description': '竖屏带字幕'}]
+2025-02-19 23:40:52 - [Thread-119084] 更多效果: False
+2025-02-19 23:40:52 - [Thread-119084] 并发线程数: 10
+2025-02-19 23:40:52 - [Thread-119084] 循环剪辑: False
+2025-02-19 23:40:52 - [Thread-119084] 目录 E:\测试\新建文件夹 限制处理 50 个文件
+2025-02-19 23:40:52 - [Thread-119084] 处理方案ID: 6
+2025-02-19 23:40:52 - [Thread-84952] 获取到GPU信号量，使用GPU处理
+2025-02-19 23:40:52 - [Thread-119084] 处理方案ID: 6
+2025-02-19 23:40:52 - [Thread-84952] 开始识别字幕: 户外唱歌挑战118.mp4
+2025-02-19 23:40:52 - [Thread-116220] 获取到GPU信号量，使用GPU处理
+2025-02-19 23:40:52 - [Thread-119084] 处理方案ID: 6
+2025-02-19 23:40:52 - [Thread-116220] 开始识别字幕: 搞笑一下144.mp4
+2025-02-19 23:40:52 - [Thread-109672] 获取到GPU信号量，使用GPU处理
+2025-02-19 23:40:52 - [Thread-119084] 处理方案ID: 6
+2025-02-19 23:40:52 - [Thread-109672] 开始识别字幕: 搞笑日常576.mp4
+2025-02-19 23:40:52 - [Thread-118708] 获取到GPU信号量，使用GPU处理
+2025-02-19 23:40:52 - [Thread-119084] 处理方案ID: 6
+2025-02-19 23:40:52 - [Thread-118708] 开始识别字幕: 搞笑飙演技164.mp4
+2025-02-19 23:40:52 - [Thread-119300] 获取到GPU信号量，使用GPU处理
+2025-02-19 23:40:52 - [Thread-119084] 处理方案ID: 6
+2025-02-19 23:40:52 - [Thread-119300] 开始识别字幕: 搞笑飙演技25.mp4
+2025-02-19 23:40:52 - [Thread-116208] 获取到GPU信号量，使用GPU处理
+2025-02-19 23:40:52 - [Thread-116208] 开始识别字幕: 狗狗搞笑视频35.mp4
+2025-02-19 23:40:52 - app.core.audio_processor - INFO - 音频提取成功: temp/temp_77c37e9d_audio.wav
+2025-02-19 23:40:52 - app.core.audio_processor - INFO - 开始识别音频: temp/temp_77c37e9d_audio.wav
+2025-02-19 23:41:01 - app.core.audio_processor - INFO - 字幕文件已生成: temp/户外唱歌挑战118.srt
+2025-02-19 23:41:01 - app.core.audio_processor - INFO - 开始提取音频: E:\测试\新建文件夹\搞笑一下144.mp4
+2025-02-19 23:41:01 - [Thread-84952] 字幕识别成功: temp/户外唱歌挑战118.srt
+2025-02-19 23:41:01 - app.core.process_thread - INFO - [Thread-84952] 字幕识别成功: temp/户外唱歌挑战118.srt
+2025-02-19 23:41:01 - app.core.audio_processor - INFO - 音频提取成功: temp/temp_60a2488a_audio.wav
+2025-02-19 23:41:01 - app.core.audio_processor - INFO - 开始识别音频: temp/temp_60a2488a_audio.wav
+2025-02-19 23:41:03 - [Thread-84952] 完整的FFmpeg命令: ffmpeg -y -i E:\测试\新建文件夹\户外唱歌挑战118.mp4 -vf "scale=1080:1980:force_original_aspect_ratio=1,pad=1080:1980:(ow-iw)/2:(oh-ih)/2:black,drawbox=x=0:y=0:w=iw:h=100:color=white:t=fill,drawtext=text='户外唱歌挑战118':fontfile='C\:/Windows/Fonts/simhei.ttf':fontsize=40:fontcolor=black:x=(w-text_w)/2:y=(50-text_h)/2,drawbox=x=0:y=ih*0.6:w=iw:h=ih*0.16:color=white:t=fill,subtitles='temp/户外唱歌挑战118.srt':force_style='FontName=SimHei,Fontsize=20,Alignment=2,Position=50%,Yabs=ih*0.6+(ih*0.16-th)/2,PrimaryColour=&H000000&,BorderStyle=1,Outline=1,OutlineColour=&HFFFFFF&,MarginL=10,MarginR=10,MarginV=85',unsharp=5:5:1.8:5:5:0.5,hqdn3d=1.2:1.2:4:4" -c:v h264_nvenc -preset p4 -tune ll -rc:v vbr -cq:v 23 -qmin 18 -qmax 28 -b:v 4M -maxrate 12M -bufsize 8M -spatial-aq 1 -temporal-aq 1 -aq-strength 8 -b_ref_mode 0 -multipass qres -profile:v high -level 5.1 -c:a aac -b:a 128k -threads 10 -movflags +faststart D:\测试\新建文件夹\户外唱歌挑战118.mp4
+2025-02-19 23:41:03 - app.core.process_thread - INFO - [Thread-84952] 完整的FFmpeg命令: ffmpeg -y -i E:\测试\新建文件夹\户外唱歌挑战118.mp4 -vf "scale=1080:1980:force_original_aspect_ratio=1,pad=1080:1980:(ow-iw)/2:(oh-ih)/2:black,drawbox=x=0:y=0:w=iw:h=100:color=white:t=fill,drawtext=text='户外唱歌挑战118':fontfile='C\:/Windows/Fonts/simhei.ttf':fontsize=40:fontcolor=black:x=(w-text_w)/2:y=(50-text_h)/2,drawbox=x=0:y=ih*0.6:w=iw:h=ih*0.16:color=white:t=fill,subtitles='temp/户外唱歌挑战118.srt':force_style='FontName=SimHei,Fontsize=20,Alignment=2,Position=50%,Yabs=ih*0.6+(ih*0.16-th)/2,PrimaryColour=&H000000&,BorderStyle=1,Outline=1,OutlineColour=&HFFFFFF&,MarginL=10,MarginR=10,MarginV=85',unsharp=5:5:1.8:5:5:0.5,hqdn3d=1.2:1.2:4:4" -c:v h264_nvenc -preset p4 -tune ll -rc:v vbr -cq:v 23 -qmin 18 -qmax 28 -b:v 4M -maxrate 12M -bufsize 8M -spatial-aq 1 -temporal-aq 1 -aq-strength 8 -b_ref_mode 0 -multipass qres -profile:v high -level 5.1 -c:a aac -b:a 128k -threads 10 -movflags +faststart D:\测试\新建文件夹\户外唱歌挑战118.mp4
+2025-02-19 23:41:03 - app.core.process_thread - INFO - [Thread-84952] 
+开始处理文件: 户外唱歌挑战118.mp4
+2025-02-19 23:41:03 - app.core.process_thread - INFO - [Thread-84952] 使用方案 6 (GPU)
+2025-02-19 23:41:03 - [Thread-84952] 
+开始处理文件: 户外唱歌挑战118.mp4
+2025-02-19 23:41:03 - [Thread-84952] 使用方案 6 (GPU)
+2025-02-19 23:41:10 - app.core.audio_processor - INFO - 字幕文件已生成: temp/搞笑一下144.srt
+2025-02-19 23:41:10 - app.core.audio_processor - INFO - 开始提取音频: E:\测试\新建文件夹\搞笑日常576.mp4
+2025-02-19 23:41:10 - [Thread-116220] 字幕识别成功: temp/搞笑一下144.srt
+2025-02-19 23:41:10 - app.core.process_thread - INFO - [Thread-116220] 字幕识别成功: temp/搞笑一下144.srt
+2025-02-19 23:41:10 - app.core.audio_processor - INFO - 音频提取成功: temp/temp_5a0ce23d_audio.wav
+2025-02-19 23:41:10 - app.core.audio_processor - INFO - 开始识别音频: temp/temp_5a0ce23d_audio.wav
+2025-02-19 23:41:12 - [Thread-116220] 完整的FFmpeg命令: ffmpeg -y -i E:\测试\新建文件夹\搞笑一下144.mp4 -vf "scale=1080:1980:force_original_aspect_ratio=1,pad=1080:1980:(ow-iw)/2:(oh-ih)/2:black,drawbox=x=0:y=0:w=iw:h=100:color=white:t=fill,drawtext=text='搞笑一下144':fontfile='C\:/Windows/Fonts/simhei.ttf':fontsize=40:fontcolor=black:x=(w-text_w)/2:y=(50-text_h)/2,drawbox=x=0:y=ih*0.6:w=iw:h=ih*0.16:color=white:t=fill,subtitles='temp/搞笑一下144.srt':force_style='FontName=SimHei,Fontsize=20,Alignment=2,Position=50%,Yabs=ih*0.6+(ih*0.16-th)/2,PrimaryColour=&H000000&,BorderStyle=1,Outline=1,OutlineColour=&HFFFFFF&,MarginL=10,MarginR=10,MarginV=85',unsharp=5:5:1.8:5:5:0.5,hqdn3d=1.2:1.2:4:4" -c:v h264_nvenc -preset p4 -tune ll -rc:v vbr -cq:v 23 -qmin 18 -qmax 28 -b:v 4M -maxrate 12M -bufsize 8M -spatial-aq 1 -temporal-aq 1 -aq-strength 8 -b_ref_mode 0 -multipass qres -profile:v high -level 5.1 -c:a aac -b:a 128k -threads 10 -movflags +faststart D:\测试\新建文件夹\搞笑一下144.mp4
+2025-02-19 23:41:12 - app.core.process_thread - INFO - [Thread-116220] 完整的FFmpeg命令: ffmpeg -y -i E:\测试\新建文件夹\搞笑一下144.mp4 -vf "scale=1080:1980:force_original_aspect_ratio=1,pad=1080:1980:(ow-iw)/2:(oh-ih)/2:black,drawbox=x=0:y=0:w=iw:h=100:color=white:t=fill,drawtext=text='搞笑一下144':fontfile='C\:/Windows/Fonts/simhei.ttf':fontsize=40:fontcolor=black:x=(w-text_w)/2:y=(50-text_h)/2,drawbox=x=0:y=ih*0.6:w=iw:h=ih*0.16:color=white:t=fill,subtitles='temp/搞笑一下144.srt':force_style='FontName=SimHei,Fontsize=20,Alignment=2,Position=50%,Yabs=ih*0.6+(ih*0.16-th)/2,PrimaryColour=&H000000&,BorderStyle=1,Outline=1,OutlineColour=&HFFFFFF&,MarginL=10,MarginR=10,MarginV=85',unsharp=5:5:1.8:5:5:0.5,hqdn3d=1.2:1.2:4:4" -c:v h264_nvenc -preset p4 -tune ll -rc:v vbr -cq:v 23 -qmin 18 -qmax 28 -b:v 4M -maxrate 12M -bufsize 8M -spatial-aq 1 -temporal-aq 1 -aq-strength 8 -b_ref_mode 0 -multipass qres -profile:v high -level 5.1 -c:a aac -b:a 128k -threads 10 -movflags +faststart D:\测试\新建文件夹\搞笑一下144.mp4
+2025-02-19 23:41:12 - app.core.process_thread - INFO - [Thread-116220] 
+开始处理文件: 搞笑一下144.mp4
+2025-02-19 23:41:12 - app.core.process_thread - INFO - [Thread-116220] 使用方案 6 (GPU)
+2025-02-19 23:41:12 - [Thread-116220] 
+开始处理文件: 搞笑一下144.mp4
+2025-02-19 23:41:12 - [Thread-116220] 使用方案 6 (GPU)
+2025-02-19 23:41:19 - app.core.audio_processor - INFO - 字幕文件已生成: temp/搞笑日常576.srt
+2025-02-19 23:41:19 - app.core.audio_processor - INFO - 开始提取音频: E:\测试\新建文件夹\搞笑飙演技164.mp4
+2025-02-19 23:41:19 - [Thread-109672] 字幕识别成功: temp/搞笑日常576.srt
+2025-02-19 23:41:19 - app.core.process_thread - INFO - [Thread-109672] 字幕识别成功: temp/搞笑日常576.srt
+2025-02-19 23:41:19 - app.core.audio_processor - INFO - 音频提取成功: temp/temp_d9308727_audio.wav
+2025-02-19 23:41:19 - app.core.audio_processor - INFO - 开始识别音频: temp/temp_d9308727_audio.wav
+2025-02-19 23:41:21 - [Thread-84952] 成功处理: 户外唱歌挑战118.mp4
+2025-02-19 23:41:21 - app.core.process_thread - INFO - [Thread-84952] 成功处理: 户外唱歌挑战118.mp4
+2025-02-19 23:41:21 - [Thread-109672] 完整的FFmpeg命令: ffmpeg -y -i E:\测试\新建文件夹\搞笑日常576.mp4 -vf "scale=1080:1980:force_original_aspect_ratio=1,pad=1080:1980:(ow-iw)/2:(oh-ih)/2:black,drawbox=x=0:y=0:w=iw:h=100:color=white:t=fill,drawtext=text='搞笑日常576':fontfile='C\:/Windows/Fonts/simhei.ttf':fontsize=40:fontcolor=black:x=(w-text_w)/2:y=(50-text_h)/2,drawbox=x=0:y=ih*0.6:w=iw:h=ih*0.16:color=white:t=fill,subtitles='temp/搞笑日常576.srt':force_style='FontName=SimHei,Fontsize=20,Alignment=2,Position=50%,Yabs=ih*0.6+(ih*0.16-th)/2,PrimaryColour=&H000000&,BorderStyle=1,Outline=1,OutlineColour=&HFFFFFF&,MarginL=10,MarginR=10,MarginV=85',unsharp=5:5:1.8:5:5:0.5,hqdn3d=1.2:1.2:4:4" -c:v h264_nvenc -preset p4 -tune ll -rc:v vbr -cq:v 23 -qmin 18 -qmax 28 -b:v 4M -maxrate 12M -bufsize 8M -spatial-aq 1 -temporal-aq 1 -aq-strength 8 -b_ref_mode 0 -multipass qres -profile:v high -level 5.1 -c:a aac -b:a 128k -threads 10 -movflags +faststart D:\测试\新建文件夹\搞笑日常576.mp4
+2025-02-19 23:41:21 - app.core.process_thread - INFO - [Thread-109672] 完整的FFmpeg命令: ffmpeg -y -i E:\测试\新建文件夹\搞笑日常576.mp4 -vf "scale=1080:1980:force_original_aspect_ratio=1,pad=1080:1980:(ow-iw)/2:(oh-ih)/2:black,drawbox=x=0:y=0:w=iw:h=100:color=white:t=fill,drawtext=text='搞笑日常576':fontfile='C\:/Windows/Fonts/simhei.ttf':fontsize=40:fontcolor=black:x=(w-text_w)/2:y=(50-text_h)/2,drawbox=x=0:y=ih*0.6:w=iw:h=ih*0.16:color=white:t=fill,subtitles='temp/搞笑日常576.srt':force_style='FontName=SimHei,Fontsize=20,Alignment=2,Position=50%,Yabs=ih*0.6+(ih*0.16-th)/2,PrimaryColour=&H000000&,BorderStyle=1,Outline=1,OutlineColour=&HFFFFFF&,MarginL=10,MarginR=10,MarginV=85',unsharp=5:5:1.8:5:5:0.5,hqdn3d=1.2:1.2:4:4" -c:v h264_nvenc -preset p4 -tune ll -rc:v vbr -cq:v 23 -qmin 18 -qmax 28 -b:v 4M -maxrate 12M -bufsize 8M -spatial-aq 1 -temporal-aq 1 -aq-strength 8 -b_ref_mode 0 -multipass qres -profile:v high -level 5.1 -c:a aac -b:a 128k -threads 10 -movflags +faststart D:\测试\新建文件夹\搞笑日常576.mp4
+2025-02-19 23:41:21 - app.core.process_thread - INFO - [Thread-109672] 
+开始处理文件: 搞笑日常576.mp4
+2025-02-19 23:41:21 - app.core.process_thread - INFO - [Thread-109672] 使用方案 6 (GPU)
+2025-02-19 23:41:21 - [Thread-109672] 
+开始处理文件: 搞笑日常576.mp4
+2025-02-19 23:41:21 - [Thread-109672] 使用方案 6 (GPU)
+2025-02-19 23:41:25 - app.core.audio_processor - INFO - 字幕文件已生成: temp/搞笑飙演技164.srt
+2025-02-19 23:41:25 - app.core.audio_processor - INFO - 开始提取音频: E:\测试\新建文件夹\搞笑飙演技25.mp4
+2025-02-19 23:41:25 - [Thread-118708] 字幕识别成功: temp/搞笑飙演技164.srt
+2025-02-19 23:41:25 - app.core.process_thread - INFO - [Thread-118708] 字幕识别成功: temp/搞笑飙演技164.srt
+2025-02-19 23:41:25 - app.core.audio_processor - INFO - 音频提取成功: temp/temp_d8b67048_audio.wav
+2025-02-19 23:41:25 - app.core.audio_processor - INFO - 开始识别音频: temp/temp_d8b67048_audio.wav
+2025-02-19 23:41:27 - [Thread-118708] 完整的FFmpeg命令: ffmpeg -y -i E:\测试\新建文件夹\搞笑飙演技164.mp4 -vf "scale=1080:1980:force_original_aspect_ratio=1,pad=1080:1980:(ow-iw)/2:(oh-ih)/2:black,drawbox=x=0:y=0:w=iw:h=100:color=white:t=fill,drawtext=text='搞笑飙演技164':fontfile='C\:/Windows/Fonts/simhei.ttf':fontsize=40:fontcolor=black:x=(w-text_w)/2:y=(50-text_h)/2,drawbox=x=0:y=ih*0.6:w=iw:h=ih*0.16:color=white:t=fill,subtitles='temp/搞笑飙演技164.srt':force_style='FontName=SimHei,Fontsize=20,Alignment=2,Position=50%,Yabs=ih*0.6+(ih*0.16-th)/2,PrimaryColour=&H000000&,BorderStyle=1,Outline=1,OutlineColour=&HFFFFFF&,MarginL=10,MarginR=10,MarginV=85',unsharp=5:5:1.8:5:5:0.5,hqdn3d=1.2:1.2:4:4" -c:v h264_nvenc -preset p4 -tune ll -rc:v vbr -cq:v 23 -qmin 18 -qmax 28 -b:v 4M -maxrate 12M -bufsize 8M -spatial-aq 1 -temporal-aq 1 -aq-strength 8 -b_ref_mode 0 -multipass qres -profile:v high -level 5.1 -c:a aac -b:a 128k -threads 10 -movflags +faststart D:\测试\新建文件夹\搞笑飙演技164.mp4
+2025-02-19 23:41:27 - app.core.process_thread - INFO - [Thread-118708] 完整的FFmpeg命令: ffmpeg -y -i E:\测试\新建文件夹\搞笑飙演技164.mp4 -vf "scale=1080:1980:force_original_aspect_ratio=1,pad=1080:1980:(ow-iw)/2:(oh-ih)/2:black,drawbox=x=0:y=0:w=iw:h=100:color=white:t=fill,drawtext=text='搞笑飙演技164':fontfile='C\:/Windows/Fonts/simhei.ttf':fontsize=40:fontcolor=black:x=(w-text_w)/2:y=(50-text_h)/2,drawbox=x=0:y=ih*0.6:w=iw:h=ih*0.16:color=white:t=fill,subtitles='temp/搞笑飙演技164.srt':force_style='FontName=SimHei,Fontsize=20,Alignment=2,Position=50%,Yabs=ih*0.6+(ih*0.16-th)/2,PrimaryColour=&H000000&,BorderStyle=1,Outline=1,OutlineColour=&HFFFFFF&,MarginL=10,MarginR=10,MarginV=85',unsharp=5:5:1.8:5:5:0.5,hqdn3d=1.2:1.2:4:4" -c:v h264_nvenc -preset p4 -tune ll -rc:v vbr -cq:v 23 -qmin 18 -qmax 28 -b:v 4M -maxrate 12M -bufsize 8M -spatial-aq 1 -temporal-aq 1 -aq-strength 8 -b_ref_mode 0 -multipass qres -profile:v high -level 5.1 -c:a aac -b:a 128k -threads 10 -movflags +faststart D:\测试\新建文件夹\搞笑飙演技164.mp4
+2025-02-19 23:41:27 - app.core.process_thread - INFO - [Thread-118708] 
+开始处理文件: 搞笑飙演技164.mp4
+2025-02-19 23:41:27 - app.core.process_thread - INFO - [Thread-118708] 使用方案 6 (GPU)
+2025-02-19 23:41:27 - [Thread-118708] 
+开始处理文件: 搞笑飙演技164.mp4
+2025-02-19 23:41:27 - [Thread-118708] 使用方案 6 (GPU)
+2025-02-19 23:41:28 - [Thread-116220] 成功处理: 搞笑一下144.mp4
+2025-02-19 23:41:28 - app.core.process_thread - INFO - [Thread-116220] 成功处理: 搞笑一下144.mp4
+2025-02-19 23:41:33 - app.core.audio_processor - INFO - 字幕文件已生成: temp/搞笑飙演技25.srt
+2025-02-19 23:41:33 - app.core.audio_processor - INFO - 开始提取音频: E:\测试\新建文件夹\狗狗搞笑视频35.mp4
+2025-02-19 23:41:33 - [Thread-119300] 字幕识别成功: temp/搞笑飙演技25.srt
+2025-02-19 23:41:33 - app.core.process_thread - INFO - [Thread-119300] 字幕识别成功: temp/搞笑飙演技25.srt
+2025-02-19 23:41:33 - app.core.audio_processor - INFO - 音频提取成功: temp/temp_8ce1526a_audio.wav
+2025-02-19 23:41:33 - app.core.audio_processor - INFO - 开始识别音频: temp/temp_8ce1526a_audio.wav
+2025-02-19 23:41:35 - [Thread-119300] 完整的FFmpeg命令: ffmpeg -y -i E:\测试\新建文件夹\搞笑飙演技25.mp4 -vf "scale=1080:1980:force_original_aspect_ratio=1,pad=1080:1980:(ow-iw)/2:(oh-ih)/2:black,drawbox=x=0:y=0:w=iw:h=100:color=white:t=fill,drawtext=text='搞笑飙演技25':fontfile='C\:/Windows/Fonts/simhei.ttf':fontsize=40:fontcolor=black:x=(w-text_w)/2:y=(50-text_h)/2,drawbox=x=0:y=ih*0.6:w=iw:h=ih*0.16:color=white:t=fill,subtitles='temp/搞笑飙演技25.srt':force_style='FontName=SimHei,Fontsize=20,Alignment=2,Position=50%,Yabs=ih*0.6+(ih*0.16-th)/2,PrimaryColour=&H000000&,BorderStyle=1,Outline=1,OutlineColour=&HFFFFFF&,MarginL=10,MarginR=10,MarginV=85',unsharp=5:5:1.8:5:5:0.5,hqdn3d=1.2:1.2:4:4" -c:v h264_nvenc -preset p4 -tune ll -rc:v vbr -cq:v 23 -qmin 18 -qmax 28 -b:v 4M -maxrate 12M -bufsize 8M -spatial-aq 1 -temporal-aq 1 -aq-strength 8 -b_ref_mode 0 -multipass qres -profile:v high -level 5.1 -c:a aac -b:a 128k -threads 10 -movflags +faststart D:\测试\新建文件夹\搞笑飙演技25.mp4
+2025-02-19 23:41:35 - app.core.process_thread - INFO - [Thread-119300] 完整的FFmpeg命令: ffmpeg -y -i E:\测试\新建文件夹\搞笑飙演技25.mp4 -vf "scale=1080:1980:force_original_aspect_ratio=1,pad=1080:1980:(ow-iw)/2:(oh-ih)/2:black,drawbox=x=0:y=0:w=iw:h=100:color=white:t=fill,drawtext=text='搞笑飙演技25':fontfile='C\:/Windows/Fonts/simhei.ttf':fontsize=40:fontcolor=black:x=(w-text_w)/2:y=(50-text_h)/2,drawbox=x=0:y=ih*0.6:w=iw:h=ih*0.16:color=white:t=fill,subtitles='temp/搞笑飙演技25.srt':force_style='FontName=SimHei,Fontsize=20,Alignment=2,Position=50%,Yabs=ih*0.6+(ih*0.16-th)/2,PrimaryColour=&H000000&,BorderStyle=1,Outline=1,OutlineColour=&HFFFFFF&,MarginL=10,MarginR=10,MarginV=85',unsharp=5:5:1.8:5:5:0.5,hqdn3d=1.2:1.2:4:4" -c:v h264_nvenc -preset p4 -tune ll -rc:v vbr -cq:v 23 -qmin 18 -qmax 28 -b:v 4M -maxrate 12M -bufsize 8M -spatial-aq 1 -temporal-aq 1 -aq-strength 8 -b_ref_mode 0 -multipass qres -profile:v high -level 5.1 -c:a aac -b:a 128k -threads 10 -movflags +faststart D:\测试\新建文件夹\搞笑飙演技25.mp4
+2025-02-19 23:41:35 - app.core.process_thread - INFO - [Thread-119300] 
+开始处理文件: 搞笑飙演技25.mp4
+2025-02-19 23:41:35 - app.core.process_thread - INFO - [Thread-119300] 使用方案 6 (GPU)
+2025-02-19 23:41:35 - [Thread-119300] 
+开始处理文件: 搞笑飙演技25.mp4
+2025-02-19 23:41:35 - [Thread-119300] 使用方案 6 (GPU)
+2025-02-19 23:41:37 - [Thread-118708] 成功处理: 搞笑飙演技164.mp4
+2025-02-19 23:41:37 - app.core.process_thread - INFO - [Thread-118708] 成功处理: 搞笑飙演技164.mp4
+2025-02-19 23:41:37 - [Thread-109672] 成功处理: 搞笑日常576.mp4
+2025-02-19 23:41:37 - app.core.process_thread - INFO - [Thread-109672] 成功处理: 搞笑日常576.mp4
+2025-02-19 23:41:40 - app.core.audio_processor - INFO - 字幕文件已生成: temp/狗狗搞笑视频35.srt
+2025-02-19 23:41:40 - app.core.process_thread - INFO - [Thread-116208] 字幕识别成功: temp/狗狗搞笑视频35.srt
+2025-02-19 23:41:40 - [Thread-116208] 字幕识别成功: temp/狗狗搞笑视频35.srt
+2025-02-19 23:41:42 - [Thread-116208] 完整的FFmpeg命令: ffmpeg -y -i E:\测试\新建文件夹\狗狗搞笑视频35.mp4 -vf "scale=1080:1980:force_original_aspect_ratio=1,pad=1080:1980:(ow-iw)/2:(oh-ih)/2:black,drawbox=x=0:y=0:w=iw:h=100:color=white:t=fill,drawtext=text='狗狗搞笑视频35':fontfile='C\:/Windows/Fonts/simhei.ttf':fontsize=40:fontcolor=black:x=(w-text_w)/2:y=(50-text_h)/2,drawbox=x=0:y=ih*0.6:w=iw:h=ih*0.16:color=white:t=fill,subtitles='temp/狗狗搞笑视频35.srt':force_style='FontName=SimHei,Fontsize=20,Alignment=2,Position=50%,Yabs=ih*0.6+(ih*0.16-th)/2,PrimaryColour=&H000000&,BorderStyle=1,Outline=1,OutlineColour=&HFFFFFF&,MarginL=10,MarginR=10,MarginV=85',unsharp=5:5:1.8:5:5:0.5,hqdn3d=1.2:1.2:4:4" -c:v h264_nvenc -preset p4 -tune ll -rc:v vbr -cq:v 23 -qmin 18 -qmax 28 -b:v 4M -maxrate 12M -bufsize 8M -spatial-aq 1 -temporal-aq 1 -aq-strength 8 -b_ref_mode 0 -multipass qres -profile:v high -level 5.1 -c:a aac -b:a 128k -threads 10 -movflags +faststart D:\测试\新建文件夹\狗狗搞笑视频35.mp4
+2025-02-19 23:41:42 - app.core.process_thread - INFO - [Thread-116208] 完整的FFmpeg命令: ffmpeg -y -i E:\测试\新建文件夹\狗狗搞笑视频35.mp4 -vf "scale=1080:1980:force_original_aspect_ratio=1,pad=1080:1980:(ow-iw)/2:(oh-ih)/2:black,drawbox=x=0:y=0:w=iw:h=100:color=white:t=fill,drawtext=text='狗狗搞笑视频35':fontfile='C\:/Windows/Fonts/simhei.ttf':fontsize=40:fontcolor=black:x=(w-text_w)/2:y=(50-text_h)/2,drawbox=x=0:y=ih*0.6:w=iw:h=ih*0.16:color=white:t=fill,subtitles='temp/狗狗搞笑视频35.srt':force_style='FontName=SimHei,Fontsize=20,Alignment=2,Position=50%,Yabs=ih*0.6+(ih*0.16-th)/2,PrimaryColour=&H000000&,BorderStyle=1,Outline=1,OutlineColour=&HFFFFFF&,MarginL=10,MarginR=10,MarginV=85',unsharp=5:5:1.8:5:5:0.5,hqdn3d=1.2:1.2:4:4" -c:v h264_nvenc -preset p4 -tune ll -rc:v vbr -cq:v 23 -qmin 18 -qmax 28 -b:v 4M -maxrate 12M -bufsize 8M -spatial-aq 1 -temporal-aq 1 -aq-strength 8 -b_ref_mode 0 -multipass qres -profile:v high -level 5.1 -c:a aac -b:a 128k -threads 10 -movflags +faststart D:\测试\新建文件夹\狗狗搞笑视频35.mp4
+2025-02-19 23:41:42 - app.core.process_thread - INFO - [Thread-116208] 
+开始处理文件: 狗狗搞笑视频35.mp4
+2025-02-19 23:41:42 - app.core.process_thread - INFO - [Thread-116208] 使用方案 6 (GPU)
+2025-02-19 23:41:42 - [Thread-116208] 
+开始处理文件: 狗狗搞笑视频35.mp4
+2025-02-19 23:41:42 - [Thread-116208] 使用方案 6 (GPU)
+2025-02-19 23:41:47 - [Thread-119300] 成功处理: 搞笑飙演技25.mp4
+2025-02-19 23:41:47 - app.core.process_thread - INFO - [Thread-119300] 成功处理: 搞笑飙演技25.mp4
+2025-02-19 23:41:57 - [Thread-116208] 成功处理: 狗狗搞笑视频35.mp4
+2025-02-19 23:41:57 - app.core.process_thread - INFO - [Thread-116208] 成功处理: 狗狗搞笑视频35.mp4

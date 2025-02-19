@@ -30,11 +30,12 @@ import { useEffect, useState } from "react"
 import { z } from "zod"
 import axios from "axios"
 
-import { ItemsService } from "../../client"
+import { ItemsService, type UserPublic } from "../../client"
 import ActionsMenu from "../../components/Common/ActionsMenu"
 import Navbar from "../../components/Common/Navbar"
 import AddItem from "../../components/Items/AddItem"
 import { PaginationFooter } from "../../components/Common/PaginationFooter.tsx"
+import { UsersService } from "../../client"
 
 const itemsSearchSchema = z.object({
   page: z.number().catch(1),
@@ -77,17 +78,13 @@ function ItemPermissions({ itemId, isOpen, onClose }: ItemPermissionsProps) {
   const [selectedRole, setSelectedRole] = useState<PermissionLevel>(PERMISSION_LEVELS.READ)
 
   // 获取用户列表
-  const { data: users } = useQuery({
+  const { data: usersResponse, isLoading, error } = useQuery({
     queryKey: ["users"],
     queryFn: async () => {
-      const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/v1/users`, {
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem("access_token")}`,
-        },
-      })
-      return response.data
-    }
-  })
+      const result = await UsersService.readUsers({ skip: 0, limit: 100 });
+      return result;
+    },
+  });
 
   // 获取项目当前的权限列表
   const { data: permissions } = useQuery({
@@ -161,17 +158,32 @@ function ItemPermissions({ itemId, isOpen, onClose }: ItemPermissionsProps) {
           <VStack spacing={4}>
             <FormControl>
               <FormLabel>选择用户</FormLabel>
-              <Select
-                placeholder="选择用户"
-                value={selectedUserId}
-                onChange={(e) => setSelectedUserId(e.target.value)}
-              >
-                {users?.data?.map((user: any) => (
-                  <option key={user.id} value={user.id}>
-                    {user.email}
-                  </option>
-                ))}
-              </Select>
+              {isLoading ? (
+                <Select isDisabled placeholder="加载中..." />
+              ) : error ? (
+                <Select isDisabled placeholder="加载失败" />
+              ) : (
+                <Select
+                  placeholder="选择用户"
+                  value={selectedUserId}
+                  onChange={(e) => setSelectedUserId(e.target.value)}
+                >
+                  {usersResponse?.data ? (
+                    usersResponse.data.map((user) => (
+                      <option key={user.id} value={user.id}>
+                        {user.email || user.full_name || '未知用户'}
+                      </option>
+                    ))
+                  ) : (
+                    <option value="">没有可用用户</option>
+                  )}
+                </Select>
+              )}
+              {error && (
+                <div style={{ color: 'red', marginTop: '4px', fontSize: '14px' }}>
+                  加载用户列表失败
+                </div>
+              )}
             </FormControl>
 
             <FormControl>
@@ -255,14 +267,14 @@ function ItemsTable() {
 
   return (
     <>
-      <TableContainer>
-        <Table size={{ base: "sm", md: "md" }}>
+      <TableContainer width="100%">
+        <Table size={{ base: "sm", md: "md" }} width="100%">
           <Thead>
             <Tr>
-              <Th>ID</Th>
-              <Th>Title</Th>
-              <Th>Description</Th>
-              <Th>Actions</Th>
+              <Th width="25%">ID</Th>
+              <Th width="25%">Title</Th>
+              <Th width="30%">Description</Th>
+              <Th width="20%">Actions</Th>
             </Tr>
           </Thead>
           {isPending ? (
@@ -332,14 +344,36 @@ function ItemsTable() {
 }
 
 function Items() {
-  return (
-    <Container maxW="full">
-      <Heading size="lg" textAlign={{ base: "center", md: "left" }} pt={12}>
-        Items Management
-      </Heading>
+  const { isOpen, onOpen, onClose } = useDisclosure()
+  const queryClient = useQueryClient()
+  const currentUser = queryClient.getQueryData<UserPublic>(["currentUser"])
+  const navigate = useNavigate({ from: Route.fullPath })
 
-      <Navbar type={"Item"} addModalAs={AddItem} />
-      <ItemsTable />
-    </Container>
+  // 如果不是管理员，重定向到首页
+  useEffect(() => {
+    if (!currentUser?.is_superuser) {
+      navigate({ to: "/" })
+    }
+  }, [currentUser])
+
+  // 如果不是管理员，不显示任何内容
+  if (!currentUser?.is_superuser) {
+    return null
+  }
+
+  return (
+    <>
+      <Navbar type="Item" addModalAs={AddItem} />
+      <Container maxW="100%" py={8} px={8}>
+        <Heading size="lg" mb={8}>
+          项目管理
+        </Heading>
+        <Button onClick={onOpen} mb={8}>
+          添加项目
+        </Button>
+        <ItemsTable />
+        <AddItem isOpen={isOpen} onClose={onClose} />
+      </Container>
+    </>
   )
 }

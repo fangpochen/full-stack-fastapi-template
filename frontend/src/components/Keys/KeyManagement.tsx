@@ -31,8 +31,7 @@ import { useApiKeys, useCreateApiKeys, useDeleteApiKey, useToggleApiKey } from "
 import { useQueryClient, useQuery } from "@tanstack/react-query"
 import { useState } from "react"
 import axios from "axios"
-import { ItemsService } from "../../client"
-import { useUsers } from "../../services/user"
+import { ItemsService, UsersService } from "../../client"
 
 interface ApiKey {
   id: string;
@@ -98,7 +97,10 @@ export const KeyManagement = () => {
   const [page, setPage] = useState(1)
   const [pageSize, setPageSize] = useState(10)
   const [selectedUserId, setSelectedUserId] = useState<string>("")
-  const { data: users } = useUsers()
+  const { data: usersResponse } = useQuery({
+    queryKey: ["users"],
+    queryFn: () => UsersService.readUsers({ skip: 0, limit: 100 })
+  })
   const { data: keysResponse } = useApiKeys({
     page,
     pageSize,
@@ -149,15 +151,24 @@ export const KeyManagement = () => {
 
   const handleCreate = async () => {
     try {
+      if (!selectedItemId) {
+        toast({ status: "error", title: "请选择项目" });
+        return;
+      }
+      
       await createKeysMutation.mutateAsync({
         count,
-        item_id: selectedItemId || undefined,
+        item_id: selectedItemId,
         expires_at: expiresAt
       })
       toast({ status: "success", title: `成功创建 ${count} 个密钥` })
       queryClient.invalidateQueries({ queryKey: ["api-keys"] })
-    } catch (error) {
-      toast({ status: "error", title: "创建失败" })
+    } catch (error: any) {
+      toast({ 
+        status: "error", 
+        title: "创建失败", 
+        description: error.response?.data?.detail || "未知错误" 
+      })
     }
   }
 
@@ -241,6 +252,31 @@ export const KeyManagement = () => {
     }
   };
 
+  // 添加批量续约的处理函数
+  const handleBatchRenew = async (newExpiresAt: string) => {
+    try {
+      await axios.put(
+        `${import.meta.env.VITE_API_URL}/api/v1/api-keys/batch-renew`,
+        {
+          key_ids: selectedKeys,
+          expires_at: newExpiresAt
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${localStorage.getItem("access_token")}`,
+          },
+        }
+      );
+      toast({ status: "success", title: `成功续约${selectedKeys.length}个密钥` });
+      queryClient.invalidateQueries({ queryKey: ["api-keys"] });
+      setSelectedKeys([]);
+    } catch (error) {
+      console.error('Renew error:', error);
+      toast({ status: "error", title: "续约失败" });
+    }
+  };
+
   return (
     <Box maxW="100vw" overflowX="auto">
       <HStack spacing={4} mb={4}>
@@ -262,7 +298,7 @@ export const KeyManagement = () => {
           </NumberInput>
         </FormControl>
         
-        <FormControl w="200px">
+        <FormControl w="200px" isRequired>
           <FormLabel fontSize="sm">项目</FormLabel>
           <Select
             placeholder="选择项目"
@@ -284,122 +320,173 @@ export const KeyManagement = () => {
               type="datetime-local"
               value={expiresAt}
               onChange={(e) => setExpiresAt(e.target.value)}
-              min={new Date().toISOString().slice(0, 16)}
-              size="md"
-              w="200px"
             />
-            <ButtonGroup size="sm">
+            <ButtonGroup size="sm" variant="outline">
               <Button
-                size="sm"
                 onClick={() => {
                   const date = new Date();
                   date.setMonth(date.getMonth() + 1);
                   setExpiresAt(date.toISOString().slice(0, 16));
                 }}
               >
-                一个月
+                1个月
               </Button>
               <Button
-                size="sm"
                 onClick={() => {
                   const date = new Date();
                   date.setMonth(date.getMonth() + 3);
                   setExpiresAt(date.toISOString().slice(0, 16));
                 }}
               >
-                三个月
+                3个月
               </Button>
               <Button
-                size="sm"
                 onClick={() => {
                   const date = new Date();
                   date.setFullYear(date.getFullYear() + 1);
                   setExpiresAt(date.toISOString().slice(0, 16));
                 }}
               >
-                一年
+                1年
+              </Button>
+              <Button
+                colorScheme="purple"
+                onClick={() => {
+                  setExpiresAt("9999-12-31T23:59");
+                }}
+              >
+                永久
               </Button>
             </ButtonGroup>
           </HStack>
         </FormControl>
 
         <Button
-          colorScheme="purple"
-          bg="#6B46C1"
-          _hover={{ bg: "#805AD5" }}
+          colorScheme="blue"
           onClick={handleCreate}
           isLoading={createKeysMutation.isPending}
         >
           创建密钥
         </Button>
-        {selectedKeys.length > 0 && (
-          <>
-            <Button
-              colorScheme="red"
-              onClick={() => handleBatchToggle(false)}
-              isLoading={toggleKeyMutation.isPending}
-            >
-              批量禁用
-            </Button>
-            <Button
-              colorScheme="green"
-              onClick={() => handleBatchToggle(true)}
-              isLoading={toggleKeyMutation.isPending}
-            >
-              批量启用
-            </Button>
-            <Button
-              colorScheme="red"
-              onClick={handleBatchDelete}
-              isLoading={deleteKeyMutation.isPending}
-            >
-              批量删除
-            </Button>
-          </>
-        )}
       </HStack>
 
-      <Flex mb={4} gap={4}>
+      <Flex mb={4} gap={4} align="center">
+        <Text fontWeight="medium">用户筛选</Text>
         {isAdmin && (
-          <FormControl w="300px">
-            <FormLabel>用户筛选</FormLabel>
-            <Select
-              value={selectedUserId}
-              onChange={(e) => {
-                setSelectedUserId(e.target.value);
-                setPage(1);
-              }}
-              placeholder="全部用户"
-            >
-              {users?.map((user: User) => (
-                <option key={user.id} value={user.id}>
-                  {user.email || user.username}
-                </option>
-              ))}
-            </Select>
-          </FormControl>
+          <Select
+            w="200px"
+            value={selectedUserId}
+            onChange={(e) => {
+              setSelectedUserId(e.target.value);
+              setPage(1);
+            }}
+            placeholder="全部用户"
+            size="sm"
+          >
+            <option value="">全部用户</option>
+            {usersResponse?.data?.map((user: { id: string; email: string }) => (
+              <option key={user.id} value={user.id}>
+                {user.email}
+              </option>
+            ))}
+          </Select>
+        )}
+
+        {selectedKeys.length > 0 && (
+          <>
+            <ButtonGroup size="sm">
+              <Button
+                colorScheme="red"
+                onClick={() => handleBatchToggle(false)}
+                isLoading={toggleKeyMutation.isPending}
+                size="sm"
+              >
+                批量禁用
+              </Button>
+              <Button
+                colorScheme="green"
+                onClick={() => handleBatchToggle(true)}
+                isLoading={toggleKeyMutation.isPending}
+                size="sm"
+              >
+                批量启用
+              </Button>
+              <Button
+                colorScheme="red"
+                onClick={handleBatchDelete}
+                isLoading={deleteKeyMutation.isPending}
+                size="sm"
+              >
+                批量删除
+              </Button>
+            </ButtonGroup>
+            <ButtonGroup size="sm">
+              <Button
+                colorScheme="blue"
+                onClick={() => {
+                  const date = new Date();
+                  date.setMonth(date.getMonth() + 1);
+                  handleBatchRenew(date.toISOString());
+                }}
+                size="sm"
+              >
+                续约1个月
+              </Button>
+              <Button
+                colorScheme="blue"
+                onClick={() => {
+                  const date = new Date();
+                  date.setMonth(date.getMonth() + 3);
+                  handleBatchRenew(date.toISOString());
+                }}
+                size="sm"
+              >
+                续约3个月
+              </Button>
+              <Button
+                colorScheme="blue"
+                onClick={() => {
+                  const date = new Date();
+                  date.setFullYear(date.getFullYear() + 1);
+                  handleBatchRenew(date.toISOString());
+                }}
+                size="sm"
+              >
+                续约1年
+              </Button>
+              <Button
+                colorScheme="purple"
+                onClick={() => {
+                  handleBatchRenew("9999-12-31T23:59:00");
+                }}
+                size="sm"
+              >
+                永久有效
+              </Button>
+            </ButtonGroup>
+          </>
         )}
       </Flex>
 
-      <TableContainer minW="1200px">
-        <Table size="md">
+      <TableContainer minW="800px">
+        <Table size="sm">
           <Thead>
             <Tr>
-              <Th width="50px">
+              <Th width="30px">
                 <Checkbox
                   isChecked={selectedKeys.length === keys.length}
                   isIndeterminate={selectedKeys.length > 0 && selectedKeys.length < keys.length}
                   onChange={handleSelectAll}
                 />
               </Th>
-              <Th width="300px">密钥</Th>
-              <Th width="200px">项目</Th>
-              <Th width="400px">设备信息</Th>
-              <Th width="200px">用户ID</Th>
-              <Th width="150px">创建时间</Th>
-              <Th width="150px">过期时间</Th>
-              <Th width="100px">状态</Th>
-              <Th width="100px">操作</Th>
+              <Th width="200px">密钥</Th>
+              <Th width="120px">项目</Th>
+              <Th width="200px">设备信息</Th>
+              <Th width="120px">用户ID</Th>
+              <Th width="100px">创建时间</Th>
+              <Th width="100px">过期时间</Th>
+              <Th width="60px">状态</Th>
+              <Th width="60px">操作</Th>
             </Tr>
           </Thead>
           <Tbody>
@@ -412,28 +499,28 @@ export const KeyManagement = () => {
                   />
                 </Td>
                 <Td>
-                  <Flex gap={2} align="center" width="100%">
+                  <Flex gap={1} align="center" width="100%">
                     <Text 
                       fontFamily="mono" 
-                      fontSize="sm"
+                      fontSize="xs"
                       whiteSpace="nowrap"
                       overflow="hidden"
                       textOverflow="ellipsis"
-                      maxW="350px"
+                      maxW="160px"
                     >
                       {key.key}
                     </Text>
                     <IconButton
                       aria-label="Copy key"
                       icon={<FiCopy />}
-                      size="sm"
+                      size="xs"
                       variant="ghost"
                       onClick={() => handleCopy(key.key)}
                     />
                   </Flex>
                 </Td>
                 <Td>
-                  <Text color={key.item ? "black" : "gray.500"}>
+                  <Text fontSize="xs" color={key.item ? "black" : "gray.500"} isTruncated maxW="120px">
                     {key.item ? key.item.title : "未关联项目"}
                   </Text>
                 </Td>
@@ -441,24 +528,29 @@ export const KeyManagement = () => {
                   <Box
                     whiteSpace="pre-wrap"
                     fontFamily="mono"
-                    fontSize="sm"
-                    p={2}
+                    fontSize="xs"
+                    p={1}
                     bg="gray.50"
-                    borderRadius="md"
-                    maxH="200px"
+                    borderRadius="sm"
+                    maxH="100px"
                     overflowY="auto"
-                    minW="350px"
+                    maxW="200px"
                   >
                     {formatMachineInfo(key.machine_info)}
                   </Box>
                 </Td>
                 <Td>
-                  <Text fontFamily="mono">{key.user_id || '未绑定用户'}</Text>
+                  <Text fontFamily="mono" fontSize="xs" isTruncated maxW="120px">{key.user_id || '未绑定用户'}</Text>
                 </Td>
-                <Td>{new Date(key.created_at).toLocaleString()}</Td>
-                <Td>{key.expires_at ? new Date(key.expires_at).toLocaleString() : '永不过期'}</Td>
+                <Td>
+                  <Text fontSize="xs">{new Date(key.created_at).toLocaleDateString()}</Text>
+                </Td>
+                <Td>
+                  <Text fontSize="xs">{key.expires_at ? new Date(key.expires_at).toLocaleDateString() : '永不过期'}</Text>
+                </Td>
                 <Td>
                   <Switch
+                    size="sm"
                     isChecked={key.is_active}
                     onChange={() => handleToggle(key.id)}
                     colorScheme="green"
@@ -469,7 +561,7 @@ export const KeyManagement = () => {
                     aria-label="Delete key"
                     icon={<FiTrash2 />}
                     colorScheme="red"
-                    size="sm"
+                    size="xs"
                     onClick={() => handleDelete(key.id)}
                     isLoading={deleteKeyMutation.isPending}
                   />

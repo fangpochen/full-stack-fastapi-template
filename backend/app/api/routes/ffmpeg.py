@@ -12,6 +12,9 @@ class FFmpegCommandRequest(BaseModel):
     plan_id: int
     more_effects: bool = False
     canvas_y: float = 0.6  # 字幕区域的Y轴位置，默认0.6
+    font_size: int = 25  # 字体大小，默认25
+    margin_v: int = 85  # 字幕垂直边距，默认85
+    font_name: str = "SimHei"  # 字体名称，默认SimHei
 
 class PlanResponse(BaseModel):
     """方案响应模型"""
@@ -108,12 +111,22 @@ async def get_plans() -> List[Dict[str, Any]]:
             detail="获取方案列表失败。请联系作者喝杯咖啡吧~"
         )
 
-def generate_gpu_command(width: int, height: int, vf: str, plan_id: int = None, canvas_y: float = 0.6) -> str:
-    """生成GPU版本的FFmpeg命令"""
+def generate_gpu_command(width: int, height: int, vf: str, plan_id: int = None, canvas_y: float = 0.6, font_size: int = 25, margin_v: int = 85, font_name: str = "SimHei") -> str:
+    """生成GPU版本的FFmpeg命令
+    
+    Args:
+        width: 视频宽度
+        height: 视频高度
+        vf: 视频滤镜
+        plan_id: 方案ID
+        canvas_y: 字幕区域Y轴位置
+        font_size: 字体大小
+        margin_v: 字幕垂直边距
+        font_name: 字体名称
+    """
     if plan_id == 6:  # 方案6 - 带字幕的竖屏视频
         # 计算字幕区域高度和位置
         box_height = 0.16  # 字幕框高度（占画面高度的16%）
-        font_size = 25  # 使用固定字体大小
         
         # 使用列表组织滤镜
         vf_filters = [
@@ -126,11 +139,11 @@ def generate_gpu_command(width: int, height: int, vf: str, plan_id: int = None, 
             # 字幕白色背景
             f"drawbox=x=0:y=ih*{canvas_y}:w=iw:h=ih*{box_height}:color=white:t=fill",
             # 添加字幕
-            "subtitles='{subtitle_file}':force_style='FontName=SimHei,Fontsize=25,Alignment=2,"
+            f"subtitles='{{subtitle_file}}':force_style='FontName={font_name},Fontsize={font_size},Alignment=2,"
             "Position=50%,"  # 水平居中
             f"Yabs=ih*{canvas_y}+(ih*{box_height}-th)/2,"  # 在白色背景中垂直居中
             "PrimaryColour=&H000000&,BorderStyle=1,Outline=1,"
-            "OutlineColour=&HFFFFFF&,MarginL=10,MarginR=10'",
+            f"OutlineColour=&HFFFFFF&,MarginL=10,MarginR=10,MarginV={margin_v}'",
             # 图像优化
             "unsharp=5:5:1.8:5:5:0.5",
             "hqdn3d=1.2:1.2:4:4"
@@ -165,12 +178,22 @@ def generate_gpu_command(width: int, height: int, vf: str, plan_id: int = None, 
         )
         return command
 
-def generate_cpu_command(width: int, height: int, vf: str, plan_id: int = None, canvas_y: float = 0.6) -> str:
-    """生成CPU版本的FFmpeg命令"""
+def generate_cpu_command(width: int, height: int, vf: str, plan_id: int = None, canvas_y: float = 0.6, font_size: int = 25, margin_v: int = 85, font_name: str = "SimHei") -> str:
+    """生成CPU版本的FFmpeg命令
+    
+    Args:
+        width: 视频宽度
+        height: 视频高度
+        vf: 视频滤镜
+        plan_id: 方案ID
+        canvas_y: 字幕区域Y轴位置
+        font_size: 字体大小
+        margin_v: 字幕垂直边距
+        font_name: 字体名称
+    """
     if plan_id == 6:  # 方案6 - 带字幕的竖屏视频
         # 计算字幕区域高度和位置
         box_height = 0.16  # 字幕框高度（占画面高度的16%）
-        font_size = 25  # 使用固定字体大小
         
         # 使用列表组织滤镜
         vf_filters = [
@@ -183,11 +206,11 @@ def generate_cpu_command(width: int, height: int, vf: str, plan_id: int = None, 
             # 字幕白色背景
             f"drawbox=x=0:y=ih*{canvas_y}:w=iw:h=ih*{box_height}:color=white:t=fill",
             # 添加字幕
-            "subtitles='{subtitle_file}':force_style='FontName=SimHei,Fontsize=25,Alignment=2,"
+            f"subtitles='{{subtitle_file}}':force_style='FontName={font_name},Fontsize={font_size},Alignment=2,"
             "Position=50%,"  # 水平居中
             f"Yabs=ih*{canvas_y}+(ih*{box_height}-th)/2,"  # 在白色背景中垂直居中
             "PrimaryColour=&H000000&,BorderStyle=1,Outline=1,"
-            "OutlineColour=&HFFFFFF&,MarginL=10,MarginR=10'",
+            f"OutlineColour=&HFFFFFF&,MarginL=10,MarginR=10,MarginV={margin_v}'",
             # 图像优化
             "unsharp=5:5:1.8:5:5:0.5",
             "hqdn3d=1.2:1.2:4:4"
@@ -222,13 +245,16 @@ def generate_cpu_command(width: int, height: int, vf: str, plan_id: int = None, 
         )
         return command
 
-def generate_ffmpeg_command(plan_params: Dict[str, Any], more_effects: bool, canvas_y: float = 0.6) -> Dict[str, str]:
+def generate_ffmpeg_command(plan_params: Dict[str, Any], more_effects: bool, canvas_y: float = 0.6, font_size: int = 25, margin_v: int = 85, font_name: str = "SimHei") -> Dict[str, str]:
     """生成FFmpeg命令
     
     Args:
         plan_params: 方案参数
         more_effects: 是否启用更多效果
         canvas_y: 字幕区域的Y轴位置，默认0.6
+        font_size: 字体大小，默认25
+        margin_v: 字幕垂直边距，默认85
+        font_name: 字体名称，默认SimHei
         
     Returns:
         Dict[str, str]: 包含GPU和CPU命令的响应
@@ -256,7 +282,7 @@ def generate_ffmpeg_command(plan_params: Dict[str, Any], more_effects: bool, can
             f'pad=w=iw+20:h=ih+20:x=10:y=10:color=gray@0.05,'
             f'scale={width}:{height}:force_original_aspect_ratio=1,'
             f'pad={width}:{height}:(ow-iw)/2:(oh-ih)/2:black,'
-            f'unsharp=5:5:1.8:5:5:0.5,hqdn3d=1.2:1.2:4:4'
+            f',unsharp=5:5:1.8:5:5:0.5,hqdn3d=1.2:1.2:4:4'
         ),
         "basic": (
             f'scale={width}:{height}:force_original_aspect_ratio=1,'
@@ -274,8 +300,8 @@ def generate_ffmpeg_command(plan_params: Dict[str, Any], more_effects: bool, can
     
     # 生成两种版本的命令
     return {
-        "gpu_command": generate_gpu_command(width, height, vf, plan_id, canvas_y),
-        "cpu_command": generate_cpu_command(width, height, vf, plan_id, canvas_y)
+        "gpu_command": generate_gpu_command(width, height, vf, plan_id, canvas_y, font_size, margin_v, font_name),
+        "cpu_command": generate_cpu_command(width, height, vf, plan_id, canvas_y, font_size, margin_v, font_name)
     }
 
 @router.post("/command", response_model=Dict[str, str])
@@ -283,7 +309,7 @@ async def get_ffmpeg_command(request: FFmpegCommandRequest) -> Dict[str, str]:
     """获取FFmpeg命令
     
     Args:
-        request: 包含plan_id、more_effects和canvas_y的请求
+        request: 包含plan_id、more_effects、canvas_y、font_size、margin_v和font_name的请求
         
     Returns:
         Dict[str, str]: 包含GPU和CPU命令的响应
@@ -296,7 +322,10 @@ async def get_ffmpeg_command(request: FFmpegCommandRequest) -> Dict[str, str]:
         commands = generate_ffmpeg_command(
             plan_params, 
             request.more_effects,
-            request.canvas_y
+            request.canvas_y,
+            request.font_size,
+            request.margin_v,
+            request.font_name
         )
         
         return commands

@@ -5,10 +5,16 @@ import { FiBriefcase, FiHome, FiSettings, FiUsers, FiKey } from "react-icons/fi"
 
 import type { UserPublic } from "../../client"
 
-const items = [
+// 基础菜单项
+const baseItems = [
   { icon: FiHome, title: "控制台", path: "/" },
-  { icon: FiBriefcase, title: "项目管理", path: "/items" },
   { icon: FiSettings, title: "用户设置", path: "/settings" },
+]
+
+// 管理员菜单项
+const adminItems = [
+  { icon: FiBriefcase, title: "项目管理", path: "/items" },
+  { icon: FiUsers, title: "管理员", path: "/admin" },
 ]
 
 interface SidebarItemsProps {
@@ -21,9 +27,10 @@ const SidebarItems = ({ onClose }: SidebarItemsProps) => {
   const bgActive = useColorModeValue("#E2E8F0", "#4A5568")
   const currentUser = queryClient.getQueryData<UserPublic>(["currentUser"])
 
+  // 根据用户权限组合菜单项
   const finalItems = currentUser?.is_superuser
-    ? [...items, { icon: FiUsers, title: "管理员", path: "/admin" }]
-    : items
+    ? [...baseItems, ...adminItems]
+    : baseItems
 
   const listItems = finalItems.map(({ icon, title, path }) => (
     <Flex

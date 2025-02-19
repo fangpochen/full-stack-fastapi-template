@@ -18,6 +18,7 @@ import { type SubmitHandler, useForm } from "react-hook-form"
 import { type ApiError, type ItemCreate, ItemsService } from "../../client"
 import useCustomToast from "../../hooks/useCustomToast"
 import { handleError } from "../../utils"
+import useAuth from "../../hooks/useAuth"
 
 interface AddItemProps {
   isOpen: boolean
@@ -25,8 +26,15 @@ interface AddItemProps {
 }
 
 const AddItem = ({ isOpen, onClose }: AddItemProps) => {
+  const { user } = useAuth()
   const queryClient = useQueryClient()
   const showToast = useCustomToast()
+
+  // 如果不是管理员，不显示任何内容
+  if (!user?.is_superuser) {
+    return null
+  }
+
   const {
     register,
     handleSubmit,
