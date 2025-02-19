@@ -22,13 +22,14 @@ logger = logging.getLogger('key_verification')
 SERVER_IP = '139.224.70.41'
 # SERVER_IP = 'localhost'
 
-def verify_key(api_key: str, is_background: bool = False) -> bool:
+def verify_key(api_key: str, is_background: bool = False, item: str = "clip") -> bool:
     """
     验证密钥
     
     Args:
         api_key: 密钥字符串
         is_background: 是否为后台验证
+        item: 项目标识，默认为"clip"
         
     Returns:
         bool: 验证是否成功
@@ -50,7 +51,7 @@ def verify_key(api_key: str, is_background: bool = False) -> bool:
             "os": os_info,
             "cpu": cpu_info,
             "mac": mac,
-            "item": "clip"
+            "item": item
         }
     }
 
@@ -67,7 +68,12 @@ def verify_key(api_key: str, is_background: bool = False) -> bool:
         else:
             logger.info(f"密钥验证结果: {result}")
             
-        return result.get("valid", False)
+        if not result.get("valid", False):
+            error_msg = result.get("message", "验证失败")
+            logger.error(f"密钥验证失败: {error_msg}")
+            return False
+            
+        return True
         
     except requests.exceptions.RequestException as e:
         if is_background:

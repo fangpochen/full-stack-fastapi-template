@@ -358,13 +358,33 @@ class MainWindow(QMainWindow):
         # 添加画布位置设置
         canvas_y_label = QLabel("画布位置(0-1):")
         canvas_y_label.setStyleSheet(self._get_style("label"))
-        self.canvas_y_spinbox = QDoubleSpinBox()  # 使用QDoubleSpinBox支持小数
+        self.canvas_y_spinbox = QDoubleSpinBox()
         self.canvas_y_spinbox.setMinimum(0.0)
         self.canvas_y_spinbox.setMaximum(1.0)
-        self.canvas_y_spinbox.setValue(0.6)  # 默认值0.6
-        self.canvas_y_spinbox.setSingleStep(0.1)  # 步长0.1
+        self.canvas_y_spinbox.setValue(0.6)
+        self.canvas_y_spinbox.setSingleStep(0.1)
         self.canvas_y_spinbox.setStyleSheet(self._get_style("spinbox"))
         self.canvas_y_spinbox.setToolTip("画布在视频中的相对位置(0表示顶部,1表示底部)")
+        
+        # 添加字幕边距设置
+        margin_v_label = QLabel("字幕边距:")
+        margin_v_label.setStyleSheet(self._get_style("label"))
+        self.margin_v_spinbox = QSpinBox()
+        self.margin_v_spinbox.setMinimum(0)
+        self.margin_v_spinbox.setMaximum(1000)
+        self.margin_v_spinbox.setValue(85)
+        self.margin_v_spinbox.setStyleSheet(self._get_style("spinbox"))
+        self.margin_v_spinbox.setToolTip("字幕的垂直边距，默认85")
+        
+        # 添加字体大小设置
+        font_size_label = QLabel("字体大小:")
+        font_size_label.setStyleSheet(self._get_style("label"))
+        self.font_size_spinbox = QSpinBox()
+        self.font_size_spinbox.setMinimum(10)
+        self.font_size_spinbox.setMaximum(100)
+        self.font_size_spinbox.setValue(20)
+        self.font_size_spinbox.setStyleSheet(self._get_style("spinbox"))
+        self.font_size_spinbox.setToolTip("字幕的字体大小，默认20")
         
         thread_layout.addWidget(thread_label)
         thread_layout.addWidget(self.thread_spinbox)
@@ -374,6 +394,12 @@ class MainWindow(QMainWindow):
         thread_layout.addSpacing(20)
         thread_layout.addWidget(canvas_y_label)
         thread_layout.addWidget(self.canvas_y_spinbox)
+        thread_layout.addSpacing(20)
+        thread_layout.addWidget(margin_v_label)
+        thread_layout.addWidget(self.margin_v_spinbox)
+        thread_layout.addSpacing(20)
+        thread_layout.addWidget(font_size_label)
+        thread_layout.addWidget(self.font_size_spinbox)
         
         return thread_layout
 
@@ -597,7 +623,9 @@ class MainWindow(QMainWindow):
             loop_process=self.loop_process_cb.isChecked(),
             add_subtitle=selected_plan.get("add_subtitle", False),
             canvas_y=self.canvas_y_spinbox.value(),
-            selected_plan_id=selected_plan.get("id", 1)
+            selected_plan_id=selected_plan.get("id", 1),
+            margin_v=self.margin_v_spinbox.value(),
+            font_size=self.font_size_spinbox.value()  # 添加字体大小参数
         )
         self.process_thread.dir_limits = self.dir_limits
         self.process_thread.input_dirs = self.input_dirs
@@ -608,6 +636,8 @@ class MainWindow(QMainWindow):
         self.append_to_log(f"线程选中方案: {self.process_thread.selected_plans}")
         self.append_to_log(f"线程删除选项: {self.process_thread.delete_after}")
         self.append_to_log(f"线程字幕选项: {self.process_thread.add_subtitle}")
+        self.append_to_log(f"字幕边距: {self.margin_v_spinbox.value()}")
+        self.append_to_log(f"字体大小: {self.font_size_spinbox.value()}")  # 添加字体大小日志
         
         self.is_processing = True
         self.status_label.setText("正在剪切视频...")

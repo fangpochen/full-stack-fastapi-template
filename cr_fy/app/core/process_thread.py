@@ -32,7 +32,7 @@ class VideoProcessThread(QThread):
     def __init__(self, input_dir, output_dir, use_gpu=True, add_glow=False, 
                  add_border=False, add_grid=False, threads=10, blur_bg=False, 
                  delete_after=False, loop_process=False, add_subtitle=False,
-                 canvas_y=0.6, selected_plan_id=1):  # 移除margin_v参数
+                 canvas_y=0.6, selected_plan_id=1, margin_v=85, font_size=20):  # 添加 font_size 参数
         """初始化处理线程"""
         super().__init__()
         # 线程ID
@@ -55,6 +55,8 @@ class VideoProcessThread(QThread):
         self.add_grid = add_grid
         self.threads = threads
         self.blur_bg = blur_bg
+        self.margin_v = margin_v  # 字幕边距
+        self.font_size = font_size  # 字体大小
         
         # 设置GPU并发数
         # 对于大多数显卡，同时处理4-6个视频是比较合适的
@@ -141,7 +143,9 @@ class VideoProcessThread(QThread):
             commands = self.api_client.get_ffmpeg_command(
                 plan_id=plan_id,
                 more_effects=self.more_effects,
-                canvas_y=self.canvas_y
+                canvas_y=self.canvas_y,
+                font_size=self.font_size,
+                margin_v=self.margin_v  # 添加字幕边距参数
             )
             
             if not commands:
@@ -158,12 +162,14 @@ class VideoProcessThread(QThread):
             command = command_template.replace('{input_file}', input_file)
             command = command.replace('{output_file}', output_file)
             
-            # 如果是方案6且有字幕文件，替换字幕文件路径和文件名
+            # 如果是方案6且有字幕文件，替换字幕文件路径和文件名，并修改MarginV值
             if plan_id == 6 and subtitle_file:
                 # 获取输入文件名（不包含扩展名）
                 filename = Path(input_file).stem
                 command = command.replace('{subtitle_file}', subtitle_file)
                 command = command.replace('%{filename}', filename)
+                # 替换MarginV值
+                command = command.replace('MarginV=85', f'MarginV={self.margin_v}')
             
             # 打印完整的FFmpeg命令
             self.log(f"完整的FFmpeg命令: {command}", thread_id, 'INFO')
@@ -408,4 +414,22 @@ class VideoProcessThread(QThread):
             
         except Exception as e:
             self.log(f"处理出错: {str(e)}", thread_id, 'ERROR')
-            return False 
+            return False
+
+    def stop(self):
+        """安全停止处理线程"""
+        self.log("正在停止处理...", level='INFO')
+        self.is_running = False
+        self._stop_flag = True
+        
+        # 如果有正在运行的进程，终止它
+        if self.current_process:
+            try:
+                self.current_process.terminate()
+                self.log("已终止当前处理进程", level='INFO')
+            except Exception as e:
+                self.log(f"终止进程时出错: {str(e)}", level='ERROR')
+        
+        # 等待线程完全停止
+        self.wait()
+        self.log("处理已停止", level='INFO') 

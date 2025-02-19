@@ -50,7 +50,7 @@ class APIClient:
             self.logger.error(f"获取方案列表失败: {str(e)}")
             return []
             
-    def get_ffmpeg_command(self, plan_id: int, more_effects: bool = False, canvas_y: float = 0.6) -> Dict[str, str]:
+    def get_ffmpeg_command(self, plan_id: int, more_effects: bool = False, canvas_y: float = 0.6, font_size: int = 20, margin_v: int = 85) -> Dict[str, str]:
         """
         获取FFmpeg处理命令
         
@@ -58,17 +58,21 @@ class APIClient:
             plan_id: 处理方案ID
             more_effects: 是否启用更多效果
             canvas_y: 字幕区域的Y轴位置，默认0.6
+            font_size: 字幕字体大小，默认20
+            margin_v: 字幕边距，默认85
                 
         Returns:
             Dict[str, str]: 包含GPU和CPU处理命令的响应
         """
         try:
-            self.logger.debug(f"获取FFmpeg命令: {plan_id}, {more_effects}, {canvas_y}")
+            self.logger.debug(f"获取FFmpeg命令: {plan_id}, {more_effects}, {canvas_y}, {font_size}, {margin_v}")
             url = f"{self.base_url}/api/v1/ffmpeg/command"
             payload = {
                 "plan_id": plan_id,
                 "more_effects": more_effects,
-                "canvas_y": canvas_y
+                "canvas_y": canvas_y,
+                "font_size": font_size,
+                "margin_v": margin_v
             }
             
             response = requests.post(url, json=payload, timeout=30)
@@ -103,13 +107,14 @@ class APIClient:
             self.logger.error(f"获取处理方案时出错: {str(e)}")
             return []
         
-    def verify_api_key(self, api_key: str, is_background: bool = False) -> bool:
+    def verify_api_key(self, api_key: str, is_background: bool = False, item: str = "clip") -> bool:
         """
         验证API密钥（同步方法）
         
         Args:
             api_key: API密钥
             is_background: 是否为后台验证
+            item: 项目标识，默认为"clip"
             
         Returns:
             bool: 验证是否成功
@@ -123,7 +128,7 @@ class APIClient:
                            for elements in range(0,2*6,2)][::-1])
             
             # 准备请求数据
-            url = f"http://{self.base_url}/api/v1/api-keys/verify"
+            url = f"{self.base_url}/api/v1/api-keys/verify"
             payload = {
                 "key": api_key,
                 "machine_info": {
@@ -131,7 +136,7 @@ class APIClient:
                     "os": os_info,
                     "cpu": cpu_info,
                     "mac": mac,
-                    "item": "clip"
+                    "item": item
                 }
             }
             
@@ -150,8 +155,11 @@ class APIClient:
                     self.logger.info(f"密钥验证结果: {result}")
                     
                 if not result.get("valid", False):
-                    self.logger.error("密钥验证失败")
-                    sys.exit(1)
+                    error_msg = result.get("message", "验证失败")
+                    self.logger.error(f"密钥验证失败: {error_msg}")
+                    if not is_background:
+                        sys.exit(1)
+                    return False
                     
                 return True
             else:
