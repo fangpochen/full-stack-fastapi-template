@@ -20,7 +20,7 @@ class APIClient:
         self.config = config
         self.logger = logging.getLogger(__name__)
         self.session: Optional[aiohttp.ClientSession] = None
-        self.base_url = config.get('api.base_url', 'http://localhost:8000')
+        self.base_url = config.get('api.base_url', 'http://139.224.70.41:8000')
         
     async def __aenter__(self):
         """异步上下文管理器入口"""
@@ -42,21 +42,24 @@ class APIClient:
             List[Dict[str, Any]]: 方案列表
         """
         try:
-            url = f"{self.base_url}/api/v1/ffmpeg/plans"
-            
-            # 优先使用缓存的密钥
+            # 获取 API key
             api_key = self.config.get_cached_key()
             if not api_key:
-                # 如果缓存中没有,尝试从配置文件获取
                 api_key = self.config.get('api.api_key')
                 
             if not api_key:
                 self.logger.error("未配置API密钥")
                 return []
             
+            url = f"{self.base_url}/api/v1/ffmpeg/plans"
             headers = {
-                "X-API-Key": api_key
+                "Content-Type": "application/json",
+                "X-API-Key": api_key,
+                "User-Agent": f"CR-Client/{getattr(sys, 'frozen', False)}"
             }
+            
+            self.logger.debug(f"发送请求到 {url}")
+            self.logger.debug(f"请求头: {headers}")
             
             response = requests.get(url, headers=headers, timeout=30)
             response.raise_for_status()
@@ -65,57 +68,41 @@ class APIClient:
             self.logger.error(f"获取方案列表失败: {str(e)}")
             return []
             
-    def get_ffmpeg_command(self, plan_id: int, more_effects: bool = False, canvas_y: float = 0.6, font_size: int = 20, margin_v: int = 85) -> Dict[str, str]:
-        """
-        获取FFmpeg处理命令
-        
-        Args:
-            plan_id: 处理方案ID
-            more_effects: 是否启用更多效果
-            canvas_y: 字幕区域的Y轴位置，默认0.6
-            font_size: 字体大小，默认20
-            margin_v: 字幕边距，默认85
-                
-        Returns:
-            Dict[str, str]: 包含GPU和CPU处理命令的响应
-        """
+    def get_ffmpeg_command(self, plan_id: int, more_effects: bool = False, canvas_y: float = 0.6, font_size: int = 20, margin_v: int = 85) -> dict:
+        """获取FFmpeg命令模板"""
         try:
-            self.logger.debug(f"获取FFmpeg命令: {plan_id}, {more_effects}, {canvas_y}, {font_size}, {margin_v}")
-            url = f"{self.base_url}/api/v1/ffmpeg/command"
-            
-            # 优先使用缓存的密钥
+            # 获取 API key
             api_key = self.config.get_cached_key()
             if not api_key:
-                # 如果缓存中没有,尝试从配置文件获取
                 api_key = self.config.get('api.api_key')
                 
             if not api_key:
                 self.logger.error("未配置API密钥")
                 return {}
+
+            # 构建请求参数
+            params = {
+                'plan_id': plan_id,
+                'more_effects': more_effects,
+                'canvas_y': canvas_y,
+                'font_size': font_size,
+                'margin_v': margin_v
+            }
             
+            # 发送请求
+            url = f"{self.base_url}/api/v1/ffmpeg/command"
             headers = {
-                "X-API-Key": api_key,
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
+                "X-API-Key": api_key
             }
             
-            payload = {
-                "plan_id": plan_id,
-                "more_effects": more_effects,
-                "canvas_y": canvas_y,
-                "font_size": font_size,
-                "margin_v": margin_v
-            }
+            self.logger.debug(f"发送请求到 {url}")
+            self.logger.debug(f"请求参数: {params}")
+            self.logger.debug(f"请求头: {headers}")
             
-            response = requests.post(url, headers=headers, json=payload, timeout=30)
+            response = requests.post(url, json=params, headers=headers, timeout=30)
             response.raise_for_status()
-            result = response.json()
-            self.logger.debug(f"获取FFmpeg命令结果: {result}")
-            if "gpu_command" in result and "cpu_command" in result:
-                return result
-            else:
-                self.logger.error("获取FFmpeg命令失败：返回数据格式错误")
-                return {}
-                
+            return response.json()
         except Exception as e:
             self.logger.error(f"获取FFmpeg命令失败: {str(e)}")
             return {}
@@ -128,7 +115,12 @@ class APIClient:
             List[Dict[str, Any]]: 处理方案列表
         """
         try:
-            async with self.session.get(f"{self.base_url}/api/plans") as response:
+            url = f"{self.base_url}/api/v1/ffmpeg/plans"
+            headers = {
+                "Content-Type": "application/json",
+                "X-API-Key": self.config.get('api.api_key')
+            }
+            async with self.session.get(url, headers=headers) as response:
                 if response.status == 200:
                     return await response.json()
                 else:

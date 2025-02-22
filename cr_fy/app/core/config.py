@@ -4,6 +4,8 @@
 """
 import json
 import logging
+import sys
+import os
 from pathlib import Path
 from typing import Dict, Any
 from datetime import datetime, timedelta
@@ -23,11 +25,22 @@ class Config:
             return
             
         # 基础配置
-        self.config_dir = Path("app/resources/config")
+        if getattr(sys, 'frozen', False):
+            # 如果是打包后的可执行文件
+            base_path = Path(sys._MEIPASS)
+        else:
+            # 如果是开发环境
+            base_path = Path(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
+            
+        self.config_dir = base_path / "app" / "resources" / "config"
         self.config_file = self.config_dir / "config.json"
+        
+        # 添加日志记录
+        logging.info(f"配置文件路径: {self.config_file}")
+        
         self.default_config = {
             "api": {
-                "base_url": "http://localhost:8000",
+                "base_url": "http://139.224.70.41:8000",  # 设置默认值为生产环境地址
                 "api_key": "",
                 "timeout": 30
             },

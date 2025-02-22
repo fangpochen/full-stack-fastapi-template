@@ -257,14 +257,27 @@ async def verify_api_key(
     session: SessionDep,
     data: dict = Body(...),
 ):
-    """验证 API 密钥（无需登录）"""
+    """验证 API 密钥并检查项目权限
+    
+    Args:
+        request: 请求对象
+        session: 数据库会话
+        data: 包含密钥和机器信息的数据
+        
+    Returns:
+        dict: 验证结果
+    """
     try:
         # 检查 IP 限制
         check_ip_rate_limit(request)
         
         key = data.get('key')
         machine_info = data.get('machine_info', {})
+        item_type = machine_info.get('item')  # 获取项目类型 (clip/upload)
         
+        if not item_type:
+            return {"valid": False, "message": "Missing item type"}
+            
         # 添加 IP 信息
         machine_info.update({
             'ip_address': request.client.host,
@@ -276,21 +289,58 @@ async def verify_api_key(
         if forwarded_for:
             machine_info['x_forwarded_for'] = forwarded_for
         
-        # 查找密钥
+        # 查找密钥和关联的用户
         api_key = session.exec(
             select(ApiKey).where(ApiKey.key == key)
         ).first()
         
         if not api_key or not api_key.is_active:
-            return {"valid": False}
-        # 如果 user_name 是 admin，检查密钥是否由管理员创建
-        if machine_info.get('user_name') == 'admin':
-            # 获取密钥创建者信息
-            key_creator = session.get(User, api_key.user_id)
-            if not key_creator or not key_creator.is_superuser:
-                logger.warning(f"Non-admin key {api_key.id} attempted to be used with admin privileges")
-                return {"valid": False, "message": "Invalid admin key"}
-        # 如果已经绑定，检查设备信息是否匹配
+            return {"valid": False, "message": "Invalid or inactive key"}
+            
+        # 获取密钥关联的用户
+        user = session.get(User, api_key.user_id)
+        if not user:
+            return {"valid": False, "message": "User not found"}
+            
+        # 根据项目类型查找对应的项目
+        project_title = "剪辑" if item_type == "clip" else "上传"
+        project = session.exec(
+            select(Item).where(Item.title == project_title)
+        ).first()
+        
+        if not project:
+            return {"valid": False, "message": f"Project '{project_title}' not found"}
+            
+        # 检查用户是否有项目权限
+        has_permission = False
+        
+        # 1. 检查是否是超级用户
+        if user.is_superuser:
+            has_permission = True
+            
+        # 2. 检查是否是项目所有者
+        elif project.owner_id == user.id:
+            has_permission = True
+            
+        # 3. 检查是否有项目权限
+        else:
+            permission = session.exec(
+                select(UserProjectPermission).where(
+                    UserProjectPermission.user_id == user.id,
+                    UserProjectPermission.item_id == project.id
+                )
+            ).first()
+            
+            if permission:
+                has_permission = True
+                
+        if not has_permission:
+            return {
+                "valid": False, 
+                "message": f"No permission for {project_title} project"
+            }
+            
+        # 设备绑定检查
         if api_key.is_bound:
             stored_machine_info = api_key.machine_info.copy()
             # 更新 IP 相关信息但保留其他设备信息
@@ -303,13 +353,10 @@ async def verify_api_key(
             
             api_key.machine_info = stored_machine_info
             
-            
-            
             device_mismatch = (
                 stored_machine_info.get('hostname') != machine_info.get('hostname') or
                 stored_machine_info.get('mac') != machine_info.get('mac') or
                 stored_machine_info.get('device_id') != machine_info.get('device_id') or
-                # 添加 item 和 user_name 的匹配检查，如果存在这些字段则进行比较
                 (stored_machine_info.get('item') and machine_info.get('item') and 
                  stored_machine_info.get('item') != machine_info.get('item')) or
                 (stored_machine_info.get('user_name') and machine_info.get('user_name') and 
@@ -337,11 +384,9 @@ async def verify_api_key(
         
         return {"valid": True}
         
-    except HTTPException as e:
-        raise e
     except Exception as e:
         logger.error(f"Error verifying API key: {e}")
-        return {"valid": False}
+        return {"valid": False, "message": str(e)}
 
 @router.get("")
 async def list_api_keys(

@@ -47,12 +47,6 @@ interface ApiKey {
   expires_at?: string;
 }
 
-interface User {
-  id: string;
-  email: string;
-  username: string;
-}
-
 const formatMachineInfo = (info: Record<string, any>) => {
   if (Object.keys(info).length === 0) {
     return "未绑定设备"

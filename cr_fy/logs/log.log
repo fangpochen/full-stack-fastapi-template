@@ -27342,3 +27342,1830 @@ for embedded font 'sseriffg.fon'
 2025-02-20 01:30:52 - [Thread-125628] 成功处理: 搞笑飙演技25.mp4
 2025-02-20 01:31:04 - [Thread-117400] 成功处理: 狗狗搞笑视频35.mp4
 2025-02-20 01:31:04 - app.core.process_thread - INFO - [Thread-117400] 成功处理: 狗狗搞笑视频35.mp4
+2025-02-20 02:18:59 - key_verification - INFO - 密钥验证结果: {'valid': True}
+2025-02-20 02:19:04 - ui - WARNING - 背景图片不存在: F:\py\full-stack-fastapi-template\cr_fy\app\ui\壁纸.jpg
+2025-02-20 02:19:06 - ui - INFO - [UI] 成功加载方案列表
+2025-02-20 02:19:06 - ui - INFO - 目录 E:\测试\新建文件夹 中找到 6 个视频文件
+2025-02-20 02:19:06 - ui - INFO - 目录数: 1, 总视频数: 6
+2025-02-20 02:19:21 - app.core.process_thread - INFO - [Thread-110016] 设置GPU并发数为: 6
+2025-02-20 02:19:21 - app.core.process_thread - INFO - [Thread-110016] 使用选中的方案: {'id': 6, 'name': '方案6 自动字幕', 'width': 720, 'height': 1080, 'blur_bg': False, 'add_subtitle': True, 'description': '竖屏带字幕'}
+2025-02-20 02:19:24 - 
+=== 线程参数 ===
+2025-02-20 02:19:24 - 线程输入目录: ['E:\\测试\\新建文件夹']
+2025-02-20 02:19:24 - 线程选中方案: [{'id': 6, 'name': '方案6 自动字幕', 'width': 720, 'height': 1080, 'blur_bg': False, 'add_subtitle': True, 'description': '竖屏带字幕'}]
+2025-02-20 02:19:24 - 线程删除选项: False
+2025-02-20 02:19:24 - 线程字幕选项: True
+2025-02-20 02:19:24 - 字幕边距: 85
+2025-02-20 02:19:24 - 字体大小: 20
+2025-02-20 02:19:24 - app.core.process_thread - INFO - [Thread-110856] 
+=== 线程开始 ===
+2025-02-20 02:19:24 - [Thread-110856] 
+=== 线程开始 ===
+2025-02-20 02:19:24 - app.core.process_thread - INFO - [Thread-110856] 线程参数:
+2025-02-20 02:19:24 - app.core.process_thread - INFO - [Thread-110856] 添加字幕: True
+2025-02-20 02:19:24 - app.core.process_thread - INFO - [Thread-110856] 选中的方案: [{'id': 6, 'name': '方案6 自动字幕', 'width': 720, 'height': 1080, 'blur_bg': False, 'add_subtitle': True, 'description': '竖屏带字幕'}]
+2025-02-20 02:19:24 - app.core.process_thread - INFO - [Thread-110856] 更多效果: False
+2025-02-20 02:19:24 - app.core.process_thread - INFO - [Thread-110856] 并发线程数: 10
+2025-02-20 02:19:24 - app.core.process_thread - INFO - [Thread-110856] 循环剪辑: False
+2025-02-20 02:19:24 - app.core.process_thread - INFO - [Thread-110856] 目录 E:\测试\新建文件夹 限制处理 50 个文件
+2025-02-20 02:19:24 - app.core.process_thread - INFO - [Thread-110856] 处理方案ID: 6
+2025-02-20 02:19:24 - app.core.process_thread - INFO - [Thread-84328] 获取到GPU信号量，使用GPU处理
+2025-02-20 02:19:24 - app.core.process_thread - INFO - [Thread-110856] 处理方案ID: 6
+2025-02-20 02:19:24 - app.core.process_thread - INFO - [Thread-84328] 开始识别字幕: 户外唱歌挑战118.mp4
+2025-02-20 02:19:24 - app.core.audio_processor - INFO - 开始提取音频: E:\测试\新建文件夹\户外唱歌挑战118.mp4
+2025-02-20 02:19:24 - app.core.process_thread - INFO - [Thread-123948] 获取到GPU信号量，使用GPU处理
+2025-02-20 02:19:24 - app.core.process_thread - INFO - [Thread-110856] 处理方案ID: 6
+2025-02-20 02:19:24 - app.core.process_thread - INFO - [Thread-123948] 开始识别字幕: 搞笑一下144.mp4
+2025-02-20 02:19:24 - app.core.process_thread - INFO - [Thread-126052] 获取到GPU信号量，使用GPU处理
+2025-02-20 02:19:24 - app.core.process_thread - INFO - [Thread-110856] 处理方案ID: 6
+2025-02-20 02:19:24 - app.core.process_thread - INFO - [Thread-126052] 开始识别字幕: 搞笑日常576.mp4
+2025-02-20 02:19:24 - app.core.process_thread - INFO - [Thread-48420] 获取到GPU信号量，使用GPU处理
+2025-02-20 02:19:24 - app.core.process_thread - INFO - [Thread-110856] 处理方案ID: 6
+2025-02-20 02:19:24 - app.core.process_thread - INFO - [Thread-48420] 开始识别字幕: 搞笑飙演技164.mp4
+2025-02-20 02:19:24 - app.core.process_thread - INFO - [Thread-45376] 获取到GPU信号量，使用GPU处理
+2025-02-20 02:19:24 - app.core.process_thread - INFO - [Thread-110856] 处理方案ID: 6
+2025-02-20 02:19:24 - app.core.process_thread - INFO - [Thread-45376] 开始识别字幕: 搞笑飙演技25.mp4
+2025-02-20 02:19:24 - app.core.process_thread - INFO - [Thread-128652] 获取到GPU信号量，使用GPU处理
+2025-02-20 02:19:24 - app.core.process_thread - INFO - [Thread-128652] 开始识别字幕: 狗狗搞笑视频35.mp4
+2025-02-20 02:19:24 - [Thread-110856] 线程参数:
+2025-02-20 02:19:24 - [Thread-110856] 添加字幕: True
+2025-02-20 02:19:24 - [Thread-110856] 选中的方案: [{'id': 6, 'name': '方案6 自动字幕', 'width': 720, 'height': 1080, 'blur_bg': False, 'add_subtitle': True, 'description': '竖屏带字幕'}]
+2025-02-20 02:19:24 - [Thread-110856] 更多效果: False
+2025-02-20 02:19:24 - [Thread-110856] 并发线程数: 10
+2025-02-20 02:19:24 - [Thread-110856] 循环剪辑: False
+2025-02-20 02:19:24 - [Thread-110856] 目录 E:\测试\新建文件夹 限制处理 50 个文件
+2025-02-20 02:19:24 - [Thread-110856] 处理方案ID: 6
+2025-02-20 02:19:24 - [Thread-84328] 获取到GPU信号量，使用GPU处理
+2025-02-20 02:19:24 - [Thread-110856] 处理方案ID: 6
+2025-02-20 02:19:24 - [Thread-84328] 开始识别字幕: 户外唱歌挑战118.mp4
+2025-02-20 02:19:24 - [Thread-123948] 获取到GPU信号量，使用GPU处理
+2025-02-20 02:19:24 - [Thread-110856] 处理方案ID: 6
+2025-02-20 02:19:24 - [Thread-123948] 开始识别字幕: 搞笑一下144.mp4
+2025-02-20 02:19:24 - [Thread-126052] 获取到GPU信号量，使用GPU处理
+2025-02-20 02:19:24 - [Thread-110856] 处理方案ID: 6
+2025-02-20 02:19:24 - [Thread-126052] 开始识别字幕: 搞笑日常576.mp4
+2025-02-20 02:19:24 - [Thread-48420] 获取到GPU信号量，使用GPU处理
+2025-02-20 02:19:24 - [Thread-110856] 处理方案ID: 6
+2025-02-20 02:19:24 - [Thread-48420] 开始识别字幕: 搞笑飙演技164.mp4
+2025-02-20 02:19:24 - [Thread-45376] 获取到GPU信号量，使用GPU处理
+2025-02-20 02:19:24 - [Thread-110856] 处理方案ID: 6
+2025-02-20 02:19:24 - [Thread-45376] 开始识别字幕: 搞笑飙演技25.mp4
+2025-02-20 02:19:24 - [Thread-128652] 获取到GPU信号量，使用GPU处理
+2025-02-20 02:19:24 - [Thread-128652] 开始识别字幕: 狗狗搞笑视频35.mp4
+2025-02-20 02:19:25 - app.core.audio_processor - INFO - 音频提取成功: temp/temp_76594401_audio.wav
+2025-02-20 02:19:25 - app.core.audio_processor - INFO - 开始识别音频: temp/temp_76594401_audio.wav
+2025-02-20 02:19:33 - app.core.audio_processor - INFO - 字幕文件已生成: temp/户外唱歌挑战118.srt
+2025-02-20 02:19:33 - app.core.audio_processor - INFO - 开始提取音频: E:\测试\新建文件夹\搞笑一下144.mp4
+2025-02-20 02:19:33 - [Thread-84328] 字幕识别成功: temp/户外唱歌挑战118.srt
+2025-02-20 02:19:33 - app.core.process_thread - INFO - [Thread-84328] 字幕识别成功: temp/户外唱歌挑战118.srt
+2025-02-20 02:19:34 - app.core.audio_processor - INFO - 音频提取成功: temp/temp_1b5320ec_audio.wav
+2025-02-20 02:19:34 - app.core.audio_processor - INFO - 开始识别音频: temp/temp_1b5320ec_audio.wav
+2025-02-20 02:19:35 - [Thread-84328] 
+开始处理文件: 户外唱歌挑战118.mp4
+2025-02-20 02:19:35 - app.core.process_thread - INFO - [Thread-84328] 
+开始处理文件: 户外唱歌挑战118.mp4
+2025-02-20 02:19:35 - app.core.process_thread - INFO - [Thread-84328] 使用方案 6 (GPU)
+2025-02-20 02:19:35 - [Thread-84328] 使用方案 6 (GPU)
+2025-02-20 02:19:43 - app.core.audio_processor - INFO - 字幕文件已生成: temp/搞笑一下144.srt
+2025-02-20 02:19:43 - app.core.audio_processor - INFO - 开始提取音频: E:\测试\新建文件夹\搞笑日常576.mp4
+2025-02-20 02:19:43 - app.core.process_thread - INFO - [Thread-123948] 字幕识别成功: temp/搞笑一下144.srt
+2025-02-20 02:19:43 - [Thread-123948] 字幕识别成功: temp/搞笑一下144.srt
+2025-02-20 02:19:43 - app.core.audio_processor - INFO - 音频提取成功: temp/temp_aa62cfe9_audio.wav
+2025-02-20 02:19:43 - app.core.audio_processor - INFO - 开始识别音频: temp/temp_aa62cfe9_audio.wav
+2025-02-20 02:19:45 - app.core.process_thread - INFO - [Thread-123948] 
+开始处理文件: 搞笑一下144.mp4
+2025-02-20 02:19:45 - [Thread-123948] 
+开始处理文件: 搞笑一下144.mp4
+2025-02-20 02:19:45 - app.core.process_thread - INFO - [Thread-123948] 使用方案 6 (GPU)
+2025-02-20 02:19:45 - [Thread-123948] 使用方案 6 (GPU)
+2025-02-20 02:19:53 - app.core.process_thread - INFO - [Thread-84328] 成功处理: 户外唱歌挑战118.mp4
+2025-02-20 02:19:53 - [Thread-84328] 成功处理: 户外唱歌挑战118.mp4
+2025-02-20 02:19:54 - app.core.audio_processor - INFO - 字幕文件已生成: temp/搞笑日常576.srt
+2025-02-20 02:19:55 - app.core.audio_processor - INFO - 开始提取音频: E:\测试\新建文件夹\搞笑飙演技164.mp4
+2025-02-20 02:19:55 - app.core.process_thread - INFO - [Thread-126052] 字幕识别成功: temp/搞笑日常576.srt
+2025-02-20 02:19:55 - [Thread-126052] 字幕识别成功: temp/搞笑日常576.srt
+2025-02-20 02:19:55 - app.core.audio_processor - INFO - 音频提取成功: temp/temp_dde45aed_audio.wav
+2025-02-20 02:19:55 - app.core.audio_processor - INFO - 开始识别音频: temp/temp_dde45aed_audio.wav
+2025-02-20 02:19:57 - app.core.process_thread - INFO - [Thread-126052] 
+开始处理文件: 搞笑日常576.mp4
+2025-02-20 02:19:57 - [Thread-126052] 
+开始处理文件: 搞笑日常576.mp4
+2025-02-20 02:19:57 - app.core.process_thread - INFO - [Thread-126052] 使用方案 6 (GPU)
+2025-02-20 02:19:57 - [Thread-126052] 使用方案 6 (GPU)
+2025-02-20 02:20:01 - app.core.process_thread - INFO - [Thread-123948] 成功处理: 搞笑一下144.mp4
+2025-02-20 02:20:01 - [Thread-123948] 成功处理: 搞笑一下144.mp4
+2025-02-20 02:20:03 - app.core.audio_processor - INFO - 字幕文件已生成: temp/搞笑飙演技164.srt
+2025-02-20 02:20:03 - app.core.audio_processor - INFO - 开始提取音频: E:\测试\新建文件夹\搞笑飙演技25.mp4
+2025-02-20 02:20:03 - app.core.process_thread - INFO - [Thread-48420] 字幕识别成功: temp/搞笑飙演技164.srt
+2025-02-20 02:20:03 - [Thread-48420] 字幕识别成功: temp/搞笑飙演技164.srt
+2025-02-20 02:20:04 - app.core.audio_processor - INFO - 音频提取成功: temp/temp_e05ca9b4_audio.wav
+2025-02-20 02:20:04 - app.core.audio_processor - INFO - 开始识别音频: temp/temp_e05ca9b4_audio.wav
+2025-02-20 02:20:05 - [Thread-48420] 
+开始处理文件: 搞笑飙演技164.mp4
+2025-02-20 02:20:05 - app.core.process_thread - INFO - [Thread-48420] 
+开始处理文件: 搞笑飙演技164.mp4
+2025-02-20 02:20:05 - app.core.process_thread - INFO - [Thread-48420] 使用方案 6 (GPU)
+2025-02-20 02:20:05 - [Thread-48420] 使用方案 6 (GPU)
+2025-02-20 02:20:14 - app.core.process_thread - INFO - [Thread-126052] 成功处理: 搞笑日常576.mp4
+2025-02-20 02:20:14 - [Thread-126052] 成功处理: 搞笑日常576.mp4
+2025-02-20 02:20:15 - app.core.audio_processor - INFO - 字幕文件已生成: temp/搞笑飙演技25.srt
+2025-02-20 02:20:15 - app.core.audio_processor - INFO - 开始提取音频: E:\测试\新建文件夹\狗狗搞笑视频35.mp4
+2025-02-20 02:20:15 - app.core.process_thread - INFO - [Thread-45376] 字幕识别成功: temp/搞笑飙演技25.srt
+2025-02-20 02:20:15 - [Thread-45376] 字幕识别成功: temp/搞笑飙演技25.srt
+2025-02-20 02:20:16 - [Thread-48420] 成功处理: 搞笑飙演技164.mp4
+2025-02-20 02:20:16 - app.core.process_thread - INFO - [Thread-48420] 成功处理: 搞笑飙演技164.mp4
+2025-02-20 02:20:16 - app.core.audio_processor - INFO - 音频提取成功: temp/temp_7202e185_audio.wav
+2025-02-20 02:20:16 - app.core.audio_processor - INFO - 开始识别音频: temp/temp_7202e185_audio.wav
+2025-02-20 02:20:17 - [Thread-45376] 
+开始处理文件: 搞笑飙演技25.mp4
+2025-02-20 02:20:17 - app.core.process_thread - INFO - [Thread-45376] 
+开始处理文件: 搞笑飙演技25.mp4
+2025-02-20 02:20:17 - app.core.process_thread - INFO - [Thread-45376] 使用方案 6 (GPU)
+2025-02-20 02:20:17 - [Thread-45376] 使用方案 6 (GPU)
+2025-02-20 02:20:22 - app.core.audio_processor - INFO - 字幕文件已生成: temp/狗狗搞笑视频35.srt
+2025-02-20 02:20:22 - [Thread-128652] 字幕识别成功: temp/狗狗搞笑视频35.srt
+2025-02-20 02:20:22 - app.core.process_thread - INFO - [Thread-128652] 字幕识别成功: temp/狗狗搞笑视频35.srt
+2025-02-20 02:20:24 - [Thread-128652] 
+开始处理文件: 狗狗搞笑视频35.mp4
+2025-02-20 02:20:24 - app.core.process_thread - INFO - [Thread-128652] 
+开始处理文件: 狗狗搞笑视频35.mp4
+2025-02-20 02:20:24 - app.core.process_thread - INFO - [Thread-128652] 使用方案 6 (GPU)
+2025-02-20 02:20:24 - [Thread-128652] 使用方案 6 (GPU)
+2025-02-20 02:20:30 - app.core.process_thread - INFO - [Thread-45376] 成功处理: 搞笑飙演技25.mp4
+2025-02-20 02:20:30 - [Thread-45376] 成功处理: 搞笑飙演技25.mp4
+2025-02-20 02:20:41 - app.core.process_thread - INFO - [Thread-128652] 成功处理: 狗狗搞笑视频35.mp4
+2025-02-20 02:20:41 - [Thread-128652] 成功处理: 狗狗搞笑视频35.mp4
+2025-02-20 02:26:37 - key_verification - INFO - 密钥验证结果: {'valid': True}
+2025-02-20 02:26:38 - ui - WARNING - 背景图片不存在: F:\py\full-stack-fastapi-template\cr_fy\app\ui\壁纸.jpg
+2025-02-20 02:26:40 - ui - INFO - [UI] 成功加载方案列表
+2025-02-20 02:26:40 - ui - INFO - 目录 E:\测试\新建文件夹 中找到 6 个视频文件
+2025-02-20 02:26:40 - ui - INFO - 目录数: 1, 总视频数: 6
+2025-02-20 02:26:46 - app.core.process_thread - INFO - [Thread-126080] 设置GPU并发数为: 6
+2025-02-20 02:26:46 - app.core.process_thread - INFO - [Thread-126080] 使用选中的方案: {'id': 6, 'name': '方案6 自动字幕', 'width': 720, 'height': 1080, 'blur_bg': False, 'add_subtitle': True, 'description': '竖屏带字幕'}
+2025-02-20 02:26:48 - 
+=== 线程参数 ===
+2025-02-20 02:26:48 - 线程输入目录: ['E:\\测试\\新建文件夹']
+2025-02-20 02:26:48 - 线程选中方案: [{'id': 6, 'name': '方案6 自动字幕', 'width': 720, 'height': 1080, 'blur_bg': False, 'add_subtitle': True, 'description': '竖屏带字幕'}]
+2025-02-20 02:26:48 - 线程删除选项: False
+2025-02-20 02:26:48 - 线程字幕选项: True
+2025-02-20 02:26:48 - 字幕边距: 85
+2025-02-20 02:26:48 - 字体大小: 20
+2025-02-20 02:26:48 - app.core.process_thread - INFO - [Thread-62116] 
+=== 线程开始 ===
+2025-02-20 02:26:48 - app.core.process_thread - INFO - [Thread-62116] 线程参数:
+2025-02-20 02:26:48 - app.core.process_thread - INFO - [Thread-62116] 添加字幕: True
+2025-02-20 02:26:48 - app.core.process_thread - INFO - [Thread-62116] 选中的方案: [{'id': 6, 'name': '方案6 自动字幕', 'width': 720, 'height': 1080, 'blur_bg': False, 'add_subtitle': True, 'description': '竖屏带字幕'}]
+2025-02-20 02:26:48 - [Thread-62116] 
+=== 线程开始 ===
+2025-02-20 02:26:48 - app.core.process_thread - INFO - [Thread-62116] 更多效果: False
+2025-02-20 02:26:48 - [Thread-62116] 线程参数:
+2025-02-20 02:26:48 - app.core.process_thread - INFO - [Thread-62116] 并发线程数: 10
+2025-02-20 02:26:48 - app.core.process_thread - INFO - [Thread-62116] 循环剪辑: False
+2025-02-20 02:26:48 - app.core.process_thread - INFO - [Thread-62116] 目录 E:\测试\新建文件夹 限制处理 50 个文件
+2025-02-20 02:26:48 - app.core.process_thread - INFO - [Thread-62116] 处理方案ID: 6
+2025-02-20 02:26:48 - app.core.process_thread - INFO - [Thread-129876] 获取到GPU信号量，使用GPU处理
+2025-02-20 02:26:48 - app.core.process_thread - INFO - [Thread-62116] 处理方案ID: 6
+2025-02-20 02:26:48 - app.core.process_thread - INFO - [Thread-129876] 开始识别字幕: 户外唱歌挑战118.mp4
+2025-02-20 02:26:48 - app.core.audio_processor - INFO - 开始提取音频: E:\测试\新建文件夹\户外唱歌挑战118.mp4
+2025-02-20 02:26:48 - app.core.process_thread - INFO - [Thread-111428] 获取到GPU信号量，使用GPU处理
+2025-02-20 02:26:48 - app.core.process_thread - INFO - [Thread-62116] 处理方案ID: 6
+2025-02-20 02:26:48 - app.core.process_thread - INFO - [Thread-111428] 开始识别字幕: 搞笑一下144.mp4
+2025-02-20 02:26:48 - app.core.process_thread - INFO - [Thread-118884] 获取到GPU信号量，使用GPU处理
+2025-02-20 02:26:48 - app.core.process_thread - INFO - [Thread-62116] 处理方案ID: 6
+2025-02-20 02:26:48 - app.core.process_thread - INFO - [Thread-118884] 开始识别字幕: 搞笑日常576.mp4
+2025-02-20 02:26:48 - app.core.process_thread - INFO - [Thread-128604] 获取到GPU信号量，使用GPU处理
+2025-02-20 02:26:48 - app.core.process_thread - INFO - [Thread-62116] 处理方案ID: 6
+2025-02-20 02:26:48 - app.core.process_thread - INFO - [Thread-128604] 开始识别字幕: 搞笑飙演技164.mp4
+2025-02-20 02:26:48 - app.core.process_thread - INFO - [Thread-128908] 获取到GPU信号量，使用GPU处理
+2025-02-20 02:26:48 - app.core.process_thread - INFO - [Thread-62116] 处理方案ID: 6
+2025-02-20 02:26:48 - app.core.process_thread - INFO - [Thread-128908] 开始识别字幕: 搞笑飙演技25.mp4
+2025-02-20 02:26:48 - app.core.process_thread - INFO - [Thread-125060] 获取到GPU信号量，使用GPU处理
+2025-02-20 02:26:48 - app.core.process_thread - INFO - [Thread-125060] 开始识别字幕: 狗狗搞笑视频35.mp4
+2025-02-20 02:26:48 - [Thread-62116] 添加字幕: True
+2025-02-20 02:26:48 - [Thread-62116] 选中的方案: [{'id': 6, 'name': '方案6 自动字幕', 'width': 720, 'height': 1080, 'blur_bg': False, 'add_subtitle': True, 'description': '竖屏带字幕'}]
+2025-02-20 02:26:48 - [Thread-62116] 更多效果: False
+2025-02-20 02:26:48 - [Thread-62116] 并发线程数: 10
+2025-02-20 02:26:48 - [Thread-62116] 循环剪辑: False
+2025-02-20 02:26:48 - [Thread-62116] 目录 E:\测试\新建文件夹 限制处理 50 个文件
+2025-02-20 02:26:48 - [Thread-62116] 处理方案ID: 6
+2025-02-20 02:26:48 - [Thread-129876] 获取到GPU信号量，使用GPU处理
+2025-02-20 02:26:48 - [Thread-62116] 处理方案ID: 6
+2025-02-20 02:26:48 - [Thread-129876] 开始识别字幕: 户外唱歌挑战118.mp4
+2025-02-20 02:26:48 - [Thread-111428] 获取到GPU信号量，使用GPU处理
+2025-02-20 02:26:48 - [Thread-62116] 处理方案ID: 6
+2025-02-20 02:26:48 - [Thread-111428] 开始识别字幕: 搞笑一下144.mp4
+2025-02-20 02:26:48 - [Thread-118884] 获取到GPU信号量，使用GPU处理
+2025-02-20 02:26:48 - [Thread-62116] 处理方案ID: 6
+2025-02-20 02:26:48 - [Thread-118884] 开始识别字幕: 搞笑日常576.mp4
+2025-02-20 02:26:48 - [Thread-128604] 获取到GPU信号量，使用GPU处理
+2025-02-20 02:26:48 - [Thread-62116] 处理方案ID: 6
+2025-02-20 02:26:48 - [Thread-128604] 开始识别字幕: 搞笑飙演技164.mp4
+2025-02-20 02:26:48 - [Thread-128908] 获取到GPU信号量，使用GPU处理
+2025-02-20 02:26:48 - [Thread-62116] 处理方案ID: 6
+2025-02-20 02:26:48 - [Thread-128908] 开始识别字幕: 搞笑飙演技25.mp4
+2025-02-20 02:26:48 - [Thread-125060] 获取到GPU信号量，使用GPU处理
+2025-02-20 02:26:48 - [Thread-125060] 开始识别字幕: 狗狗搞笑视频35.mp4
+2025-02-20 02:26:48 - app.core.audio_processor - INFO - 音频提取成功: temp/temp_eaabb81c_audio.wav
+2025-02-20 02:26:48 - app.core.audio_processor - INFO - 开始识别音频: temp/temp_eaabb81c_audio.wav
+2025-02-20 02:26:57 - app.core.audio_processor - INFO - 字幕文件已生成: temp/户外唱歌挑战118.srt
+2025-02-20 02:26:57 - app.core.audio_processor - INFO - 开始提取音频: E:\测试\新建文件夹\搞笑一下144.mp4
+2025-02-20 02:26:57 - [Thread-129876] 字幕识别成功: temp/户外唱歌挑战118.srt
+2025-02-20 02:26:57 - app.core.process_thread - INFO - [Thread-129876] 字幕识别成功: temp/户外唱歌挑战118.srt
+2025-02-20 02:26:57 - app.core.audio_processor - INFO - 音频提取成功: temp/temp_c20fcfca_audio.wav
+2025-02-20 02:26:57 - app.core.audio_processor - INFO - 开始识别音频: temp/temp_c20fcfca_audio.wav
+2025-02-20 02:26:59 - app.core.process_thread - INFO - [Thread-129876] 
+开始处理文件: 户外唱歌挑战118.mp4
+2025-02-20 02:26:59 - [Thread-129876] 
+开始处理文件: 户外唱歌挑战118.mp4
+2025-02-20 02:26:59 - app.core.process_thread - INFO - [Thread-129876] 使用方案 6 (GPU)
+2025-02-20 02:26:59 - [Thread-129876] 使用方案 6 (GPU)
+2025-02-20 02:27:06 - app.core.audio_processor - INFO - 字幕文件已生成: temp/搞笑一下144.srt
+2025-02-20 02:27:06 - app.core.audio_processor - INFO - 开始提取音频: E:\测试\新建文件夹\搞笑日常576.mp4
+2025-02-20 02:27:06 - [Thread-111428] 字幕识别成功: temp/搞笑一下144.srt
+2025-02-20 02:27:06 - app.core.process_thread - INFO - [Thread-111428] 字幕识别成功: temp/搞笑一下144.srt
+2025-02-20 02:27:06 - app.core.audio_processor - INFO - 音频提取成功: temp/temp_e8a9af2b_audio.wav
+2025-02-20 02:27:06 - app.core.audio_processor - INFO - 开始识别音频: temp/temp_e8a9af2b_audio.wav
+2025-02-20 02:27:08 - [Thread-111428] 
+开始处理文件: 搞笑一下144.mp4
+2025-02-20 02:27:08 - app.core.process_thread - INFO - [Thread-111428] 
+开始处理文件: 搞笑一下144.mp4
+2025-02-20 02:27:08 - app.core.process_thread - INFO - [Thread-111428] 使用方案 6 (GPU)
+2025-02-20 02:27:08 - [Thread-111428] 使用方案 6 (GPU)
+2025-02-20 02:27:17 - [Thread-129876] 成功处理: 户外唱歌挑战118.mp4
+2025-02-20 02:27:17 - app.core.process_thread - INFO - [Thread-129876] 成功处理: 户外唱歌挑战118.mp4
+2025-02-20 02:27:17 - app.core.audio_processor - INFO - 字幕文件已生成: temp/搞笑日常576.srt
+2025-02-20 02:27:17 - app.core.audio_processor - INFO - 开始提取音频: E:\测试\新建文件夹\搞笑飙演技164.mp4
+2025-02-20 02:27:17 - [Thread-118884] 字幕识别成功: temp/搞笑日常576.srt
+2025-02-20 02:27:17 - app.core.process_thread - INFO - [Thread-118884] 字幕识别成功: temp/搞笑日常576.srt
+2025-02-20 02:27:17 - app.core.audio_processor - INFO - 音频提取成功: temp/temp_1e0dc2ad_audio.wav
+2025-02-20 02:27:17 - app.core.audio_processor - INFO - 开始识别音频: temp/temp_1e0dc2ad_audio.wav
+2025-02-20 02:27:19 - [Thread-118884] 
+开始处理文件: 搞笑日常576.mp4
+2025-02-20 02:27:19 - app.core.process_thread - INFO - [Thread-118884] 
+开始处理文件: 搞笑日常576.mp4
+2025-02-20 02:27:19 - app.core.process_thread - INFO - [Thread-118884] 使用方案 6 (GPU)
+2025-02-20 02:27:19 - [Thread-118884] 使用方案 6 (GPU)
+2025-02-20 02:27:23 - app.core.audio_processor - INFO - 字幕文件已生成: temp/搞笑飙演技164.srt
+2025-02-20 02:27:23 - app.core.audio_processor - INFO - 开始提取音频: E:\测试\新建文件夹\搞笑飙演技25.mp4
+2025-02-20 02:27:23 - [Thread-128604] 字幕识别成功: temp/搞笑飙演技164.srt
+2025-02-20 02:27:23 - app.core.process_thread - INFO - [Thread-128604] 字幕识别成功: temp/搞笑飙演技164.srt
+2025-02-20 02:27:23 - app.core.process_thread - INFO - [Thread-111428] 成功处理: 搞笑一下144.mp4
+2025-02-20 02:27:23 - [Thread-111428] 成功处理: 搞笑一下144.mp4
+2025-02-20 02:27:23 - app.core.audio_processor - INFO - 音频提取成功: temp/temp_853e892d_audio.wav
+2025-02-20 02:27:23 - app.core.audio_processor - INFO - 开始识别音频: temp/temp_853e892d_audio.wav
+2025-02-20 02:27:25 - [Thread-128604] 
+开始处理文件: 搞笑飙演技164.mp4
+2025-02-20 02:27:25 - app.core.process_thread - INFO - [Thread-128604] 
+开始处理文件: 搞笑飙演技164.mp4
+2025-02-20 02:27:25 - app.core.process_thread - INFO - [Thread-128604] 使用方案 6 (GPU)
+2025-02-20 02:27:25 - [Thread-128604] 使用方案 6 (GPU)
+2025-02-20 02:27:31 - app.core.audio_processor - INFO - 字幕文件已生成: temp/搞笑飙演技25.srt
+2025-02-20 02:27:31 - app.core.audio_processor - INFO - 开始提取音频: E:\测试\新建文件夹\狗狗搞笑视频35.mp4
+2025-02-20 02:27:31 - [Thread-128908] 字幕识别成功: temp/搞笑飙演技25.srt
+2025-02-20 02:27:31 - app.core.process_thread - INFO - [Thread-128908] 字幕识别成功: temp/搞笑飙演技25.srt
+2025-02-20 02:27:32 - app.core.audio_processor - INFO - 音频提取成功: temp/temp_40f2cc83_audio.wav
+2025-02-20 02:27:32 - app.core.audio_processor - INFO - 开始识别音频: temp/temp_40f2cc83_audio.wav
+2025-02-20 02:27:33 - app.core.process_thread - INFO - [Thread-128908] 
+开始处理文件: 搞笑飙演技25.mp4
+2025-02-20 02:27:33 - [Thread-128908] 
+开始处理文件: 搞笑飙演技25.mp4
+2025-02-20 02:27:33 - app.core.process_thread - INFO - [Thread-128908] 使用方案 6 (GPU)
+2025-02-20 02:27:33 - [Thread-128908] 使用方案 6 (GPU)
+2025-02-20 02:27:34 - [Thread-128604] 成功处理: 搞笑飙演技164.mp4
+2025-02-20 02:27:34 - app.core.process_thread - INFO - [Thread-128604] 成功处理: 搞笑飙演技164.mp4
+2025-02-20 02:27:34 - [Thread-118884] 成功处理: 搞笑日常576.mp4
+2025-02-20 02:27:34 - app.core.process_thread - INFO - [Thread-118884] 成功处理: 搞笑日常576.mp4
+2025-02-20 02:27:38 - app.core.audio_processor - INFO - 字幕文件已生成: temp/狗狗搞笑视频35.srt
+2025-02-20 02:27:38 - [Thread-125060] 字幕识别成功: temp/狗狗搞笑视频35.srt
+2025-02-20 02:27:38 - app.core.process_thread - INFO - [Thread-125060] 字幕识别成功: temp/狗狗搞笑视频35.srt
+2025-02-20 02:27:40 - [Thread-125060] 
+开始处理文件: 狗狗搞笑视频35.mp4
+2025-02-20 02:27:40 - app.core.process_thread - INFO - [Thread-125060] 
+开始处理文件: 狗狗搞笑视频35.mp4
+2025-02-20 02:27:40 - app.core.process_thread - INFO - [Thread-125060] 使用方案 6 (GPU)
+2025-02-20 02:27:40 - [Thread-125060] 使用方案 6 (GPU)
+2025-02-20 02:27:45 - app.core.process_thread - INFO - [Thread-128908] 成功处理: 搞笑飙演技25.mp4
+2025-02-20 02:27:45 - [Thread-128908] 成功处理: 搞笑飙演技25.mp4
+2025-02-20 02:27:56 - app.core.process_thread - INFO - [Thread-125060] 成功处理: 狗狗搞笑视频35.mp4
+2025-02-20 02:27:56 - [Thread-125060] 成功处理: 狗狗搞笑视频35.mp4
+2025-02-20 03:07:56 - __main__ - INFO - 开始预加载Whisper模型...
+2025-02-20 03:07:56 - __main__ - INFO - 检查开发环境模型: app\resources\models\small.pt
+2025-02-20 03:07:56 - __main__ - INFO - 找到模型文件: app\resources\models\small.pt
+2025-02-20 03:07:58 - __main__ - INFO - 成功加载Whisper模型到 cpu 设备
+2025-02-20 03:08:18 - key_verification - INFO - 密钥验证结果: {'valid': True}
+2025-02-20 03:08:19 - ui - WARNING - 背景图片不存在: F:\py\full-stack-fastapi-template\cr_fy\app\ui\壁纸.jpg
+2025-02-20 03:08:21 - ui - INFO - [UI] 成功加载方案列表
+2025-02-20 03:08:21 - ui - INFO - 目录 E:\测试\新建文件夹 中找到 6 个视频文件
+2025-02-20 03:08:21 - ui - INFO - 目录数: 1, 总视频数: 6
+2025-02-20 03:08:28 - 成功加载方案列表
+2025-02-20 05:02:59 - __main__ - INFO - 开始预加载Whisper模型...
+2025-02-20 05:02:59 - __main__ - INFO - 检查开发环境模型: app\resources\models\small.pt
+2025-02-20 05:02:59 - __main__ - INFO - 找到模型文件: app\resources\models\small.pt
+2025-02-20 05:03:01 - __main__ - INFO - 成功加载Whisper模型到 cpu 设备
+2025-02-20 05:03:08 - key_verification - INFO - 密钥验证结果: {'valid': True}
+2025-02-20 05:03:11 - ui - WARNING - 背景图片不存在: F:\py\full-stack-fastapi-template\cr_fy\app\ui\壁纸.jpg
+2025-02-20 05:03:11 - ui - INFO - [UI] 成功加载方案列表
+2025-02-20 05:03:11 - ui - INFO - 目录 E:\测试\新建文件夹 中找到 6 个视频文件
+2025-02-20 05:03:11 - ui - INFO - 目录数: 1, 总视频数: 6
+2025-02-20 05:06:00 - __main__ - INFO - 开始预加载Whisper模型...
+2025-02-20 05:06:00 - __main__ - INFO - 检查开发环境模型: app\resources\models\small.pt
+2025-02-20 05:06:00 - __main__ - INFO - 找到模型文件: app\resources\models\small.pt
+2025-02-20 05:06:02 - __main__ - INFO - 成功加载Whisper模型到 cpu 设备
+2025-02-20 05:06:08 - key_verification - INFO - 密钥验证结果: {'valid': False, 'message': 'Invalid or inactive key'}
+2025-02-20 05:06:08 - key_verification - ERROR - 密钥验证失败: Invalid or inactive key
+2025-02-20 22:32:22 - root - INFO - 配置文件路径: F:\py\full-stack-fastapi-template\cr_fy\app\resources\config\config.json
+2025-02-20 22:32:22 - __main__ - INFO - 开始预加载Whisper模型...
+2025-02-20 22:32:22 - __main__ - INFO - 检查开发环境模型: app\resources\models\small.pt
+2025-02-20 22:32:22 - __main__ - INFO - 找到模型文件: app\resources\models\small.pt
+2025-02-20 22:32:25 - __main__ - INFO - 成功加载Whisper模型到 cpu 设备
+2025-02-20 22:32:27 - key_verification - INFO - 运行模式: 开发环境
+2025-02-20 22:32:27 - key_verification - INFO - 当前工作目录: F:\py\full-stack-fastapi-template\cr_fy
+2025-02-20 22:32:30 - key_verification - INFO - 使用服务器地址: http://139.224.70.41:8000
+2025-02-20 22:32:30 - key_verification - INFO - 验证请求URL: http://139.224.70.41:8000/api/v1/api-keys/verify
+2025-02-20 22:32:30 - key_verification - INFO - 请求头: {'Content-Type': 'application/json', 'User-Agent': 'CR-Client/False'}
+2025-02-20 22:32:30 - key_verification - INFO - 请求数据: {'key': 'JGR8FC-AtCLWEHeTY2APY9xNkT9TO9IeEg3jiJvveao', 'machine_info': {'hostname': '方应9900x', 'os': 'Windows 11', 'cpu': 'AMD Ryzen 9 9900X 12-Core Processor', 'mac': 'b5:d5:56:5a:68:a2', 'item': 'clip'}}
+2025-02-20 22:32:30 - key_verification - INFO - 服务器响应状态码: 200
+2025-02-20 22:32:30 - key_verification - INFO - 服务器响应内容: {"valid":true}
+2025-02-20 22:32:30 - key_verification - INFO - 密钥验证结果: {'valid': True}
+2025-02-20 22:32:32 - ui - WARNING - 背景图片不存在: F:\py\full-stack-fastapi-template\cr_fy\app\ui\壁纸.jpg
+2025-02-20 22:32:32 - ui - INFO - [UI] 成功加载方案列表
+2025-02-20 22:32:32 - ui - INFO - 目录 E:\测试\新建文件夹 中找到 6 个视频文件
+2025-02-20 22:32:32 - ui - INFO - 目录数: 1, 总视频数: 6
+2025-02-20 22:34:04 - 已添加 1 个子目录
+2025-02-20 22:34:04 - ui - INFO - 目录 E:\测试\新建文件夹 中找到 6 个视频文件
+2025-02-20 22:34:04 - ui - INFO - 目录 E:\测试\菜心 中找到 16 个视频文件
+2025-02-20 22:34:04 - ui - INFO - 目录数: 2, 总视频数: 22
+2025-02-20 22:34:09 - ui - INFO - 目录 E:\测试\新建文件夹 中找到 6 个视频文件
+2025-02-20 22:34:09 - ui - INFO - 目录数: 1, 总视频数: 6
+2025-02-20 22:34:13 - 已选择输出目录: D:/测试
+2025-02-20 22:34:16 - app.core.process_thread - INFO - [Thread-171340] 设置GPU并发数为: 6
+2025-02-20 22:34:16 - app.core.process_thread - INFO - [Thread-171340] 使用选中的方案: {'id': 6, 'name': '方案6 自动字幕', 'width': 720, 'height': 1080, 'blur_bg': False, 'add_subtitle': True, 'description': '竖屏带字幕'}
+2025-02-20 22:34:16 - 
+=== 线程参数 ===
+2025-02-20 22:34:16 - 线程输入目录: ['E:\\测试\\新建文件夹']
+2025-02-20 22:34:16 - 线程选中方案: [{'id': 6, 'name': '方案6 自动字幕', 'width': 720, 'height': 1080, 'blur_bg': False, 'add_subtitle': True, 'description': '竖屏带字幕'}]
+2025-02-20 22:34:16 - 线程删除选项: False
+2025-02-20 22:34:16 - 线程字幕选项: True
+2025-02-20 22:34:16 - 字幕边距: 85
+2025-02-20 22:34:16 - 字体大小: 20
+2025-02-20 22:34:16 - app.core.process_thread - INFO - [Thread-184860] 
+=== 线程开始 ===
+2025-02-20 22:34:16 - app.core.process_thread - INFO - [Thread-184860] 线程参数:
+2025-02-20 22:34:16 - app.core.process_thread - INFO - [Thread-184860] 添加字幕: True
+2025-02-20 22:34:16 - app.core.process_thread - INFO - [Thread-184860] 选中的方案: [{'id': 6, 'name': '方案6 自动字幕', 'width': 720, 'height': 1080, 'blur_bg': False, 'add_subtitle': True, 'description': '竖屏带字幕'}]
+2025-02-20 22:34:16 - app.core.process_thread - INFO - [Thread-184860] 更多效果: False
+2025-02-20 22:34:16 - app.core.process_thread - INFO - [Thread-184860] 并发线程数: 10
+2025-02-20 22:34:16 - app.core.process_thread - INFO - [Thread-184860] 循环剪辑: False
+2025-02-20 22:34:16 - app.core.process_thread - INFO - [Thread-184860] 目录 E:\测试\新建文件夹 限制处理 50 个文件
+2025-02-20 22:34:16 - app.core.process_thread - INFO - [Thread-184860] 处理方案ID: 6
+2025-02-20 22:34:16 - app.core.process_thread - INFO - [Thread-187956] 开始识别字幕: 户外唱歌挑战118.mp4
+2025-02-20 22:34:16 - app.core.process_thread - INFO - [Thread-184860] 处理方案ID: 6
+2025-02-20 22:34:16 - app.core.audio_processor - INFO - 开始提取音频: E:\测试\新建文件夹\户外唱歌挑战118.mp4
+2025-02-20 22:34:16 - app.core.process_thread - INFO - [Thread-133428] 开始识别字幕: 搞笑一下144.mp4
+2025-02-20 22:34:16 - app.core.process_thread - INFO - [Thread-184860] 处理方案ID: 6
+2025-02-20 22:34:16 - app.core.process_thread - INFO - [Thread-184156] 开始识别字幕: 搞笑日常576.mp4
+2025-02-20 22:34:16 - app.core.process_thread - INFO - [Thread-184860] 处理方案ID: 6
+2025-02-20 22:34:16 - app.core.process_thread - INFO - [Thread-179736] 开始识别字幕: 搞笑飙演技164.mp4
+2025-02-20 22:34:16 - app.core.process_thread - INFO - [Thread-184860] 处理方案ID: 6
+2025-02-20 22:34:16 - app.core.process_thread - INFO - [Thread-187592] 开始识别字幕: 搞笑飙演技25.mp4
+2025-02-20 22:34:16 - app.core.process_thread - INFO - [Thread-184860] 处理方案ID: 6
+2025-02-20 22:34:16 - app.core.process_thread - INFO - [Thread-185208] 开始识别字幕: 狗狗搞笑视频35.mp4
+2025-02-20 22:34:16 - [Thread-184860] 
+=== 线程开始 ===
+2025-02-20 22:34:16 - [Thread-184860] 线程参数:
+2025-02-20 22:34:16 - [Thread-184860] 添加字幕: True
+2025-02-20 22:34:16 - [Thread-184860] 选中的方案: [{'id': 6, 'name': '方案6 自动字幕', 'width': 720, 'height': 1080, 'blur_bg': False, 'add_subtitle': True, 'description': '竖屏带字幕'}]
+2025-02-20 22:34:16 - [Thread-184860] 更多效果: False
+2025-02-20 22:34:16 - [Thread-184860] 并发线程数: 10
+2025-02-20 22:34:16 - [Thread-184860] 循环剪辑: False
+2025-02-20 22:34:16 - [Thread-184860] 目录 E:\测试\新建文件夹 限制处理 50 个文件
+2025-02-20 22:34:16 - [Thread-184860] 处理方案ID: 6
+2025-02-20 22:34:16 - [Thread-187956] 开始识别字幕: 户外唱歌挑战118.mp4
+2025-02-20 22:34:16 - [Thread-184860] 处理方案ID: 6
+2025-02-20 22:34:16 - [Thread-133428] 开始识别字幕: 搞笑一下144.mp4
+2025-02-20 22:34:16 - [Thread-184860] 处理方案ID: 6
+2025-02-20 22:34:16 - [Thread-184156] 开始识别字幕: 搞笑日常576.mp4
+2025-02-20 22:34:16 - [Thread-184860] 处理方案ID: 6
+2025-02-20 22:34:16 - [Thread-179736] 开始识别字幕: 搞笑飙演技164.mp4
+2025-02-20 22:34:16 - [Thread-184860] 处理方案ID: 6
+2025-02-20 22:34:16 - [Thread-187592] 开始识别字幕: 搞笑飙演技25.mp4
+2025-02-20 22:34:16 - [Thread-184860] 处理方案ID: 6
+2025-02-20 22:34:16 - [Thread-185208] 开始识别字幕: 狗狗搞笑视频35.mp4
+2025-02-20 22:34:16 - app.core.audio_processor - INFO - 音频提取成功: temp/temp_7919df0f_audio.wav
+2025-02-20 22:34:16 - app.core.audio_processor - INFO - 开始加载音频数据...
+2025-02-20 22:34:16 - app.core.audio_processor - INFO - 音频数据加载成功
+2025-02-20 22:34:16 - app.core.audio_processor - INFO - 开始生成频谱图...
+2025-02-20 22:34:17 - app.core.audio_processor - INFO - 频谱图生成成功, shape: torch.Size([80, 3527])
+2025-02-20 22:34:17 - app.core.audio_processor - INFO - 检查模型状态...
+2025-02-20 22:34:17 - app.core.audio_processor - INFO - 模型状态: <class 'whisper.model.Whisper'>
+2025-02-20 22:34:17 - app.core.audio_processor - INFO - 开始识别音频: temp/temp_7919df0f_audio.wav
+2025-02-20 22:34:17 - app.core.audio_processor - INFO - 开始转写...
+2025-02-20 22:34:25 - app.core.audio_processor - INFO - 转写完成
+2025-02-20 22:34:25 - app.core.audio_processor - INFO - 字幕文件已生成: temp/户外唱歌挑战118.srt
+2025-02-20 22:34:25 - app.core.audio_processor - INFO - 开始提取音频: E:\测试\新建文件夹\搞笑一下144.mp4
+2025-02-20 22:34:25 - [Thread-187956] 字幕识别成功
+2025-02-20 22:34:25 - app.core.process_thread - INFO - [Thread-187956] 字幕识别成功
+2025-02-20 22:34:25 - app.core.api_client - ERROR - 获取FFmpeg命令失败: 401 Client Error: Unauthorized for url: http://139.224.70.41:8000/api/v1/ffmpeg/command
+2025-02-20 22:34:25 - app.core.process_thread - ERROR - [Thread-187956] 获取命令模板失败
+2025-02-20 22:34:25 - [Thread-187956] 获取命令模板失败
+2025-02-20 22:34:25 - app.core.process_thread - ERROR - [Thread-187956] 获取处理命令失败，跳过文件: 户外唱歌挑战118.mp4
+2025-02-20 22:34:25 - [Thread-187956] 获取处理命令失败，跳过文件: 户外唱歌挑战118.mp4
+2025-02-20 22:34:26 - app.core.audio_processor - INFO - 音频提取成功: temp/temp_741cfda1_audio.wav
+2025-02-20 22:34:26 - app.core.audio_processor - INFO - 开始加载音频数据...
+2025-02-20 22:34:26 - app.core.audio_processor - INFO - 音频数据加载成功
+2025-02-20 22:34:26 - app.core.audio_processor - INFO - 开始生成频谱图...
+2025-02-20 22:34:26 - app.core.audio_processor - INFO - 频谱图生成成功, shape: torch.Size([80, 2835])
+2025-02-20 22:34:26 - app.core.audio_processor - INFO - 检查模型状态...
+2025-02-20 22:34:26 - app.core.audio_processor - INFO - 模型状态: <class 'whisper.model.Whisper'>
+2025-02-20 22:34:26 - app.core.audio_processor - INFO - 开始识别音频: temp/temp_741cfda1_audio.wav
+2025-02-20 22:34:26 - app.core.audio_processor - INFO - 开始转写...
+2025-02-20 22:34:33 - app.core.audio_processor - INFO - 转写完成
+2025-02-20 22:34:33 - app.core.audio_processor - INFO - 字幕文件已生成: temp/搞笑一下144.srt
+2025-02-20 22:34:33 - app.core.audio_processor - INFO - 开始提取音频: E:\测试\新建文件夹\搞笑日常576.mp4
+2025-02-20 22:34:33 - [Thread-133428] 字幕识别成功
+2025-02-20 22:34:33 - app.core.process_thread - INFO - [Thread-133428] 字幕识别成功
+2025-02-20 22:34:33 - app.core.api_client - ERROR - 获取FFmpeg命令失败: 401 Client Error: Unauthorized for url: http://139.224.70.41:8000/api/v1/ffmpeg/command
+2025-02-20 22:34:33 - app.core.process_thread - ERROR - [Thread-133428] 获取命令模板失败
+2025-02-20 22:34:33 - [Thread-133428] 获取命令模板失败
+2025-02-20 22:34:33 - app.core.process_thread - ERROR - [Thread-133428] 获取处理命令失败，跳过文件: 搞笑一下144.mp4
+2025-02-20 22:34:33 - [Thread-133428] 获取处理命令失败，跳过文件: 搞笑一下144.mp4
+2025-02-20 22:34:33 - app.core.audio_processor - INFO - 音频提取成功: temp/temp_7a05eddc_audio.wav
+2025-02-20 22:34:33 - app.core.audio_processor - INFO - 开始加载音频数据...
+2025-02-20 22:34:33 - app.core.audio_processor - INFO - 音频数据加载成功
+2025-02-20 22:34:33 - app.core.audio_processor - INFO - 开始生成频谱图...
+2025-02-20 22:34:33 - app.core.audio_processor - INFO - 频谱图生成成功, shape: torch.Size([80, 3620])
+2025-02-20 22:34:33 - app.core.audio_processor - INFO - 检查模型状态...
+2025-02-20 22:34:33 - app.core.audio_processor - INFO - 模型状态: <class 'whisper.model.Whisper'>
+2025-02-20 22:34:33 - app.core.audio_processor - INFO - 开始识别音频: temp/temp_7a05eddc_audio.wav
+2025-02-20 22:34:33 - app.core.audio_processor - INFO - 开始转写...
+2025-02-20 22:34:36 - 正在停止处理...
+2025-02-20 22:34:36 - 注意：已经开始处理的视频将继续完成，新的视频将不再开始处理
+2025-02-20 22:34:36 - [Thread-171340] 正在停止处理...
+2025-02-20 22:34:36 - app.core.process_thread - INFO - [Thread-171340] 正在停止处理...
+2025-02-20 22:34:40 - app.core.audio_processor - INFO - 转写完成
+2025-02-20 22:34:40 - app.core.audio_processor - INFO - 字幕文件已生成: temp/搞笑日常576.srt
+2025-02-20 22:34:40 - app.core.audio_processor - INFO - 开始提取音频: E:\测试\新建文件夹\搞笑飙演技164.mp4
+2025-02-20 22:34:40 - app.core.process_thread - INFO - [Thread-184156] 字幕识别成功
+2025-02-20 22:34:40 - app.core.api_client - ERROR - 获取FFmpeg命令失败: 401 Client Error: Unauthorized for url: http://139.224.70.41:8000/api/v1/ffmpeg/command
+2025-02-20 22:34:40 - app.core.process_thread - ERROR - [Thread-184156] 获取命令模板失败
+2025-02-20 22:34:40 - app.core.process_thread - ERROR - [Thread-184156] 获取处理命令失败，跳过文件: 搞笑日常576.mp4
+2025-02-20 22:34:40 - app.core.audio_processor - INFO - 音频提取成功: temp/temp_e86aa86c_audio.wav
+2025-02-20 22:34:40 - app.core.audio_processor - INFO - 开始加载音频数据...
+2025-02-20 22:34:40 - app.core.audio_processor - INFO - 音频数据加载成功
+2025-02-20 22:34:40 - app.core.audio_processor - INFO - 开始生成频谱图...
+2025-02-20 22:34:40 - app.core.audio_processor - INFO - 频谱图生成成功, shape: torch.Size([80, 1873])
+2025-02-20 22:34:40 - app.core.audio_processor - INFO - 检查模型状态...
+2025-02-20 22:34:40 - app.core.audio_processor - INFO - 模型状态: <class 'whisper.model.Whisper'>
+2025-02-20 22:34:40 - app.core.audio_processor - INFO - 开始识别音频: temp/temp_e86aa86c_audio.wav
+2025-02-20 22:34:40 - app.core.audio_processor - INFO - 开始转写...
+2025-02-20 22:34:43 - app.core.audio_processor - INFO - 转写完成
+2025-02-20 22:34:43 - app.core.audio_processor - INFO - 字幕文件已生成: temp/搞笑飙演技164.srt
+2025-02-20 22:34:43 - app.core.audio_processor - INFO - 开始提取音频: E:\测试\新建文件夹\搞笑飙演技25.mp4
+2025-02-20 22:34:43 - app.core.process_thread - INFO - [Thread-179736] 字幕识别成功
+2025-02-20 22:34:43 - app.core.api_client - ERROR - 获取FFmpeg命令失败: 401 Client Error: Unauthorized for url: http://139.224.70.41:8000/api/v1/ffmpeg/command
+2025-02-20 22:34:43 - app.core.process_thread - ERROR - [Thread-179736] 获取命令模板失败
+2025-02-20 22:34:43 - app.core.process_thread - ERROR - [Thread-179736] 获取处理命令失败，跳过文件: 搞笑飙演技164.mp4
+2025-02-20 22:34:43 - app.core.audio_processor - INFO - 音频提取成功: temp/temp_f07680c8_audio.wav
+2025-02-20 22:34:43 - app.core.audio_processor - INFO - 开始加载音频数据...
+2025-02-20 22:34:43 - app.core.audio_processor - INFO - 音频数据加载成功
+2025-02-20 22:34:43 - app.core.audio_processor - INFO - 开始生成频谱图...
+2025-02-20 22:34:43 - app.core.audio_processor - INFO - 频谱图生成成功, shape: torch.Size([80, 2983])
+2025-02-20 22:34:43 - app.core.audio_processor - INFO - 检查模型状态...
+2025-02-20 22:34:43 - app.core.audio_processor - INFO - 模型状态: <class 'whisper.model.Whisper'>
+2025-02-20 22:34:43 - app.core.audio_processor - INFO - 开始识别音频: temp/temp_f07680c8_audio.wav
+2025-02-20 22:34:43 - app.core.audio_processor - INFO - 开始转写...
+2025-02-20 22:34:48 - app.core.audio_processor - INFO - 转写完成
+2025-02-20 22:34:48 - app.core.audio_processor - INFO - 字幕文件已生成: temp/搞笑飙演技25.srt
+2025-02-20 22:34:48 - app.core.audio_processor - INFO - 开始提取音频: E:\测试\新建文件夹\狗狗搞笑视频35.mp4
+2025-02-20 22:34:48 - app.core.process_thread - INFO - [Thread-187592] 字幕识别成功
+2025-02-20 22:34:48 - app.core.api_client - ERROR - 获取FFmpeg命令失败: 401 Client Error: Unauthorized for url: http://139.224.70.41:8000/api/v1/ffmpeg/command
+2025-02-20 22:34:48 - app.core.process_thread - ERROR - [Thread-187592] 获取命令模板失败
+2025-02-20 22:34:48 - app.core.process_thread - ERROR - [Thread-187592] 获取处理命令失败，跳过文件: 搞笑飙演技25.mp4
+2025-02-20 22:34:49 - app.core.audio_processor - INFO - 音频提取成功: temp/temp_36ce7484_audio.wav
+2025-02-20 22:34:49 - app.core.audio_processor - INFO - 开始加载音频数据...
+2025-02-20 22:34:49 - app.core.audio_processor - INFO - 音频数据加载成功
+2025-02-20 22:34:49 - app.core.audio_processor - INFO - 开始生成频谱图...
+2025-02-20 22:34:49 - app.core.audio_processor - INFO - 频谱图生成成功, shape: torch.Size([80, 4581])
+2025-02-20 22:34:49 - app.core.audio_processor - INFO - 检查模型状态...
+2025-02-20 22:34:49 - app.core.audio_processor - INFO - 模型状态: <class 'whisper.model.Whisper'>
+2025-02-20 22:34:49 - app.core.audio_processor - INFO - 开始识别音频: temp/temp_36ce7484_audio.wav
+2025-02-20 22:34:49 - app.core.audio_processor - INFO - 开始转写...
+2025-02-20 22:34:53 - app.core.audio_processor - INFO - 转写完成
+2025-02-20 22:34:53 - app.core.audio_processor - INFO - 字幕文件已生成: temp/狗狗搞笑视频35.srt
+2025-02-20 22:34:53 - app.core.process_thread - INFO - [Thread-185208] 字幕识别成功
+2025-02-20 22:34:53 - app.core.api_client - ERROR - 获取FFmpeg命令失败: 401 Client Error: Unauthorized for url: http://139.224.70.41:8000/api/v1/ffmpeg/command
+2025-02-20 22:34:53 - app.core.process_thread - ERROR - [Thread-185208] 获取命令模板失败
+2025-02-20 22:34:53 - app.core.process_thread - ERROR - [Thread-185208] 获取处理命令失败，跳过文件: 狗狗搞笑视频35.mp4
+2025-02-20 22:34:53 - [Thread-171340] 处理已停止
+2025-02-20 22:34:53 - app.core.process_thread - INFO - [Thread-171340] 处理已停止
+2025-02-20 22:34:53 - [Thread-184156] 字幕识别成功
+2025-02-20 22:34:53 - [Thread-184156] 获取命令模板失败
+2025-02-20 22:34:53 - [Thread-184156] 获取处理命令失败，跳过文件: 搞笑日常576.mp4
+2025-02-20 22:34:53 - [Thread-179736] 字幕识别成功
+2025-02-20 22:34:53 - [Thread-179736] 获取命令模板失败
+2025-02-20 22:34:53 - [Thread-179736] 获取处理命令失败，跳过文件: 搞笑飙演技164.mp4
+2025-02-20 22:34:53 - [Thread-187592] 字幕识别成功
+2025-02-20 22:34:53 - [Thread-187592] 获取命令模板失败
+2025-02-20 22:34:53 - [Thread-187592] 获取处理命令失败，跳过文件: 搞笑飙演技25.mp4
+2025-02-20 22:34:53 - [Thread-185208] 字幕识别成功
+2025-02-20 22:34:53 - [Thread-185208] 获取命令模板失败
+2025-02-20 22:34:53 - [Thread-185208] 获取处理命令失败，跳过文件: 狗狗搞笑视频35.mp4
+2025-02-20 22:36:23 - root - INFO - 配置文件路径: F:\py\full-stack-fastapi-template\cr_fy\app\resources\config\config.json
+2025-02-20 22:36:23 - __main__ - INFO - 开始预加载Whisper模型...
+2025-02-20 22:36:23 - __main__ - INFO - 检查开发环境模型: app\resources\models\small.pt
+2025-02-20 22:36:23 - __main__ - INFO - 找到模型文件: app\resources\models\small.pt
+2025-02-20 22:36:25 - __main__ - INFO - 成功加载Whisper模型到 cpu 设备
+2025-02-20 22:36:29 - key_verification - INFO - 运行模式: 开发环境
+2025-02-20 22:36:29 - key_verification - INFO - 当前工作目录: F:\py\full-stack-fastapi-template\cr_fy
+2025-02-20 22:36:31 - key_verification - INFO - 使用服务器地址: http://139.224.70.41:8000
+2025-02-20 22:36:31 - key_verification - INFO - 验证请求URL: http://139.224.70.41:8000/api/v1/api-keys/verify
+2025-02-20 22:36:31 - key_verification - INFO - 请求头: {'Content-Type': 'application/json', 'User-Agent': 'CR-Client/False'}
+2025-02-20 22:36:31 - key_verification - INFO - 请求数据: {'key': 'JGR8FC-AtCLWEHeTY2APY9xNkT9TO9IeEg3jiJvveao', 'machine_info': {'hostname': '方应9900x', 'os': 'Windows 11', 'cpu': 'AMD Ryzen 9 9900X 12-Core Processor', 'mac': 'b5:d5:56:5a:68:a2', 'item': 'clip'}}
+2025-02-20 22:36:31 - key_verification - INFO - 服务器响应状态码: 200
+2025-02-20 22:36:31 - key_verification - INFO - 服务器响应内容: {"valid":true}
+2025-02-20 22:36:31 - key_verification - INFO - 密钥验证结果: {'valid': True}
+2025-02-20 22:36:32 - ui - WARNING - 背景图片不存在: F:\py\full-stack-fastapi-template\cr_fy\app\ui\壁纸.jpg
+2025-02-20 22:36:33 - ui - INFO - [UI] 成功加载方案列表
+2025-02-20 22:36:33 - ui - INFO - 目录 E:\测试\新建文件夹 中找到 6 个视频文件
+2025-02-20 22:36:33 - ui - INFO - 目录数: 1, 总视频数: 6
+2025-02-20 22:36:39 - 已添加 1 个子目录
+2025-02-20 22:36:39 - ui - INFO - 目录 E:\测试\新建文件夹 中找到 6 个视频文件
+2025-02-20 22:36:39 - ui - INFO - 目录 E:\测试\菜心 中找到 16 个视频文件
+2025-02-20 22:36:39 - ui - INFO - 目录数: 2, 总视频数: 22
+2025-02-20 22:36:43 - 已选择输出目录: D:/测试
+2025-02-20 22:36:46 - ui - INFO - 目录 E:\测试\新建文件夹 中找到 6 个视频文件
+2025-02-20 22:36:46 - ui - INFO - 目录数: 1, 总视频数: 6
+2025-02-20 22:36:48 - app.core.process_thread - INFO - [Thread-186660] 设置GPU并发数为: 6
+2025-02-20 22:36:48 - app.core.process_thread - INFO - [Thread-186660] 使用选中的方案: {'id': 6, 'name': '方案6 自动字幕', 'width': 720, 'height': 1080, 'blur_bg': False, 'add_subtitle': True, 'description': '竖屏带字幕'}
+2025-02-20 22:36:48 - 
+=== 线程参数 ===
+2025-02-20 22:36:48 - 线程输入目录: ['E:\\测试\\新建文件夹']
+2025-02-20 22:36:48 - 线程选中方案: [{'id': 6, 'name': '方案6 自动字幕', 'width': 720, 'height': 1080, 'blur_bg': False, 'add_subtitle': True, 'description': '竖屏带字幕'}]
+2025-02-20 22:36:48 - 线程删除选项: False
+2025-02-20 22:36:48 - 线程字幕选项: True
+2025-02-20 22:36:48 - 字幕边距: 85
+2025-02-20 22:36:48 - 字体大小: 20
+2025-02-20 22:36:48 - app.core.process_thread - INFO - [Thread-187356] 
+=== 线程开始 ===
+2025-02-20 22:36:48 - [Thread-187356] 
+=== 线程开始 ===
+2025-02-20 22:36:48 - app.core.process_thread - INFO - [Thread-187356] 线程参数:
+2025-02-20 22:36:48 - app.core.process_thread - INFO - [Thread-187356] 添加字幕: True
+2025-02-20 22:36:48 - app.core.process_thread - INFO - [Thread-187356] 选中的方案: [{'id': 6, 'name': '方案6 自动字幕', 'width': 720, 'height': 1080, 'blur_bg': False, 'add_subtitle': True, 'description': '竖屏带字幕'}]
+2025-02-20 22:36:48 - app.core.process_thread - INFO - [Thread-187356] 更多效果: False
+2025-02-20 22:36:48 - app.core.process_thread - INFO - [Thread-187356] 并发线程数: 10
+2025-02-20 22:36:48 - app.core.process_thread - INFO - [Thread-187356] 循环剪辑: False
+2025-02-20 22:36:48 - app.core.process_thread - INFO - [Thread-187356] 目录 E:\测试\新建文件夹 限制处理 50 个文件
+2025-02-20 22:36:48 - app.core.process_thread - INFO - [Thread-187356] 处理方案ID: 6
+2025-02-20 22:36:48 - app.core.process_thread - INFO - [Thread-177764] 开始识别字幕: 户外唱歌挑战118.mp4
+2025-02-20 22:36:48 - app.core.process_thread - INFO - [Thread-187356] 处理方案ID: 6
+2025-02-20 22:36:48 - app.core.audio_processor - INFO - 开始提取音频: E:\测试\新建文件夹\户外唱歌挑战118.mp4
+2025-02-20 22:36:48 - app.core.process_thread - INFO - [Thread-188276] 开始识别字幕: 搞笑一下144.mp4
+2025-02-20 22:36:48 - app.core.process_thread - INFO - [Thread-187356] 处理方案ID: 6
+2025-02-20 22:36:48 - app.core.process_thread - INFO - [Thread-186576] 开始识别字幕: 搞笑日常576.mp4
+2025-02-20 22:36:48 - app.core.process_thread - INFO - [Thread-187356] 处理方案ID: 6
+2025-02-20 22:36:48 - app.core.process_thread - INFO - [Thread-187356] 处理方案ID: 6
+2025-02-20 22:36:48 - app.core.process_thread - INFO - [Thread-185312] 开始识别字幕: 搞笑飙演技164.mp4
+2025-02-20 22:36:48 - app.core.process_thread - INFO - [Thread-186552] 开始识别字幕: 搞笑飙演技25.mp4
+2025-02-20 22:36:48 - app.core.process_thread - INFO - [Thread-187356] 处理方案ID: 6
+2025-02-20 22:36:48 - app.core.process_thread - INFO - [Thread-186044] 开始识别字幕: 狗狗搞笑视频35.mp4
+2025-02-20 22:36:48 - [Thread-187356] 线程参数:
+2025-02-20 22:36:48 - [Thread-187356] 添加字幕: True
+2025-02-20 22:36:48 - [Thread-187356] 选中的方案: [{'id': 6, 'name': '方案6 自动字幕', 'width': 720, 'height': 1080, 'blur_bg': False, 'add_subtitle': True, 'description': '竖屏带字幕'}]
+2025-02-20 22:36:48 - [Thread-187356] 更多效果: False
+2025-02-20 22:36:48 - [Thread-187356] 并发线程数: 10
+2025-02-20 22:36:48 - [Thread-187356] 循环剪辑: False
+2025-02-20 22:36:48 - [Thread-187356] 目录 E:\测试\新建文件夹 限制处理 50 个文件
+2025-02-20 22:36:48 - [Thread-187356] 处理方案ID: 6
+2025-02-20 22:36:48 - [Thread-177764] 开始识别字幕: 户外唱歌挑战118.mp4
+2025-02-20 22:36:48 - [Thread-187356] 处理方案ID: 6
+2025-02-20 22:36:48 - [Thread-188276] 开始识别字幕: 搞笑一下144.mp4
+2025-02-20 22:36:48 - [Thread-187356] 处理方案ID: 6
+2025-02-20 22:36:48 - [Thread-186576] 开始识别字幕: 搞笑日常576.mp4
+2025-02-20 22:36:48 - [Thread-187356] 处理方案ID: 6
+2025-02-20 22:36:48 - [Thread-185312] 开始识别字幕: 搞笑飙演技164.mp4
+2025-02-20 22:36:48 - [Thread-187356] 处理方案ID: 6
+2025-02-20 22:36:48 - [Thread-186552] 开始识别字幕: 搞笑飙演技25.mp4
+2025-02-20 22:36:48 - [Thread-187356] 处理方案ID: 6
+2025-02-20 22:36:48 - [Thread-186044] 开始识别字幕: 狗狗搞笑视频35.mp4
+2025-02-20 22:36:48 - app.core.audio_processor - INFO - 音频提取成功: temp/temp_108132be_audio.wav
+2025-02-20 22:36:48 - app.core.audio_processor - INFO - 开始加载音频数据...
+2025-02-20 22:36:48 - app.core.audio_processor - INFO - 音频数据加载成功
+2025-02-20 22:36:48 - app.core.audio_processor - INFO - 开始生成频谱图...
+2025-02-20 22:36:48 - app.core.audio_processor - INFO - 频谱图生成成功, shape: torch.Size([80, 3527])
+2025-02-20 22:36:48 - app.core.audio_processor - INFO - 检查模型状态...
+2025-02-20 22:36:48 - app.core.audio_processor - INFO - 模型状态: <class 'whisper.model.Whisper'>
+2025-02-20 22:36:48 - app.core.audio_processor - INFO - 开始识别音频: temp/temp_108132be_audio.wav
+2025-02-20 22:36:48 - app.core.audio_processor - INFO - 开始转写...
+2025-02-20 22:36:57 - app.core.audio_processor - INFO - 转写完成
+2025-02-20 22:36:57 - app.core.audio_processor - INFO - 字幕文件已生成: temp/户外唱歌挑战118.srt
+2025-02-20 22:36:57 - app.core.audio_processor - INFO - 开始提取音频: E:\测试\新建文件夹\搞笑一下144.mp4
+2025-02-20 22:36:57 - [Thread-177764] 字幕识别成功
+2025-02-20 22:36:57 - app.core.process_thread - INFO - [Thread-177764] 字幕识别成功
+2025-02-20 22:36:57 - [Thread-177764] 开始处理: 户外唱歌挑战118.mp4 (使用GPU)
+2025-02-20 22:36:57 - app.core.process_thread - INFO - [Thread-177764] 开始处理: 户外唱歌挑战118.mp4 (使用GPU)
+2025-02-20 22:36:57 - app.core.audio_processor - INFO - 音频提取成功: temp/temp_3ee59b32_audio.wav
+2025-02-20 22:36:57 - app.core.audio_processor - INFO - 开始加载音频数据...
+2025-02-20 22:36:57 - app.core.audio_processor - INFO - 音频数据加载成功
+2025-02-20 22:36:57 - app.core.audio_processor - INFO - 开始生成频谱图...
+2025-02-20 22:36:57 - app.core.audio_processor - INFO - 频谱图生成成功, shape: torch.Size([80, 2835])
+2025-02-20 22:36:57 - app.core.audio_processor - INFO - 检查模型状态...
+2025-02-20 22:36:57 - app.core.audio_processor - INFO - 模型状态: <class 'whisper.model.Whisper'>
+2025-02-20 22:36:57 - app.core.audio_processor - INFO - 开始识别音频: temp/temp_3ee59b32_audio.wav
+2025-02-20 22:36:57 - app.core.audio_processor - INFO - 开始转写...
+2025-02-20 22:37:06 - app.core.audio_processor - INFO - 转写完成
+2025-02-20 22:37:06 - app.core.audio_processor - INFO - 字幕文件已生成: temp/搞笑一下144.srt
+2025-02-20 22:37:06 - app.core.audio_processor - INFO - 开始提取音频: E:\测试\新建文件夹\搞笑日常576.mp4
+2025-02-20 22:37:06 - app.core.process_thread - INFO - [Thread-188276] 字幕识别成功
+2025-02-20 22:37:06 - [Thread-188276] 字幕识别成功
+2025-02-20 22:37:06 - [Thread-188276] 开始处理: 搞笑一下144.mp4 (使用GPU)
+2025-02-20 22:37:06 - app.core.process_thread - INFO - [Thread-188276] 开始处理: 搞笑一下144.mp4 (使用GPU)
+2025-02-20 22:37:06 - app.core.audio_processor - INFO - 音频提取成功: temp/temp_d5d1089f_audio.wav
+2025-02-20 22:37:06 - app.core.audio_processor - INFO - 开始加载音频数据...
+2025-02-20 22:37:06 - app.core.audio_processor - INFO - 音频数据加载成功
+2025-02-20 22:37:06 - app.core.audio_processor - INFO - 开始生成频谱图...
+2025-02-20 22:37:06 - app.core.audio_processor - INFO - 频谱图生成成功, shape: torch.Size([80, 3620])
+2025-02-20 22:37:06 - app.core.audio_processor - INFO - 检查模型状态...
+2025-02-20 22:37:06 - app.core.audio_processor - INFO - 模型状态: <class 'whisper.model.Whisper'>
+2025-02-20 22:37:06 - app.core.audio_processor - INFO - 开始识别音频: temp/temp_d5d1089f_audio.wav
+2025-02-20 22:37:06 - app.core.audio_processor - INFO - 开始转写...
+2025-02-20 22:37:14 - [Thread-177764] 处理完成: 户外唱歌挑战118.mp4
+2025-02-20 22:37:14 - app.core.process_thread - INFO - [Thread-177764] 处理完成: 户外唱歌挑战118.mp4
+2025-02-20 22:37:17 - app.core.audio_processor - INFO - 转写完成
+2025-02-20 22:37:17 - app.core.audio_processor - INFO - 字幕文件已生成: temp/搞笑日常576.srt
+2025-02-20 22:37:17 - app.core.audio_processor - INFO - 开始提取音频: E:\测试\新建文件夹\搞笑飙演技164.mp4
+2025-02-20 22:37:17 - [Thread-186576] 字幕识别成功
+2025-02-20 22:37:17 - app.core.process_thread - INFO - [Thread-186576] 字幕识别成功
+2025-02-20 22:37:17 - app.core.process_thread - INFO - [Thread-186576] 开始处理: 搞笑日常576.mp4 (使用GPU)
+2025-02-20 22:37:17 - [Thread-186576] 开始处理: 搞笑日常576.mp4 (使用GPU)
+2025-02-20 22:37:17 - app.core.audio_processor - INFO - 音频提取成功: temp/temp_b9407cd0_audio.wav
+2025-02-20 22:37:17 - app.core.audio_processor - INFO - 开始加载音频数据...
+2025-02-20 22:37:17 - app.core.audio_processor - INFO - 音频数据加载成功
+2025-02-20 22:37:17 - app.core.audio_processor - INFO - 开始生成频谱图...
+2025-02-20 22:37:17 - app.core.audio_processor - INFO - 频谱图生成成功, shape: torch.Size([80, 1873])
+2025-02-20 22:37:17 - app.core.audio_processor - INFO - 检查模型状态...
+2025-02-20 22:37:17 - app.core.audio_processor - INFO - 模型状态: <class 'whisper.model.Whisper'>
+2025-02-20 22:37:17 - app.core.audio_processor - INFO - 开始识别音频: temp/temp_b9407cd0_audio.wav
+2025-02-20 22:37:17 - app.core.audio_processor - INFO - 开始转写...
+2025-02-20 22:37:22 - app.core.process_thread - INFO - [Thread-188276] 处理完成: 搞笑一下144.mp4
+2025-02-20 22:37:22 - [Thread-188276] 处理完成: 搞笑一下144.mp4
+2025-02-20 22:37:23 - app.core.audio_processor - INFO - 转写完成
+2025-02-20 22:37:23 - app.core.audio_processor - INFO - 字幕文件已生成: temp/搞笑飙演技164.srt
+2025-02-20 22:37:23 - app.core.audio_processor - INFO - 开始提取音频: E:\测试\新建文件夹\搞笑飙演技25.mp4
+2025-02-20 22:37:23 - [Thread-185312] 字幕识别成功
+2025-02-20 22:37:23 - app.core.process_thread - INFO - [Thread-185312] 字幕识别成功
+2025-02-20 22:37:23 - app.core.process_thread - INFO - [Thread-185312] 开始处理: 搞笑飙演技164.mp4 (使用GPU)
+2025-02-20 22:37:23 - [Thread-185312] 开始处理: 搞笑飙演技164.mp4 (使用GPU)
+2025-02-20 22:37:24 - app.core.audio_processor - INFO - 音频提取成功: temp/temp_525d86f3_audio.wav
+2025-02-20 22:37:24 - app.core.audio_processor - INFO - 开始加载音频数据...
+2025-02-20 22:37:24 - app.core.audio_processor - INFO - 音频数据加载成功
+2025-02-20 22:37:24 - app.core.audio_processor - INFO - 开始生成频谱图...
+2025-02-20 22:37:24 - app.core.audio_processor - INFO - 频谱图生成成功, shape: torch.Size([80, 2983])
+2025-02-20 22:37:24 - app.core.audio_processor - INFO - 检查模型状态...
+2025-02-20 22:37:24 - app.core.audio_processor - INFO - 模型状态: <class 'whisper.model.Whisper'>
+2025-02-20 22:37:24 - app.core.audio_processor - INFO - 开始识别音频: temp/temp_525d86f3_audio.wav
+2025-02-20 22:37:24 - app.core.audio_processor - INFO - 开始转写...
+2025-02-20 22:37:28 - 正在停止处理...
+2025-02-20 22:37:28 - 注意：已经开始处理的视频将继续完成，新的视频将不再开始处理
+2025-02-20 22:37:28 - [Thread-186660] 正在停止处理...
+2025-02-20 22:37:28 - app.core.process_thread - INFO - [Thread-186660] 正在停止处理...
+2025-02-20 22:37:28 - [Thread-186660] 已终止当前处理进程
+2025-02-20 22:37:28 - app.core.process_thread - INFO - [Thread-186660] 已终止当前处理进程
+2025-02-20 22:37:28 - app.core.process_thread - WARNING - [Thread-186576] 处理被用户中断
+2025-02-20 22:37:29 - app.core.process_thread - WARNING - [Thread-185312] 处理被用户中断
+2025-02-20 22:37:33 - app.core.audio_processor - INFO - 转写完成
+2025-02-20 22:37:33 - app.core.audio_processor - INFO - 字幕文件已生成: temp/搞笑飙演技25.srt
+2025-02-20 22:37:33 - app.core.audio_processor - INFO - 开始提取音频: E:\测试\新建文件夹\狗狗搞笑视频35.mp4
+2025-02-20 22:37:33 - app.core.process_thread - INFO - [Thread-186552] 字幕识别成功
+2025-02-20 22:37:33 - app.core.process_thread - INFO - [Thread-186552] 开始处理: 搞笑飙演技25.mp4 (使用GPU)
+2025-02-20 22:37:33 - app.core.process_thread - WARNING - [Thread-186552] 处理被用户中断
+2025-02-20 22:37:33 - app.core.audio_processor - INFO - 音频提取成功: temp/temp_893d0d99_audio.wav
+2025-02-20 22:37:33 - app.core.audio_processor - INFO - 开始加载音频数据...
+2025-02-20 22:37:33 - app.core.audio_processor - INFO - 音频数据加载成功
+2025-02-20 22:37:33 - app.core.audio_processor - INFO - 开始生成频谱图...
+2025-02-20 22:37:33 - app.core.audio_processor - INFO - 频谱图生成成功, shape: torch.Size([80, 4581])
+2025-02-20 22:37:33 - app.core.audio_processor - INFO - 检查模型状态...
+2025-02-20 22:37:33 - app.core.audio_processor - INFO - 模型状态: <class 'whisper.model.Whisper'>
+2025-02-20 22:37:33 - app.core.audio_processor - INFO - 开始识别音频: temp/temp_893d0d99_audio.wav
+2025-02-20 22:37:33 - app.core.audio_processor - INFO - 开始转写...
+2025-02-20 22:37:38 - app.core.audio_processor - INFO - 转写完成
+2025-02-20 22:37:38 - app.core.audio_processor - INFO - 字幕文件已生成: temp/狗狗搞笑视频35.srt
+2025-02-20 22:37:38 - app.core.process_thread - INFO - [Thread-186044] 字幕识别成功
+2025-02-20 22:37:38 - app.core.process_thread - INFO - [Thread-186044] 开始处理: 狗狗搞笑视频35.mp4 (使用GPU)
+2025-02-20 22:37:38 - app.core.process_thread - WARNING - [Thread-186044] 处理被用户中断
+2025-02-22 03:05:34 - root - INFO - 配置文件路径: F:\py\full-stack-fastapi-template\cr_fy\app\resources\config\config.json
+2025-02-22 03:05:34 - __main__ - INFO - 开始预加载Whisper模型...
+2025-02-22 03:05:34 - __main__ - INFO - 检查开发环境模型: app\resources\models\small.pt
+2025-02-22 03:05:34 - __main__ - INFO - 找到模型文件: app\resources\models\small.pt
+2025-02-22 03:05:35 - __main__ - INFO - 成功加载Whisper模型到 cpu 设备
+2025-02-22 03:05:38 - key_verification - INFO - 运行模式: 开发环境
+2025-02-22 03:05:38 - key_verification - INFO - 当前工作目录: F:\py\full-stack-fastapi-template\cr_fy
+2025-02-22 03:05:40 - key_verification - INFO - 使用服务器地址: http://139.224.70.41:8000
+2025-02-22 03:05:40 - key_verification - INFO - 验证请求URL: http://139.224.70.41:8000/api/v1/api-keys/verify
+2025-02-22 03:05:40 - key_verification - INFO - 请求头: {'Content-Type': 'application/json', 'User-Agent': 'CR-Client/False'}
+2025-02-22 03:05:40 - key_verification - INFO - 请求数据: {'key': 'JGR8FC-AtCLWEHeTY2APY9xNkT9TO9IeEg3jiJvveao', 'machine_info': {'hostname': '方应9900x', 'os': 'Windows 11', 'cpu': 'AMD Ryzen 9 9900X 12-Core Processor', 'mac': 'b5:d5:56:5a:68:a2', 'item': 'clip'}}
+2025-02-22 03:05:40 - key_verification - INFO - 服务器响应状态码: 200
+2025-02-22 03:05:40 - key_verification - INFO - 服务器响应内容: {"valid":true}
+2025-02-22 03:05:40 - key_verification - INFO - 密钥验证结果: {'valid': True}
+2025-02-22 03:05:41 - ui - WARNING - 背景图片不存在: F:\py\full-stack-fastapi-template\cr_fy\app\ui\壁纸.jpg
+2025-02-22 03:05:41 - ui - INFO - [UI] 成功加载方案列表
+2025-02-22 03:05:41 - ui - INFO - 目录 E:\测试\新建文件夹 中找到 6 个视频文件
+2025-02-22 03:05:41 - ui - INFO - 目录数: 1, 总视频数: 6
+2025-02-22 03:05:48 - 已添加 1 个子目录
+2025-02-22 03:05:48 - ui - INFO - 目录 E:\测试\新建文件夹 中找到 6 个视频文件
+2025-02-22 03:05:48 - ui - INFO - 目录 E:\测试\菜心 中找到 16 个视频文件
+2025-02-22 03:05:48 - ui - INFO - 目录数: 2, 总视频数: 22
+2025-02-22 03:05:51 - ui - INFO - 目录 E:\测试\新建文件夹 中找到 6 个视频文件
+2025-02-22 03:05:51 - ui - INFO - 目录数: 1, 总视频数: 6
+2025-02-22 03:05:52 - app.core.process_thread - INFO - [Thread-178492] 设置GPU并发数为: 6
+2025-02-22 03:05:52 - app.core.process_thread - INFO - [Thread-178492] 使用选中的方案: {'id': 6, 'name': '方案6 自动字幕', 'width': 720, 'height': 1080, 'blur_bg': False, 'add_subtitle': True, 'description': '竖屏带字幕'}
+2025-02-22 03:05:52 - 
+=== 线程参数 ===
+2025-02-22 03:05:52 - 线程输入目录: ['E:\\测试\\新建文件夹']
+2025-02-22 03:05:52 - 线程选中方案: [{'id': 6, 'name': '方案6 自动字幕', 'width': 720, 'height': 1080, 'blur_bg': False, 'add_subtitle': True, 'description': '竖屏带字幕'}]
+2025-02-22 03:05:52 - 线程删除选项: False
+2025-02-22 03:05:52 - 线程字幕选项: True
+2025-02-22 03:05:52 - 字幕边距: 85
+2025-02-22 03:05:52 - 字体大小: 20
+2025-02-22 03:05:52 - app.core.process_thread - INFO - [Thread-152864] 
+=== 线程开始 ===
+2025-02-22 03:05:52 - app.core.process_thread - INFO - [Thread-152864] 线程参数:
+2025-02-22 03:05:52 - app.core.process_thread - INFO - [Thread-152864] 添加字幕: True
+2025-02-22 03:05:52 - app.core.process_thread - INFO - [Thread-152864] 选中的方案: [{'id': 6, 'name': '方案6 自动字幕', 'width': 720, 'height': 1080, 'blur_bg': False, 'add_subtitle': True, 'description': '竖屏带字幕'}]
+2025-02-22 03:05:52 - app.core.process_thread - INFO - [Thread-152864] 更多效果: False
+2025-02-22 03:05:52 - app.core.process_thread - INFO - [Thread-152864] 并发线程数: 10
+2025-02-22 03:05:52 - app.core.process_thread - INFO - [Thread-152864] 循环剪辑: False
+2025-02-22 03:05:52 - app.core.process_thread - INFO - [Thread-152864] 目录 E:\测试\新建文件夹 限制处理 50 个文件
+2025-02-22 03:05:52 - app.core.process_thread - INFO - [Thread-152864] 处理方案ID: 6
+2025-02-22 03:05:52 - app.core.process_thread - INFO - [Thread-24384] 开始识别字幕: 户外唱歌挑战118.mp4
+2025-02-22 03:05:52 - app.core.process_thread - INFO - [Thread-152864] 处理方案ID: 6
+2025-02-22 03:05:52 - app.core.audio_processor - INFO - 开始提取音频: E:\测试\新建文件夹\户外唱歌挑战118.mp4
+2025-02-22 03:05:52 - app.core.process_thread - INFO - [Thread-125432] 开始识别字幕: 搞笑一下144.mp4
+2025-02-22 03:05:52 - app.core.process_thread - INFO - [Thread-152864] 处理方案ID: 6
+2025-02-22 03:05:52 - app.core.process_thread - INFO - [Thread-59516] 开始识别字幕: 搞笑日常576.mp4
+2025-02-22 03:05:52 - app.core.process_thread - INFO - [Thread-152864] 处理方案ID: 6
+2025-02-22 03:05:52 - app.core.process_thread - INFO - [Thread-8376] 开始识别字幕: 搞笑飙演技164.mp4
+2025-02-22 03:05:52 - app.core.process_thread - INFO - [Thread-152864] 处理方案ID: 6
+2025-02-22 03:05:52 - app.core.process_thread - INFO - [Thread-12804] 开始识别字幕: 搞笑飙演技25.mp4
+2025-02-22 03:05:52 - app.core.process_thread - INFO - [Thread-152864] 处理方案ID: 6
+2025-02-22 03:05:52 - app.core.process_thread - INFO - [Thread-183600] 开始识别字幕: 狗狗搞笑视频35.mp4
+2025-02-22 03:05:52 - [Thread-152864] 
+=== 线程开始 ===
+2025-02-22 03:05:52 - [Thread-152864] 线程参数:
+2025-02-22 03:05:52 - [Thread-152864] 添加字幕: True
+2025-02-22 03:05:52 - [Thread-152864] 选中的方案: [{'id': 6, 'name': '方案6 自动字幕', 'width': 720, 'height': 1080, 'blur_bg': False, 'add_subtitle': True, 'description': '竖屏带字幕'}]
+2025-02-22 03:05:52 - [Thread-152864] 更多效果: False
+2025-02-22 03:05:52 - [Thread-152864] 并发线程数: 10
+2025-02-22 03:05:52 - [Thread-152864] 循环剪辑: False
+2025-02-22 03:05:52 - [Thread-152864] 目录 E:\测试\新建文件夹 限制处理 50 个文件
+2025-02-22 03:05:52 - [Thread-152864] 处理方案ID: 6
+2025-02-22 03:05:52 - [Thread-24384] 开始识别字幕: 户外唱歌挑战118.mp4
+2025-02-22 03:05:52 - [Thread-152864] 处理方案ID: 6
+2025-02-22 03:05:52 - [Thread-125432] 开始识别字幕: 搞笑一下144.mp4
+2025-02-22 03:05:52 - [Thread-152864] 处理方案ID: 6
+2025-02-22 03:05:52 - [Thread-59516] 开始识别字幕: 搞笑日常576.mp4
+2025-02-22 03:05:52 - [Thread-152864] 处理方案ID: 6
+2025-02-22 03:05:52 - [Thread-8376] 开始识别字幕: 搞笑飙演技164.mp4
+2025-02-22 03:05:52 - [Thread-152864] 处理方案ID: 6
+2025-02-22 03:05:52 - [Thread-12804] 开始识别字幕: 搞笑飙演技25.mp4
+2025-02-22 03:05:52 - [Thread-152864] 处理方案ID: 6
+2025-02-22 03:05:52 - [Thread-183600] 开始识别字幕: 狗狗搞笑视频35.mp4
+2025-02-22 03:05:54 - app.core.audio_processor - INFO - 音频提取成功: temp/temp_368059d8_audio.wav
+2025-02-22 03:05:54 - app.core.audio_processor - INFO - 开始加载音频数据...
+2025-02-22 03:05:54 - app.core.audio_processor - INFO - 音频数据加载成功
+2025-02-22 03:05:54 - app.core.audio_processor - INFO - 开始生成频谱图...
+2025-02-22 03:05:54 - app.core.audio_processor - INFO - 频谱图生成成功, shape: torch.Size([80, 3527])
+2025-02-22 03:05:54 - app.core.audio_processor - INFO - 检查模型状态...
+2025-02-22 03:05:54 - app.core.audio_processor - INFO - 模型状态: <class 'whisper.model.Whisper'>
+2025-02-22 03:05:54 - app.core.audio_processor - INFO - 开始识别音频: temp/temp_368059d8_audio.wav
+2025-02-22 03:05:54 - app.core.audio_processor - INFO - 开始转写...
+2025-02-22 03:06:01 - app.core.audio_processor - INFO - 转写完成
+2025-02-22 03:06:01 - app.core.audio_processor - INFO - 字幕文件已生成: temp/户外唱歌挑战118.srt
+2025-02-22 03:06:01 - [Thread-24384] 字幕识别成功
+2025-02-22 03:06:01 - app.core.audio_processor - INFO - 开始提取音频: E:\测试\新建文件夹\搞笑一下144.mp4
+2025-02-22 03:06:01 - app.core.process_thread - INFO - [Thread-24384] 字幕识别成功
+2025-02-22 03:06:01 - [Thread-24384] 开始处理: 户外唱歌挑战118.mp4 (使用GPU)
+2025-02-22 03:06:01 - app.core.process_thread - INFO - [Thread-24384] 开始处理: 户外唱歌挑战118.mp4 (使用GPU)
+2025-02-22 03:06:02 - app.core.audio_processor - INFO - 音频提取成功: temp/temp_9bf83dcd_audio.wav
+2025-02-22 03:06:02 - app.core.audio_processor - INFO - 开始加载音频数据...
+2025-02-22 03:06:02 - app.core.audio_processor - INFO - 音频数据加载成功
+2025-02-22 03:06:02 - app.core.audio_processor - INFO - 开始生成频谱图...
+2025-02-22 03:06:02 - app.core.audio_processor - INFO - 频谱图生成成功, shape: torch.Size([80, 2835])
+2025-02-22 03:06:02 - app.core.audio_processor - INFO - 检查模型状态...
+2025-02-22 03:06:02 - app.core.audio_processor - INFO - 模型状态: <class 'whisper.model.Whisper'>
+2025-02-22 03:06:02 - app.core.audio_processor - INFO - 开始识别音频: temp/temp_9bf83dcd_audio.wav
+2025-02-22 03:06:02 - app.core.audio_processor - INFO - 开始转写...
+2025-02-22 03:06:09 - app.core.audio_processor - INFO - 转写完成
+2025-02-22 03:06:09 - app.core.audio_processor - INFO - 字幕文件已生成: temp/搞笑一下144.srt
+2025-02-22 03:06:09 - app.core.audio_processor - INFO - 开始提取音频: E:\测试\新建文件夹\搞笑日常576.mp4
+2025-02-22 03:06:09 - [Thread-125432] 字幕识别成功
+2025-02-22 03:06:09 - app.core.process_thread - INFO - [Thread-125432] 字幕识别成功
+2025-02-22 03:06:09 - [Thread-125432] 开始处理: 搞笑一下144.mp4 (使用GPU)
+2025-02-22 03:06:09 - app.core.process_thread - INFO - [Thread-125432] 开始处理: 搞笑一下144.mp4 (使用GPU)
+2025-02-22 03:06:10 - app.core.audio_processor - INFO - 音频提取成功: temp/temp_28fe7ebd_audio.wav
+2025-02-22 03:06:10 - app.core.audio_processor - INFO - 开始加载音频数据...
+2025-02-22 03:06:10 - app.core.audio_processor - INFO - 音频数据加载成功
+2025-02-22 03:06:10 - app.core.audio_processor - INFO - 开始生成频谱图...
+2025-02-22 03:06:10 - app.core.audio_processor - INFO - 频谱图生成成功, shape: torch.Size([80, 3620])
+2025-02-22 03:06:10 - app.core.audio_processor - INFO - 检查模型状态...
+2025-02-22 03:06:10 - app.core.audio_processor - INFO - 模型状态: <class 'whisper.model.Whisper'>
+2025-02-22 03:06:10 - app.core.audio_processor - INFO - 开始识别音频: temp/temp_28fe7ebd_audio.wav
+2025-02-22 03:06:10 - app.core.audio_processor - INFO - 开始转写...
+2025-02-22 03:06:18 - app.core.audio_processor - INFO - 转写完成
+2025-02-22 03:06:18 - app.core.audio_processor - INFO - 字幕文件已生成: temp/搞笑日常576.srt
+2025-02-22 03:06:18 - app.core.audio_processor - INFO - 开始提取音频: E:\测试\新建文件夹\搞笑飙演技164.mp4
+2025-02-22 03:06:18 - [Thread-59516] 字幕识别成功
+2025-02-22 03:06:18 - app.core.process_thread - INFO - [Thread-59516] 字幕识别成功
+2025-02-22 03:06:18 - app.core.process_thread - INFO - [Thread-59516] 开始处理: 搞笑日常576.mp4 (使用GPU)
+2025-02-22 03:06:18 - [Thread-59516] 开始处理: 搞笑日常576.mp4 (使用GPU)
+2025-02-22 03:06:18 - app.core.audio_processor - INFO - 音频提取成功: temp/temp_9241ab20_audio.wav
+2025-02-22 03:06:18 - app.core.audio_processor - INFO - 开始加载音频数据...
+2025-02-22 03:06:18 - [Thread-24384] 处理完成: 户外唱歌挑战118.mp4
+2025-02-22 03:06:18 - app.core.process_thread - INFO - [Thread-24384] 处理完成: 户外唱歌挑战118.mp4
+2025-02-22 03:06:18 - app.core.audio_processor - INFO - 音频数据加载成功
+2025-02-22 03:06:18 - app.core.audio_processor - INFO - 开始生成频谱图...
+2025-02-22 03:06:18 - app.core.audio_processor - INFO - 频谱图生成成功, shape: torch.Size([80, 1873])
+2025-02-22 03:06:18 - app.core.audio_processor - INFO - 检查模型状态...
+2025-02-22 03:06:18 - app.core.audio_processor - INFO - 模型状态: <class 'whisper.model.Whisper'>
+2025-02-22 03:06:18 - app.core.audio_processor - INFO - 开始识别音频: temp/temp_9241ab20_audio.wav
+2025-02-22 03:06:18 - app.core.audio_processor - INFO - 开始转写...
+2025-02-22 03:06:22 - 正在停止处理...
+2025-02-22 03:06:22 - 注意：已经开始处理的视频将继续完成，新的视频将不再开始处理
+2025-02-22 03:06:22 - [Thread-178492] 正在停止处理...
+2025-02-22 03:06:22 - app.core.process_thread - INFO - [Thread-178492] 正在停止处理...
+2025-02-22 03:06:22 - [Thread-178492] 已终止当前处理进程
+2025-02-22 03:06:22 - app.core.process_thread - INFO - [Thread-178492] 已终止当前处理进程
+2025-02-22 03:06:22 - app.core.process_thread - WARNING - [Thread-59516] 处理被用户中断
+2025-02-22 03:06:23 - app.core.process_thread - WARNING - [Thread-125432] 处理被用户中断
+2025-02-22 03:06:23 - app.core.audio_processor - INFO - 转写完成
+2025-02-22 03:06:23 - app.core.audio_processor - INFO - 字幕文件已生成: temp/搞笑飙演技164.srt
+2025-02-22 03:06:23 - app.core.audio_processor - INFO - 开始提取音频: E:\测试\新建文件夹\搞笑飙演技25.mp4
+2025-02-22 03:06:23 - app.core.process_thread - INFO - [Thread-8376] 字幕识别成功
+2025-02-22 03:06:23 - app.core.process_thread - INFO - [Thread-8376] 开始处理: 搞笑飙演技164.mp4 (使用GPU)
+2025-02-22 03:06:24 - app.core.process_thread - WARNING - [Thread-8376] 处理被用户中断
+2025-02-22 03:06:24 - app.core.audio_processor - INFO - 音频提取成功: temp/temp_9396500b_audio.wav
+2025-02-22 03:06:24 - app.core.audio_processor - INFO - 开始加载音频数据...
+2025-02-22 03:06:24 - app.core.audio_processor - INFO - 音频数据加载成功
+2025-02-22 03:06:24 - app.core.audio_processor - INFO - 开始生成频谱图...
+2025-02-22 03:06:24 - app.core.audio_processor - INFO - 频谱图生成成功, shape: torch.Size([80, 2983])
+2025-02-22 03:06:24 - app.core.audio_processor - INFO - 检查模型状态...
+2025-02-22 03:06:24 - app.core.audio_processor - INFO - 模型状态: <class 'whisper.model.Whisper'>
+2025-02-22 03:06:24 - app.core.audio_processor - INFO - 开始识别音频: temp/temp_9396500b_audio.wav
+2025-02-22 03:06:24 - app.core.audio_processor - INFO - 开始转写...
+2025-02-22 03:06:29 - app.core.audio_processor - INFO - 转写完成
+2025-02-22 03:06:29 - app.core.audio_processor - INFO - 字幕文件已生成: temp/搞笑飙演技25.srt
+2025-02-22 03:06:29 - app.core.audio_processor - INFO - 开始提取音频: E:\测试\新建文件夹\狗狗搞笑视频35.mp4
+2025-02-22 03:06:29 - app.core.process_thread - INFO - [Thread-12804] 字幕识别成功
+2025-02-22 03:06:29 - app.core.process_thread - INFO - [Thread-12804] 开始处理: 搞笑飙演技25.mp4 (使用GPU)
+2025-02-22 03:06:30 - app.core.process_thread - WARNING - [Thread-12804] 处理被用户中断
+2025-02-22 03:06:30 - app.core.audio_processor - INFO - 音频提取成功: temp/temp_bce84189_audio.wav
+2025-02-22 03:06:30 - app.core.audio_processor - INFO - 开始加载音频数据...
+2025-02-22 03:06:30 - app.core.audio_processor - INFO - 音频数据加载成功
+2025-02-22 03:06:30 - app.core.audio_processor - INFO - 开始生成频谱图...
+2025-02-22 03:06:30 - app.core.audio_processor - INFO - 频谱图生成成功, shape: torch.Size([80, 4581])
+2025-02-22 03:06:30 - app.core.audio_processor - INFO - 检查模型状态...
+2025-02-22 03:06:30 - app.core.audio_processor - INFO - 模型状态: <class 'whisper.model.Whisper'>
+2025-02-22 03:06:30 - app.core.audio_processor - INFO - 开始识别音频: temp/temp_bce84189_audio.wav
+2025-02-22 03:06:30 - app.core.audio_processor - INFO - 开始转写...
+2025-02-22 03:06:34 - app.core.audio_processor - INFO - 转写完成
+2025-02-22 03:06:34 - app.core.audio_processor - INFO - 字幕文件已生成: temp/狗狗搞笑视频35.srt
+2025-02-22 03:06:34 - app.core.process_thread - INFO - [Thread-183600] 字幕识别成功
+2025-02-22 03:06:34 - app.core.process_thread - INFO - [Thread-183600] 开始处理: 狗狗搞笑视频35.mp4 (使用GPU)
+2025-02-22 03:06:34 - app.core.process_thread - WARNING - [Thread-183600] 处理被用户中断
+2025-02-22 03:06:34 - [Thread-178492] 处理已停止
+2025-02-22 03:06:34 - app.core.process_thread - INFO - [Thread-178492] 处理已停止
+2025-02-22 03:06:34 - [Thread-59516] 处理被用户中断
+2025-02-22 03:06:34 - [Thread-125432] 处理被用户中断
+2025-02-22 03:06:34 - [Thread-8376] 字幕识别成功
+2025-02-22 03:06:34 - [Thread-8376] 开始处理: 搞笑飙演技164.mp4 (使用GPU)
+2025-02-22 03:06:34 - [Thread-8376] 处理被用户中断
+2025-02-22 03:06:34 - [Thread-12804] 字幕识别成功
+2025-02-22 03:06:34 - [Thread-12804] 开始处理: 搞笑飙演技25.mp4 (使用GPU)
+2025-02-22 03:06:34 - [Thread-12804] 处理被用户中断
+2025-02-22 03:06:34 - [Thread-183600] 字幕识别成功
+2025-02-22 03:06:34 - [Thread-183600] 开始处理: 狗狗搞笑视频35.mp4 (使用GPU)
+2025-02-22 03:06:34 - [Thread-183600] 处理被用户中断
+2025-02-22 16:44:48 - root - INFO - 配置文件路径: F:\py\full-stack-fastapi-template\cr_fy\app\resources\config\config.json
+2025-02-22 16:44:48 - __main__ - INFO - 开始预加载Whisper模型...
+2025-02-22 16:44:48 - __main__ - INFO - 检查模型文件: F:\py\full-stack-fastapi-template\cr_fy\models\small.pt
+2025-02-22 16:44:48 - __main__ - INFO - 找到模型文件: F:\py\full-stack-fastapi-template\cr_fy\models\small.pt
+2025-02-22 16:44:50 - __main__ - INFO - 成功加载Whisper模型到 cpu 设备
+2025-02-22 16:44:52 - key_verification - INFO - 运行模式: 开发环境
+2025-02-22 16:44:52 - key_verification - INFO - 当前工作目录: F:\py\full-stack-fastapi-template\cr_fy
+2025-02-22 16:44:54 - key_verification - INFO - 使用服务器地址: http://139.224.70.41:8000
+2025-02-22 16:44:54 - key_verification - INFO - 验证请求URL: http://139.224.70.41:8000/api/v1/api-keys/verify
+2025-02-22 16:44:54 - key_verification - INFO - 请求头: {'Content-Type': 'application/json', 'User-Agent': 'CR-Client/False'}
+2025-02-22 16:44:54 - key_verification - INFO - 请求数据: {'key': 'JGR8FC-AtCLWEHeTY2APY9xNkT9TO9IeEg3jiJvveao', 'machine_info': {'hostname': '方应9900x', 'os': 'Windows 11', 'cpu': 'AMD Ryzen 9 9900X 12-Core Processor', 'mac': 'b5:d5:56:5a:68:a2', 'item': 'clip'}}
+2025-02-22 16:44:54 - key_verification - INFO - 服务器响应状态码: 200
+2025-02-22 16:44:54 - key_verification - INFO - 服务器响应内容: {"valid":true}
+2025-02-22 16:44:54 - key_verification - INFO - 密钥验证结果: {'valid': True}
+2025-02-22 16:44:55 - ui - WARNING - 背景图片不存在: F:\py\full-stack-fastapi-template\cr_fy\app\ui\壁纸.jpg
+2025-02-22 16:44:55 - ui - INFO - [UI] 成功加载方案列表
+2025-02-22 16:44:55 - ui - INFO - 目录 E:\测试\新建文件夹 中找到 6 个视频文件
+2025-02-22 16:44:55 - ui - INFO - 目录数: 1, 总视频数: 6
+2025-02-22 16:45:03 - app.core.process_thread - INFO - [Thread-55104] 设置GPU并发数为: 6
+2025-02-22 16:45:03 - app.core.process_thread - INFO - [Thread-55104] 使用选中的方案: {'id': 6, 'name': '方案6 自动字幕', 'width': 720, 'height': 1080, 'blur_bg': False, 'add_subtitle': True, 'description': '竖屏带字幕'}
+2025-02-22 16:45:03 - 
+=== 线程参数 ===
+2025-02-22 16:45:03 - 线程输入目录: ['E:\\测试\\新建文件夹']
+2025-02-22 16:45:03 - 线程选中方案: [{'id': 6, 'name': '方案6 自动字幕', 'width': 720, 'height': 1080, 'blur_bg': False, 'add_subtitle': True, 'description': '竖屏带字幕'}]
+2025-02-22 16:45:03 - 线程删除选项: False
+2025-02-22 16:45:03 - 线程字幕选项: True
+2025-02-22 16:45:03 - 字幕边距: 85
+2025-02-22 16:45:03 - 字体大小: 20
+2025-02-22 16:45:03 - app.core.process_thread - INFO - [Thread-15356] 
+=== 线程开始 ===
+2025-02-22 16:45:03 - [Thread-15356] 
+=== 线程开始 ===
+2025-02-22 16:45:03 - app.core.process_thread - INFO - [Thread-15356] 线程参数:
+2025-02-22 16:45:03 - app.core.process_thread - INFO - [Thread-15356] 添加字幕: True
+2025-02-22 16:45:03 - app.core.process_thread - INFO - [Thread-15356] 选中的方案: [{'id': 6, 'name': '方案6 自动字幕', 'width': 720, 'height': 1080, 'blur_bg': False, 'add_subtitle': True, 'description': '竖屏带字幕'}]
+2025-02-22 16:45:03 - app.core.process_thread - INFO - [Thread-15356] 更多效果: True
+2025-02-22 16:45:03 - app.core.process_thread - INFO - [Thread-15356] 并发线程数: 10
+2025-02-22 16:45:03 - app.core.process_thread - INFO - [Thread-15356] 循环剪辑: False
+2025-02-22 16:45:03 - app.core.process_thread - INFO - [Thread-15356] 目录 E:\测试\新建文件夹 限制处理 50 个文件
+2025-02-22 16:45:03 - app.core.process_thread - INFO - [Thread-15356] 处理方案ID: 6
+2025-02-22 16:45:03 - app.core.process_thread - INFO - [Thread-167792] 开始识别字幕: 户外唱歌挑战118.mp4
+2025-02-22 16:45:03 - app.core.process_thread - INFO - [Thread-15356] 处理方案ID: 6
+2025-02-22 16:45:03 - app.core.audio_processor - INFO - 开始提取音频: E:\测试\新建文件夹\户外唱歌挑战118.mp4
+2025-02-22 16:45:03 - app.core.process_thread - INFO - [Thread-188376] 开始识别字幕: 搞笑一下144.mp4
+2025-02-22 16:45:03 - app.core.process_thread - INFO - [Thread-15356] 处理方案ID: 6
+2025-02-22 16:45:03 - app.core.process_thread - INFO - [Thread-6884] 开始识别字幕: 搞笑日常576.mp4
+2025-02-22 16:45:03 - app.core.process_thread - INFO - [Thread-15356] 处理方案ID: 6
+2025-02-22 16:45:03 - app.core.process_thread - INFO - [Thread-161124] 开始识别字幕: 搞笑飙演技164.mp4
+2025-02-22 16:45:03 - app.core.process_thread - INFO - [Thread-15356] 处理方案ID: 6
+2025-02-22 16:45:03 - app.core.process_thread - INFO - [Thread-168252] 开始识别字幕: 搞笑飙演技25.mp4
+2025-02-22 16:45:03 - app.core.process_thread - INFO - [Thread-15356] 处理方案ID: 6
+2025-02-22 16:45:03 - app.core.process_thread - INFO - [Thread-31556] 开始识别字幕: 狗狗搞笑视频35.mp4
+2025-02-22 16:45:03 - [Thread-15356] 线程参数:
+2025-02-22 16:45:03 - [Thread-15356] 添加字幕: True
+2025-02-22 16:45:03 - [Thread-15356] 选中的方案: [{'id': 6, 'name': '方案6 自动字幕', 'width': 720, 'height': 1080, 'blur_bg': False, 'add_subtitle': True, 'description': '竖屏带字幕'}]
+2025-02-22 16:45:03 - [Thread-15356] 更多效果: True
+2025-02-22 16:45:03 - [Thread-15356] 并发线程数: 10
+2025-02-22 16:45:03 - [Thread-15356] 循环剪辑: False
+2025-02-22 16:45:03 - [Thread-15356] 目录 E:\测试\新建文件夹 限制处理 50 个文件
+2025-02-22 16:45:03 - [Thread-15356] 处理方案ID: 6
+2025-02-22 16:45:03 - [Thread-167792] 开始识别字幕: 户外唱歌挑战118.mp4
+2025-02-22 16:45:03 - [Thread-15356] 处理方案ID: 6
+2025-02-22 16:45:03 - [Thread-188376] 开始识别字幕: 搞笑一下144.mp4
+2025-02-22 16:45:03 - [Thread-15356] 处理方案ID: 6
+2025-02-22 16:45:03 - [Thread-6884] 开始识别字幕: 搞笑日常576.mp4
+2025-02-22 16:45:03 - [Thread-15356] 处理方案ID: 6
+2025-02-22 16:45:03 - [Thread-161124] 开始识别字幕: 搞笑飙演技164.mp4
+2025-02-22 16:45:03 - [Thread-15356] 处理方案ID: 6
+2025-02-22 16:45:03 - [Thread-168252] 开始识别字幕: 搞笑飙演技25.mp4
+2025-02-22 16:45:03 - [Thread-15356] 处理方案ID: 6
+2025-02-22 16:45:03 - [Thread-31556] 开始识别字幕: 狗狗搞笑视频35.mp4
+2025-02-22 16:45:03 - app.core.audio_processor - INFO - 音频提取成功: temp/temp_ea6f13d2_audio.wav
+2025-02-22 16:45:03 - app.core.audio_processor - INFO - 开始加载音频数据...
+2025-02-22 16:45:03 - app.core.audio_processor - INFO - 音频数据加载成功
+2025-02-22 16:45:03 - app.core.audio_processor - INFO - 开始生成频谱图...
+2025-02-22 16:45:03 - app.core.audio_processor - INFO - 频谱图生成成功, shape: torch.Size([80, 3527])
+2025-02-22 16:45:03 - app.core.audio_processor - INFO - 检查模型状态...
+2025-02-22 16:45:03 - app.core.audio_processor - INFO - 模型状态: <class 'whisper.model.Whisper'>
+2025-02-22 16:45:03 - app.core.audio_processor - INFO - 开始识别音频: temp/temp_ea6f13d2_audio.wav
+2025-02-22 16:45:03 - app.core.audio_processor - INFO - 开始转写...
+2025-02-22 16:45:11 - app.core.audio_processor - INFO - 转写完成
+2025-02-22 16:45:11 - app.core.audio_processor - INFO - 字幕文件已生成: temp/户外唱歌挑战118.srt
+2025-02-22 16:45:12 - app.core.audio_processor - INFO - 开始提取音频: E:\测试\新建文件夹\搞笑一下144.mp4
+2025-02-22 16:45:12 - [Thread-167792] 字幕识别成功
+2025-02-22 16:45:12 - app.core.process_thread - INFO - [Thread-167792] 字幕识别成功
+2025-02-22 16:45:12 - app.core.process_thread - INFO - [Thread-167792] 开始处理: 户外唱歌挑战118.mp4 (使用GPU)
+2025-02-22 16:45:12 - [Thread-167792] 开始处理: 户外唱歌挑战118.mp4 (使用GPU)
+2025-02-22 16:45:12 - app.core.audio_processor - INFO - 音频提取成功: temp/temp_f6473ec4_audio.wav
+2025-02-22 16:45:12 - app.core.audio_processor - INFO - 开始加载音频数据...
+2025-02-22 16:45:12 - app.core.audio_processor - INFO - 音频数据加载成功
+2025-02-22 16:45:12 - app.core.audio_processor - INFO - 开始生成频谱图...
+2025-02-22 16:45:12 - app.core.audio_processor - INFO - 频谱图生成成功, shape: torch.Size([80, 2835])
+2025-02-22 16:45:12 - app.core.audio_processor - INFO - 检查模型状态...
+2025-02-22 16:45:12 - app.core.audio_processor - INFO - 模型状态: <class 'whisper.model.Whisper'>
+2025-02-22 16:45:12 - app.core.audio_processor - INFO - 开始识别音频: temp/temp_f6473ec4_audio.wav
+2025-02-22 16:45:12 - app.core.audio_processor - INFO - 开始转写...
+2025-02-22 16:45:20 - app.core.audio_processor - INFO - 转写完成
+2025-02-22 16:45:20 - app.core.audio_processor - INFO - 字幕文件已生成: temp/搞笑一下144.srt
+2025-02-22 16:45:20 - app.core.audio_processor - INFO - 开始提取音频: E:\测试\新建文件夹\搞笑日常576.mp4
+2025-02-22 16:45:20 - [Thread-188376] 字幕识别成功
+2025-02-22 16:45:20 - app.core.process_thread - INFO - [Thread-188376] 字幕识别成功
+2025-02-22 16:45:20 - [Thread-188376] 开始处理: 搞笑一下144.mp4 (使用GPU)
+2025-02-22 16:45:20 - app.core.process_thread - INFO - [Thread-188376] 开始处理: 搞笑一下144.mp4 (使用GPU)
+2025-02-22 16:45:20 - app.core.audio_processor - INFO - 音频提取成功: temp/temp_c4bb73a7_audio.wav
+2025-02-22 16:45:20 - app.core.audio_processor - INFO - 开始加载音频数据...
+2025-02-22 16:45:21 - app.core.audio_processor - INFO - 音频数据加载成功
+2025-02-22 16:45:21 - app.core.audio_processor - INFO - 开始生成频谱图...
+2025-02-22 16:45:21 - app.core.audio_processor - INFO - 频谱图生成成功, shape: torch.Size([80, 3620])
+2025-02-22 16:45:21 - app.core.audio_processor - INFO - 检查模型状态...
+2025-02-22 16:45:21 - app.core.audio_processor - INFO - 模型状态: <class 'whisper.model.Whisper'>
+2025-02-22 16:45:21 - app.core.audio_processor - INFO - 开始识别音频: temp/temp_c4bb73a7_audio.wav
+2025-02-22 16:45:21 - app.core.audio_processor - INFO - 开始转写...
+2025-02-22 16:45:29 - app.core.process_thread - INFO - [Thread-167792] 处理完成: 户外唱歌挑战118.mp4
+2025-02-22 16:45:29 - [Thread-167792] 处理完成: 户外唱歌挑战118.mp4
+2025-02-22 16:45:29 - app.core.audio_processor - INFO - 转写完成
+2025-02-22 16:45:29 - app.core.audio_processor - INFO - 字幕文件已生成: temp/搞笑日常576.srt
+2025-02-22 16:45:29 - app.core.audio_processor - INFO - 开始提取音频: E:\测试\新建文件夹\搞笑飙演技164.mp4
+2025-02-22 16:45:29 - [Thread-6884] 字幕识别成功
+2025-02-22 16:45:29 - app.core.process_thread - INFO - [Thread-6884] 字幕识别成功
+2025-02-22 16:45:30 - app.core.process_thread - INFO - [Thread-6884] 开始处理: 搞笑日常576.mp4 (使用GPU)
+2025-02-22 16:45:30 - [Thread-6884] 开始处理: 搞笑日常576.mp4 (使用GPU)
+2025-02-22 16:45:30 - app.core.audio_processor - INFO - 音频提取成功: temp/temp_5982d150_audio.wav
+2025-02-22 16:45:30 - app.core.audio_processor - INFO - 开始加载音频数据...
+2025-02-22 16:45:30 - app.core.audio_processor - INFO - 音频数据加载成功
+2025-02-22 16:45:30 - app.core.audio_processor - INFO - 开始生成频谱图...
+2025-02-22 16:45:30 - app.core.audio_processor - INFO - 频谱图生成成功, shape: torch.Size([80, 1873])
+2025-02-22 16:45:30 - app.core.audio_processor - INFO - 检查模型状态...
+2025-02-22 16:45:30 - app.core.audio_processor - INFO - 模型状态: <class 'whisper.model.Whisper'>
+2025-02-22 16:45:30 - app.core.audio_processor - INFO - 开始识别音频: temp/temp_5982d150_audio.wav
+2025-02-22 16:45:30 - app.core.audio_processor - INFO - 开始转写...
+2025-02-22 16:45:35 - app.core.audio_processor - INFO - 转写完成
+2025-02-22 16:45:35 - app.core.audio_processor - INFO - 字幕文件已生成: temp/搞笑飙演技164.srt
+2025-02-22 16:45:35 - app.core.audio_processor - INFO - 开始提取音频: E:\测试\新建文件夹\搞笑飙演技25.mp4
+2025-02-22 16:45:35 - [Thread-161124] 字幕识别成功
+2025-02-22 16:45:35 - app.core.process_thread - INFO - [Thread-161124] 字幕识别成功
+2025-02-22 16:45:35 - app.core.process_thread - INFO - [Thread-161124] 开始处理: 搞笑飙演技164.mp4 (使用GPU)
+2025-02-22 16:45:35 - [Thread-161124] 开始处理: 搞笑飙演技164.mp4 (使用GPU)
+2025-02-22 16:45:35 - app.core.audio_processor - INFO - 音频提取成功: temp/temp_b410aa05_audio.wav
+2025-02-22 16:45:35 - app.core.audio_processor - INFO - 开始加载音频数据...
+2025-02-22 16:45:35 - app.core.audio_processor - INFO - 音频数据加载成功
+2025-02-22 16:45:35 - app.core.audio_processor - INFO - 开始生成频谱图...
+2025-02-22 16:45:35 - app.core.audio_processor - INFO - 频谱图生成成功, shape: torch.Size([80, 2983])
+2025-02-22 16:45:35 - app.core.audio_processor - INFO - 检查模型状态...
+2025-02-22 16:45:35 - app.core.audio_processor - INFO - 模型状态: <class 'whisper.model.Whisper'>
+2025-02-22 16:45:35 - app.core.audio_processor - INFO - 开始识别音频: temp/temp_b410aa05_audio.wav
+2025-02-22 16:45:35 - app.core.audio_processor - INFO - 开始转写...
+2025-02-22 16:45:36 - app.core.process_thread - INFO - [Thread-188376] 处理完成: 搞笑一下144.mp4
+2025-02-22 16:45:36 - [Thread-188376] 处理完成: 搞笑一下144.mp4
+2025-02-22 16:45:43 - app.core.audio_processor - INFO - 转写完成
+2025-02-22 16:45:43 - app.core.audio_processor - INFO - 字幕文件已生成: temp/搞笑飙演技25.srt
+2025-02-22 16:45:43 - app.core.audio_processor - INFO - 开始提取音频: E:\测试\新建文件夹\狗狗搞笑视频35.mp4
+2025-02-22 16:45:43 - [Thread-168252] 字幕识别成功
+2025-02-22 16:45:43 - app.core.process_thread - INFO - [Thread-168252] 字幕识别成功
+2025-02-22 16:45:43 - [Thread-168252] 开始处理: 搞笑飙演技25.mp4 (使用GPU)
+2025-02-22 16:45:43 - app.core.process_thread - INFO - [Thread-168252] 开始处理: 搞笑飙演技25.mp4 (使用GPU)
+2025-02-22 16:45:43 - app.core.audio_processor - INFO - 音频提取成功: temp/temp_b99567d4_audio.wav
+2025-02-22 16:45:43 - app.core.audio_processor - INFO - 开始加载音频数据...
+2025-02-22 16:45:43 - app.core.audio_processor - INFO - 音频数据加载成功
+2025-02-22 16:45:43 - app.core.audio_processor - INFO - 开始生成频谱图...
+2025-02-22 16:45:43 - app.core.audio_processor - INFO - 频谱图生成成功, shape: torch.Size([80, 4581])
+2025-02-22 16:45:43 - app.core.audio_processor - INFO - 检查模型状态...
+2025-02-22 16:45:43 - app.core.audio_processor - INFO - 模型状态: <class 'whisper.model.Whisper'>
+2025-02-22 16:45:43 - app.core.audio_processor - INFO - 开始识别音频: temp/temp_b99567d4_audio.wav
+2025-02-22 16:45:43 - app.core.audio_processor - INFO - 开始转写...
+2025-02-22 16:45:45 - app.core.process_thread - INFO - [Thread-161124] 处理完成: 搞笑飙演技164.mp4
+2025-02-22 16:45:45 - [Thread-161124] 处理完成: 搞笑飙演技164.mp4
+2025-02-22 16:45:46 - app.core.process_thread - INFO - [Thread-6884] 处理完成: 搞笑日常576.mp4
+2025-02-22 16:45:46 - [Thread-6884] 处理完成: 搞笑日常576.mp4
+2025-02-22 16:45:49 - app.core.audio_processor - INFO - 转写完成
+2025-02-22 16:45:49 - app.core.audio_processor - INFO - 字幕文件已生成: temp/狗狗搞笑视频35.srt
+2025-02-22 16:45:49 - app.core.process_thread - INFO - [Thread-31556] 字幕识别成功
+2025-02-22 16:45:49 - [Thread-31556] 字幕识别成功
+2025-02-22 16:45:49 - app.core.process_thread - INFO - [Thread-31556] 开始处理: 狗狗搞笑视频35.mp4 (使用GPU)
+2025-02-22 16:45:49 - [Thread-31556] 开始处理: 狗狗搞笑视频35.mp4 (使用GPU)
+2025-02-22 16:45:56 - [Thread-168252] 处理完成: 搞笑飙演技25.mp4
+2025-02-22 16:45:56 - app.core.process_thread - INFO - [Thread-168252] 处理完成: 搞笑飙演技25.mp4
+2025-02-22 16:46:06 - app.core.process_thread - INFO - [Thread-31556] 处理完成: 狗狗搞笑视频35.mp4
+2025-02-22 16:46:06 - [Thread-31556] 处理完成: 狗狗搞笑视频35.mp4
+2025-02-22 16:53:47 - root - INFO - 配置文件路径: F:\py\full-stack-fastapi-template\cr_fy\app\resources\config\config.json
+2025-02-22 16:53:47 - __main__ - INFO - 开始预加载Whisper模型...
+2025-02-22 16:53:47 - __main__ - INFO - 检查模型文件: F:\py\full-stack-fastapi-template\cr_fy\models\small.pt
+2025-02-22 16:53:47 - __main__ - INFO - 找到模型文件: F:\py\full-stack-fastapi-template\cr_fy\models\small.pt
+2025-02-22 16:53:47 - __main__ - INFO - 成功加载Whisper模型到 cpu 设备
+2025-02-22 16:53:48 - key_verification - INFO - 运行模式: 开发环境
+2025-02-22 16:53:48 - key_verification - INFO - 当前工作目录: F:\py\full-stack-fastapi-template\cr_fy
+2025-02-22 16:53:50 - key_verification - INFO - 使用服务器地址: http://139.224.70.41:8000
+2025-02-22 16:53:50 - key_verification - INFO - 验证请求URL: http://139.224.70.41:8000/api/v1/api-keys/verify
+2025-02-22 16:53:50 - key_verification - INFO - 请求头: {'Content-Type': 'application/json', 'User-Agent': 'CR-Client/False'}
+2025-02-22 16:53:50 - key_verification - INFO - 请求数据: {'key': 'JGR8FC-AtCLWEHeTY2APY9xNkT9TO9IeEg3jiJvveao', 'machine_info': {'hostname': '方应9900x', 'os': 'Windows 11', 'cpu': 'AMD Ryzen 9 9900X 12-Core Processor', 'mac': 'b5:d5:56:5a:68:a2', 'item': 'clip'}}
+2025-02-22 16:53:50 - key_verification - INFO - 服务器响应状态码: 200
+2025-02-22 16:53:50 - key_verification - INFO - 服务器响应内容: {"valid":true}
+2025-02-22 16:53:50 - key_verification - INFO - 密钥验证结果: {'valid': True}
+2025-02-22 16:53:51 - ui - WARNING - 背景图片不存在: F:\py\full-stack-fastapi-template\cr_fy\app\ui\壁纸.jpg
+2025-02-22 16:53:51 - ui - INFO - [UI] 成功加载方案列表
+2025-02-22 16:53:51 - ui - INFO - 目录 E:\测试\新建文件夹 中找到 6 个视频文件
+2025-02-22 16:53:51 - ui - INFO - 目录数: 1, 总视频数: 6
+2025-02-22 16:53:56 - app.core.process_thread - INFO - [Thread-23892] 设置GPU并发数为: 6
+2025-02-22 16:53:56 - app.core.process_thread - INFO - [Thread-23892] 使用选中的方案: {'id': 6, 'name': '方案6 自动字幕', 'width': 720, 'height': 1080, 'blur_bg': False, 'add_subtitle': True, 'description': '竖屏带字幕'}
+2025-02-22 16:53:56 - 
+=== 线程参数 ===
+2025-02-22 16:53:56 - 线程输入目录: ['E:\\测试\\新建文件夹']
+2025-02-22 16:53:56 - 线程选中方案: [{'id': 6, 'name': '方案6 自动字幕', 'width': 720, 'height': 1080, 'blur_bg': False, 'add_subtitle': True, 'description': '竖屏带字幕'}]
+2025-02-22 16:53:56 - 线程删除选项: False
+2025-02-22 16:53:56 - 线程字幕选项: True
+2025-02-22 16:53:56 - 字幕边距: 85
+2025-02-22 16:53:56 - 字体大小: 20
+2025-02-22 16:53:56 - app.core.process_thread - INFO - [Thread-144528] 
+=== 线程开始 ===
+2025-02-22 16:53:56 - [Thread-144528] 
+=== 线程开始 ===
+2025-02-22 16:53:56 - app.core.process_thread - INFO - [Thread-144528] 线程参数:
+2025-02-22 16:53:56 - app.core.process_thread - INFO - [Thread-144528] 添加字幕: True
+2025-02-22 16:53:56 - app.core.process_thread - INFO - [Thread-144528] 选中的方案: [{'id': 6, 'name': '方案6 自动字幕', 'width': 720, 'height': 1080, 'blur_bg': False, 'add_subtitle': True, 'description': '竖屏带字幕'}]
+2025-02-22 16:53:56 - app.core.process_thread - INFO - [Thread-144528] 更多效果: False
+2025-02-22 16:53:56 - app.core.process_thread - INFO - [Thread-144528] 并发线程数: 10
+2025-02-22 16:53:56 - app.core.process_thread - INFO - [Thread-144528] 循环剪辑: False
+2025-02-22 16:53:56 - app.core.process_thread - INFO - [Thread-144528] 目录 E:\测试\新建文件夹 限制处理 50 个文件
+2025-02-22 16:53:56 - app.core.process_thread - INFO - [Thread-144528] 处理方案ID: 6
+2025-02-22 16:53:56 - app.core.process_thread - INFO - [Thread-4800] 开始识别字幕: 户外唱歌挑战118.mp4
+2025-02-22 16:53:56 - app.core.process_thread - INFO - [Thread-144528] 处理方案ID: 6
+2025-02-22 16:53:56 - app.core.audio_processor - INFO - 开始提取音频: E:\测试\新建文件夹\户外唱歌挑战118.mp4
+2025-02-22 16:53:56 - app.core.process_thread - INFO - [Thread-127940] 开始识别字幕: 搞笑一下144.mp4
+2025-02-22 16:53:56 - app.core.process_thread - INFO - [Thread-144528] 处理方案ID: 6
+2025-02-22 16:53:56 - app.core.process_thread - INFO - [Thread-122432] 开始识别字幕: 搞笑日常576.mp4
+2025-02-22 16:53:56 - app.core.process_thread - INFO - [Thread-144528] 处理方案ID: 6
+2025-02-22 16:53:56 - app.core.process_thread - INFO - [Thread-144528] 处理方案ID: 6
+2025-02-22 16:53:56 - app.core.process_thread - INFO - [Thread-161412] 开始识别字幕: 搞笑飙演技164.mp4
+2025-02-22 16:53:56 - app.core.process_thread - INFO - [Thread-110956] 开始识别字幕: 搞笑飙演技25.mp4
+2025-02-22 16:53:56 - app.core.process_thread - INFO - [Thread-144528] 处理方案ID: 6
+2025-02-22 16:53:56 - app.core.process_thread - INFO - [Thread-125448] 开始识别字幕: 狗狗搞笑视频35.mp4
+2025-02-22 16:53:56 - [Thread-144528] 线程参数:
+2025-02-22 16:53:56 - [Thread-144528] 添加字幕: True
+2025-02-22 16:53:56 - [Thread-144528] 选中的方案: [{'id': 6, 'name': '方案6 自动字幕', 'width': 720, 'height': 1080, 'blur_bg': False, 'add_subtitle': True, 'description': '竖屏带字幕'}]
+2025-02-22 16:53:56 - [Thread-144528] 更多效果: False
+2025-02-22 16:53:56 - [Thread-144528] 并发线程数: 10
+2025-02-22 16:53:56 - [Thread-144528] 循环剪辑: False
+2025-02-22 16:53:56 - [Thread-144528] 目录 E:\测试\新建文件夹 限制处理 50 个文件
+2025-02-22 16:53:56 - [Thread-144528] 处理方案ID: 6
+2025-02-22 16:53:56 - [Thread-4800] 开始识别字幕: 户外唱歌挑战118.mp4
+2025-02-22 16:53:56 - [Thread-144528] 处理方案ID: 6
+2025-02-22 16:53:56 - [Thread-127940] 开始识别字幕: 搞笑一下144.mp4
+2025-02-22 16:53:56 - [Thread-144528] 处理方案ID: 6
+2025-02-22 16:53:56 - [Thread-122432] 开始识别字幕: 搞笑日常576.mp4
+2025-02-22 16:53:56 - [Thread-144528] 处理方案ID: 6
+2025-02-22 16:53:56 - [Thread-161412] 开始识别字幕: 搞笑飙演技164.mp4
+2025-02-22 16:53:56 - [Thread-144528] 处理方案ID: 6
+2025-02-22 16:53:56 - [Thread-110956] 开始识别字幕: 搞笑飙演技25.mp4
+2025-02-22 16:53:56 - [Thread-144528] 处理方案ID: 6
+2025-02-22 16:53:56 - [Thread-125448] 开始识别字幕: 狗狗搞笑视频35.mp4
+2025-02-22 16:53:56 - app.core.audio_processor - INFO - 音频提取成功: temp/temp_b6c3ee1e_audio.wav
+2025-02-22 16:53:56 - app.core.audio_processor - INFO - 开始加载音频数据...
+2025-02-22 16:53:56 - app.core.audio_processor - INFO - 音频数据加载成功
+2025-02-22 16:53:56 - app.core.audio_processor - INFO - 开始生成频谱图...
+2025-02-22 16:53:56 - app.core.audio_processor - INFO - 频谱图生成成功, shape: torch.Size([80, 3527])
+2025-02-22 16:53:56 - app.core.audio_processor - INFO - 检查模型状态...
+2025-02-22 16:53:56 - app.core.audio_processor - INFO - 模型状态: <class 'whisper.model.Whisper'>
+2025-02-22 16:53:56 - app.core.audio_processor - INFO - 开始识别音频: temp/temp_b6c3ee1e_audio.wav
+2025-02-22 16:53:56 - app.core.audio_processor - INFO - 开始转写...
+2025-02-22 16:54:05 - app.core.audio_processor - INFO - 转写完成
+2025-02-22 16:54:05 - app.core.audio_processor - INFO - 字幕文件已生成: temp/户外唱歌挑战118.srt
+2025-02-22 16:54:05 - app.core.audio_processor - INFO - 开始提取音频: E:\测试\新建文件夹\搞笑一下144.mp4
+2025-02-22 16:54:05 - [Thread-4800] 字幕识别成功
+2025-02-22 16:54:05 - app.core.process_thread - INFO - [Thread-4800] 字幕识别成功
+2025-02-22 16:54:05 - app.core.process_thread - INFO - [Thread-4800] 开始处理: 户外唱歌挑战118.mp4 (使用GPU)
+2025-02-22 16:54:05 - [Thread-4800] 开始处理: 户外唱歌挑战118.mp4 (使用GPU)
+2025-02-22 16:54:05 - app.core.audio_processor - INFO - 音频提取成功: temp/temp_d8a50f9b_audio.wav
+2025-02-22 16:54:05 - app.core.audio_processor - INFO - 开始加载音频数据...
+2025-02-22 16:54:05 - app.core.audio_processor - INFO - 音频数据加载成功
+2025-02-22 16:54:05 - app.core.audio_processor - INFO - 开始生成频谱图...
+2025-02-22 16:54:05 - app.core.audio_processor - INFO - 频谱图生成成功, shape: torch.Size([80, 2835])
+2025-02-22 16:54:05 - app.core.audio_processor - INFO - 检查模型状态...
+2025-02-22 16:54:05 - app.core.audio_processor - INFO - 模型状态: <class 'whisper.model.Whisper'>
+2025-02-22 16:54:05 - app.core.audio_processor - INFO - 开始识别音频: temp/temp_d8a50f9b_audio.wav
+2025-02-22 16:54:05 - app.core.audio_processor - INFO - 开始转写...
+2025-02-22 16:54:14 - app.core.audio_processor - INFO - 转写完成
+2025-02-22 16:54:14 - app.core.audio_processor - INFO - 字幕文件已生成: temp/搞笑一下144.srt
+2025-02-22 16:54:14 - app.core.audio_processor - INFO - 开始提取音频: E:\测试\新建文件夹\搞笑日常576.mp4
+2025-02-22 16:54:14 - [Thread-127940] 字幕识别成功
+2025-02-22 16:54:14 - app.core.process_thread - INFO - [Thread-127940] 字幕识别成功
+2025-02-22 16:54:14 - [Thread-127940] 开始处理: 搞笑一下144.mp4 (使用GPU)
+2025-02-22 16:54:14 - app.core.process_thread - INFO - [Thread-127940] 开始处理: 搞笑一下144.mp4 (使用GPU)
+2025-02-22 16:54:14 - app.core.audio_processor - INFO - 音频提取成功: temp/temp_087bbc74_audio.wav
+2025-02-22 16:54:14 - app.core.audio_processor - INFO - 开始加载音频数据...
+2025-02-22 16:54:14 - app.core.audio_processor - INFO - 音频数据加载成功
+2025-02-22 16:54:14 - app.core.audio_processor - INFO - 开始生成频谱图...
+2025-02-22 16:54:14 - app.core.audio_processor - INFO - 频谱图生成成功, shape: torch.Size([80, 3620])
+2025-02-22 16:54:14 - app.core.audio_processor - INFO - 检查模型状态...
+2025-02-22 16:54:14 - app.core.audio_processor - INFO - 模型状态: <class 'whisper.model.Whisper'>
+2025-02-22 16:54:14 - app.core.audio_processor - INFO - 开始识别音频: temp/temp_087bbc74_audio.wav
+2025-02-22 16:54:14 - app.core.audio_processor - INFO - 开始转写...
+2025-02-22 16:54:22 - app.core.process_thread - INFO - [Thread-4800] 处理完成: 户外唱歌挑战118.mp4
+2025-02-22 16:54:22 - [Thread-4800] 处理完成: 户外唱歌挑战118.mp4
+2025-02-22 16:54:22 - app.core.process_thread - INFO - [Thread-144528] 已完成 1 个视频的处理
+2025-02-22 16:54:22 - [Thread-144528] 已完成 1 个视频的处理
+2025-02-22 16:54:23 - app.core.audio_processor - INFO - 转写完成
+2025-02-22 16:54:23 - app.core.audio_processor - INFO - 字幕文件已生成: temp/搞笑日常576.srt
+2025-02-22 16:54:23 - app.core.audio_processor - INFO - 开始提取音频: E:\测试\新建文件夹\搞笑飙演技164.mp4
+2025-02-22 16:54:23 - [Thread-122432] 字幕识别成功
+2025-02-22 16:54:23 - app.core.process_thread - INFO - [Thread-122432] 字幕识别成功
+2025-02-22 16:54:23 - [Thread-122432] 开始处理: 搞笑日常576.mp4 (使用GPU)
+2025-02-22 16:54:23 - app.core.process_thread - INFO - [Thread-122432] 开始处理: 搞笑日常576.mp4 (使用GPU)
+2025-02-22 16:54:23 - app.core.audio_processor - INFO - 音频提取成功: temp/temp_79839f66_audio.wav
+2025-02-22 16:54:23 - app.core.audio_processor - INFO - 开始加载音频数据...
+2025-02-22 16:54:23 - app.core.audio_processor - INFO - 音频数据加载成功
+2025-02-22 16:54:23 - app.core.audio_processor - INFO - 开始生成频谱图...
+2025-02-22 16:54:23 - app.core.audio_processor - INFO - 频谱图生成成功, shape: torch.Size([80, 1873])
+2025-02-22 16:54:23 - app.core.audio_processor - INFO - 检查模型状态...
+2025-02-22 16:54:23 - app.core.audio_processor - INFO - 模型状态: <class 'whisper.model.Whisper'>
+2025-02-22 16:54:23 - app.core.audio_processor - INFO - 开始识别音频: temp/temp_79839f66_audio.wav
+2025-02-22 16:54:23 - app.core.audio_processor - INFO - 开始转写...
+2025-02-22 16:54:29 - app.core.process_thread - INFO - [Thread-127940] 处理完成: 搞笑一下144.mp4
+2025-02-22 16:54:29 - [Thread-127940] 处理完成: 搞笑一下144.mp4
+2025-02-22 16:54:29 - app.core.process_thread - INFO - [Thread-144528] 已完成 2 个视频的处理
+2025-02-22 16:54:29 - [Thread-144528] 已完成 2 个视频的处理
+2025-02-22 16:54:29 - app.core.audio_processor - INFO - 转写完成
+2025-02-22 16:54:29 - app.core.audio_processor - INFO - 字幕文件已生成: temp/搞笑飙演技164.srt
+2025-02-22 16:54:29 - app.core.audio_processor - INFO - 开始提取音频: E:\测试\新建文件夹\搞笑飙演技25.mp4
+2025-02-22 16:54:29 - app.core.process_thread - INFO - [Thread-161412] 字幕识别成功
+2025-02-22 16:54:29 - [Thread-161412] 字幕识别成功
+2025-02-22 16:54:29 - [Thread-161412] 开始处理: 搞笑飙演技164.mp4 (使用GPU)
+2025-02-22 16:54:29 - app.core.process_thread - INFO - [Thread-161412] 开始处理: 搞笑飙演技164.mp4 (使用GPU)
+2025-02-22 16:54:29 - app.core.audio_processor - INFO - 音频提取成功: temp/temp_0fa3083d_audio.wav
+2025-02-22 16:54:29 - app.core.audio_processor - INFO - 开始加载音频数据...
+2025-02-22 16:54:29 - app.core.audio_processor - INFO - 音频数据加载成功
+2025-02-22 16:54:29 - app.core.audio_processor - INFO - 开始生成频谱图...
+2025-02-22 16:54:29 - app.core.audio_processor - INFO - 频谱图生成成功, shape: torch.Size([80, 2983])
+2025-02-22 16:54:29 - app.core.audio_processor - INFO - 检查模型状态...
+2025-02-22 16:54:29 - app.core.audio_processor - INFO - 模型状态: <class 'whisper.model.Whisper'>
+2025-02-22 16:54:29 - app.core.audio_processor - INFO - 开始识别音频: temp/temp_0fa3083d_audio.wav
+2025-02-22 16:54:29 - app.core.audio_processor - INFO - 开始转写...
+2025-02-22 16:54:38 - app.core.audio_processor - INFO - 转写完成
+2025-02-22 16:54:38 - app.core.audio_processor - INFO - 字幕文件已生成: temp/搞笑飙演技25.srt
+2025-02-22 16:54:38 - app.core.audio_processor - INFO - 开始提取音频: E:\测试\新建文件夹\狗狗搞笑视频35.mp4
+2025-02-22 16:54:38 - [Thread-110956] 字幕识别成功
+2025-02-22 16:54:38 - app.core.process_thread - INFO - [Thread-110956] 字幕识别成功
+2025-02-22 16:54:38 - app.core.process_thread - INFO - [Thread-110956] 开始处理: 搞笑飙演技25.mp4 (使用GPU)
+2025-02-22 16:54:38 - [Thread-110956] 开始处理: 搞笑飙演技25.mp4 (使用GPU)
+2025-02-22 16:54:38 - app.core.audio_processor - INFO - 音频提取成功: temp/temp_aa87f7e2_audio.wav
+2025-02-22 16:54:38 - app.core.audio_processor - INFO - 开始加载音频数据...
+2025-02-22 16:54:38 - app.core.audio_processor - INFO - 音频数据加载成功
+2025-02-22 16:54:38 - app.core.audio_processor - INFO - 开始生成频谱图...
+2025-02-22 16:54:38 - app.core.audio_processor - INFO - 频谱图生成成功, shape: torch.Size([80, 4581])
+2025-02-22 16:54:38 - app.core.audio_processor - INFO - 检查模型状态...
+2025-02-22 16:54:38 - app.core.audio_processor - INFO - 模型状态: <class 'whisper.model.Whisper'>
+2025-02-22 16:54:38 - app.core.audio_processor - INFO - 开始识别音频: temp/temp_aa87f7e2_audio.wav
+2025-02-22 16:54:38 - app.core.audio_processor - INFO - 开始转写...
+2025-02-22 16:54:39 - app.core.process_thread - INFO - [Thread-161412] 处理完成: 搞笑飙演技164.mp4
+2025-02-22 16:54:39 - [Thread-161412] 处理完成: 搞笑飙演技164.mp4
+2025-02-22 16:54:39 - [Thread-144528] 已完成 3 个视频的处理
+2025-02-22 16:54:39 - app.core.process_thread - INFO - [Thread-144528] 已完成 3 个视频的处理
+2025-02-22 16:54:39 - app.core.process_thread - INFO - [Thread-122432] 处理完成: 搞笑日常576.mp4
+2025-02-22 16:54:39 - [Thread-122432] 处理完成: 搞笑日常576.mp4
+2025-02-22 16:54:39 - [Thread-144528] 已完成 4 个视频的处理
+2025-02-22 16:54:39 - app.core.process_thread - INFO - [Thread-144528] 已完成 4 个视频的处理
+2025-02-22 16:54:43 - app.core.audio_processor - INFO - 转写完成
+2025-02-22 16:54:43 - app.core.audio_processor - INFO - 字幕文件已生成: temp/狗狗搞笑视频35.srt
+2025-02-22 16:54:43 - [Thread-125448] 字幕识别成功
+2025-02-22 16:54:43 - app.core.process_thread - INFO - [Thread-125448] 字幕识别成功
+2025-02-22 16:54:44 - app.core.process_thread - INFO - [Thread-125448] 开始处理: 狗狗搞笑视频35.mp4 (使用GPU)
+2025-02-22 16:54:44 - [Thread-125448] 开始处理: 狗狗搞笑视频35.mp4 (使用GPU)
+2025-02-22 16:54:49 - app.core.process_thread - INFO - [Thread-110956] 处理完成: 搞笑飙演技25.mp4
+2025-02-22 16:54:49 - [Thread-110956] 处理完成: 搞笑飙演技25.mp4
+2025-02-22 16:54:49 - [Thread-144528] 已完成 5 个视频的处理
+2025-02-22 16:54:49 - app.core.process_thread - INFO - [Thread-144528] 已完成 5 个视频的处理
+2025-02-22 16:54:58 - app.core.process_thread - INFO - [Thread-125448] 处理完成: 狗狗搞笑视频35.mp4
+2025-02-22 16:54:58 - [Thread-125448] 处理完成: 狗狗搞笑视频35.mp4
+2025-02-22 16:54:58 - app.core.process_thread - INFO - [Thread-144528] 已完成 6 个视频的处理
+2025-02-22 16:54:58 - [Thread-144528] 已完成 6 个视频的处理
+2025-02-22 16:54:58 - [Thread-144528] 处理完成，共处理 6 个视频，总用时 61.7 秒
+2025-02-22 16:54:58 - app.core.process_thread - INFO - [Thread-144528] 处理完成，共处理 6 个视频，总用时 61.7 秒
+2025-02-22 16:54:58 - app.core.process_thread - ERROR - [Thread-144528] 处理过程出错: type object 'Qt' has no attribute 'Q_ARG'
+2025-02-22 16:54:58 - [Thread-144528] 处理过程出错: type object 'Qt' has no attribute 'Q_ARG'
+2025-02-22 16:56:05 - root - INFO - 配置文件路径: F:\py\full-stack-fastapi-template\cr_fy\app\resources\config\config.json
+2025-02-22 16:56:05 - __main__ - INFO - 开始预加载Whisper模型...
+2025-02-22 16:56:05 - __main__ - INFO - 检查模型文件: F:\py\full-stack-fastapi-template\cr_fy\models\small.pt
+2025-02-22 16:56:05 - __main__ - INFO - 找到模型文件: F:\py\full-stack-fastapi-template\cr_fy\models\small.pt
+2025-02-22 16:56:05 - __main__ - INFO - 成功加载Whisper模型到 cpu 设备
+2025-02-22 16:56:07 - key_verification - INFO - 运行模式: 开发环境
+2025-02-22 16:56:07 - key_verification - INFO - 当前工作目录: F:\py\full-stack-fastapi-template\cr_fy
+2025-02-22 16:56:09 - key_verification - INFO - 使用服务器地址: http://139.224.70.41:8000
+2025-02-22 16:56:09 - key_verification - INFO - 验证请求URL: http://139.224.70.41:8000/api/v1/api-keys/verify
+2025-02-22 16:56:09 - key_verification - INFO - 请求头: {'Content-Type': 'application/json', 'User-Agent': 'CR-Client/False'}
+2025-02-22 16:56:09 - key_verification - INFO - 请求数据: {'key': 'JGR8FC-AtCLWEHeTY2APY9xNkT9TO9IeEg3jiJvveao', 'machine_info': {'hostname': '方应9900x', 'os': 'Windows 11', 'cpu': 'AMD Ryzen 9 9900X 12-Core Processor', 'mac': 'b5:d5:56:5a:68:a2', 'item': 'clip'}}
+2025-02-22 16:56:09 - key_verification - INFO - 服务器响应状态码: 200
+2025-02-22 16:56:09 - key_verification - INFO - 服务器响应内容: {"valid":true}
+2025-02-22 16:56:09 - key_verification - INFO - 密钥验证结果: {'valid': True}
+2025-02-22 16:56:11 - ui - WARNING - 背景图片不存在: F:\py\full-stack-fastapi-template\cr_fy\app\ui\壁纸.jpg
+2025-02-22 16:56:11 - ui - INFO - [UI] 成功加载方案列表
+2025-02-22 16:56:11 - ui - INFO - 目录 E:\测试\新建文件夹 中找到 6 个视频文件
+2025-02-22 16:56:11 - ui - INFO - 目录数: 1, 总视频数: 6
+2025-02-22 16:56:14 - app.core.process_thread - INFO - [Thread-23060] 设置GPU并发数为: 6
+2025-02-22 16:56:14 - app.core.process_thread - INFO - [Thread-23060] 使用选中的方案: {'id': 6, 'name': '方案6 自动字幕', 'width': 720, 'height': 1080, 'blur_bg': False, 'add_subtitle': True, 'description': '竖屏带字幕'}
+2025-02-22 16:56:14 - 
+=== 线程参数 ===
+2025-02-22 16:56:14 - 线程输入目录: ['E:\\测试\\新建文件夹']
+2025-02-22 16:56:14 - 线程选中方案: [{'id': 6, 'name': '方案6 自动字幕', 'width': 720, 'height': 1080, 'blur_bg': False, 'add_subtitle': True, 'description': '竖屏带字幕'}]
+2025-02-22 16:56:14 - 线程删除选项: False
+2025-02-22 16:56:14 - 线程字幕选项: True
+2025-02-22 16:56:14 - 字幕边距: 85
+2025-02-22 16:56:14 - 字体大小: 20
+2025-02-22 16:56:14 - app.core.process_thread - INFO - [Thread-121084] 
+=== 线程开始 ===
+2025-02-22 16:56:14 - [Thread-121084] 
+=== 线程开始 ===
+2025-02-22 16:56:14 - app.core.process_thread - INFO - [Thread-121084] 线程参数:
+2025-02-22 16:56:14 - app.core.process_thread - INFO - [Thread-121084] 添加字幕: True
+2025-02-22 16:56:14 - app.core.process_thread - INFO - [Thread-121084] 选中的方案: [{'id': 6, 'name': '方案6 自动字幕', 'width': 720, 'height': 1080, 'blur_bg': False, 'add_subtitle': True, 'description': '竖屏带字幕'}]
+2025-02-22 16:56:14 - app.core.process_thread - INFO - [Thread-121084] 更多效果: False
+2025-02-22 16:56:14 - app.core.process_thread - INFO - [Thread-121084] 并发线程数: 10
+2025-02-22 16:56:14 - app.core.process_thread - INFO - [Thread-121084] 循环剪辑: False
+2025-02-22 16:56:14 - app.core.process_thread - INFO - [Thread-121084] 目录 E:\测试\新建文件夹 限制处理 50 个文件
+2025-02-22 16:56:14 - app.core.process_thread - INFO - [Thread-121084] 处理方案ID: 6
+2025-02-22 16:56:14 - app.core.process_thread - INFO - [Thread-12104] 开始识别字幕: 户外唱歌挑战118.mp4
+2025-02-22 16:56:14 - app.core.process_thread - INFO - [Thread-121084] 处理方案ID: 6
+2025-02-22 16:56:14 - app.core.audio_processor - INFO - 开始提取音频: E:\测试\新建文件夹\户外唱歌挑战118.mp4
+2025-02-22 16:56:14 - app.core.process_thread - INFO - [Thread-191580] 开始识别字幕: 搞笑一下144.mp4
+2025-02-22 16:56:14 - app.core.process_thread - INFO - [Thread-121084] 处理方案ID: 6
+2025-02-22 16:56:14 - app.core.process_thread - INFO - [Thread-188796] 开始识别字幕: 搞笑日常576.mp4
+2025-02-22 16:56:14 - app.core.process_thread - INFO - [Thread-121084] 处理方案ID: 6
+2025-02-22 16:56:14 - app.core.process_thread - INFO - [Thread-189180] 开始识别字幕: 搞笑飙演技164.mp4
+2025-02-22 16:56:14 - app.core.process_thread - INFO - [Thread-121084] 处理方案ID: 6
+2025-02-22 16:56:14 - app.core.process_thread - INFO - [Thread-42440] 开始识别字幕: 搞笑飙演技25.mp4
+2025-02-22 16:56:14 - app.core.process_thread - INFO - [Thread-121084] 处理方案ID: 6
+2025-02-22 16:56:14 - app.core.process_thread - INFO - [Thread-112264] 开始识别字幕: 狗狗搞笑视频35.mp4
+2025-02-22 16:56:14 - [Thread-121084] 线程参数:
+2025-02-22 16:56:14 - [Thread-121084] 添加字幕: True
+2025-02-22 16:56:14 - [Thread-121084] 选中的方案: [{'id': 6, 'name': '方案6 自动字幕', 'width': 720, 'height': 1080, 'blur_bg': False, 'add_subtitle': True, 'description': '竖屏带字幕'}]
+2025-02-22 16:56:14 - [Thread-121084] 更多效果: False
+2025-02-22 16:56:14 - [Thread-121084] 并发线程数: 10
+2025-02-22 16:56:14 - [Thread-121084] 循环剪辑: False
+2025-02-22 16:56:14 - [Thread-121084] 目录 E:\测试\新建文件夹 限制处理 50 个文件
+2025-02-22 16:56:14 - [Thread-121084] 处理方案ID: 6
+2025-02-22 16:56:14 - [Thread-12104] 开始识别字幕: 户外唱歌挑战118.mp4
+2025-02-22 16:56:14 - [Thread-121084] 处理方案ID: 6
+2025-02-22 16:56:14 - [Thread-191580] 开始识别字幕: 搞笑一下144.mp4
+2025-02-22 16:56:14 - [Thread-121084] 处理方案ID: 6
+2025-02-22 16:56:14 - [Thread-188796] 开始识别字幕: 搞笑日常576.mp4
+2025-02-22 16:56:14 - [Thread-121084] 处理方案ID: 6
+2025-02-22 16:56:14 - [Thread-189180] 开始识别字幕: 搞笑飙演技164.mp4
+2025-02-22 16:56:14 - [Thread-121084] 处理方案ID: 6
+2025-02-22 16:56:14 - [Thread-42440] 开始识别字幕: 搞笑飙演技25.mp4
+2025-02-22 16:56:14 - [Thread-121084] 处理方案ID: 6
+2025-02-22 16:56:14 - [Thread-112264] 开始识别字幕: 狗狗搞笑视频35.mp4
+2025-02-22 16:56:14 - app.core.audio_processor - INFO - 音频提取成功: temp/temp_42a0864f_audio.wav
+2025-02-22 16:56:14 - app.core.audio_processor - INFO - 开始加载音频数据...
+2025-02-22 16:56:14 - app.core.audio_processor - INFO - 音频数据加载成功
+2025-02-22 16:56:14 - app.core.audio_processor - INFO - 开始生成频谱图...
+2025-02-22 16:56:14 - app.core.audio_processor - INFO - 频谱图生成成功, shape: torch.Size([80, 3527])
+2025-02-22 16:56:14 - app.core.audio_processor - INFO - 检查模型状态...
+2025-02-22 16:56:14 - app.core.audio_processor - INFO - 模型状态: <class 'whisper.model.Whisper'>
+2025-02-22 16:56:14 - app.core.audio_processor - INFO - 开始识别音频: temp/temp_42a0864f_audio.wav
+2025-02-22 16:56:14 - app.core.audio_processor - INFO - 开始转写...
+2025-02-22 16:56:22 - app.core.audio_processor - INFO - 转写完成
+2025-02-22 16:56:22 - app.core.audio_processor - INFO - 字幕文件已生成: temp/户外唱歌挑战118.srt
+2025-02-22 16:56:22 - app.core.audio_processor - INFO - 开始提取音频: E:\测试\新建文件夹\搞笑一下144.mp4
+2025-02-22 16:56:22 - [Thread-12104] 字幕识别成功
+2025-02-22 16:56:22 - app.core.process_thread - INFO - [Thread-12104] 字幕识别成功
+2025-02-22 16:56:22 - [Thread-12104] 开始处理: 户外唱歌挑战118.mp4 (使用GPU)
+2025-02-22 16:56:22 - app.core.process_thread - INFO - [Thread-12104] 开始处理: 户外唱歌挑战118.mp4 (使用GPU)
+2025-02-22 16:56:22 - app.core.audio_processor - INFO - 音频提取成功: temp/temp_2907c807_audio.wav
+2025-02-22 16:56:22 - app.core.audio_processor - INFO - 开始加载音频数据...
+2025-02-22 16:56:22 - app.core.audio_processor - INFO - 音频数据加载成功
+2025-02-22 16:56:22 - app.core.audio_processor - INFO - 开始生成频谱图...
+2025-02-22 16:56:22 - app.core.audio_processor - INFO - 频谱图生成成功, shape: torch.Size([80, 2835])
+2025-02-22 16:56:22 - app.core.audio_processor - INFO - 检查模型状态...
+2025-02-22 16:56:22 - app.core.audio_processor - INFO - 模型状态: <class 'whisper.model.Whisper'>
+2025-02-22 16:56:22 - app.core.audio_processor - INFO - 开始识别音频: temp/temp_2907c807_audio.wav
+2025-02-22 16:56:22 - app.core.audio_processor - INFO - 开始转写...
+2025-02-22 16:56:31 - app.core.audio_processor - INFO - 转写完成
+2025-02-22 16:56:31 - app.core.audio_processor - INFO - 字幕文件已生成: temp/搞笑一下144.srt
+2025-02-22 16:56:31 - app.core.audio_processor - INFO - 开始提取音频: E:\测试\新建文件夹\搞笑日常576.mp4
+2025-02-22 16:56:31 - [Thread-191580] 字幕识别成功
+2025-02-22 16:56:31 - app.core.process_thread - INFO - [Thread-191580] 字幕识别成功
+2025-02-22 16:56:31 - [Thread-191580] 开始处理: 搞笑一下144.mp4 (使用GPU)
+2025-02-22 16:56:31 - app.core.process_thread - INFO - [Thread-191580] 开始处理: 搞笑一下144.mp4 (使用GPU)
+2025-02-22 16:56:31 - app.core.audio_processor - INFO - 音频提取成功: temp/temp_6612a8e8_audio.wav
+2025-02-22 16:56:31 - app.core.audio_processor - INFO - 开始加载音频数据...
+2025-02-22 16:56:31 - app.core.audio_processor - INFO - 音频数据加载成功
+2025-02-22 16:56:31 - app.core.audio_processor - INFO - 开始生成频谱图...
+2025-02-22 16:56:31 - app.core.audio_processor - INFO - 频谱图生成成功, shape: torch.Size([80, 3620])
+2025-02-22 16:56:31 - app.core.audio_processor - INFO - 检查模型状态...
+2025-02-22 16:56:31 - app.core.audio_processor - INFO - 模型状态: <class 'whisper.model.Whisper'>
+2025-02-22 16:56:31 - app.core.audio_processor - INFO - 开始识别音频: temp/temp_6612a8e8_audio.wav
+2025-02-22 16:56:31 - app.core.audio_processor - INFO - 开始转写...
+2025-02-22 16:56:39 - [Thread-12104] 处理完成: 户外唱歌挑战118.mp4
+2025-02-22 16:56:39 - app.core.process_thread - INFO - [Thread-12104] 处理完成: 户外唱歌挑战118.mp4
+2025-02-22 16:56:39 - app.core.process_thread - INFO - [Thread-121084] 已完成 1 个视频的处理
+2025-02-22 16:56:39 - [Thread-121084] 已完成 1 个视频的处理
+2025-02-22 16:56:40 - app.core.audio_processor - INFO - 转写完成
+2025-02-22 16:56:40 - app.core.audio_processor - INFO - 字幕文件已生成: temp/搞笑日常576.srt
+2025-02-22 16:56:40 - [Thread-188796] 字幕识别成功
+2025-02-22 16:56:40 - app.core.audio_processor - INFO - 开始提取音频: E:\测试\新建文件夹\搞笑飙演技164.mp4
+2025-02-22 16:56:40 - app.core.process_thread - INFO - [Thread-188796] 字幕识别成功
+2025-02-22 16:56:40 - [Thread-188796] 开始处理: 搞笑日常576.mp4 (使用GPU)
+2025-02-22 16:56:40 - app.core.process_thread - INFO - [Thread-188796] 开始处理: 搞笑日常576.mp4 (使用GPU)
+2025-02-22 16:56:40 - app.core.audio_processor - INFO - 音频提取成功: temp/temp_88c8444e_audio.wav
+2025-02-22 16:56:40 - app.core.audio_processor - INFO - 开始加载音频数据...
+2025-02-22 16:56:40 - app.core.audio_processor - INFO - 音频数据加载成功
+2025-02-22 16:56:40 - app.core.audio_processor - INFO - 开始生成频谱图...
+2025-02-22 16:56:40 - app.core.audio_processor - INFO - 频谱图生成成功, shape: torch.Size([80, 1873])
+2025-02-22 16:56:40 - app.core.audio_processor - INFO - 检查模型状态...
+2025-02-22 16:56:40 - app.core.audio_processor - INFO - 模型状态: <class 'whisper.model.Whisper'>
+2025-02-22 16:56:40 - app.core.audio_processor - INFO - 开始识别音频: temp/temp_88c8444e_audio.wav
+2025-02-22 16:56:40 - app.core.audio_processor - INFO - 开始转写...
+2025-02-22 16:56:45 - app.core.audio_processor - INFO - 转写完成
+2025-02-22 16:56:45 - app.core.audio_processor - INFO - 字幕文件已生成: temp/搞笑飙演技164.srt
+2025-02-22 16:56:45 - app.core.audio_processor - INFO - 开始提取音频: E:\测试\新建文件夹\搞笑飙演技25.mp4
+2025-02-22 16:56:45 - app.core.process_thread - INFO - [Thread-189180] 字幕识别成功
+2025-02-22 16:56:45 - [Thread-189180] 字幕识别成功
+2025-02-22 16:56:45 - app.core.process_thread - INFO - [Thread-189180] 开始处理: 搞笑飙演技164.mp4 (使用GPU)
+2025-02-22 16:56:45 - [Thread-189180] 开始处理: 搞笑飙演技164.mp4 (使用GPU)
+2025-02-22 16:56:45 - app.core.audio_processor - INFO - 音频提取成功: temp/temp_77fcbdd1_audio.wav
+2025-02-22 16:56:45 - app.core.audio_processor - INFO - 开始加载音频数据...
+2025-02-22 16:56:45 - app.core.audio_processor - INFO - 音频数据加载成功
+2025-02-22 16:56:45 - app.core.audio_processor - INFO - 开始生成频谱图...
+2025-02-22 16:56:45 - app.core.audio_processor - INFO - 频谱图生成成功, shape: torch.Size([80, 2983])
+2025-02-22 16:56:46 - app.core.audio_processor - INFO - 检查模型状态...
+2025-02-22 16:56:46 - app.core.audio_processor - INFO - 模型状态: <class 'whisper.model.Whisper'>
+2025-02-22 16:56:46 - app.core.audio_processor - INFO - 开始识别音频: temp/temp_77fcbdd1_audio.wav
+2025-02-22 16:56:46 - app.core.audio_processor - INFO - 开始转写...
+2025-02-22 16:56:46 - app.core.process_thread - INFO - [Thread-191580] 处理完成: 搞笑一下144.mp4
+2025-02-22 16:56:46 - [Thread-191580] 处理完成: 搞笑一下144.mp4
+2025-02-22 16:56:46 - app.core.process_thread - INFO - [Thread-121084] 已完成 2 个视频的处理
+2025-02-22 16:56:46 - [Thread-121084] 已完成 2 个视频的处理
+2025-02-22 16:56:53 - app.core.audio_processor - INFO - 转写完成
+2025-02-22 16:56:53 - app.core.audio_processor - INFO - 字幕文件已生成: temp/搞笑飙演技25.srt
+2025-02-22 16:56:53 - app.core.audio_processor - INFO - 开始提取音频: E:\测试\新建文件夹\狗狗搞笑视频35.mp4
+2025-02-22 16:56:53 - app.core.process_thread - INFO - [Thread-42440] 字幕识别成功
+2025-02-22 16:56:53 - [Thread-42440] 字幕识别成功
+2025-02-22 16:56:53 - [Thread-42440] 开始处理: 搞笑飙演技25.mp4 (使用GPU)
+2025-02-22 16:56:53 - app.core.process_thread - INFO - [Thread-42440] 开始处理: 搞笑飙演技25.mp4 (使用GPU)
+2025-02-22 16:56:54 - app.core.audio_processor - INFO - 音频提取成功: temp/temp_6ff12145_audio.wav
+2025-02-22 16:56:54 - app.core.audio_processor - INFO - 开始加载音频数据...
+2025-02-22 16:56:54 - app.core.audio_processor - INFO - 音频数据加载成功
+2025-02-22 16:56:54 - app.core.audio_processor - INFO - 开始生成频谱图...
+2025-02-22 16:56:54 - app.core.audio_processor - INFO - 频谱图生成成功, shape: torch.Size([80, 4581])
+2025-02-22 16:56:54 - app.core.audio_processor - INFO - 检查模型状态...
+2025-02-22 16:56:54 - app.core.audio_processor - INFO - 模型状态: <class 'whisper.model.Whisper'>
+2025-02-22 16:56:54 - app.core.audio_processor - INFO - 开始识别音频: temp/temp_6ff12145_audio.wav
+2025-02-22 16:56:54 - app.core.audio_processor - INFO - 开始转写...
+2025-02-22 16:56:55 - [Thread-189180] 处理完成: 搞笑飙演技164.mp4
+2025-02-22 16:56:55 - app.core.process_thread - INFO - [Thread-189180] 处理完成: 搞笑飙演技164.mp4
+2025-02-22 16:56:55 - [Thread-121084] 已完成 3 个视频的处理
+2025-02-22 16:56:55 - app.core.process_thread - INFO - [Thread-121084] 已完成 3 个视频的处理
+2025-02-22 16:56:56 - [Thread-188796] 处理完成: 搞笑日常576.mp4
+2025-02-22 16:56:56 - app.core.process_thread - INFO - [Thread-188796] 处理完成: 搞笑日常576.mp4
+2025-02-22 16:56:56 - [Thread-121084] 已完成 4 个视频的处理
+2025-02-22 16:56:56 - app.core.process_thread - INFO - [Thread-121084] 已完成 4 个视频的处理
+2025-02-22 16:57:00 - app.core.audio_processor - INFO - 转写完成
+2025-02-22 16:57:00 - app.core.audio_processor - INFO - 字幕文件已生成: temp/狗狗搞笑视频35.srt
+2025-02-22 16:57:00 - [Thread-112264] 字幕识别成功
+2025-02-22 16:57:00 - app.core.process_thread - INFO - [Thread-112264] 字幕识别成功
+2025-02-22 16:57:00 - [Thread-112264] 开始处理: 狗狗搞笑视频35.mp4 (使用GPU)
+2025-02-22 16:57:00 - app.core.process_thread - INFO - [Thread-112264] 开始处理: 狗狗搞笑视频35.mp4 (使用GPU)
+2025-02-22 16:57:06 - [Thread-42440] 处理完成: 搞笑飙演技25.mp4
+2025-02-22 16:57:06 - app.core.process_thread - INFO - [Thread-42440] 处理完成: 搞笑飙演技25.mp4
+2025-02-22 16:57:06 - [Thread-121084] 已完成 5 个视频的处理
+2025-02-22 16:57:06 - app.core.process_thread - INFO - [Thread-121084] 已完成 5 个视频的处理
+2025-02-22 16:57:15 - [Thread-112264] 处理完成: 狗狗搞笑视频35.mp4
+2025-02-22 16:57:15 - app.core.process_thread - INFO - [Thread-112264] 处理完成: 狗狗搞笑视频35.mp4
+2025-02-22 16:57:15 - [Thread-121084] 已完成 6 个视频的处理
+2025-02-22 16:57:15 - app.core.process_thread - INFO - [Thread-121084] 已完成 6 个视频的处理
+2025-02-22 16:57:15 - app.core.process_thread - INFO - [Thread-121084] 处理完成，共处理 6 个视频，总用时 60.7 秒
+2025-02-22 16:57:15 - [Thread-121084] 处理完成，共处理 6 个视频，总用时 60.7 秒
+2025-02-22 16:57:39 - app.core.process_thread - INFO - [Thread-23060] 设置GPU并发数为: 6
+2025-02-22 16:57:39 - app.core.process_thread - INFO - [Thread-23060] 使用选中的方案: {'id': 6, 'name': '方案6 自动字幕', 'width': 720, 'height': 1080, 'blur_bg': False, 'add_subtitle': True, 'description': '竖屏带字幕'}
+2025-02-22 16:57:39 - 
+=== 线程参数 ===
+2025-02-22 16:57:39 - 线程输入目录: ['E:\\测试\\新建文件夹']
+2025-02-22 16:57:39 - 线程选中方案: [{'id': 6, 'name': '方案6 自动字幕', 'width': 720, 'height': 1080, 'blur_bg': False, 'add_subtitle': True, 'description': '竖屏带字幕'}]
+2025-02-22 16:57:39 - 线程删除选项: False
+2025-02-22 16:57:39 - 线程字幕选项: True
+2025-02-22 16:57:39 - 字幕边距: 85
+2025-02-22 16:57:39 - 字体大小: 20
+2025-02-22 16:57:39 - app.core.process_thread - INFO - [Thread-47980] 
+=== 线程开始 ===
+2025-02-22 16:57:39 - app.core.process_thread - INFO - [Thread-47980] 线程参数:
+2025-02-22 16:57:39 - [Thread-47980] 
+=== 线程开始 ===
+2025-02-22 16:57:39 - app.core.process_thread - INFO - [Thread-47980] 添加字幕: True
+2025-02-22 16:57:39 - app.core.process_thread - INFO - [Thread-47980] 选中的方案: [{'id': 6, 'name': '方案6 自动字幕', 'width': 720, 'height': 1080, 'blur_bg': False, 'add_subtitle': True, 'description': '竖屏带字幕'}]
+2025-02-22 16:57:39 - app.core.process_thread - INFO - [Thread-47980] 更多效果: False
+2025-02-22 16:57:39 - app.core.process_thread - INFO - [Thread-47980] 并发线程数: 10
+2025-02-22 16:57:39 - app.core.process_thread - INFO - [Thread-47980] 循环剪辑: False
+2025-02-22 16:57:39 - [Thread-47980] 线程参数:
+2025-02-22 16:57:39 - app.core.process_thread - INFO - [Thread-47980] 目录 E:\测试\新建文件夹 限制处理 50 个文件
+2025-02-22 16:57:39 - [Thread-47980] 添加字幕: True
+2025-02-22 16:57:39 - app.core.process_thread - INFO - [Thread-47980] 处理方案ID: 6
+2025-02-22 16:57:39 - [Thread-47980] 选中的方案: [{'id': 6, 'name': '方案6 自动字幕', 'width': 720, 'height': 1080, 'blur_bg': False, 'add_subtitle': True, 'description': '竖屏带字幕'}]
+2025-02-22 16:57:39 - [Thread-47980] 更多效果: False
+2025-02-22 16:57:39 - [Thread-47980] 并发线程数: 10
+2025-02-22 16:57:39 - app.core.process_thread - INFO - [Thread-165108] 开始识别字幕: 户外唱歌挑战118.mp4
+2025-02-22 16:57:39 - [Thread-47980] 循环剪辑: False
+2025-02-22 16:57:39 - app.core.process_thread - INFO - [Thread-47980] 处理方案ID: 6
+2025-02-22 16:57:39 - [Thread-47980] 目录 E:\测试\新建文件夹 限制处理 50 个文件
+2025-02-22 16:57:39 - app.core.audio_processor - INFO - 开始提取音频: E:\测试\新建文件夹\户外唱歌挑战118.mp4
+2025-02-22 16:57:39 - [Thread-47980] 处理方案ID: 6
+2025-02-22 16:57:39 - app.core.process_thread - INFO - [Thread-57248] 开始识别字幕: 搞笑一下144.mp4
+2025-02-22 16:57:39 - app.core.process_thread - INFO - [Thread-47980] 处理方案ID: 6
+2025-02-22 16:57:39 - [Thread-165108] 开始识别字幕: 户外唱歌挑战118.mp4
+2025-02-22 16:57:39 - [Thread-47980] 处理方案ID: 6
+2025-02-22 16:57:39 - app.core.process_thread - INFO - [Thread-31356] 开始识别字幕: 搞笑日常576.mp4
+2025-02-22 16:57:39 - app.core.process_thread - INFO - [Thread-47980] 处理方案ID: 6
+2025-02-22 16:57:39 - app.core.process_thread - INFO - [Thread-168404] 开始识别字幕: 搞笑飙演技164.mp4
+2025-02-22 16:57:39 - app.core.process_thread - INFO - [Thread-47980] 处理方案ID: 6
+2025-02-22 16:57:39 - app.core.process_thread - INFO - [Thread-26036] 开始识别字幕: 搞笑飙演技25.mp4
+2025-02-22 16:57:39 - app.core.process_thread - INFO - [Thread-47980] 处理方案ID: 6
+2025-02-22 16:57:39 - app.core.process_thread - INFO - [Thread-179896] 开始识别字幕: 狗狗搞笑视频35.mp4
+2025-02-22 16:57:39 - [Thread-57248] 开始识别字幕: 搞笑一下144.mp4
+2025-02-22 16:57:39 - [Thread-47980] 处理方案ID: 6
+2025-02-22 16:57:39 - [Thread-31356] 开始识别字幕: 搞笑日常576.mp4
+2025-02-22 16:57:39 - [Thread-47980] 处理方案ID: 6
+2025-02-22 16:57:39 - [Thread-168404] 开始识别字幕: 搞笑飙演技164.mp4
+2025-02-22 16:57:39 - [Thread-47980] 处理方案ID: 6
+2025-02-22 16:57:39 - [Thread-26036] 开始识别字幕: 搞笑飙演技25.mp4
+2025-02-22 16:57:39 - [Thread-47980] 处理方案ID: 6
+2025-02-22 16:57:39 - [Thread-179896] 开始识别字幕: 狗狗搞笑视频35.mp4
+2025-02-22 16:57:39 - app.core.audio_processor - INFO - 音频提取成功: temp/temp_c15b9642_audio.wav
+2025-02-22 16:57:39 - app.core.audio_processor - INFO - 开始加载音频数据...
+2025-02-22 16:57:39 - app.core.audio_processor - INFO - 音频数据加载成功
+2025-02-22 16:57:39 - app.core.audio_processor - INFO - 开始生成频谱图...
+2025-02-22 16:57:39 - app.core.audio_processor - INFO - 频谱图生成成功, shape: torch.Size([80, 3527])
+2025-02-22 16:57:39 - app.core.audio_processor - INFO - 检查模型状态...
+2025-02-22 16:57:39 - app.core.audio_processor - INFO - 模型状态: <class 'whisper.model.Whisper'>
+2025-02-22 16:57:39 - app.core.audio_processor - INFO - 开始识别音频: temp/temp_c15b9642_audio.wav
+2025-02-22 16:57:39 - app.core.audio_processor - INFO - 开始转写...
+2025-02-22 16:57:48 - app.core.audio_processor - INFO - 转写完成
+2025-02-22 16:57:48 - app.core.audio_processor - INFO - 字幕文件已生成: temp/户外唱歌挑战118.srt
+2025-02-22 16:57:48 - app.core.audio_processor - INFO - 开始提取音频: E:\测试\新建文件夹\搞笑一下144.mp4
+2025-02-22 16:57:48 - [Thread-165108] 字幕识别成功
+2025-02-22 16:57:48 - app.core.process_thread - INFO - [Thread-165108] 字幕识别成功
+2025-02-22 16:57:48 - app.core.process_thread - INFO - [Thread-165108] 开始处理: 户外唱歌挑战118.mp4 (使用GPU)
+2025-02-22 16:57:48 - [Thread-165108] 开始处理: 户外唱歌挑战118.mp4 (使用GPU)
+2025-02-22 16:57:48 - app.core.audio_processor - INFO - 音频提取成功: temp/temp_e11563a1_audio.wav
+2025-02-22 16:57:48 - app.core.audio_processor - INFO - 开始加载音频数据...
+2025-02-22 16:57:48 - app.core.audio_processor - INFO - 音频数据加载成功
+2025-02-22 16:57:48 - app.core.audio_processor - INFO - 开始生成频谱图...
+2025-02-22 16:57:48 - app.core.audio_processor - INFO - 频谱图生成成功, shape: torch.Size([80, 2835])
+2025-02-22 16:57:48 - app.core.audio_processor - INFO - 检查模型状态...
+2025-02-22 16:57:48 - app.core.audio_processor - INFO - 模型状态: <class 'whisper.model.Whisper'>
+2025-02-22 16:57:48 - app.core.audio_processor - INFO - 开始识别音频: temp/temp_e11563a1_audio.wav
+2025-02-22 16:57:48 - app.core.audio_processor - INFO - 开始转写...
+2025-02-22 16:57:58 - app.core.audio_processor - INFO - 转写完成
+2025-02-22 16:57:58 - app.core.audio_processor - INFO - 字幕文件已生成: temp/搞笑一下144.srt
+2025-02-22 16:57:58 - app.core.audio_processor - INFO - 开始提取音频: E:\测试\新建文件夹\搞笑日常576.mp4
+2025-02-22 16:57:58 - [Thread-57248] 字幕识别成功
+2025-02-22 16:57:58 - app.core.process_thread - INFO - [Thread-57248] 字幕识别成功
+2025-02-22 16:57:58 - [Thread-57248] 开始处理: 搞笑一下144.mp4 (使用GPU)
+2025-02-22 16:57:58 - app.core.process_thread - INFO - [Thread-57248] 开始处理: 搞笑一下144.mp4 (使用GPU)
+2025-02-22 16:57:58 - app.core.audio_processor - INFO - 音频提取成功: temp/temp_96582f87_audio.wav
+2025-02-22 16:57:58 - app.core.audio_processor - INFO - 开始加载音频数据...
+2025-02-22 16:57:58 - app.core.audio_processor - INFO - 音频数据加载成功
+2025-02-22 16:57:58 - app.core.audio_processor - INFO - 开始生成频谱图...
+2025-02-22 16:57:58 - app.core.audio_processor - INFO - 频谱图生成成功, shape: torch.Size([80, 3620])
+2025-02-22 16:57:58 - app.core.audio_processor - INFO - 检查模型状态...
+2025-02-22 16:57:58 - app.core.audio_processor - INFO - 模型状态: <class 'whisper.model.Whisper'>
+2025-02-22 16:57:58 - app.core.audio_processor - INFO - 开始识别音频: temp/temp_96582f87_audio.wav
+2025-02-22 16:57:58 - app.core.audio_processor - INFO - 开始转写...
+2025-02-22 16:58:05 - app.core.process_thread - INFO - [Thread-165108] 处理完成: 户外唱歌挑战118.mp4
+2025-02-22 16:58:05 - [Thread-165108] 处理完成: 户外唱歌挑战118.mp4
+2025-02-22 16:58:05 - [Thread-47980] 已完成 1 个视频的处理
+2025-02-22 16:58:05 - app.core.process_thread - INFO - [Thread-47980] 已完成 1 个视频的处理
+2025-02-22 16:58:08 - app.core.audio_processor - INFO - 转写完成
+2025-02-22 16:58:08 - app.core.audio_processor - INFO - 字幕文件已生成: temp/搞笑日常576.srt
+2025-02-22 16:58:08 - app.core.audio_processor - INFO - 开始提取音频: E:\测试\新建文件夹\搞笑飙演技164.mp4
+2025-02-22 16:58:08 - app.core.process_thread - INFO - [Thread-31356] 字幕识别成功
+2025-02-22 16:58:08 - [Thread-31356] 字幕识别成功
+2025-02-22 16:58:08 - app.core.process_thread - INFO - [Thread-31356] 开始处理: 搞笑日常576.mp4 (使用GPU)
+2025-02-22 16:58:08 - [Thread-31356] 开始处理: 搞笑日常576.mp4 (使用GPU)
+2025-02-22 16:58:08 - app.core.audio_processor - INFO - 音频提取成功: temp/temp_d45cafc9_audio.wav
+2025-02-22 16:58:08 - app.core.audio_processor - INFO - 开始加载音频数据...
+2025-02-22 16:58:09 - app.core.audio_processor - INFO - 音频数据加载成功
+2025-02-22 16:58:09 - app.core.audio_processor - INFO - 开始生成频谱图...
+2025-02-22 16:58:09 - app.core.audio_processor - INFO - 频谱图生成成功, shape: torch.Size([80, 1873])
+2025-02-22 16:58:09 - app.core.audio_processor - INFO - 检查模型状态...
+2025-02-22 16:58:09 - app.core.audio_processor - INFO - 模型状态: <class 'whisper.model.Whisper'>
+2025-02-22 16:58:09 - app.core.audio_processor - INFO - 开始识别音频: temp/temp_d45cafc9_audio.wav
+2025-02-22 16:58:09 - app.core.audio_processor - INFO - 开始转写...
+2025-02-22 16:58:13 - app.core.process_thread - INFO - [Thread-57248] 处理完成: 搞笑一下144.mp4
+2025-02-22 16:58:13 - [Thread-57248] 处理完成: 搞笑一下144.mp4
+2025-02-22 16:58:13 - app.core.process_thread - INFO - [Thread-47980] 已完成 2 个视频的处理
+2025-02-22 16:58:13 - [Thread-47980] 已完成 2 个视频的处理
+2025-02-22 16:58:14 - app.core.audio_processor - INFO - 转写完成
+2025-02-22 16:58:14 - app.core.audio_processor - INFO - 字幕文件已生成: temp/搞笑飙演技164.srt
+2025-02-22 16:58:14 - app.core.audio_processor - INFO - 开始提取音频: E:\测试\新建文件夹\搞笑飙演技25.mp4
+2025-02-22 16:58:14 - app.core.process_thread - INFO - [Thread-168404] 字幕识别成功
+2025-02-22 16:58:14 - [Thread-168404] 字幕识别成功
+2025-02-22 16:58:14 - app.core.process_thread - INFO - [Thread-168404] 开始处理: 搞笑飙演技164.mp4 (使用GPU)
+2025-02-22 16:58:14 - [Thread-168404] 开始处理: 搞笑飙演技164.mp4 (使用GPU)
+2025-02-22 16:58:14 - app.core.audio_processor - INFO - 音频提取成功: temp/temp_2bddef72_audio.wav
+2025-02-22 16:58:14 - app.core.audio_processor - INFO - 开始加载音频数据...
+2025-02-22 16:58:15 - app.core.audio_processor - INFO - 音频数据加载成功
+2025-02-22 16:58:15 - app.core.audio_processor - INFO - 开始生成频谱图...
+2025-02-22 16:58:15 - app.core.audio_processor - INFO - 频谱图生成成功, shape: torch.Size([80, 2983])
+2025-02-22 16:58:15 - app.core.audio_processor - INFO - 检查模型状态...
+2025-02-22 16:58:15 - app.core.audio_processor - INFO - 模型状态: <class 'whisper.model.Whisper'>
+2025-02-22 16:58:15 - app.core.audio_processor - INFO - 开始识别音频: temp/temp_2bddef72_audio.wav
+2025-02-22 16:58:15 - app.core.audio_processor - INFO - 开始转写...
+2025-02-22 16:58:21 - 正在停止处理...
+2025-02-22 16:58:21 - 注意：已经开始处理的视频将继续完成，新的视频将不再开始处理
+2025-02-22 16:58:21 - [Thread-23060] 正在停止处理...
+2025-02-22 16:58:21 - app.core.process_thread - INFO - [Thread-23060] 正在停止处理...
+2025-02-22 16:58:21 - [Thread-23060] 已终止当前处理进程
+2025-02-22 16:58:21 - app.core.process_thread - INFO - [Thread-23060] 已终止当前处理进程
+2025-02-22 16:58:21 - app.core.process_thread - WARNING - [Thread-31356] 处理被用户中断
+2025-02-22 16:58:22 - app.core.process_thread - WARNING - [Thread-168404] 处理被用户中断
+2025-02-22 16:58:24 - app.core.audio_processor - INFO - 转写完成
+2025-02-22 16:58:24 - app.core.audio_processor - INFO - 字幕文件已生成: temp/搞笑飙演技25.srt
+2025-02-22 16:58:24 - app.core.process_thread - INFO - [Thread-26036] 字幕识别成功
+2025-02-22 16:58:24 - app.core.audio_processor - INFO - 开始提取音频: E:\测试\新建文件夹\狗狗搞笑视频35.mp4
+2025-02-22 16:58:24 - app.core.process_thread - INFO - [Thread-26036] 开始处理: 搞笑飙演技25.mp4 (使用GPU)
+2025-02-22 16:58:24 - app.core.process_thread - WARNING - [Thread-26036] 处理被用户中断
+2025-02-22 16:58:24 - app.core.audio_processor - INFO - 音频提取成功: temp/temp_2d941b79_audio.wav
+2025-02-22 16:58:24 - app.core.audio_processor - INFO - 开始加载音频数据...
+2025-02-22 16:58:24 - app.core.audio_processor - INFO - 音频数据加载成功
+2025-02-22 16:58:24 - app.core.audio_processor - INFO - 开始生成频谱图...
+2025-02-22 16:58:24 - app.core.audio_processor - INFO - 频谱图生成成功, shape: torch.Size([80, 4581])
+2025-02-22 16:58:24 - app.core.audio_processor - INFO - 检查模型状态...
+2025-02-22 16:58:24 - app.core.audio_processor - INFO - 模型状态: <class 'whisper.model.Whisper'>
+2025-02-22 16:58:24 - app.core.audio_processor - INFO - 开始识别音频: temp/temp_2d941b79_audio.wav
+2025-02-22 16:58:24 - app.core.audio_processor - INFO - 开始转写...
+2025-02-22 16:58:29 - app.core.audio_processor - INFO - 转写完成
+2025-02-22 16:58:29 - app.core.audio_processor - INFO - 字幕文件已生成: temp/狗狗搞笑视频35.srt
+2025-02-22 16:58:29 - app.core.process_thread - INFO - [Thread-179896] 字幕识别成功
+2025-02-22 16:58:29 - app.core.process_thread - INFO - [Thread-179896] 开始处理: 狗狗搞笑视频35.mp4 (使用GPU)
+2025-02-22 16:58:29 - app.core.process_thread - WARNING - [Thread-179896] 处理被用户中断
+2025-02-22 16:58:29 - app.core.process_thread - INFO - [Thread-47980] 处理完成，共处理 2 个视频，总用时 49.7 秒
+2025-02-22 16:58:29 - [Thread-23060] 处理已停止
+2025-02-22 16:58:29 - app.core.process_thread - INFO - [Thread-23060] 处理已停止
+2025-02-22 16:58:29 - [Thread-31356] 处理被用户中断
+2025-02-22 16:58:29 - [Thread-168404] 处理被用户中断
+2025-02-22 16:58:29 - [Thread-26036] 字幕识别成功
+2025-02-22 16:58:29 - [Thread-26036] 开始处理: 搞笑飙演技25.mp4 (使用GPU)
+2025-02-22 16:58:29 - [Thread-26036] 处理被用户中断
+2025-02-22 16:58:29 - [Thread-179896] 字幕识别成功
+2025-02-22 16:58:29 - [Thread-179896] 开始处理: 狗狗搞笑视频35.mp4 (使用GPU)
+2025-02-22 16:58:29 - [Thread-179896] 处理被用户中断
+2025-02-22 16:58:29 - [Thread-47980] 处理完成，共处理 2 个视频，总用时 49.7 秒
+2025-02-23 00:10:24 - root - INFO - 配置文件路径: F:\py\full-stack-fastapi-template\cr_fy\app\resources\config\config.json
+2025-02-23 00:10:24 - __main__ - INFO - 开始预加载Whisper模型...
+2025-02-23 00:10:24 - __main__ - INFO - 检查模型文件: F:\py\full-stack-fastapi-template\cr_fy\models\small.pt
+2025-02-23 00:10:24 - __main__ - INFO - 找到模型文件: F:\py\full-stack-fastapi-template\cr_fy\models\small.pt
+2025-02-23 00:10:24 - __main__ - INFO - 成功加载Whisper模型到 cpu 设备
+2025-02-23 00:10:26 - key_verification - INFO - 运行模式: 开发环境
+2025-02-23 00:10:26 - key_verification - INFO - 当前工作目录: F:\py\full-stack-fastapi-template\cr_fy
+2025-02-23 00:10:28 - key_verification - INFO - 使用服务器地址: http://139.224.70.41:8000
+2025-02-23 00:10:28 - key_verification - INFO - 验证请求URL: http://139.224.70.41:8000/api/v1/api-keys/verify
+2025-02-23 00:10:28 - key_verification - INFO - 请求头: {'Content-Type': 'application/json', 'User-Agent': 'CR-Client/False'}
+2025-02-23 00:10:28 - key_verification - INFO - 请求数据: {'key': 'JGR8FC-AtCLWEHeTY2APY9xNkT9TO9IeEg3jiJvveao', 'machine_info': {'hostname': '方应9900x', 'os': 'Windows 11', 'cpu': 'AMD Ryzen 9 9900X 12-Core Processor', 'mac': 'b5:d5:56:5a:68:a2', 'item': 'clip'}}
+2025-02-23 00:10:28 - key_verification - INFO - 服务器响应状态码: 200
+2025-02-23 00:10:28 - key_verification - INFO - 服务器响应内容: {"valid":true}
+2025-02-23 00:10:28 - key_verification - INFO - 密钥验证结果: {'valid': True}
+2025-02-23 00:10:29 - ui - WARNING - 背景图片不存在: F:\py\full-stack-fastapi-template\cr_fy\app\ui\壁纸.jpg
+2025-02-23 00:10:29 - ui - INFO - [UI] 成功加载方案列表
+2025-02-23 00:10:29 - ui - INFO - 目录 E:\测试\新建文件夹 中找到 6 个视频文件
+2025-02-23 00:10:29 - ui - INFO - 目录数: 1, 总视频数: 6
+2025-02-23 00:10:33 - app.core.process_thread - INFO - [Thread-59616] 设置GPU并发数为: 6
+2025-02-23 00:10:33 - app.core.process_thread - INFO - [Thread-59616] 使用选中的方案: {'id': 1, 'name': '方案1', 'width': 1200, 'height': 2480, 'blur_bg': False, 'add_subtitle': False, 'description': '竖屏标准尺寸'}
+2025-02-23 00:10:33 - root - INFO - 开发环境当前目录: F:\py\full-stack-fastapi-template\cr_fy
+2025-02-23 00:10:33 - root - INFO - 开发环境基础路径: F:\py\full-stack-fastapi-template\cr_fy
+2025-02-23 00:10:33 - root - INFO - 检查 FFmpeg 路径: F:\py\full-stack-fastapi-template\cr_fy\ffmpeg.exe
+2025-02-23 00:10:33 - root - INFO - 找到 FFmpeg: F:\py\full-stack-fastapi-template\cr_fy\ffmpeg.exe
+2025-02-23 00:10:33 - app.core.audio_processor - INFO - FFmpeg 路径: F:\py\full-stack-fastapi-template\cr_fy\ffmpeg.exe
+2025-02-23 00:10:33 - app.core.audio_processor - INFO - 运行在开发环境中
+2025-02-23 00:10:33 - 
+=== 线程参数 ===
+2025-02-23 00:10:33 - 线程输入目录: ['E:\\测试\\新建文件夹']
+2025-02-23 00:10:33 - 线程选中方案: [{'id': 1, 'name': '方案1', 'width': 1200, 'height': 2480, 'blur_bg': False, 'add_subtitle': False, 'description': '竖屏标准尺寸'}]
+2025-02-23 00:10:33 - 线程删除选项: False
+2025-02-23 00:10:33 - 线程字幕选项: False
+2025-02-23 00:10:33 - 字幕边距: 85
+2025-02-23 00:10:33 - 字体大小: 20
+2025-02-23 00:10:33 - app.core.process_thread - INFO - [Thread-52312] 
+=== 线程开始 ===
+2025-02-23 00:10:33 - app.core.process_thread - INFO - [Thread-52312] 线程参数:
+2025-02-23 00:10:33 - app.core.process_thread - INFO - [Thread-52312] 添加字幕: False
+2025-02-23 00:10:33 - app.core.process_thread - INFO - [Thread-52312] 选中的方案: [{'id': 1, 'name': '方案1', 'width': 1200, 'height': 2480, 'blur_bg': False, 'add_subtitle': False, 'description': '竖屏标准尺寸'}]
+2025-02-23 00:10:33 - app.core.process_thread - INFO - [Thread-52312] 更多效果: False
+2025-02-23 00:10:33 - app.core.process_thread - INFO - [Thread-52312] 并发线程数: 10
+2025-02-23 00:10:33 - app.core.process_thread - INFO - [Thread-52312] 循环剪辑: False
+2025-02-23 00:10:33 - app.core.process_thread - INFO - [Thread-52312] 目录 E:\测试\新建文件夹 限制处理 50 个文件
+2025-02-23 00:10:33 - app.core.process_thread - INFO - [Thread-52312] 处理方案ID: 1
+2025-02-23 00:10:33 - app.core.process_thread - INFO - [Thread-52312] 处理方案ID: 1
+2025-02-23 00:10:33 - app.core.process_thread - INFO - [Thread-52312] 处理方案ID: 1
+2025-02-23 00:10:33 - app.core.process_thread - INFO - [Thread-52312] 处理方案ID: 1
+2025-02-23 00:10:33 - app.core.process_thread - INFO - [Thread-52312] 处理方案ID: 1
+2025-02-23 00:10:33 - app.core.process_thread - INFO - [Thread-52312] 处理方案ID: 1
+2025-02-23 00:10:33 - [Thread-52312] 
+=== 线程开始 ===
+2025-02-23 00:10:33 - [Thread-52312] 线程参数:
+2025-02-23 00:10:33 - [Thread-52312] 添加字幕: False
+2025-02-23 00:10:33 - [Thread-52312] 选中的方案: [{'id': 1, 'name': '方案1', 'width': 1200, 'height': 2480, 'blur_bg': False, 'add_subtitle': False, 'description': '竖屏标准尺寸'}]
+2025-02-23 00:10:33 - [Thread-52312] 更多效果: False
+2025-02-23 00:10:33 - [Thread-52312] 并发线程数: 10
+2025-02-23 00:10:33 - [Thread-52312] 循环剪辑: False
+2025-02-23 00:10:33 - [Thread-52312] 目录 E:\测试\新建文件夹 限制处理 50 个文件
+2025-02-23 00:10:33 - [Thread-52312] 处理方案ID: 1
+2025-02-23 00:10:33 - [Thread-52312] 处理方案ID: 1
+2025-02-23 00:10:33 - [Thread-52312] 处理方案ID: 1
+2025-02-23 00:10:33 - [Thread-52312] 处理方案ID: 1
+2025-02-23 00:10:33 - [Thread-52312] 处理方案ID: 1
+2025-02-23 00:10:33 - [Thread-52312] 处理方案ID: 1
+2025-02-23 00:10:33 - app.core.process_thread - INFO - [Thread-166452] 开始处理: 搞笑飙演技25.mp4 (使用GPU)
+2025-02-23 00:10:33 - [Thread-166452] 开始处理: 搞笑飙演技25.mp4 (使用GPU)
+2025-02-23 00:10:33 - app.core.process_thread - INFO - [Thread-25740] 开始处理: 狗狗搞笑视频35.mp4 (使用GPU)
+2025-02-23 00:10:33 - [Thread-25740] 开始处理: 狗狗搞笑视频35.mp4 (使用GPU)
+2025-02-23 00:10:33 - app.core.process_thread - INFO - [Thread-12856] 开始处理: 搞笑飙演技164.mp4 (使用GPU)
+2025-02-23 00:10:33 - [Thread-12856] 开始处理: 搞笑飙演技164.mp4 (使用GPU)
+2025-02-23 00:10:33 - app.core.process_thread - INFO - [Thread-28700] 开始处理: 户外唱歌挑战118.mp4 (使用GPU)
+2025-02-23 00:10:33 - [Thread-28700] 开始处理: 户外唱歌挑战118.mp4 (使用GPU)
+2025-02-23 00:10:33 - app.core.process_thread - INFO - [Thread-38620] 开始处理: 搞笑一下144.mp4 (使用GPU)
+2025-02-23 00:10:33 - [Thread-38620] 开始处理: 搞笑一下144.mp4 (使用GPU)
+2025-02-23 00:10:33 - app.core.process_thread - INFO - [Thread-161740] 开始处理: 搞笑日常576.mp4 (使用GPU)
+2025-02-23 00:10:33 - [Thread-161740] 开始处理: 搞笑日常576.mp4 (使用GPU)
+2025-02-23 00:10:43 - [Thread-12856] 处理完成: 搞笑飙演技164.mp4
+2025-02-23 00:10:43 - app.core.process_thread - INFO - [Thread-12856] 处理完成: 搞笑飙演技164.mp4
+2025-02-23 00:10:43 - app.core.process_thread - INFO - [Thread-52312] 已完成 1 个视频的处理
+2025-02-23 00:10:43 - [Thread-52312] 已完成 1 个视频的处理
+2025-02-23 00:10:49 - app.core.process_thread - INFO - [Thread-161740] 处理完成: 搞笑日常576.mp4
+2025-02-23 00:10:49 - [Thread-161740] 处理完成: 搞笑日常576.mp4
+2025-02-23 00:10:49 - app.core.process_thread - INFO - [Thread-52312] 已完成 2 个视频的处理
+2025-02-23 00:10:49 - [Thread-52312] 已完成 2 个视频的处理
+2025-02-23 00:10:50 - app.core.process_thread - INFO - [Thread-166452] 处理完成: 搞笑飙演技25.mp4
+2025-02-23 00:10:50 - [Thread-166452] 处理完成: 搞笑飙演技25.mp4
+2025-02-23 00:10:50 - app.core.process_thread - INFO - [Thread-52312] 已完成 3 个视频的处理
+2025-02-23 00:10:50 - [Thread-52312] 已完成 3 个视频的处理
+2025-02-23 00:10:50 - app.core.process_thread - INFO - [Thread-28700] 处理完成: 户外唱歌挑战118.mp4
+2025-02-23 00:10:50 - [Thread-28700] 处理完成: 户外唱歌挑战118.mp4
+2025-02-23 00:10:50 - [Thread-52312] 已完成 4 个视频的处理
+2025-02-23 00:10:50 - app.core.process_thread - INFO - [Thread-52312] 已完成 4 个视频的处理
+2025-02-23 00:10:51 - [Thread-38620] 处理完成: 搞笑一下144.mp4
+2025-02-23 00:10:51 - app.core.process_thread - INFO - [Thread-38620] 处理完成: 搞笑一下144.mp4
+2025-02-23 00:10:51 - [Thread-52312] 已完成 5 个视频的处理
+2025-02-23 00:10:51 - app.core.process_thread - INFO - [Thread-52312] 已完成 5 个视频的处理
+2025-02-23 00:10:52 - app.core.process_thread - INFO - [Thread-25740] 处理完成: 狗狗搞笑视频35.mp4
+2025-02-23 00:10:52 - [Thread-25740] 处理完成: 狗狗搞笑视频35.mp4
+2025-02-23 00:10:52 - [Thread-52312] 已完成 6 个视频的处理
+2025-02-23 00:10:52 - app.core.process_thread - INFO - [Thread-52312] 已完成 6 个视频的处理
+2025-02-23 00:10:52 - [Thread-52312] 处理完成，共处理 6 个视频，总用时 19.0 秒
+2025-02-23 00:10:52 - app.core.process_thread - INFO - [Thread-52312] 处理完成，共处理 6 个视频，总用时 19.0 秒
+2025-02-23 00:11:10 - app.core.process_thread - INFO - [Thread-59616] 设置GPU并发数为: 6
+2025-02-23 00:11:10 - app.core.process_thread - INFO - [Thread-59616] 使用选中的方案: {'id': 1, 'name': '方案1', 'width': 1200, 'height': 2480, 'blur_bg': False, 'add_subtitle': False, 'description': '竖屏标准尺寸'}
+2025-02-23 00:11:10 - root - INFO - 开发环境当前目录: F:\py\full-stack-fastapi-template\cr_fy
+2025-02-23 00:11:10 - root - INFO - 开发环境基础路径: F:\py\full-stack-fastapi-template\cr_fy
+2025-02-23 00:11:10 - root - INFO - 检查 FFmpeg 路径: F:\py\full-stack-fastapi-template\cr_fy\ffmpeg.exe
+2025-02-23 00:11:10 - root - INFO - 找到 FFmpeg: F:\py\full-stack-fastapi-template\cr_fy\ffmpeg.exe
+2025-02-23 00:11:10 - app.core.audio_processor - INFO - FFmpeg 路径: F:\py\full-stack-fastapi-template\cr_fy\ffmpeg.exe
+2025-02-23 00:11:10 - app.core.audio_processor - INFO - 运行在开发环境中
+2025-02-23 00:11:10 - 
+=== 线程参数 ===
+2025-02-23 00:11:10 - 线程输入目录: ['E:\\测试\\新建文件夹']
+2025-02-23 00:11:10 - 线程选中方案: [{'id': 1, 'name': '方案1', 'width': 1200, 'height': 2480, 'blur_bg': False, 'add_subtitle': False, 'description': '竖屏标准尺寸'}]
+2025-02-23 00:11:10 - 线程删除选项: False
+2025-02-23 00:11:10 - 线程字幕选项: False
+2025-02-23 00:11:10 - 字幕边距: 85
+2025-02-23 00:11:10 - 字体大小: 20
+2025-02-23 00:11:10 - app.core.process_thread - INFO - [Thread-185436] 
+=== 线程开始 ===
+2025-02-23 00:11:10 - app.core.process_thread - INFO - [Thread-185436] 线程参数:
+2025-02-23 00:11:10 - app.core.process_thread - INFO - [Thread-185436] 添加字幕: False
+2025-02-23 00:11:10 - app.core.process_thread - INFO - [Thread-185436] 选中的方案: [{'id': 1, 'name': '方案1', 'width': 1200, 'height': 2480, 'blur_bg': False, 'add_subtitle': False, 'description': '竖屏标准尺寸'}]
+2025-02-23 00:11:10 - app.core.process_thread - INFO - [Thread-185436] 更多效果: True
+2025-02-23 00:11:10 - app.core.process_thread - INFO - [Thread-185436] 并发线程数: 10
+2025-02-23 00:11:10 - [Thread-185436] 
+=== 线程开始 ===
+2025-02-23 00:11:10 - app.core.process_thread - INFO - [Thread-185436] 循环剪辑: False
+2025-02-23 00:11:10 - [Thread-185436] 线程参数:
+2025-02-23 00:11:10 - [Thread-185436] 添加字幕: False
+2025-02-23 00:11:10 - app.core.process_thread - INFO - [Thread-185436] 目录 E:\测试\新建文件夹 限制处理 50 个文件
+2025-02-23 00:11:10 - [Thread-185436] 选中的方案: [{'id': 1, 'name': '方案1', 'width': 1200, 'height': 2480, 'blur_bg': False, 'add_subtitle': False, 'description': '竖屏标准尺寸'}]
+2025-02-23 00:11:10 - app.core.process_thread - INFO - [Thread-185436] 处理方案ID: 1
+2025-02-23 00:11:10 - [Thread-185436] 更多效果: True
+2025-02-23 00:11:10 - [Thread-185436] 并发线程数: 10
+2025-02-23 00:11:10 - [Thread-185436] 循环剪辑: False
+2025-02-23 00:11:10 - app.core.process_thread - INFO - [Thread-185436] 处理方案ID: 1
+2025-02-23 00:11:10 - [Thread-185436] 目录 E:\测试\新建文件夹 限制处理 50 个文件
+2025-02-23 00:11:10 - [Thread-185436] 处理方案ID: 1
+2025-02-23 00:11:10 - app.core.process_thread - INFO - [Thread-185436] 处理方案ID: 1
+2025-02-23 00:11:10 - app.core.process_thread - INFO - [Thread-185436] 处理方案ID: 1
+2025-02-23 00:11:10 - app.core.process_thread - INFO - [Thread-185436] 处理方案ID: 1
+2025-02-23 00:11:10 - app.core.process_thread - INFO - [Thread-185436] 处理方案ID: 1
+2025-02-23 00:11:10 - [Thread-185436] 处理方案ID: 1
+2025-02-23 00:11:10 - [Thread-185436] 处理方案ID: 1
+2025-02-23 00:11:10 - [Thread-185436] 处理方案ID: 1
+2025-02-23 00:11:10 - [Thread-185436] 处理方案ID: 1
+2025-02-23 00:11:10 - [Thread-185436] 处理方案ID: 1
+2025-02-23 00:11:10 - app.core.process_thread - INFO - [Thread-23940] 开始处理: 搞笑飙演技164.mp4 (使用GPU)
+2025-02-23 00:11:10 - [Thread-23940] 开始处理: 搞笑飙演技164.mp4 (使用GPU)
+2025-02-23 00:11:10 - app.core.process_thread - INFO - [Thread-23300] 开始处理: 户外唱歌挑战118.mp4 (使用GPU)
+2025-02-23 00:11:10 - [Thread-23300] 开始处理: 户外唱歌挑战118.mp4 (使用GPU)
+2025-02-23 00:11:10 - app.core.process_thread - INFO - [Thread-177572] 开始处理: 搞笑日常576.mp4 (使用GPU)
+2025-02-23 00:11:10 - [Thread-177572] 开始处理: 搞笑日常576.mp4 (使用GPU)
+2025-02-23 00:11:10 - app.core.process_thread - INFO - [Thread-161924] 开始处理: 狗狗搞笑视频35.mp4 (使用GPU)
+2025-02-23 00:11:10 - [Thread-161924] 开始处理: 狗狗搞笑视频35.mp4 (使用GPU)
+2025-02-23 00:11:10 - app.core.process_thread - INFO - [Thread-14088] 开始处理: 搞笑一下144.mp4 (使用GPU)
+2025-02-23 00:11:10 - [Thread-14088] 开始处理: 搞笑一下144.mp4 (使用GPU)
+2025-02-23 00:11:10 - [Thread-161180] 开始处理: 搞笑飙演技25.mp4 (使用GPU)
+2025-02-23 00:11:10 - app.core.process_thread - INFO - [Thread-161180] 开始处理: 搞笑飙演技25.mp4 (使用GPU)
+2025-02-23 00:11:31 - app.core.process_thread - INFO - [Thread-23940] 处理完成: 搞笑飙演技164.mp4
+2025-02-23 00:11:31 - [Thread-23940] 处理完成: 搞笑飙演技164.mp4
+2025-02-23 00:11:31 - app.core.process_thread - INFO - [Thread-185436] 已完成 1 个视频的处理
+2025-02-23 00:11:31 - [Thread-185436] 已完成 1 个视频的处理
+2025-02-23 00:11:42 - app.core.process_thread - INFO - [Thread-161180] 处理完成: 搞笑飙演技25.mp4
+2025-02-23 00:11:42 - [Thread-161180] 处理完成: 搞笑飙演技25.mp4
+2025-02-23 00:11:42 - app.core.process_thread - INFO - [Thread-185436] 已完成 2 个视频的处理
+2025-02-23 00:11:42 - [Thread-185436] 已完成 2 个视频的处理
+2025-02-23 00:11:42 - app.core.process_thread - INFO - [Thread-14088] 处理完成: 搞笑一下144.mp4
+2025-02-23 00:11:42 - [Thread-14088] 处理完成: 搞笑一下144.mp4
+2025-02-23 00:11:42 - [Thread-185436] 已完成 3 个视频的处理
+2025-02-23 00:11:42 - app.core.process_thread - INFO - [Thread-185436] 已完成 3 个视频的处理
+2025-02-23 00:11:44 - app.core.process_thread - INFO - [Thread-177572] 处理完成: 搞笑日常576.mp4
+2025-02-23 00:11:44 - [Thread-177572] 处理完成: 搞笑日常576.mp4
+2025-02-23 00:11:44 - app.core.process_thread - INFO - [Thread-185436] 已完成 4 个视频的处理
+2025-02-23 00:11:44 - [Thread-185436] 已完成 4 个视频的处理
+2025-02-23 00:11:47 - app.core.process_thread - INFO - [Thread-23300] 处理完成: 户外唱歌挑战118.mp4
+2025-02-23 00:11:47 - [Thread-23300] 处理完成: 户外唱歌挑战118.mp4
+2025-02-23 00:11:47 - app.core.process_thread - INFO - [Thread-185436] 已完成 5 个视频的处理
+2025-02-23 00:11:47 - [Thread-185436] 已完成 5 个视频的处理
+2025-02-23 00:11:51 - app.core.process_thread - INFO - [Thread-161924] 处理完成: 狗狗搞笑视频35.mp4
+2025-02-23 00:11:51 - [Thread-161924] 处理完成: 狗狗搞笑视频35.mp4
+2025-02-23 00:11:51 - app.core.process_thread - INFO - [Thread-185436] 已完成 6 个视频的处理
+2025-02-23 00:11:51 - [Thread-185436] 已完成 6 个视频的处理
+2025-02-23 00:11:51 - app.core.process_thread - INFO - [Thread-185436] 处理完成，共处理 6 个视频，总用时 41.4 秒
+2025-02-23 00:11:51 - [Thread-185436] 处理完成，共处理 6 个视频，总用时 41.4 秒

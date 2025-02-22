@@ -364,7 +364,7 @@ def generate_ffmpeg_command(plan_params: Dict[str, Any], more_effects: bool, can
             f'drawgrid=width=10:height=100:thickness=2:color=black@0.01,'
             f'pad=w=iw+20:h=ih+20:x=10:y=10:color=gray@0.05,'
             f'scale={width}:{height}:force_original_aspect_ratio=1,'
-            f'pad={width}:{height}:(ow-iw)/2:(oh-ih)/2:black,'
+            f'pad={width}:{height}:(ow-iw)/2:(oh-ih)/2:black'
             f',unsharp=5:5:1.8:5:5:0.5,hqdn3d=1.2:1.2:4:4'
         ),
         "basic": (

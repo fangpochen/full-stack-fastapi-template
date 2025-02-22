@@ -9,7 +9,7 @@ import subprocess
 import threading
 from datetime import datetime
 from pathlib import Path
-from PyQt5.QtCore import QThread, pyqtSignal
+from PyQt5.QtCore import QThread, pyqtSignal, QMetaObject, Q_ARG, Qt
 from app.core.audio_processor import OptimizedProcessor
 from app.core.api_client import APIClient
 from app.core.config import Config
@@ -126,17 +126,6 @@ class VideoProcessThread(QThread):
     def get_ffmpeg_command(self, input_file: str, output_file: str, plan_id: int, use_gpu: bool, thread_id: int, subtitle_file: str = None) -> str:
         """
         获取FFmpeg处理命令
-        
-        Args:
-            input_file: 输入文件路径
-            output_file: 输出文件路径
-            plan_id: 处理方案ID
-            use_gpu: 是否使用GPU
-            thread_id: 线程ID
-            subtitle_file: 字幕文件路径（可选）
-            
-        Returns:
-            str: FFmpeg命令
         """
         try:
             # 获取命令模板
@@ -145,7 +134,7 @@ class VideoProcessThread(QThread):
                 more_effects=self.more_effects,
                 canvas_y=self.canvas_y,
                 font_size=self.font_size,
-                margin_v=self.margin_v  # 添加字幕边距参数
+                margin_v=self.margin_v
             )
             
             if not commands:
@@ -162,22 +151,33 @@ class VideoProcessThread(QThread):
             command = command_template.replace('{input_file}', input_file)
             command = command.replace('{output_file}', output_file)
             
-            # 如果是方案6且有字幕文件，替换字幕文件路径和文件名，并修改MarginV值
+            # 如果是方案6且有字幕文件，替换字幕文件路径
             if plan_id == 6 and subtitle_file:
-                # 获取输入文件名（不包含扩展名）
                 filename = Path(input_file).stem
                 command = command.replace('{subtitle_file}', subtitle_file)
                 command = command.replace('%{filename}', filename)
-                # 替换MarginV值
-                command = command.replace('MarginV=85', f'MarginV={self.margin_v}')
             
-            # 打印完整的FFmpeg命令
-            self.log(f"完整的FFmpeg命令: {command}", thread_id, 'DEBUG')
             return command
             
         except Exception as e:
             self.log(f"生成命令失败: {str(e)}", thread_id, 'ERROR')
             return None
+
+    def emit_finished(self, total_processed, total_time):
+        """安全发送完成信号"""
+        try:
+            # 直接发送信号
+            self.finished.emit(total_processed, total_time)
+        except Exception as e:
+            self.log(f"发送完成信号时出错: {str(e)}", level='ERROR')
+                               
+    def emit_error(self, error_msg):
+        """安全发送错误信号"""
+        try:
+            # 直接发送信号
+            self.error.emit(error_msg)
+        except Exception as e:
+            self.log(f"发送错误信号时出错: {str(e)}", level='ERROR')
 
     def run(self):
         """运行处理线程"""
@@ -193,20 +193,15 @@ class VideoProcessThread(QThread):
             total_processed = 0
             total_start_time = time.time()
             
-            while self.is_running:  # 外层循环，用于循环剪辑
-                # 创建线程池
+            while self.is_running:
                 with ThreadPoolExecutor(max_workers=self.threads) as executor:
-                    # 存储所有任务
                     futures = []
                     
                     for input_dir in self.input_dirs:
                         if not self.is_running:
                             break
-                        
-                        # 获取当前目录的限制数量
+                            
                         limit = self.dir_limits.get(input_dir, 0)
-                        
-                        # 获取目录中的视频文件
                         video_files = [f for f in Path(input_dir).rglob("*") 
                                      if f.suffix.lower() in ['.mp4', '.avi', '.mov', '.mkv']]
                         
@@ -214,7 +209,6 @@ class VideoProcessThread(QThread):
                             self.log(f"目录 {input_dir} 中没有视频文件", None, 'WARNING')
                             continue
                             
-                        # 应用限制
                         if limit > 0:
                             video_files = video_files[:limit]
                             self.log(f"目录 {input_dir} 限制处理 {limit} 个文件", None, 'INFO')
@@ -230,12 +224,10 @@ class VideoProcessThread(QThread):
                                 plan_id = plan["id"]
                                 self.log(f"处理方案ID: {plan_id}")
                                 
-                                # 构建输出文件路径
                                 input_dir_name = Path(input_dir).name
                                 output_file = Path(self.output_dir) / input_dir_name / f"{video_file.stem}{video_file.suffix}"
                                 output_file.parent.mkdir(parents=True, exist_ok=True)
                                 
-                                # 提交任务到线程池
                                 future = executor.submit(
                                     self.process_video,
                                     video_file,
@@ -245,19 +237,17 @@ class VideoProcessThread(QThread):
                                 )
                                 futures.append(future)
                     
-                    # 等待所有任务完成并收集结果
                     for future in as_completed(futures):
                         try:
                             if future.result():
                                 total_processed += 1
+                                self.log(f"已完成 {total_processed} 个视频的处理", None, 'INFO')
                         except Exception as e:
                             self.log(f"处理任务失败: {str(e)}")
                 
-                # 检查是否继续循环
                 if not self.loop_process or not self.is_running:
                     break
                     
-                # 检查是否还有文件需要处理
                 has_files = False
                 for input_dir in self.input_dirs:
                     if list(Path(input_dir).rglob("*.mp4")) or \
@@ -274,11 +264,16 @@ class VideoProcessThread(QThread):
                 self.log("开始新一轮循环处理", None, 'INFO')
             
             total_time = time.time() - total_start_time
-            self.finished.emit(total_processed, total_time)
+            self.log(f"处理完成，共处理 {total_processed} 个视频，总用时 {total_time:.1f} 秒", None, 'INFO')
+            
+            # 使用安全的信号发送方式
+            self.emit_finished(total_processed, total_time)
             
         except Exception as e:
-            self.error.emit(str(e))
-            
+            error_msg = f"处理过程出错: {str(e)}"
+            self.log(error_msg, level='ERROR')
+            self.emit_error(error_msg)
+
     def process_video(self, video_file: Path, output_file: Path, plan_id: int, more_effects: bool) -> bool:
         """在线程池中处理单个视频"""
         thread_id = threading.get_ident()
@@ -290,20 +285,19 @@ class VideoProcessThread(QThread):
             
             try:
                 if use_gpu:
-                    self.log(f"获取到GPU信号量，使用GPU处理", thread_id, 'INFO')
+                    self.log(f"使用GPU处理", thread_id, 'DEBUG')
                 else:
-                    self.log(f"使用CPU处理 (GPU信号量未获取到或未启用GPU)", thread_id, 'INFO')
+                    self.log(f"使用CPU处理", thread_id, 'DEBUG')
 
                 # 如果是方案6，先进行字幕识别
                 if plan_id == 6:
                     self.log(f"开始识别字幕: {video_file.name}", thread_id, 'INFO')
                     try:
-                        # 生成字幕并获取音频文件路径
                         subtitle_file, audio_file = self.audio_processor.generate_srt(str(video_file))
                         if not subtitle_file:
                             self.log(f"字幕识别失败，跳过文件: {video_file.name}", thread_id, 'ERROR')
                             return False
-                        self.log(f"字幕识别成功: {subtitle_file}", thread_id, 'INFO')
+                        self.log(f"字幕识别成功", thread_id, 'INFO')
                     except Exception as e:
                         self.log(f"字幕识别出错: {str(e)}", thread_id, 'ERROR')
                         return False
@@ -315,16 +309,14 @@ class VideoProcessThread(QThread):
                     plan_id,
                     use_gpu,
                     thread_id,
-                    subtitle_file  # 传递字幕文件路径
+                    subtitle_file
                 )
                 
                 if not ffmpeg_cmd:
                     self.log(f"获取处理命令失败，跳过文件: {video_file.name}", thread_id, 'ERROR')
                     return False
                     
-                self.log(f"\n开始处理文件: {video_file.name}", thread_id, 'INFO')
-                self.log(f"使用方案 {plan_id} ({'GPU' if use_gpu else 'CPU'})", thread_id, 'INFO')
-                self.log(f"更多效果: {more_effects}", thread_id, 'DEBUG')
+                self.log(f"开始处理: {video_file.name} (使用{'GPU' if use_gpu else 'CPU'})", thread_id, 'INFO')
                 
                 # 使用UTF-8编码处理命令
                 process = subprocess.Popen(
@@ -360,17 +352,16 @@ class VideoProcessThread(QThread):
                     if "time=" in line:
                         import re
                         match = re.search(progress_pattern, line)
-                        if match:
-                            self.log(f"处理进度: {match.group(1)}", thread_id, 'DEBUG')  # 改为DEBUG级别
+                        if match and thread_id % 2 == 0:  # 只打印一半的进度日志
+                            self.log(f"处理进度: {match.group(1)}", thread_id, 'DEBUG')
                             
                 if process.returncode == 0:
                     if output_file.exists() and output_file.stat().st_size > 0:
-                        self.log(f"成功处理: {video_file.name}", thread_id, 'INFO')
+                        self.log(f"处理完成: {video_file.name}", thread_id, 'INFO')
                         # 清理临时字幕文件
                         if subtitle_file and os.path.exists(subtitle_file):
                             try:
                                 os.remove(subtitle_file)
-                                self.log(f"已删除临时字幕文件: {subtitle_file}", thread_id, 'DEBUG')
                             except Exception as e:
                                 self.log(f"删除临时字幕文件失败: {str(e)}", thread_id, 'WARNING')
                                 
@@ -399,14 +390,10 @@ class VideoProcessThread(QThread):
                 
                 # 清理临时文件
                 try:
-                    # 清理临时音频文件
                     if audio_file and os.path.exists(audio_file):
                         os.remove(audio_file)
-                        self.log(f"已删除临时音频文件: {audio_file}", thread_id, 'DEBUG')
-                    # 清理临时字幕文件
                     if subtitle_file and os.path.exists(subtitle_file):
                         os.remove(subtitle_file)
-                        self.log(f"已删除临时字幕文件: {subtitle_file}", thread_id, 'DEBUG')
                 except Exception as e:
                     self.log(f"清理临时文件失败: {str(e)}", thread_id, 'WARNING')
                 
