@@ -147,15 +147,35 @@ class VideoProcessThread(QThread):
                 self.log(f"未找到{'GPU' if use_gpu else 'CPU'}命令模板", thread_id, 'ERROR')
                 return None
                 
+            # 处理文件路径
+            input_file = str(Path(input_file).resolve())  # 转换为绝对路径
+            output_file = str(Path(output_file).resolve())  # 转换为绝对路径
+            
+            # 处理路径中的特殊字符
+            input_file = f'"{input_file}"'  # 用引号包裹路径
+            output_file = f'"{output_file}"'  # 用引号包裹路径
+            
+            # 替换路径分隔符
+            input_file = input_file.replace('\\', '/')
+            output_file = output_file.replace('\\', '/')
+            
             # 替换文件路径
             command = command_template.replace('{input_file}', input_file)
             command = command.replace('{output_file}', output_file)
             
             # 如果是方案6且有字幕文件，替换字幕文件路径
             if plan_id == 6 and subtitle_file:
-                filename = Path(input_file).stem
+                filename = Path(input_file.strip('"')).stem  # 去除引号后获取文件名
+                # 使用相对路径，只用单引号
+                subtitle_file = str(Path(subtitle_file))  # 不使用resolve()保持相对路径
+                subtitle_file = subtitle_file.replace('\\', '/')  # 替换路径分隔符
+                
                 command = command.replace('{subtitle_file}', subtitle_file)
                 command = command.replace('%{filename}', filename)
+                command = command.replace('MarginV=85', f'MarginV={self.margin_v}')
+            
+            # # 打印完整命令
+            # self.log(f"完整的FFmpeg命令: {command}", thread_id, 'INFO')
             
             return command
             
@@ -317,6 +337,7 @@ class VideoProcessThread(QThread):
                     return False
                     
                 self.log(f"开始处理: {video_file.name} (使用{'GPU' if use_gpu else 'CPU'})", thread_id, 'INFO')
+                self.log(f"执行命令: {ffmpeg_cmd}", thread_id, 'INFO')
                 
                 # 使用UTF-8编码处理命令
                 process = subprocess.Popen(
